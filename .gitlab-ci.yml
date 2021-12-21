@@ -1,0 +1,30 @@
+#
+# Deployment script for gitlab ci 
+#
+# ----
+# If you make fundamental changes here, you should down the containers on amvara2
+# root@amvara2:/home/gitlab-runner/builds/663b8094/0/amvara/haproxy/conf# docker stop cometa_website cometa_website_stage
+# ----
+stages:
+  - deploy
+
+stage_deployment:
+  stage: deploy
+  script:
+    # replace stripe key
+    - echo "Replace strip key in src/environments/environment.prod.ts with environment variable COMETA_STRIPE_PUBLIC_KEY"
+    - sed -i 's/@@COMETA_STRIPE_PUBLIC_KEY@@/'$COMETA_STRIPE_PUBLIC_TEST_KEY'/g' src/environments/environment.prod.ts
+    # replace mail password
+    - echo "Replace mail password in cometa_secret_variables.prod.php with Value from enviroment "
+    - sed -i 's/@@COMETA_MAIL_PASSWORD@@/'$COMETA_MAIL_PASSWORD'/g' php/cometa_secret_variables.prod.php
+    # copy php files
+    - echo "Copy php/cometa_secret_variables.prod.php  to  php/cometa_secret_variables.php"
+    - cp php/cometa_secret_variables.prod.php php/cometa_secret_variables.php
+    # check container exists, create one or rebuild angular project with zero downtime 
+    - echo "Checking if cometa_website is already running else start it..."
+    - echo "If there are changes to docker-compose file it will recreate the container..."
+    - docker-compose up -d 2>&1 | grep "up-to-date" && docker exec cometa_website bash -c "ng build --aot --extract-licenses --build-optimizer --optimization --configuration production; cp -r dist/cometa-rocks-website/* /var/www/html" || ( timeout 360 docker-compose logs -f || true )
+
+  only:
+    refs:
+      - stage

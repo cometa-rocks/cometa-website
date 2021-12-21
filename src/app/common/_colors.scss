@@ -1,0 +1,31 @@
+/*
+
+This is the global color file ... you should import this using
+    @import "_colors";
+inside each component
+
+*/
+
+/* used in features*/ 
+$black: black;
+
+$blackish: #111111;
+
+$heavy-orange: #E2B154;
+$lightgray: lightgray;
+$lightgreen: lightgreen;
+$lightblue: lightblue;
+
+/* used in footer ... same as $grayish;*/
+$lightblack: #343333;
+
+$gray: gray;
+
+$grayish: #343333;
+
+$white: #ffffff;
+
+/* used in darkmode for text */
+$whitish: #cae0eb;
+
+$medium-gray: #aeabab; 

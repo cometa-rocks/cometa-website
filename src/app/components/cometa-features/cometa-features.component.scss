@@ -1,0 +1,45 @@
+@import "_colors";
+
+$p-fsize: .9em;
+$a-fsize: .9em;
+
+
+.section-features {
+    padding: 50px 10%;
+    background-color: $white;
+
+    .content-wrapper {
+        display: grid;
+        grid-template-columns: repeat(1fr);
+        grid-gap: 30px;
+
+        @media (min-width: 560px) { grid-template-columns: repeat(2,1fr); }
+        @media (min-width: 1200px) { grid-template-columns: repeat(3,1fr); }
+
+        .content {
+            .card {
+                display: flex;
+                justify-content: space-around;
+    
+    
+                .text {
+                    padding-bottom: 25px;
+                    padding-left: 10px;
+    
+                    h4 {
+                        padding: 10px 0;
+                        font-size: 1.3em;
+                        color: $heavy-orange;
+                        @media (min-width: 850px) { font-size: 1.5em; }
+                        @media (min-width: 1200px) { font-size: 2em; }
+                    }
+                }
+            }
+        }
+    }
+
+    &.isDark {
+        background-color: $black;
+        color: $whitish;
+    }
+}

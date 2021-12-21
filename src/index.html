@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <title>co.meta - Complete Meta Test Automation - cometa.rocks</title>
+  <base href="/">
+
+  <meta name="description" content="Visual and functional regression testing using browser automation, ui testing">
+  <meta name="author" content="COMETA ROCKS S.L.">
+  <meta name="keywords"
+      content="automated software testing,web testing tools,browser automation,ui testing,automated web testing,gui testing tools,web macro,web ui testing,ui testing framework,ui automation,automated ui testing,web automation,website automation,usertesting, user testing, testing usability, web usability, usability test, usability testing, online usability testing tools, usability testing software, remote user testing , website usability testing , mobile user testing">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="assets/favicons/stage/favicon.ico?v=2">
+  <link rel="manifest" href="assets/manifest.json">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+  <link href="assets/aos/aos.css" rel="stylesheet">
+  <script src="assets/aos/aos.js"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+  <style>
+    @import"https://fonts.googleapis.com/css2?family=Comfortaa&display=swap";
+  </style>
+  <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+<!-- 
+  Doubled the import of styles  
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
+ -->
+</head>
+<body>
+    <!-- AOS is a library for element tracking ... fade in and out -->
+    <script>
+     AOS.init({
+        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+        initClassName: 'aos-init', // class applied after initialization
+        animatedClassName: 'aos-animate', // class applied on animation
+        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+        
+
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 20, // offset (in px) from the original trigger point
+        delay: 200, // values from 0 to 3000, with step 50ms
+        duration: 400, // values from 0 to 3000, with step 50ms
+        easing: 'ease', // default easing for AOS animations
+        once: false, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+        anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+    }
+     ); 
+  </script>
+
+  <app-root></app-root>
+
+  <script src="runtime.js" type="module"></script>
+  <script src="polyfills.js" type="module"></script>
+  <script src="main.js" type="module"></script>
+
+</body></html>

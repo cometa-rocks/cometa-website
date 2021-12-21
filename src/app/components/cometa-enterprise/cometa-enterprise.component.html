@@ -1,0 +1,19 @@
+<div [ngClass]="{'isDark': currentTheme == 'dark'}" class="section-enterprise">
+
+    <div class="section-header">
+        <h2 data-aos="fade-up">{{content.cometa_enterprise_title}}</h2>
+        <div class="separator"></div>
+        <p data-aos="fade-up">{{content.cometa_enterprise_desc}}</p>
+    </div>
+
+    <div class="content-wrapper">
+        <ul>
+            <li data-aos="fade-up" *ngFor="let ch of content.characteristics">
+                <img alt="" [src]="ch.image">
+                <p>{{ch.description}}</p>
+            </li>
+        </ul>
+    </div>
+    
+</div>
+

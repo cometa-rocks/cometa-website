@@ -1,0 +1,29 @@
+<div [ngClass]="{'isDark': currentTheme == 'dark'}" class="section-features">
+    
+    <div class="section-header">
+        <h2 data-aos="fade-up">{{content.cometa_features_title}}</h2>
+        <div class="separator"></div>
+        <p data-aos="fade-up">{{content.cometa_features_desc}}</p>
+
+        <p *ngIf="currentLang == 'en'" data-aos="fade-up">
+            {{content.cometa_features_desc_opensrc}}
+            <a target="_blank" href="https://jmeter.apache.org/">{{content.cometa_features_jmeter}}</a>, 
+            <a target="_blank" href="https://www.jenkins.io/">{{content.cometa_features_jenkins}}</a>, 
+            <a target="_blank" href="htstps://git-scm.com/">{{content.cometa_features_git}}</a>, ...) {{content.cometa_features_easier}}
+        </p>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="content" *ngFor="let screenshot of content.screenshots">
+            <div data-aos="fade-up" class="card">
+                <div class="icon">
+                    <img alt="" [src]="screenshot.image">
+                </div>
+                <div class="text">
+                    <h4>{{screenshot.title}}</h4>
+                    <p>{{screenshot.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,129 @@
+//
+// Import the global colors scheme
+//
+@import "_colors";
+
+$p-fsize: .9em;
+$a-fsize: .9em;
+
+header {
+    height: 4em;
+    background-color: $grayish;
+    color: $whitish;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .cometa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .menu {
+            display: none;
+            margin: 0 1em;
+            
+            mat-icon {
+                color: $heavy-orange;
+                padding: 0;
+            }
+        }
+
+        .logo {
+            margin-left: 2em;    
+            line-height: 30px;
+
+            span {
+                font-size: 30px;
+                font-weight: bold;
+    
+                &:nth-child(1) {
+                    color: $heavy-orange;
+                }
+    
+                &:nth-child(2) {
+                    color: gray;
+                }
+            }
+        }
+    }
+
+    
+
+    .nav {
+        display: none; 
+
+        ul {
+            display: flex;
+            list-style-type: none;
+
+            li {
+                margin: 0 1em;
+
+                a {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .theme-switcher, 
+    .lang-switcher {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $heavy-orange;
+    }
+
+    .theme-switcher p,
+    .lang-switcher p {
+        font-size: $p-fsize;
+        margin: .5em 1em;
+
+        &.isActive {
+            font-weight: bold;
+            border-bottom: 1px solid $heavy-orange;
+        }
+    }
+
+    .lang-switcher {
+        p {
+            cursor: pointer;
+        }
+    }
+
+    .theme-switcher {
+        .switch {
+            position: relative;
+            width: 2em;
+            height: .8em;
+            border: 2px solid $heavy-orange;;
+            border-radius: 1em;
+            cursor: pointer;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 1px;
+                left: 2px;
+                height: .4em;
+                width: .4em;
+                background-color: $heavy-orange;;
+                border-radius: 50%;
+                transition: .2s;
+            }
+
+            &:active::before{
+                width: .5em;
+            }
+
+            &.isDark::before {
+                left: 20px;
+            }
+        }
+    }
+
+    &.isDark {
+        background-color: $blackish;
+    }
+}

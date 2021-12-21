@@ -1,0 +1,40 @@
+@import "_colors";
+$p-fsize: .9em;
+$a-fsize: .9em;
+
+.section-enterprise {
+    padding: 50px 10%;
+
+    .content-wrapper {
+        ul {
+            display: grid;
+            grid-gap: 30px;
+            grid-template-columns: repeat(1fr);
+            list-style-type: none;
+
+            @media (min-width: 750px) { grid-template-columns: repeat(2,1fr); }
+            @media (min-width: 1200px) { grid-template-columns: repeat(3,1fr); }
+
+            li {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                border-bottom: 1px solid $lightgray;
+
+                p {
+                    padding-left: 10px;
+                }
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+        }
+    }
+
+    &.isDark {
+        background-color: $blackish;
+        color: $whitish;
+    }
+}

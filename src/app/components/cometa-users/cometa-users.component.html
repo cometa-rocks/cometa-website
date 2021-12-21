@@ -1,0 +1,74 @@
+<div [ngClass]="{'isDark': currentTheme == 'dark'}" class="section-users">
+    <div class="section-header">
+        <h2 data-aos="fade-up">{{content.cometa_users_title}}</h2>
+        <div class="separator"></div>
+        <p data-aos="fade-up">{{content.cometa_users_desc}}</p>
+    </div>
+    
+    <div class="content-wrapper">
+        <div data-aos="fade-right" class="logo"></div>
+        <div class="content">
+            <div class="title"><h1 data-aos="fade-left">{{content.cometa_users_users_say}}</h1></div>
+            <div data-aos="fade-left" class="testimonial" *ngFor="let testimonial of content.testimonials">
+                <span class="testimonial-quote">&quot;{{testimonial.quote}}</span>
+                <i> {{testimonial.text}}&quot; </i>
+                <p class="testimonial_from" style="font-family: 'Montserrat','Arial'; padding-top:20px">
+                    {{testimonial.form}}
+                    <br />{{testimonial.footer_text}}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="links">
+        <div class="link">
+            <div data-aos="fade-right" class="title"><a target="_blank" href="https://ocagzojn33k.typeform.com/to/G2VgVbbB">{{content.cometa_users_early_access}}</a></div>
+            <p data-aos="fade-right">{{content.cometa_users_early_access_desc}}</p>      
+        </div>
+        <a name="subscribe"></a>
+        <div class="link">
+            <div data-aos="fade-right" class="title" (click)="activateDonatePanel()"><a>{{content.cometa_users_donate}}</a></div>
+            <p data-aos="fade-right">{{content.cometa_users_donate_desc}}</p>
+            <div class="donate-panel" *ngIf="donatePanelIsActive">
+                <p>{{content.cometa_users_donate_panel_desc}}</p>
+                <form [formGroup]="donateForm">
+                    <div class="form-group">
+                        <textarea type="text" formControlName="reason" class="form-control" placeholder="Donate reason..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div class="amount-buttons">
+                            <div>
+                                <p>{{content.cometa_users_donate_button_helper}}</p>
+                                <input [ngClass]="{'isSet': form['amount'].value === '10'}" (click)="setAmount(10)" type="button" value="10">   
+                            </div>
+                            <div>
+                                <p>{{content.cometa_users_donate_button_Supporter}}</p>
+                                <input [ngClass]="{'isSet': form['amount'].value === '29'}" (click)="setAmount(29)" type="button" value="29">   
+                            </div>
+                            <div>
+                                <p>{{content.cometa_users_donate_button_Lover}}</p>
+                                <input [ngClass]="{'isSet': form['amount'].value === '490'}" (click)="setAmount(490)" type="button" value="490">   
+                            </div>
+                            <div>
+                                <p>{{content.cometa_users_donate_button_Angel}}</p>
+                                <input style="padding-left: 10px" [ngClass]="{'isSet': form['amount'].value != '490' 
+                                                         && form['amount'].value != '29' 
+                                                         && form['amount'].value != '10'
+                                                         && form['amount'].value != '' }" 
+                                                        (input)="setCustomeAmount($event)" 
+                                                        type="number" 
+                                                        placeholder="custome">
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="form['amount'].value > 0" class="form-group">
+                        <div class="subscribe-time">
+                            <button [disabled]="loading" (click)="onSubmit('month')">{{content.cometa_users_donate_button_submit_monthly}}</button>
+                            <button [disabled]="loading" (click)="onSubmit('year')">{{content.cometa_users_donate_button_submit_yearly}}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

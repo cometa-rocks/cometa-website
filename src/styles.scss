@@ -1,0 +1,124 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+@font-face{
+    font-family:'Material Icons';
+    font-style:normal;
+    font-weight:400;
+    src:url(https://fonts.gstatic.com/s/materialicons/v118/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
+}
+
+@font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:100;
+    font-display:swap;
+    src:url(https://fonts.gstatic.com/s/inter/v7/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeAZJhjp-Ek-_EeAmM.woff) format('woff');
+    unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+
+.material-icons{
+    font-family:'Material Icons';
+    font-weight:normal;
+    font-style:normal;
+    font-size:24px;
+    line-height:1;
+    letter-spacing:normal;
+    text-transform:none;
+    display:inline-block;
+    white-space:nowrap;
+    word-wrap:normal;
+    direction:ltr;
+    -webkit-font-feature-settings:'liga';
+    -webkit-font-smoothing:antialiased;
+}
+
+$heavy-orange: #E2B154;
+$lightgray: lightgray;
+$lightgreen: lightgreen;
+$lightblue: lightblue;
+$dark_footer: #343333;
+$gray: gray;
+$white: #ffffff;
+$whitish: #f1f1f1;
+$blackish: #111111;
+$medium-gray: #aeabab; 
+
+$p-fsize: .9em;
+$a-fsize: .9em;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: 300;
+}
+
+body {
+    background-color: #F1F1F1;
+    font-family: Arial;
+
+    h1 {
+        /* h1 styles contain comfortaa font */
+        font-family: 'comfortaa', sans-serif;
+    }
+    
+    /* headers styles for section >> architecture, enterprise, features, portfolio, users, contact us */
+    /**************************************************************************************************/
+    .section-header {
+        padding-bottom: 50px;
+        width: 100%;
+        text-align: center;
+
+        h2 {
+            @media (min-width: 850px) { font-size: 2.5em; }
+            @media (min-width: 1200px) { font-size: 2em; }
+        }
+
+        .separator {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: $heavy-orange;
+            margin: 10px 0;
+            border: 5px solid white;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                transform: translateY(-50%);
+                height: 1px;
+                width: 100px;
+                background-color: $heavy-orange;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 15px;
+                transform: translateY(-50%);
+                height: 1px;
+                width: 100px;
+                background-color: $heavy-orange;
+            }
+        }
+
+        p {
+            padding: 5px 0;
+ 
+            a {
+                color: $heavy-orange;
+                text-decoration: none;
+            }
+        }
+    }
+    /************************************ Section header styles end ***********************************/
+    /**************************************************************************************************/
+
+}

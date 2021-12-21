@@ -1,0 +1,36 @@
+<header [ngClass]="{'isDark': currentTheme == 'dark'}">
+    <div class="cometa">
+      <div class="menu">
+        <mat-icon>menu</mat-icon>
+      </div>
+      <div class="logo">            
+          <span>co.</span><span>meta</span>
+      </div>
+    </div>
+    <div class="nav">
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Features</a></li>
+        <li><a href="">Screenshots</a></li>
+        <li><a href="">Architecture</a></li>
+        <li><a href="">Enterprise</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="switcher">
+        <div class="theme-switcher">
+          <p *ngIf="currentLang == 'en'" [ngClass]="{'isActive': currentTheme == 'light'}">LIGHT</p>
+          <p *ngIf="currentLang == 'ca'" [ngClass]="{'isActive': currentTheme == 'light'}">CLAR</p>
+          <div [ngClass]="{'isDark': currentTheme == 'dark'}"  (click)="switchTheme()" class="switch"></div>
+          <p *ngIf="currentLang == 'en'" [ngClass]="{'isActive': currentTheme == 'dark'}">DARK</p>
+          <p *ngIf="currentLang == 'ca'" [ngClass]="{'isActive': currentTheme == 'dark'}">FOSC</p>
+        </div>
+        <div class="lang-switcher">
+          <p (click)="switchLang('en')"  [ngClass]="{'isActive': currentLang == 'en'}"> EN </p>
+          <div class="separator">|</div>
+          <p (click)="switchLang('ca')" [ngClass]="{'isActive': currentLang == 'ca'}"> CA </p>
+        </div>
+      </div>
+    </div>
+  </header>

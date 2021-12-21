@@ -1,0 +1,102 @@
+@import "_colors";
+$p-fsize: .9em;
+$a-fsize: .9em;
+
+
+.section-portfolio {
+    padding: 50px 10%;
+        
+    .content-wrapper {
+        display: grid;
+        grid-template-columns: repeat(1fr);
+        grid-gap: 30px;
+
+        @media (min-width: 750px) { grid-template-columns: repeat(2, 1fr); }
+        @media (min-width: 1200px) { grid-template-columns: repeat(3, 1fr); }
+
+
+        .content {
+            background-color: $white;
+            border-radius: 10px;
+            box-shadow: rgba(82, 93, 50, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+            &:hover {
+                box-shadow: rgba(211, 189, 20, 0.25) 0px 2px 5px -1px, rgba(167, 86, 10, 0.3) 0px 1px 3px -1px;
+            }
+
+            .card {
+                padding: 20px;
+                height: 100%;
+
+                .screenshot {
+                    height: auto;
+                    overflow: hidden;
+                    margin: auto 0;
+                    @media (min-width: 550px) { height: 200px; }
+
+
+                    img {
+                        height: auto;
+                        width: 100%; 
+                        pointer-events: none;
+                    
+                        @media (min-width: 1200px) { 
+                            cursor: pointer;
+                            pointer-events: inherit; 
+                        }
+                    }
+                }
+            }
+
+            .text {
+                padding: 30px 0;
+
+                h4 {
+                    font-size: 1em;
+                    padding: 10px 0;
+                    color: $heavy-orange;
+                    @media (min-width: 850px) { font-size: 1.2em; }
+                    @media (min-width: 1200px) { font-size: 1.5em; }
+                }
+            }
+        }
+    }
+    
+    &.isDark {
+        background-color: $blackish;
+        color: $whitish;
+
+        .card {
+            p {
+                color: $blackish;
+            }
+        }
+    }
+}
+
+.image-magnifier {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    background-color: transparent;
+    text-align: center;
+    //backdrop-filter: blur(10px);
+
+    &.isActive {
+        @media (min-width: 1200px) { display: block; }
+    }
+
+    .magnified_img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        max-height: 70%;
+        height: auto;
+        max-width: 80%;
+    }   
+}

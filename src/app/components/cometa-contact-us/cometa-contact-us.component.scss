@@ -1,0 +1,67 @@
+@import "_colors";
+
+$p-fsize: .9em;
+$a-fsize: .9em;
+
+
+.section-contact-us {
+    padding: 50px 10%;
+    background-color: $white;
+
+    form {
+        display: grid;
+        place-items: center;
+
+        .form-group {
+            text-align: left;
+            margin: 20px 0;
+            width: 100%;
+
+            @media (min-width: 600px) {  width: 70%; }
+            @media (min-width: 900px) {  width: 40%; }
+    
+            input {
+                width: 100%;
+                padding-left: 15px;
+                height: 40px;
+                border: 1px solid $heavy-orange;
+                border-radius: 5px;
+                font: inherit;
+                cursor: pointer;
+                outline: inherit;
+                background: $whitish;
+                color: $blackish;
+                margin: 10px 0;
+            }
+    
+            .feedback {
+                color: $heavy-orange;
+            }
+
+            button {
+                font-family: 'comfortaa', 'Inter', sans-serif;
+                width: 100%;
+                height: 40px;
+                background: $blackish;
+                color: $white;
+                margin: 10px 0;
+                margin-right: 10px;
+                outline-color: $heavy-orange;
+
+                @media (min-width: 900px) {  width: 30%; }
+    
+                &:hover {
+                    background-color: $heavy-orange;
+                }
+            }
+        }
+    }
+
+    
+
+
+    &.isDark {
+        background-color: $black;
+        color: $whitish;
+    }
+}

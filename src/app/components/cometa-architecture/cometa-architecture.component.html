@@ -1,0 +1,19 @@
+<div [ngClass]="{'isDark': currentTheme == 'dark'}" class="section-architecture">
+    <div class="section-header">
+        <h2 data-aos="fade-up">{{content.cometa_enterprise_title}}</h2>
+        <div class="separator"></div>
+        <p data-aos="fade-up"> {{content.cometa_enterprise_desc}}
+            <a target="_blank" href="https://about.gitlab.com/">{{content.cometa_enterprise_repo}}</a>. </p>
+    </div>
+    <div class="content-wrapper">
+        <div data-aos="fade-up" class="content" *ngFor="let tech of content.techStack">
+            <div class="tech">
+                <a target="_blank" href="{{tech.href}}"><img alt="" [src]="tech.image"></a>
+                <a target="_blank" href="{{tech.href}}"><strong>{{tech.name}}</strong></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    

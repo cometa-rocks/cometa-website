@@ -1,0 +1,24 @@
+<footer [ngClass]="{'isDark': currentTheme == 'dark'}">
+    <div class="links-wrapper">
+        <div class="links" *ngFor="let section of content.linkSection">
+            <div data-aos="fade-up" class="title">{{section.title}}</div>
+            <ul data-aos="fade-up" *ngFor="let link of section.links">
+                <li><a target="_blank" href="{{link.href}}">{{link.name}}</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="legal-info">
+        <div class="copyright">
+            <p data-aos="fade-up">{{content.cometa_footer_cometa_rocks}}</p>
+            <p data-aos="fade-up">{{content.cometa_footer_company_info}}</p>
+        </div>
+        <div data-aos="fade-up" class="social-net">
+            <a target="_blank" href="https://linkedin.com/company/cometa-rocks/"> <img alt="" src="assets/social-media/linkedin-icon.png"> </a>
+            <a target="_blank" href="https://twitter.com/cometa_rocks"> <img alt="" src="assets/social-media/twitter-icon.webp"> </a>
+        </div>
+        <div data-aos="fade-up" class="keywords">
+            <p>{{content.cometa_footer_keywords}}</p>
+        </div>
+    </div>
+</footer>

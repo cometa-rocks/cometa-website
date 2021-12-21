@@ -1,0 +1,44 @@
+@import "_colors";
+
+$p-fsize: .9em;
+$a-fsize: .9em;
+
+
+.section-architecture {
+    padding: 50px 10%;
+    background-color: $white;
+
+    .content-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 20px;
+
+        @media (min-width: 1200px) { grid-template-columns: repeat(4,1fr); }
+
+        .tech {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+                color: $heavy-orange;
+                font-size: 2em;
+
+                img {
+                    height: 80px;
+                    width: auto;
+
+                    @media (min-width: 650px) { height: 120px; }
+                    @media (min-width: 900px) { height: 200px; }
+                }
+            }
+        } 
+    }
+
+    &.isDark {
+        background-color: $black;
+        color: $whitish;
+    }
+}

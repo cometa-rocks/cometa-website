@@ -1,0 +1,53 @@
+<div [ngClass]="{'isDark': currentTheme == 'dark'}" class="section-contact-us" (ngSubmit)="onSubmit()">
+
+    <div class="section-header">
+        <h2 data-aos="fade-up">{{content.cometa_contactus_title}}</h2>
+        <div class="separator"></div>
+        <p data-aos="fade-up">{{content.cometa_contactus_desc}}</p>
+    </div>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div data-aos="fade-left" class="form-group">
+            <h4>{{content.cometa_contactus_form_label_name}}</h4>
+            <input type="text" formControlName="name" class="form-control"/>
+            <div *ngIf="submitted && form['name'].errors" class="feedback">
+                <div *ngIf="form['name'].errors['required']">{{content.cometa_contactus_form_required_name}}</div>
+            </div>
+        </div>
+        <div data-aos="fade-left" class="form-group">
+            <h4>{{content.cometa_contactus_form_label_email}}</h4>
+            <input type="text" formControlName="email" class="form-control"/>
+            <div *ngIf="submitted && form['email'].errors" class="feedback">
+                <div *ngIf="form['email'].errors['required']">{{content.cometa_contactus_form_required_email}}</div>
+                <div *ngIf="form['email'].errors['pattern']">{{content.cometa_contactus_form_required_email_format}}</div>
+            </div>
+        </div>
+        <div data-aos="fade-left" class="form-group">
+            <h4>{{content.cometa_contactus_form_label_subject}}</h4>
+            <input type="text" formControlName="subject" class="form-control"/>
+            <div *ngIf="submitted && form['subject'].errors" class="feedback">
+                <div *ngIf="form['subject'].errors['required']">{{content.cometa_contactus_form_required_subject}}</div>
+            </div>
+        </div>
+        <div data-aos="fade-left" class="form-group">
+            <h4>{{content.cometa_contactus_form_label_message}}</h4>
+            <input type="text" formControlName="message" class="form-control"/>
+            <div *ngIf="submitted && form['message'].errors" class="feedback">
+                <div *ngIf="form['message'].errors['required']">{{content.cometa_contactus_form_required_message}}</div>
+            </div>
+        </div>
+        <div data-aos="fade-left" class="form-group">
+            <botdetect-captcha captchaStyleName="welcomeCaptcha"></botdetect-captcha>
+            <h4>{{content.cometa_contactus_form_label_captcha}}</h4>
+            <input type="text" id="userCaptchaInput" name="userCaptchaInput" formControlName="captcha">
+            <div *ngIf="submitted && form['captcha'].errors" class="feedback">
+                <div *ngIf="form['captcha'].errors['required']">{{content.cometa_contactus_form_required_captcha}}</div>               
+            </div>
+        </div>
+        <div data-aos="fade-left" class="form-group">
+            <button [disabled]="loading"> Submit </button>
+            <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <div class="feedback">{{mailServiceFeedback}}</div>
+        </div>
+    </form>
+</div>

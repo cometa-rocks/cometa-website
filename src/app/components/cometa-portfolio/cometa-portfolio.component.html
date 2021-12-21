@@ -1,0 +1,36 @@
+<div [ngClass]="{'isDark': currentTheme == 'dark'}" class="section-portfolio">
+    <div class="section-header">
+        <h2 data-aos="fade-up">{{content.cometa_portfolio_title}}</h2>
+        <div class="separator"></div>
+        <p data-aos="fade-up">
+            {{content.cometa_portfolio_desc_automation}}
+            <br>
+            {{content.cometa_portfolio_desc_tests}}
+            <br>
+            {{content.cometa_portfolio_desc_development}}
+        </p>
+        
+        <p data-aos="fade-up">{{content.cometa_portfolio_screenshots}}
+            <a rel="noopener" href="https://prod.cometa.rocks/" target="_blank">{{content.cometa_portfolio_trial}}</a>
+        </p>
+    </div>
+
+    <div class="content-wrapper">
+        <div data-aos="fade-up" class="content" *ngFor="let screenshot of content.screenshots">
+            <div class="card">
+                <div class="screenshot">
+                    <img alt="" (click)="openMagnifier($event)" [src]="screenshot.image">
+                </div>
+                <div class="text">
+                    <h4>{{screenshot.title}}</h4>
+                    <p>{{screenshot.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div [ngClass]="{'isActive': img_magnifier_isActive }" class="image-magnifier" (click)="closeMagnifier()">
+    <img alt="" class="magnified_img" >
+</div>
+
