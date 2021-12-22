@@ -34,6 +34,10 @@ function install_nodejs(){
     echo "Switching to /tmp dir"
     cd /tmp
 
+    # uninstall older npm packages
+    echo "Uninstalling older node and npm packages"
+    apk del npm
+
     echo "Installing node version 14.4 build against musl / for alpine "
     VERSION=v14.15.0
     DISTRO=linux-x64-musl
@@ -41,10 +45,8 @@ function install_nodejs(){
     mkdir -p $INSTALL_DIR
     wget https://unofficial-builds.nodejs.org/download/release/$VERSION/node-$VERSION-$DISTRO.tar.xz
     tar -xvf node-$VERSION-$DISTRO.tar.xz -C $INSTALL_DIR
+    # update PATH variable
     export PATH=$INSTALL_DIR/node-$VERSION-$DISTRO/bin:$PATH
-    [ -f /usr/bin/node ] && mv /usr/bin/node /usr/bin/node_sic
-    [ -f /usr/bin/node ] && mv /usr/bin/npm /usr/bin/npm_sic
-    [ -f /usr/bin/node ] && mv /usr/bin/npx /usr/bin/npx_sic
     ln -s $INSTALL_DIR/node-$VERSION-$DISTRO/bin/node /usr/bin/node
     ln -s $INSTALL_DIR/node-$VERSION-$DISTRO/bin/npm /usr/bin/npm
     ln -s $INSTALL_DIR/node-$VERSION-$DISTRO/bin/npx /usr/bin/npx
@@ -52,6 +54,7 @@ function install_nodejs(){
 
 #
 # Install npm
+# DEPRECATED: If ran after installing nodejs it will replace nodejs binaries.
 #
 function install_npm(){
     echo "Installing npm"
@@ -144,7 +147,6 @@ do
         fix_user # fix nginx user
         install_lua # install lua for nginx
         install_nodejs # install nodejs
-        install_npm # install npm
         install_npm_packages # install npm packages
         build_angular # build angular project
         deploy_to_nginx # deploy to nginx document root
@@ -156,7 +158,6 @@ do
         fix_user # fix nginx user
         install_lua # install lua for nginx
         install_nodejs # install nodejs
-        install_npm # install npm
         shift
         ;;
     compile)
