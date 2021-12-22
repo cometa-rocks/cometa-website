@@ -45,8 +45,7 @@ function install_nodejs(){
     mkdir -p $INSTALL_DIR
     wget https://unofficial-builds.nodejs.org/download/release/$VERSION/node-$VERSION-$DISTRO.tar.xz
     tar -xvf node-$VERSION-$DISTRO.tar.xz -C $INSTALL_DIR
-    # update PATH variable
-    export PATH=$INSTALL_DIR/node-$VERSION-$DISTRO/bin:$PATH
+    # add links to /usr/bin/
     ln -s $INSTALL_DIR/node-$VERSION-$DISTRO/bin/node /usr/bin/node
     ln -s $INSTALL_DIR/node-$VERSION-$DISTRO/bin/npm /usr/bin/npm
     ln -s $INSTALL_DIR/node-$VERSION-$DISTRO/bin/npx /usr/bin/npx
@@ -82,7 +81,7 @@ function build_angular(){
 
     echo "Building project"
     [ ! -f /cometa_website/src/environments/environment.ts ] && { cp /cometa_website/src/environments/environment.prod.ts /cometa_website/src/environments/environment.ts; echo Copied environment.prod.ts; } || echo environment.ts exists
-    ng build --aot --extract-licenses --build-optimizer --optimization --configuration production
+    npx ng build --aot --extract-licenses --build-optimizer --optimization --configuration production
 }
 
 #
