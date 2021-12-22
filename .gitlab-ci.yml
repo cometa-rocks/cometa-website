@@ -8,13 +8,6 @@
 stages:
   - deploy
 
-#
-# Change GIT_STRATEGY to fetch the changes 
-# instead of cloning the entire repository
-#
-variables:
-  GIT_STRATEGY: fetch
-
 stage_deployment:
   stage: deploy
   script:

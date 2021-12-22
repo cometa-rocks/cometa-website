@@ -79,3 +79,9 @@ ng build --aot --extract-licenses --build-optimizer --optimization --configurati
 #
 echo "Copying files to dist"
 cp -r dist/cometa-rocks-website/* /var/www/html
+
+#
+# Set permissions back to nginx:nginx so next
+# deployment won't fail
+#
+chown -R nginx:nginx /cometa_website
