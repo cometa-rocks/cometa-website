@@ -11,6 +11,14 @@
 #
 
 #
+# GLOBAL VARIABLES
+#
+VERSION=v14.15.0
+DISTRO=linux-x64-musl
+INSTALL_DIR=/usr/local/lib/nodejs
+export PATH=$INSTALL_DIR/node-$VERSION-$DISTRO/bin:$PATH
+
+#
 # Fix the users to 1000+1001
 function fix_user() {
     echo "Fixing users to 1000+1001"
@@ -39,9 +47,6 @@ function install_nodejs(){
     apk del npm
 
     echo "Installing node version 14.4 build against musl / for alpine "
-    VERSION=v14.15.0
-    DISTRO=linux-x64-musl
-    INSTALL_DIR=/usr/local/lib/nodejs
     mkdir -p $INSTALL_DIR
     wget https://unofficial-builds.nodejs.org/download/release/$VERSION/node-$VERSION-$DISTRO.tar.xz
     tar -xvf node-$VERSION-$DISTRO.tar.xz -C $INSTALL_DIR
@@ -81,7 +86,7 @@ function build_angular(){
 
     echo "Building project"
     [ ! -f /cometa_website/src/environments/environment.ts ] && { cp /cometa_website/src/environments/environment.prod.ts /cometa_website/src/environments/environment.ts; echo Copied environment.prod.ts; } || echo environment.ts exists
-    npx ng build --aot --extract-licenses --build-optimizer --optimization --configuration production
+    ng build --aot --extract-licenses --build-optimizer --optimization --configuration production
 }
 
 #
