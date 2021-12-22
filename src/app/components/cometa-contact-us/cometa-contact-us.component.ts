@@ -93,7 +93,7 @@ export class CometaContactUsComponent implements OnInit {
     this.loading = true;
 
     /*defines url to to php mailer backend service*/
-    const url = "http://localhost:8010/php/mail.php";
+    const url = "/php/mail.php";
 
     /* set request options
      - setting X-www-form-urlencoded, as mail.php expects the variable values in $_POST['fieldname']*/
