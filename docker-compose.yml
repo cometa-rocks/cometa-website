@@ -7,7 +7,7 @@ services:
     nginx:
       # take an image that supports php
       image: richarvey/nginx-php-fpm:latest
-      container_name: cometa_website_v2
+      container_name: cometa_web_v3
       restart: always
       volumes:
         # mount working_dir for docker-compose

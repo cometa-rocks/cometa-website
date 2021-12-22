@@ -23,6 +23,13 @@ echo "Installing lua package "
 apk add --no-cache nginx-mod-http-lua
 
 #
+# Change directory to /tmp so the workdir folder 
+# is not filled with nodejs compressed files 
+#
+echo "Switching to /tmp dir"
+cd /tmp
+
+#
 # Install node version manager
 #
 # https://dev.to/ajeetraina/installing-nodejs-14-on-alpine-linux-154m
@@ -49,6 +56,12 @@ apk add npm
 
 npm install --prefix /usr/local -g @angular/cli
 npm i --prefix /usr/local --save-dev @angular-devkit/build-angular@latest
+
+#
+# Change directory back so build can be done
+#
+echo "Switching to /cometa_website dir"
+cd /cometa_website
 
 #
 # Build the project
