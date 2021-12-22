@@ -12,76 +12,165 @@
 
 #
 # Fix the users to 1000+1001
-echo "Fixing users to 1000+1001"
-deluser www-data && adduser -DH -h /home/www-data -s /sbin/nologin -u 1000 www-data
-deluser nginx && adduser -DH -h /home/nginx -s /sbin/nologin -u 1001 nginx
+function fix_user() {
+    echo "Fixing users to 1000+1001"
+    deluser www-data && adduser -DH -h /home/www-data -s /sbin/nologin -u 1000 www-data
+    deluser nginx && adduser -DH -h /home/nginx -s /sbin/nologin -u 1001 nginx
+}
 
 #
 # Install the lua package
 #
-echo "Installing lua package "
-apk add --no-cache nginx-mod-http-lua
-
-#
-# Change directory to /tmp so the workdir folder 
-# is not filled with nodejs compressed files 
-#
-echo "Switching to /tmp dir"
-cd /tmp
+function install_lua(){
+    echo "Installing lua package "
+    apk add --no-cache nginx-mod-http-lua
+}
 
 #
 # Install node version manager
 #
 # https://dev.to/ajeetraina/installing-nodejs-14-on-alpine-linux-154m
-echo "Installing node version 14.4 build against musl / for alpine "
-VERSION=v14.15.0
-DISTRO=linux-x64-musl
-INSTALL_DIR=/usr/local/lib/nodejs
-mkdir -p $INSTALL_DIR
-wget https://unofficial-builds.nodejs.org/download/release/$VERSION/node-$VERSION-$DISTRO.tar.xz
-tar -xvf node-$VERSION-$DISTRO.tar.xz -C $INSTALL_DIR
-export PATH=$INSTALL_DIR/node-$VERSION-$DISTRO/bin:$PATH
-[ -f /usr/bin/node ] && mv /usr/bin/node /usr/bin/node_sic
-[ -f /usr/bin/node ] && mv /usr/bin/npm /usr/bin/npm_sic
-[ -f /usr/bin/node ] && mv /usr/bin/npx /usr/bin/npx_sic
-ln -s $INSTALL_DIR/node-$VERSION-$DISTRO/bin/node /usr/bin/node
-ln -s $INSTALL_DIR/node-$VERSION-$DISTRO/bin/npm /usr/bin/npm
-ln -s $INSTALL_DIR/node-$VERSION-$DISTRO/bin/npx /usr/bin/npx
+function install_nodejs(){
+    echo "Switching to /tmp dir"
+    cd /tmp
+
+    echo "Installing node version 14.4 build against musl / for alpine "
+    VERSION=v14.15.0
+    DISTRO=linux-x64-musl
+    INSTALL_DIR=/usr/local/lib/nodejs
+    mkdir -p $INSTALL_DIR
+    wget https://unofficial-builds.nodejs.org/download/release/$VERSION/node-$VERSION-$DISTRO.tar.xz
+    tar -xvf node-$VERSION-$DISTRO.tar.xz -C $INSTALL_DIR
+    export PATH=$INSTALL_DIR/node-$VERSION-$DISTRO/bin:$PATH
+    [ -f /usr/bin/node ] && mv /usr/bin/node /usr/bin/node_sic
+    [ -f /usr/bin/node ] && mv /usr/bin/npm /usr/bin/npm_sic
+    [ -f /usr/bin/node ] && mv /usr/bin/npx /usr/bin/npx_sic
+    ln -s $INSTALL_DIR/node-$VERSION-$DISTRO/bin/node /usr/bin/node
+    ln -s $INSTALL_DIR/node-$VERSION-$DISTRO/bin/npm /usr/bin/npm
+    ln -s $INSTALL_DIR/node-$VERSION-$DISTRO/bin/npx /usr/bin/npx
+}
 
 #
 # Install npm
 #
-echo "Installing npm"
-apk add npm 
+function install_npm(){
+    echo "Installing npm"
+    apk add npm 
+}
 
 #
-# Change directory back so build can be done
+# Install angular and npm packages
 #
-echo "Switching to /cometa_website dir"
-cd /cometa_website
+function install_npm_packages(){
+    echo "Switching to /cometa_website dir"
+    cd /cometa_website
 
-#
-# Install angular
-#
-npm install -g @angular/cli
-npm i --save-dev @angular-devkit/build-angular@latest
-npm i
+    npm install -g @angular/cli
+    npm i --save-dev @angular-devkit/build-angular@latest
+    npm i
+}
 
 #
 # Build the project
 #
-echo "Building project"
-[ ! -f /cometa_website/src/environments/environment.ts ] && { cp /cometa_website/src/environments/environment.prod.ts /cometa_website/src/environments/environment.ts; echo Copied environment.prod.ts; } || echo environment.ts exists
-ng build --aot --extract-licenses --build-optimizer --optimization --configuration production
+function build_angular(){
+    echo "Switching to /cometa_website dir"
+    cd /cometa_website
+
+    echo "Building project"
+    [ ! -f /cometa_website/src/environments/environment.ts ] && { cp /cometa_website/src/environments/environment.prod.ts /cometa_website/src/environments/environment.ts; echo Copied environment.prod.ts; } || echo environment.ts exists
+    ng build --aot --extract-licenses --build-optimizer --optimization --configuration production
+}
 
 #
 # Copy files to dist
 #
-echo "Copying files to dist"
-cp -r dist/cometa-rocks-website/* /var/www/html
+function deploy_to_nginx(){
+    echo "Switching to /cometa_website dir"
+    cd /cometa_website
+
+    echo "Copying files to dist"
+    cp -r dist/cometa-rocks-website/* /var/www/html
+}
 
 #
 # Set permissions back to nginx:nginx so next
 # deployment won't fail
 #
-chown -R nginx:nginx /cometa_website
+function change_owner(){
+    chown -R nginx:nginx /cometa_website
+}
+
+# #########
+# Outputs help on how to use the script.
+# @params:
+# #########
+function help(){
+	echo -ne "
+${0} [OPTIONS]
+
+OPTIONS:
+	basic						fixes user permissions, installs lua for nginx, nodejs and npm
+	compile						installs angular, npm packages, builds the project and deploys it to nginx document root
+	full						runs both of the above options (basic and compile)
+
+EXAMPLES:
+	* Fresh install / Complete Deployment
+	${0} full
+
+	* Just update / Hot deployment
+	${0} compile
+"
+	exit 10
+}
+
+
+# #########
+# If no arguments are passed, show help
+# #########
+if [[ $# -eq 0 ]]; then
+    echo "No arguments set ... nothing to do here."
+    help
+fi
+
+# #########
+# User arguments
+# #########
+while [[ $# -gt 0 ]]
+do
+    key="$1"
+    case $key in
+    full)
+        fix_user # fix nginx user
+        install_lua # install lua for nginx
+        install_nodejs # install nodejs
+        install_npm # install npm
+        install_npm_packages # install npm packages
+        build_angular # build angular project
+        deploy_to_nginx # deploy to nginx document root
+        change_owner # change owner permissions
+        exit 0;
+        shift
+        ;;
+    basic)
+        fix_user # fix nginx user
+        install_lua # install lua for nginx
+        install_nodejs # install nodejs
+        install_npm # install npm
+        shift
+        ;;
+    compile)
+        install_npm_packages # install npm packages
+        build_angular # build angular project
+        deploy_to_nginx # deploy to nginx document root
+        change_owner # change owner permissions
+        exit 0;
+        shift
+        ;;
+    *)    # unknown option
+        echo "Unknown option ${key}, try again...";
+        help
+        shift # past argument
+        ;;
+    esac
+done

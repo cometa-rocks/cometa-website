@@ -28,5 +28,5 @@ services:
       # 
       # prepare.sh Command installs npm, compiles and copies result to html folder of nginx
       #
-      command: bash -c "./prepare.sh
+      command: bash -c "./prepare.sh full
           && /start.sh"
