@@ -63,9 +63,9 @@ cd /cometa_website
 #
 # Install angular
 #
-npm install --prefix /usr/local -g @angular/cli
-npm i --prefix /usr/local --save-dev @angular-devkit/build-angular@latest
-npm i --prefix /usr/local
+npm install -g @angular/cli
+npm i --save-dev @angular-devkit/build-angular@latest
+npm i
 
 #
 # Build the project
