@@ -21,9 +21,9 @@ stage_deployment:
     - echo "Copy php/cometa_secret_variables.prod.php  to  php/cometa_secret_variables.php"
     - cp php/cometa_secret_variables.prod.php php/cometa_secret_variables.php
     # check container exists, create one or rebuild angular project with zero downtime 
-    - echo "Checking if cometa_website is already running else start it..."
+    - echo "Checking if cometa_web_v3 is already running else start it..."
     - echo "If there are changes to docker-compose file it will recreate the container..."
-    - docker-compose up -d 2>&1 | grep "up-to-date" && docker exec cometa_website bash -c "ng build --aot --extract-licenses --build-optimizer --optimization --configuration production; cp -r dist/cometa-rocks-website/* /var/www/html; chown -R nginx:nginx /cometa_website" || ( timeout 360 docker-compose logs -f --tail=100 || true )
+    - docker-compose up -d 2>&1 | grep "up-to-date" && docker exec cometa_web_v3 bash -c "ng build --aot --extract-licenses --build-optimizer --optimization --configuration production; cp -r dist/cometa-rocks-website/* /var/www/html; chown -R nginx:nginx /cometa_website" || ( timeout 360 docker-compose logs -f --tail=100 || true )
 
   only:
     refs:
