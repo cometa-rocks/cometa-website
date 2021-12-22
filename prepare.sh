@@ -13,8 +13,8 @@
 #
 # Fix the users to 1000+1001
 echo "Fixing users to 1000+1001"
-deluser www-data && adduser -DH -h /home/www-data -s /sbin/nologin -u 1001 www-data
-deluser nginx && adduser -DH -h /home/nginx -s /sbin/nologin -u 1000 nginx
+deluser www-data && adduser -DH -h /home/www-data -s /sbin/nologin -u 1000 www-data
+deluser nginx && adduser -DH -h /home/nginx -s /sbin/nologin -u 1001 nginx
 
 #
 # Install the lua package

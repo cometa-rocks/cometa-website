@@ -38,7 +38,7 @@ export class CometaContactUsComponent implements OnInit {
     this.applyCurrentLayoutSettings();
 
     /*set the endpoint to the captcha backend service */
-    this.captchaComponent.captchaEndpoint = 'http://localhost:8010/php/simple-botdetect.php';
+    this.captchaComponent.captchaEndpoint = '/php/simple-botdetect.php';
   }
 
   /*applys currently selected language and theme to layout*/
