@@ -7,7 +7,7 @@ services:
     nginx:
       # take an image that supports php
       image: richarvey/nginx-php-fpm:latest
-      container_name: cometa_website
+      container_name: cometa_website_v2
       restart: always
       volumes:
         # mount working_dir for docker-compose
@@ -26,37 +26,7 @@ services:
         - "8011:80"
       
       # 
-      # Command installs npm, compiles and copies result to html folder of nginx
+      # prepare.sh Command installs npm, compiles and copies result to html folder of nginx
       #
-      command: bash -c "deluser www-data && adduser -DH -h /home/www-data -s /sbin/nologin -u 1001 www-data
-          && deluser nginx && adduser -DH -h /home/nginx -s /sbin/nologin -u 1000 nginx
-          && apk add lua-resty-core
-          && apk add npm 
-          && apk add --no-cache nginx-mod-http-lua
-          && npm install -g @angular/cli
-          && npm uninstall @angular-devkit/build-angular
-          && npm i --save-dev @angular-devkit/build-angular@latest
-          && ng build --aot --extract-licenses --build-optimizer --optimization --configuration production
-          && cp -r dist/cometa-rocks-website/* /var/www/html
+      command: bash -c "./prepare.sh
           && /start.sh"
-      # 2021-12-13 RRO removed commands ... to start with image defaults
-      #                if specifying command property, make sure to use the image entrypoint
-      #command: tail -f /etc/passwd
-      #command: bash -c "apk add lua-resty-core 
-      #   && apk add --no-cache nginx-mod-http-lua 
-      #   && tail -f /etc/passwd
-      #   && nginx -v 
-      #   && cd /
-      #   && nginx -g 'daemon off;'"
-
-      # This docker by default uses nginx:100 as process owner
-      # This normally conflicts with the host /etc/passwd and leads to permission problems.
-      # FIXME
-      # map docker:/etc/passwd to an outside /etc/passwd 
-      # use for example userid 1001 (normally gitlab-runner) 
-      # user: "1001:1001"
-
-      # Error 2021-01-24
-      # cometa_website | 2021/01/24 13:35:55 [alert] 115#115: failed to load the 'resty.core' module (https://github.com/openresty/lua-resty-core); ensure you are using an OpenResty release from https://openresty.org/en/download.html (reason: module 'resty.core' not found:
-      # must use the following somewhere
-      # apk add lua-resty-core; apk add --no-cache nginx-mod-http-lua
