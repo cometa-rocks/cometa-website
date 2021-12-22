@@ -54,14 +54,18 @@ ln -s $INSTALL_DIR/node-$VERSION-$DISTRO/bin/npx /usr/bin/npx
 echo "Installing npm"
 apk add npm 
 
-npm install --prefix /usr/local -g @angular/cli
-npm i --prefix /usr/local --save-dev @angular-devkit/build-angular@latest
-
 #
 # Change directory back so build can be done
 #
 echo "Switching to /cometa_website dir"
 cd /cometa_website
+
+#
+# Install angular
+#
+npm install --prefix /usr/local -g @angular/cli
+npm i --prefix /usr/local --save-dev @angular-devkit/build-angular@latest
+npm i --prefix /usr/local
 
 #
 # Build the project
