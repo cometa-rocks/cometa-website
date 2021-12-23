@@ -50,6 +50,7 @@
             
             <div *ngIf="mailFeedback.successCode != 0">
                 <!-- msg below in case of sucess in green -->
+                <span id="return-code">{{mailFeedback.successCode}}</span>
                 <div *ngIf="mailFeedback.successCode == 200" class="feedback-message" [ngClass]="{'isSuccess': mailFeedback.successCode == 200}">
                     <p>Dear {{form['name'].value}} ...</p> 
                     <p>Thank you for contacting us.</p>
@@ -60,10 +61,16 @@
                     <span class="text-color-grey">m: +34 717102603</span></p> 
                 </div>
                 <!-- msg below in case of error in red -->
-                <div *ngIf="mailFeedback.successCode != 200" class="feedback-message">
+                <div *ngIf="mailFeedback.successCode == 400" class="feedback-message">
                     <p>Ooops ... The Mailserver made Booobooo!</p> 
                     <p>Your message was NOT sent.</p>
                     <p style="margin-top:10px;">Please contact the cometa.rocks team via phone: m: +34 717102603</p> 
+                </div>
+                <!-- msg below in case of error in red -->
+                <div *ngIf="mailFeedback.successCode == 502" class="feedback-message">
+                    <p>Ooops ... wrong captcha code!</p> 
+                    <p>Please try again</p>
+                    <p style="margin-top:10px;">If you are having trouble reading the captcha, you might contact the cometa.rocks team via phone: m: +34 717102603</p> 
                 </div>
             </div>
         </div>

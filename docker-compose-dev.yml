@@ -1,3 +1,7 @@
+#
+# docker-compose for dev
+# ... opens port 4300
+#
 version: "3"
 
 services:
@@ -7,10 +11,6 @@ services:
       restart: always
       volumes:
         - ./:/cometa_website
-        - ./default.conf:/etc/nginx/conf.d/default.conf
-        - ./default.conf:/etc/nginx/sites-available/default.conf
-        - ./dist/cometa-rocks-website:/var/www/html/
-        - /etc/passwd:/etc/passwd
       working_dir: /cometa_website
       environment:
         - PHP_ERRORS_STDERR=TRUE
@@ -18,35 +18,7 @@ services:
         - "8011:80"
         # use port 4300 ... as other projects like cometa_front run on 4200
         - "4300:4300"
-      
-      # && ng update '@angular/cli'
-      command: bash -c "apk add lua-resty-core
-          && apk add npm 
-          && apk add --no-cache nginx-mod-http-lua 
-          && npm install -g @angular/cli
-          && ng serve --host 0.0.0.0 --disable-host-check --port 4300"
-      # user on development is 1001 = amvara
-      # user: "1001:1001"
 
-
-      # 2021-12-13 RRO removed commands ... to start with image defaults
-      #                if specifying command property, make sure to use the image entrypoint
-      #command: tail -f /etc/passwd
-      #command: bash -c "apk add lua-resty-core 
-      #   && apk add --no-cache nginx-mod-http-lua 
-      #   && tail -f /etc/passwd
-      #   && nginx -v 
-      #   && cd /
-      #   && nginx -g 'daemon off;'"
-
-      # This docker by default uses nginx:100 as process owner
-      # This normally conflicts with the host /etc/passwd and leads to permission problems.
-      # FIXME
-      # map docker:/etc/passwd to an outside /etc/passwd 
-      # use for example userid 1001 (normally gitlab-runner) 
-      # user: "1001:1001"
-
-      # Error 2021-01-24
-      # cometa_website | 2021/01/24 13:35:55 [alert] 115#115: failed to load the 'resty.core' module (https://github.com/openresty/lua-resty-core); ensure you are using an OpenResty release from https://openresty.org/en/download.html (reason: module 'resty.core' not found:
-      # must use the following somewhere
-      # apk add lua-resty-core; apk add --no-cache nginx-mod-http-lua
+      command: bash -c "./prepare.sh full
+          && echo forking ng serve
+          && ./prepare.sh serve"
