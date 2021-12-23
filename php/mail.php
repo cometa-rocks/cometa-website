@@ -136,10 +136,15 @@ $mail->CharSet = 'UTF-8';
 // Send mail and act on return code from mailserver ... return true or false + $mail->ErrorInfo
 $mail_sent = true; // default ist false ... if mail was sent correctly this turns true
 try {
+    //debugging only
+    //fix when not used, remove print_r ----------------------------------------------------------------------------------------------------------------------------------------------------
     $mail->send();
 } catch (Exception  $e) {
     $mail_sent = false;
 }
+
+
+
 
 // ---------------------- old behavior ----------------------------
 // response old - on failure
@@ -163,19 +168,19 @@ if(isset($_POST['mail-version']) == 'toni' && !$mail_sent) {
     echo 'Mailer error: ' . $mail->ErrorInfo;
     $arr = array(   'success' => false, 
                     'successCode'=> 503,  
-                    'message' => 'We could not send your request ... please contact us via phone +34 717 102 603 or WhatsApp/Signal/Telegram on the same number. Thank you!'
+                    'message' => 'We could not send your request ... please contact us via phone +34 717 102 603 or WhatsApp/Signal/Telegram on the same number. Thank you!',
+                    'lastMsgID'  => 'not available'
     );
     echo json_encode($arr);
     return;
 }
 
 // response new - on success 
-
-//replace ID: #xxxx with message id from email.send() feedback
 if(isset($_POST['mail-version']) == 'toni' && $mail_sent) {
     $arr = array(   'success' => true, 
                     'successCode'=> 200,  
-                    'message' => 'Welcome to our universe. We received your request (ID: #xxxx) and will contact you asap. Thank you for contacting us.'
+                    'message' => 'Welcome to our universe. We received your request (ID: '.$mail->getLastMessageID().') and will contact you asap. Thank you for contacting us.',
+                    'lastMsgID'  => $mail->getLastMessageID()
     );
     echo json_encode($arr);
     return;

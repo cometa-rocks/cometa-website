@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SwitcherService } from '../../cometa-services/shared/switcher.service';
 import { CaptchaComponent } from 'angular-captcha';
 import { COMETA_CONTACT_US_DATA } from 'src/app/data/cometa.contactus.data';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-cometa-contact-us',
@@ -17,10 +18,13 @@ export class CometaContactUsComponent implements OnInit {
   contactForm: FormGroup;
   loading = false;
   submitted = false;
+
+  // MailFeedback Object is received from mail.php backend via XHR
   mailFeedback = {
     success: false,
     successCode: 0,
-    message: ''
+    message: '',
+    lastMsgID: 'not available'
   };
 
   /*stores the text-type content of the section*/
@@ -29,8 +33,6 @@ export class CometaContactUsComponent implements OnInit {
 
   //view the captcha child component
   @ViewChild(CaptchaComponent, { static: true }) captchaComponent!: CaptchaComponent;
-
-
 
   constructor(private formBuilder: FormBuilder, private sw: SwitcherService, private http: HttpClient, private elRef: ElementRef, private renderer: Renderer2) {
     this.contactForm = this.formBuilder.group({});
@@ -42,8 +44,7 @@ export class CometaContactUsComponent implements OnInit {
     this.applyCurrentLayoutSettings();
 
     /*set the endpoint to the captcha backend service */
-    //this.captchaComponent.captchaEndpoint = '/php/simple-botdetect.php';
-    this.captchaComponent.captchaEndpoint = 'http://localhost:8011/php/simple-botdetect.php';
+    this.captchaComponent.captchaEndpoint = `${environment.env_mailurl}/php/simple-botdetect.php`;
   }
 
   /*applys currently selected language and theme to layout*/
@@ -98,8 +99,7 @@ export class CometaContactUsComponent implements OnInit {
     this.loading = true;
 
     /*defines url to to php mailer backend service*/
-    //const url = "/php/mail.php";
-    const url = "http://localhost:8011/php/mail.php";
+    const url = `${environment.env_mailurl}/php/mail.php`;
 
     /* set request options
      - setting X-www-form-urlencoded, as mail.php expects the variable values in $_POST['fieldname']*/
@@ -144,8 +144,8 @@ export class CometaContactUsComponent implements OnInit {
         //console.log(feedback);
 
         setTimeout(() => {
-          this.mailFeedback.message = '';
-        }, 5000);
+/*           this.mailFeedback.message = '';
+ */        }, 5000);
       },
       (err: any) => {
         console.log(err);

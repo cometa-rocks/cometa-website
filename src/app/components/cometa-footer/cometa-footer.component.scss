@@ -1,17 +1,4 @@
-$heavy-orange: #E2B154;
-$lightgray: lightgray;
-$lightgreen: lightgreen;
-$lightblue: lightblue;
-$gray: gray;
-$white: #ffffff;
-$whitish: #f1f1f1;
-$blackish: #111111;
-$lightblack: #343333;
-$medium-gray: #aeabab;
-$p-fsize: .9em;
-$a-fsize: .9em;
-
-
+@import "_colors";
 
 footer {
     padding: 50px 10%;
@@ -79,7 +66,7 @@ footer {
     }
 
     .keywords {
-        color: $whitish;
+        color: $medium-gray;
     }
 
     &.isDark {

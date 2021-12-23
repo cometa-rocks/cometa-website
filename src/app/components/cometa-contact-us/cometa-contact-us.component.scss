@@ -51,6 +51,11 @@ $a-fsize: .9em;
                 &.isSuccess {
                     color: green;
                 }
+
+                /* adds 10px to separate the form feedback elemts */
+                p {
+                    margin: 10px 0;
+                }
             }
 
             button {
