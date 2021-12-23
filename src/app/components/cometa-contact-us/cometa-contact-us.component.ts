@@ -1,9 +1,10 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild, Renderer2, ElementRef, OnInit } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SwitcherService } from '../../cometa-services/shared/switcher.service';
 import { CaptchaComponent } from 'angular-captcha';
-import { COMETA_CONTACT_US_DATA } from 'src/app/data/cometa.contactus,data';
+import { COMETA_CONTACT_US_DATA } from 'src/app/data/cometa.contactus.data';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-cometa-contact-us',
@@ -17,7 +18,14 @@ export class CometaContactUsComponent implements OnInit {
   contactForm: FormGroup;
   loading = false;
   submitted = false;
-  mailServiceFeedback = '';
+
+  // MailFeedback Object is received from mail.php backend via XHR
+  mailFeedback = {
+    success: false,
+    successCode: 0,
+    message: '',
+    lastMsgID: 'not available'
+  };
 
   /*stores the text-type content of the section*/
   content: any; 
@@ -26,9 +34,7 @@ export class CometaContactUsComponent implements OnInit {
   //view the captcha child component
   @ViewChild(CaptchaComponent, { static: true }) captchaComponent!: CaptchaComponent;
 
-
-
-  constructor(private formBuilder: FormBuilder, private sw: SwitcherService, private http: HttpClient) {
+  constructor(private formBuilder: FormBuilder, private sw: SwitcherService, private http: HttpClient, private elRef: ElementRef, private renderer: Renderer2) {
     this.contactForm = this.formBuilder.group({});
     
   }
@@ -38,7 +44,7 @@ export class CometaContactUsComponent implements OnInit {
     this.applyCurrentLayoutSettings();
 
     /*set the endpoint to the captcha backend service */
-    this.captchaComponent.captchaEndpoint = '/php/simple-botdetect.php';
+    this.captchaComponent.captchaEndpoint = `${environment.env_mailurl}/php/simple-botdetect.php`;
   }
 
   /*applys currently selected language and theme to layout*/
@@ -93,7 +99,7 @@ export class CometaContactUsComponent implements OnInit {
     this.loading = true;
 
     /*defines url to to php mailer backend service*/
-    const url = "/php/mail.php";
+    const url = `${environment.env_mailurl}/php/mail.php`;
 
     /* set request options
      - setting X-www-form-urlencoded, as mail.php expects the variable values in $_POST['fieldname']*/
@@ -130,8 +136,16 @@ export class CometaContactUsComponent implements OnInit {
         */
         this.reload();
 
-        //show feedback message
-        this.mailServiceFeedback = res.message;
+        /*html calls mailfeedback properties in order to show service feedback message to user */
+        this.mailFeedback = res;
+
+        /* get feedback-message element*/
+        //const feedback = this.elRef.nativeElement.querySelector('.feedback-message');
+        //console.log(feedback);
+
+        setTimeout(() => {
+/*           this.mailFeedback.message = '';
+ */        }, 5000);
       },
       (err: any) => {
         console.log(err);

@@ -60,7 +60,7 @@ export const  COMETA_FEATURES_DATA = {
             description: "Accedeix a través del teu compte de Google i gaudeix del nostre servei. La instal·lació local utilitza l'inici de sessió OIDC."
             },
             {
-            image: "assets/featuresicons8-múltiples-dispositivos-64.webp",
+            image: "assets/features/icons8-múltiples-dispositivos-64.webp",
             title: "Prova en diversos dispositius",
             description: "Proveu les funcionalitats del vostre lloc web en diferents dispositius responsive. Rebre per correu electrònic un resum dels resultats de la prova."
             },

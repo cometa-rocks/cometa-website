@@ -20,7 +20,8 @@ $a-fsize: .9em;
             @media (min-width: 600px) {  width: 70%; }
             @media (min-width: 900px) {  width: 40%; }
     
-            input {
+            input,
+            textarea {
                 width: 100%;
                 padding-left: 15px;
                 height: 40px;
@@ -33,9 +34,28 @@ $a-fsize: .9em;
                 color: $blackish;
                 margin: 10px 0;
             }
+
+            textarea {
+                height: 100px;
+            }
     
             .feedback {
                 color: $heavy-orange;
+            }
+
+            .feedback-message {             
+                transition: .5s;
+
+                color: red;
+
+                &.isSuccess {
+                    color: green;
+                }
+
+                /* adds 10px to separate the form feedback elemts */
+                p {
+                    margin: 10px 0;
+                }
             }
 
             button {
@@ -58,8 +78,6 @@ $a-fsize: .9em;
     }
 
     
-
-
     &.isDark {
         background-color: $black;
         color: $whitish;

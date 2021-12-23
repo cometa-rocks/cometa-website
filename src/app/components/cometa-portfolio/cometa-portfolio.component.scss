@@ -1,7 +1,4 @@
 @import "_colors";
-$p-fsize: .9em;
-$a-fsize: .9em;
-
 
 .section-portfolio {
     padding: 50px 10%;
@@ -84,7 +81,7 @@ $a-fsize: .9em;
     z-index: 999;
     background-color: transparent;
     text-align: center;
-    //backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 
     &.isActive {
         @media (min-width: 1200px) { display: block; }

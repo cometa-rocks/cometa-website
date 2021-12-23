@@ -3,7 +3,7 @@
         <div class="links" *ngFor="let section of content.linkSection">
             <div data-aos="fade-up" class="title">{{section.title}}</div>
             <ul data-aos="fade-up" *ngFor="let link of section.links">
-                <li><a target="_blank" href="{{link.href}}">{{link.name}}</a></li>
+                <li><a target="{{link.target}}" href="{{link.href}}">{{link.name}}</a></li>
             </ul>
         </div>
     </div>

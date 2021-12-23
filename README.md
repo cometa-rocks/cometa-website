@@ -4,9 +4,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve --host 0.0.0.0 --port 4300 --disable-host-check` for a dev server. Navigate to `http://localhost:4300/`. The app will automatically reload if you change any of the source files.
-
-Needs to edit `php/cometa_secret_variables.php` and `src/environments/environment`.
+* Edit to your needs `php/cometa_secret_variables.php` and `src/environments/environment`.
+* docker-compose up -d
+* Enter docker
+* Set Environment as seen prepare.sh
+```
+VERSION=v14.15.0
+DISTRO=linux-x64-musl
+INSTALL_DIR=/usr/local/lib/nodejs
+export PATH=$INSTALL_DIR/node-$VERSION-$DISTRO/bin:$PATH
+```
+* Run  `ng serve --host 0.0.0.0 --port 4300 --disable-host-check` for a dev server. Navigate to `http://localhost:4300/`. The app will automatically reload if you change any of the source files.
 
 
 ## Code scaffolding

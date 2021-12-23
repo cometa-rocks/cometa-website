@@ -24,7 +24,6 @@ services:
         - PHP_ERRORS_STDERR=TRUE
       ports:
         - "8011:80"
-      
       # 
       # prepare.sh Command installs npm, compiles and copies result to html folder of nginx
       #

@@ -4,7 +4,7 @@ export const  COMETA_DEVICES_DATA = {
         cometa_laptop_testing: "Functional and Visual Regression Testing with excellence ",
         cometa_laptop_dont_break_code: "Don't break code. Don't break layout.",
         cometa_laptop_using_cometa: "Using cometa provides many benefits for your project.",
-        cometa_laptop_automation: "Automation of human actions on websites made easy. 100% Open source made with ♥ in Barcelona. Visual comparison with screenshots! Easy UI testing on over 2000 devices. REST API integrates easy and smooth. Webhooks alert you in your prefered messaging platform.",
+        cometa_laptop_automation: "Automation of human actions on websites made easy. 100% Open source made with 💚 in Barcelona. Visual comparison with screenshots! Easy UI testing on over 2000 devices. REST API integrates easy and smooth. Webhooks alert you in your prefered messaging platform.",
         cometa_laptop_folders: "Folders",
         cometa_laptop_features: "Features",
 

@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
+
+@import "_colors";
+
 @font-face{
     font-family:'Material Icons';
     font-style:normal;
@@ -34,16 +37,6 @@
     -webkit-font-smoothing:antialiased;
 }
 
-$heavy-orange: #E2B154;
-$lightgray: lightgray;
-$lightgreen: lightgreen;
-$lightblue: lightblue;
-$dark_footer: #343333;
-$gray: gray;
-$white: #ffffff;
-$whitish: #f1f1f1;
-$blackish: #111111;
-$medium-gray: #aeabab; 
 
 $p-fsize: .9em;
 $a-fsize: .9em;
@@ -58,6 +51,7 @@ $a-fsize: .9em;
 body {
     background-color: #F1F1F1;
     font-family: Arial;
+    overflow-X: hidden;
 
     h1 {
         /* h1 styles contain comfortaa font */
@@ -121,4 +115,9 @@ body {
     /************************************ Section header styles end ***********************************/
     /**************************************************************************************************/
 
+} /* end of body */
+
+/* to put text-color to grey use this class */
+.text-color-grey{
+    color: $lightblack;
 }
