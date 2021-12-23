@@ -74,7 +74,7 @@ function install_npm_packages(){
 
     npm install -g @angular/cli
     npm i --save-dev @angular-devkit/build-angular@latest
-    npm i
+    npm i # FIXME .. ask Arslan
 }
 
 #

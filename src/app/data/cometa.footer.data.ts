@@ -7,33 +7,33 @@ export const  COMETA_FOOTER_DATA = {
           { 
             title: "Co.meta",
             links: [
-              { name: "Introduction", href: "https://drive.google.com/file/d/1Y4lQ5aSC5Dbfn8q5Q4DLy0eEfsGWAVkm/view?usp=sharing" },
-              { name: "Getting Started", href: "https://drive.google.com/file/d/1jWA5QeMW1MJ0rmrP60oC5YzpCSRcZa9w/view?usp=sharing" },
-              { name: "Subscribe", href: "#subscribe" }
+              { name: "Introduction", target:"_blank", href: "https://drive.google.com/file/d/1Y4lQ5aSC5Dbfn8q5Q4DLy0eEfsGWAVkm/view?usp=sharing" },
+              { name: "Getting Started", target:"_blank", href: "https://drive.google.com/file/d/1jWA5QeMW1MJ0rmrP60oC5YzpCSRcZa9w/view?usp=sharing" },
+              { name: "Subscribe", target:"_self", href: "#subscribe" }
             ]
           },
           { 
             title: "Learn More",
             links: [
-              { name: "Documentation", href: "https://github.com/cometa-rocks/cometa_documentation" },
-              { name: "What the product", href: "https://www.youtube.com/watch?v=8uv-QAJkOLY&t=4s" }
+              { name: "Documentation", target:"_blank", href: "https://github.com/cometa-rocks/cometa_documentation" },
+              { name: "What the product", target:"_blank", href: "https://www.youtube.com/watch?v=8uv-QAJkOLY&t=4s" }
             ]
           },
           { 
             title: "Using Co.meta",
             links: [
-              { name: "Schedule a Demo", href: "https://cal.com/ralf/cometa-demo" },
-              { name: "User Scenarios", href: "https://drive.google.com/file/d/1jlxj-776_oTUyRHrxtFgZJUXmX3yInxn/view?usp=sharing" },
-              { name: "Login", href: "https://prod.cometa.rocks/" }
+              { name: "Schedule a Demo", target:"_blank", href: "https://cal.com/ralf/cometa-demo" },
+              { name: "User Scenarios", target:"_blank", href: "https://drive.google.com/file/d/1jlxj-776_oTUyRHrxtFgZJUXmX3yInxn/view?usp=sharing" },
+              { name: "Login", target:"_blank", href: "https://prod.cometa.rocks/" }
             ]
           },
           { 
             title: "Community & Help",
             links: [
-              { name: "Contact Us", href: "mailto:contact@cometa.rocks" },
-              { name: "Telegram", href: "https://t.me/joinchat/bFquCBGPBCAwYWZk" },
-              { name: "WhatsApp", href: "https://chat.whatsapp.com/CLIOla00LAf4Ym2mux8TXC" },
-              { name: "Logos", href: "#" }
+              { name: "Contact Us", target:"_blank", href: "mailto:contact@cometa.rocks" },
+              { name: "Telegram", target:"_blank", href: "https://t.me/joinchat/bFquCBGPBCAwYWZk" },
+              { name: "WhatsApp", target:"_blank", href: "https://chat.whatsapp.com/CLIOla00LAf4Ym2mux8TXC" },
+              { name: "Logos", target:"_self",  href: "#" }
             ]
           }
       ]
@@ -46,33 +46,33 @@ export const  COMETA_FOOTER_DATA = {
           { 
             title: "Co.meta",
             links: [
-              { name: "Introducció", href: "https://drive.google.com/file/d/1Y4lQ5aSC5Dbfn8q5Q4DLy0eEfsGWAVkm/view?usp=sharing" },
-              { name: "Començant", href: "https://drive.google.com/file/d/1jWA5QeMW1MJ0rmrP60oC5YzpCSRcZa9w/view?usp=sharing" },
-              { name: "Donar", href: "#" }
+              { name: "Introducció", target:"_blank", href: "https://drive.google.com/file/d/1Y4lQ5aSC5Dbfn8q5Q4DLy0eEfsGWAVkm/view?usp=sharing" },
+              { name: "Començant", target:"_blank", href: "https://drive.google.com/file/d/1jWA5QeMW1MJ0rmrP60oC5YzpCSRcZa9w/view?usp=sharing" },
+              { name: "Donar", target:"_self", href: "#subscribe" }
             ]
           },
           { 
             title: "Aprèn més",
             links: [
-              { name: "Documentació", href: "https://github.com/cometa-rocks/cometa_documentation" },
-              { name: "Quin producte", href: "https://www.youtube.com/watch?v=8uv-QAJkOLY&t=4s" }
+              { name: "Documentació", target:"_blank", href: "https://github.com/cometa-rocks/cometa_documentation" },
+              { name: "Quin producte", target:"_blank", href: "https://www.youtube.com/watch?v=8uv-QAJkOLY&t=4s" }
             ]
           },
           { 
             title: "Utilitzant Co.meta",
             links: [
-              { name: "Programa una demostració", href: "https://calendso.com/ralf/cometa-demo" },
-              { name: "Escenaris d'usuari", href: "https://drive.google.com/file/d/1jlxj-776_oTUyRHrxtFgZJUXmX3yInxn/view?usp=sharing" },
-              { name: "iniciar Sessió", href: "https://prod.cometa.rocks/" }
+              { name: "Programa una demostració", target:"_blank", href: "https://calendso.com/ralf/cometa-demo" },
+              { name: "Escenaris d'usuari", target:"_blank", href: "https://drive.google.com/file/d/1jlxj-776_oTUyRHrxtFgZJUXmX3yInxn/view?usp=sharing" },
+              { name: "iniciar Sessió", target:"_blank",  href: "https://prod.cometa.rocks/" }
             ]
           },
           { 
             title: "Comunitat i ajuda",
             links: [
-              { name: "Contacta amb nosaltres", href: "mailto:contact@cometa.rocks" },
-              { name: "Telegram", href: "https://t.me/joinchat/bFquCBGPBCAwYWZk" },
-              { name: "WhatsApp", href: "https://chat.whatsapp.com/CLIOla00LAf4Ym2mux8TXC" },
-              { name: "Logotips", href: "#" }
+              { name: "Contacta amb nosaltres", target:"_blank", href: "mailto:contact@cometa.rocks" },
+              { name: "Telegram", target:"_blank", href: "https://t.me/joinchat/bFquCBGPBCAwYWZk" },
+              { name: "WhatsApp", target:"_blank", href: "https://chat.whatsapp.com/CLIOla00LAf4Ym2mux8TXC" },
+              { name: "Logotips", target:"_self", href: "#" }
             ]
           }
        ]  

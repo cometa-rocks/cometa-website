@@ -15,7 +15,7 @@ services:
       environment:
         - PHP_ERRORS_STDERR=TRUE
       ports:
-        - "8010:80"
+        - "8011:80"
         # use port 4300 ... as other projects like cometa_front run on 4200
         - "4300:4300"
       

@@ -1,14 +1,13 @@
 import { Component, ElementRef, Renderer2, OnInit } from '@angular/core';
 import { SwitcherService } from '../../cometa-services/shared/switcher.service';
 import { COMETA_PORTFOLIO_DATA } from 'src/app/data/cometa.portfolio.data';
+import { HostListener } from '@angular/core';
+
 
 @Component({
   selector: 'app-cometa-portfolio',
   templateUrl: './cometa-portfolio.component.html',
-  styleUrls: ['./cometa-portfolio.component.scss'],
-  host: {
-    '(document:keydown)': 'handleKeyboardEvents($event)'
-  }
+  styleUrls: ['./cometa-portfolio.component.scss']
 })
 export class CometaPortfolioComponent implements OnInit {
 
@@ -26,11 +25,14 @@ export class CometaPortfolioComponent implements OnInit {
     this.applyCurrentLayoutSettings();
   }
 
-  /* Track the ESC to close images preview in big */
-  handleKeyboardEvents(event: KeyboardEvent) {
-    if (event.code == 'Escape') {
-      this.closeMagnifier();
-    }
+  /*closes img magnifier  when escape is clicked*/
+  @HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
+    this.closeMagnifier();
+  }
+
+  /*closes img magnifier on any kind of mousewheel usage*/
+  @HostListener('mousewheel', ['$event']) scroll(event: MouseEvent) {
+    this.closeMagnifier();
   }
 
   /*applys currently selected language and theme to layout*/
@@ -61,10 +63,4 @@ export class CometaPortfolioComponent implements OnInit {
   closeMagnifier() {
     this.img_magnifier_isActive = false;
   }
-
-  /*Prevents default event blubbling, the magnifier will only close if the click event is firied outside the magnified image itself */
-  preventEventBubbling(event: any) {
-    event.stopPropagation();
-  }
-
 }
