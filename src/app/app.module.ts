@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { BotDetectCaptchaModule } from 'angular-captcha';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CometaFeaturesComponent } from './components/cometa-features/cometa-features.component';
@@ -22,7 +21,6 @@ import { CometaDevicesComponent } from './components/cometa-devices/cometa-devic
 
 @NgModule({
   declarations: [
-    AppComponent,
     HomeComponent,
     HeaderComponent,
     CometaDevicesComponent,
@@ -43,6 +41,6 @@ import { CometaDevicesComponent } from './components/cometa-devices/cometa-devic
     BotDetectCaptchaModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [HomeComponent]
 })
 export class AppModule { }

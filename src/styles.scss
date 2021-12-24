@@ -81,26 +81,19 @@ body {
             margin: 10px 0;
             border: 5px solid white;
 
-            &::before {
-                content: '';
-                position: absolute;
-                top: 50%;
-                right: 15px;
-                transform: translateY(-50%);
-                height: 1px;
-                width: 100px;
-                background-color: $heavy-orange;
-            }
+            &::before,
             &::after {
                 content: '';
                 position: absolute;
                 top: 50%;
-                left: 15px;
-                transform: translateY(-50%);
                 height: 1px;
                 width: 100px;
+                transform: translateY(-50%);
                 background-color: $heavy-orange;
             }
+
+            &::before { right: 15px; }
+            &::after { left: 15px; }
         }
 
         p {

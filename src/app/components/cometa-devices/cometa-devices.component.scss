@@ -483,25 +483,17 @@
               }
       
               &:nth-child(3n+4) {
-                &::before {
-                  top: 0;
-                  left: -28px;
-                  height: 100%;
-                  width: 3px;
-                  background-color: red;
-                  transform: rotate(0deg) rotate(45deg);
-                }
-              }
-      
-              &:nth-child(3n+4) {
+                &::before,
                 &::after {
                   top: 0;
                   left: -28px;
                   height: 100%;
                   width: 3px;
                   background-color: red;
-                  transform: rotate(0deg) rotate(-45deg);
                 }
+                &::before { transform: rotate(0deg) rotate(45deg); }
+                
+                &::after { transform: rotate(0deg) rotate(-45deg); }
               }
             }
           }
@@ -654,7 +646,6 @@
                     }
 
                     &:nth-last-child(-n+2)::before {
-                        content: '';
                         background-color: red;
                     }
                 }

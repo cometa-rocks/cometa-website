@@ -1,7 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { loadStripe } from '@stripe/stripe-js';
+/*
+* Stripe offers two ways of importing the service
+* 1. from '@stripe/stripe-js';
+* 2. from '@stripe/stripe-js/pure';
+* what makes difference between these two is that /pure version implements lazy loading, check docs https://github.com/stripe/stripe-js/issues/43
+* meaning that script will not be loaded untill first occurrence of loadStripe() function
+* import { loadStripe } from '@stripe/stripe-js';
+*/
+import { loadStripe } from '@stripe/stripe-js/pure';
 import { environment } from '../../../environments/environment';
 import { SwitcherService } from '../../cometa-services/shared/switcher.service';
 import { COMETA_USERS_DATA  } from 'src/app/data/cometa.users.data'; // imports text content for this section

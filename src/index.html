@@ -17,19 +17,13 @@
 
   <link href="assets/aos/aos.css" rel="stylesheet">
   <script src="assets/aos/aos.js"></script>
-  <script src="https://js.stripe.com/v3/"></script>
-  <style>
-    @import"https://fonts.googleapis.com/css2?family=Comfortaa&display=swap";
-  </style>
-<!-- 
-  Doubled the import of styles  
-  <noscript><link rel="stylesheet" href="styles.css"></noscript>
- -->
+  <!--<script src="https://js.stripe.com/v3/"></script>-->
+  <style> @import"https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"; </style>
 </head>
-<body>
+  <body>
     <!-- AOS is a library for element tracking ... fade in and out -->
     <script>
-     AOS.init({
+      AOS.init({
         disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
         startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
         initClassName: 'aos-init', // class applied after initialization
@@ -48,9 +42,9 @@
         once: false, // whether animation should happen only once - while scrolling down
         mirror: false, // whether elements should animate out while scrolling past them
         anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
-    }
-     ); 
-  </script>
+      }); 
+    </script>
 
-  <app-root></app-root>
-</body></html>
+    <app-home></app-home>
+  </body>
+</html>

@@ -56,7 +56,7 @@ export class CometaContactUsComponent implements OnInit {
     });
   }
 
-  /*filters testimonials by currentLang('en'/'ca') value and returns an object which contains all the section text-type content for translated in currently selected language*/
+  /*filters testimonials by currentLang('en'/'ca') value and returns an object which contains all the text-type content, translated in currently selected language*/
   getCurrentLangContent() {
     const currentLangEntry =  Object.entries(COMETA_CONTACT_US_DATA).filter(([key]) => key === this.currentLang);
     const currentLangContent  = Object.fromEntries(currentLangEntry);
