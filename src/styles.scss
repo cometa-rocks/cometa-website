@@ -65,7 +65,7 @@ body {
         width: 100%;
         text-align: center;
 
-        h2 {
+        h1 {
             @media (min-width: 850px) { font-size: 2.5em; }
             @media (min-width: 1200px) { font-size: 2em; }
         }
@@ -108,9 +108,40 @@ body {
     /************************************ Section header styles end ***********************************/
     /**************************************************************************************************/
 
+
+
+    /* to put text-color to grey use this class */
+    .text-color-grey {
+        color: $lightblack;
+    }
+
+
+    /********************************** global headers text styling ****************++++***************/
+    /**********************************+++++++++++++++++++++++++++++++++*******************************/
+    h1, h2, h4 { padding: .5em 0; }
+
+    h1 { 
+        color: $heavy-orange;
+        font-size: 2em;
+        @media (min-width: 850px) {  font-size: 3.5em; }
+        @media (min-width: 1200px) {  font-size: 4em; }
+    }
+
+    h2 {
+        @media (min-width: 850px) {  font-size: 2.5em; }
+        @media (min-width: 1200px) {  font-size: 2em; }
+    }
+
+    h4 {
+        padding: .3em 0;
+        @media (min-width: 850px) {  font-size: 1em; }
+        @media (min-width: 1200px) { font-size: 1.5em; }
+    }
+    /******************************* end of headers text styling **************************************/
+    /**********************************+++++++++++++++++++++++++++++++++*******************************/
+
+
+
 } /* end of body */
 
-/* to put text-color to grey use this class */
-.text-color-grey{
-    color: $lightblack;
-}
+
