@@ -10,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 * import { loadStripe } from '@stripe/stripe-js';
 */
 import { loadStripe } from '@stripe/stripe-js/pure';
-import { environment } from '../../../environments/environment';
+import { environment } from 'src/environments/environment';
 import { SwitcherService } from '../../cometa-services/shared/switcher.service';
 import { COMETA_USERS_DATA  } from 'src/app/data/cometa.users.data'; // imports text content for this section
 
@@ -74,6 +74,7 @@ export class CometaUsersComponent implements OnInit {
 
   /* this functions is triggered if user choosed to donate amount of their preference, insted of choosing one of the preset amounts */
   setCustomeAmount(event: any) {
+    /*event.target.value returns amount in string format, so we are parsing it to number using Number(value: string) method*/
     this.setAmount(Number(event.target.value));
   }
 
