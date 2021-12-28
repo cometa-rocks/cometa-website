@@ -74,7 +74,7 @@ export class CometaUsersComponent implements OnInit {
 
   /* this functions is triggered if user choosed to donate amount of their preference, insted of choosing one of the preset amounts */
   setCustomeAmount(event: any) {
-    this.setAmount(event.target.value);
+    this.setAmount(Number(event.target.value));
   }
 
   /*Binds the selected donation period to the formControlName >> period */

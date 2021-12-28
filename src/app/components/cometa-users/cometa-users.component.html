@@ -23,11 +23,11 @@
     <div id="subscribe"></div> <!-- there is a link in footer called subscribe(en) or donar (ca), when it is clicked scroll will roll up here -->
     <div class="links">
         <div class="link">
-            <div data-aos="fade-right" class="title"><a target="_blank" href="https://ocagzojn33k.typeform.com/to/G2VgVbbB">{{content.cometa_users_early_access}}</a></div>
+            <div data-aos="fade-right" class="title"><a target="_blank" rel="noopener" href="https://ocagzojn33k.typeform.com/to/G2VgVbbB">{{content.cometa_users_early_access}}</a></div>
             <p data-aos="fade-right">{{content.cometa_users_early_access_desc}}</p>      
         </div>
         <div class="link">
-            <div data-aos="fade-right" class="title" (click)="activateDonatePanel()"><a>{{content.cometa_users_donate}}</a></div>
+            <div data-aos="fade-right" class="title" (click)="activateDonatePanel()"><p>{{content.cometa_users_donate}}</p></div>
             <p data-aos="fade-right">{{content.cometa_users_donate_desc}}</p>
             <div class="donate-panel" *ngIf="donatePanelIsActive">
                 <p>{{content.cometa_users_donate_panel_desc}}</p>
@@ -39,25 +39,25 @@
                         <div class="amount-buttons">
                             <div>
                                 <p>{{content.cometa_users_donate_button_helper}}</p>
-                                <input [ngClass]="{'isSet': form['amount'].value === '10'}" (click)="setAmount(10)" type="button" value="10">   
+                                <input [ngClass]="{'isSet': form['amount'].value === 10}" (click)="setAmount(10)" type="button" value="10">   
                             </div>
                             <div>
                                 <p>{{content.cometa_users_donate_button_Supporter}}</p>
-                                <input [ngClass]="{'isSet': form['amount'].value === '29'}" (click)="setAmount(29)" type="button" value="29">   
+                                <input [ngClass]="{'isSet': form['amount'].value === 29}" (click)="setAmount(29)" type="button" value="29">   
                             </div>
                             <div>
                                 <p>{{content.cometa_users_donate_button_Lover}}</p>
-                                <input [ngClass]="{'isSet': form['amount'].value === '490'}" (click)="setAmount(490)" type="button" value="490">   
+                                <input [ngClass]="{'isSet': form['amount'].value === 490}" (click)="setAmount(490)" type="button" value="490">   
                             </div>
                             <div>
                                 <p>{{content.cometa_users_donate_button_Angel}}</p>
-                                <input style="padding-left: 10px" [ngClass]="{'isSet': form['amount'].value != '490' 
-                                                         && form['amount'].value != '29' 
-                                                         && form['amount'].value != '10'
-                                                         && form['amount'].value != '' }" 
-                                                        (input)="setCustomeAmount($event)" 
-                                                        type="number" 
-                                                        placeholder="custome">
+                                <input style="padding-left: 10px" [ngClass]="{'isSet': form['amount'].value != 490 
+                                                                                    && form['amount'].value != 29 
+                                                                                    && form['amount'].value != 10
+                                                                                    && form['amount'].value != '' }" 
+                                                                                    (input)="setCustomeAmount($event)" 
+                                                                                    type="number" 
+                                                                                    placeholder="custome">
                             </div>
                         </div>
                     </div>

@@ -69,21 +69,22 @@
             .title {
                 padding: 10px 0;
                 
-                a {
-                    color: $heavy-orange;
+                a,p {
                     font-size: 2em;
                     text-decoration: none;
-                    border-bottom: 2px solid $heavy-orange;
                     cursor: pointer;
                 }
+                a {
+                    color: $heavy-orange;
+                    border-bottom: 2px solid $heavy-orange;
+                }
+
+                p {
+                    display: inline-block;
+                    color: #8BBEAC;
+                    border-bottom: 2px solid #8BBEAC;
+                }
             }
-            
-            &:nth-child(2) {
-                .title a {
-                     color: #8BBEAC;
-                     border-bottom: 2px solid #8BBEAC;
-                 }
-             }
 
             .donate-panel {
                 margin-top: 15px;
@@ -128,17 +129,10 @@
                                     color: $white;
                                     outline: #8BBEAC;
 
-                                    @media (min-width: 450px) { 
-                                        width: 140px;
-                                    }
+                                    @media (min-width: 450px) {  width: 140px; }
             
-                                    &:hover {
-                                        background-color: $heavy-orange;
-                                    }
-    
-                                    &.isSet {
-                                        background-color: $heavy-orange;
-                                    }
+                                    &:hover { background-color: $heavy-orange; }
+                                    &.isSet { background-color: $heavy-orange; }
                                 }
                             }
                         }

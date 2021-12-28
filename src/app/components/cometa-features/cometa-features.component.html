@@ -1,15 +1,15 @@
 <div [ngClass]="{'isDark': currentTheme == 'dark'}" class="section-features">
     
     <div class="section-header">
-        <h2 data-aos="fade-up">{{content.cometa_features_title}}</h2>
+        <h1 data-aos="fade-up">{{content.cometa_features_title}}</h1>
         <div class="separator"></div>
         <p data-aos="fade-up">{{content.cometa_features_desc}}</p>
 
         <p *ngIf="currentLang == 'en'" data-aos="fade-up">
             {{content.cometa_features_desc_opensrc}}
-            <a target="_blank" href="https://jmeter.apache.org/">{{content.cometa_features_jmeter}}</a>, 
-            <a target="_blank" href="https://www.jenkins.io/">{{content.cometa_features_jenkins}}</a>, 
-            <a target="_blank" href="htstps://git-scm.com/">{{content.cometa_features_git}}</a>, ...) {{content.cometa_features_easier}}
+            <a target="_blank" rel="noopener" href="https://jmeter.apache.org/">{{content.cometa_features_jmeter}}</a>, 
+            <a target="_blank" rel="noopener" href="https://www.jenkins.io/">{{content.cometa_features_jenkins}}</a>, 
+            <a target="_blank" rel="noopener" href="htstps://git-scm.com/">{{content.cometa_features_git}}</a>, ...) {{content.cometa_features_easier}}
         </p>
     </div>
 
@@ -20,7 +20,7 @@
                     <img alt="" [src]="screenshot.image">
                 </div>
                 <div class="text">
-                    <h4>{{screenshot.title}}</h4>
+                    <h1>{{screenshot.title}}</h1>
                     <p>{{screenshot.description}}</p>
                 </div>
             </div>
