@@ -19,11 +19,7 @@ header {
         .menu {
             display: none;
             margin: 0 1em;
-            
-            mat-icon {
-                color: $heavy-orange;
-                padding: 0;
-            }
+            mat-icon { color: $heavy-orange; padding: 0; }
         }
 
         .logo {
@@ -34,14 +30,9 @@ header {
             span {
                 font-size: 30px;
                 font-weight: bold;
-    
-                &:nth-child(1) {
-                    color: $heavy-orange;
-                }
-    
-                &:nth-child(2) {
-                    color: gray;
-                }
+
+                &:nth-child(1) { color: $heavy-orange; }
+                &:nth-child(2) { color: gray; }
             }
         }
     }
@@ -57,10 +48,7 @@ header {
 
             li {
                 margin: 0 1em;
-
-                a {
-                    text-decoration: none;
-                }
+                a { text-decoration: none; }
             }
         }
     }
@@ -85,9 +73,7 @@ header {
     }
 
     .lang-switcher {
-        p {
-            cursor: pointer;
-        }
+        p { cursor: pointer; }
     }
 
     .theme-switcher {
@@ -111,17 +97,11 @@ header {
                 transition: .2s;
             }
 
-            &:active::before{
-                width: .5em;
-            }
+            &:active::before{ width: .5em; }
 
-            &.isDark::before {
-                left: 20px;
-            }
+            &.isDark::before { left: 20px; }
         }
     }
 
-    &.isDark {
-        background-color: $blackish;
-    }
+    &.isDark { background-color: $blackish; }
 }

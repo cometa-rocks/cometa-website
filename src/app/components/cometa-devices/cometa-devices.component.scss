@@ -15,7 +15,6 @@
             justify-content: center;
             padding: 50px 0;
             text-align: center;
-
             @media (min-width: 568px) {  width: 85%; }
             @media (min-width: 850px) {  width: 70%; }
             @media (min-width: 1085px) {  width: 60%; }
@@ -33,7 +32,6 @@
             justify-content: center;
             align-items: center;
             box-shadow: 0px 15px 10px -7px rgba(0,0,0,1);
-    
             @media (min-width: 340px) {  height: 160px; }
             @media (min-width: 470px) {  height: 200px; }
             @media (min-width: 530px) {  height: 250px; }
@@ -59,7 +57,6 @@
                     justify-content: space-between;
                     margin-left: 1%;
                     border-radius: .2em;
-    
                     @media (min-width: 530px) {  height: 5%; }
     
                     .logo {
@@ -68,13 +65,12 @@
     
                         span { 
                             font-size: 8px;
-    
-                            &:nth-child(1) { color: $heavy-orange; }
-                            &:nth-child(2) { color: $gray; }
-    
                             @media (min-width: 470px) {  font-size: 10px; }
                             @media (min-width: 690px) {  font-size: 12px; }
                             @media (min-width: 850px) {  font-size: 14px; }
+    
+                            &:nth-child(1) { color: $heavy-orange; }
+                            &:nth-child(2) { color: $gray; }
                         }
                     }
     
@@ -88,7 +84,6 @@
                             background: $medium-gray;
                             margin: 5px;
                             border-radius: 10px;
-    
                             @media (min-width: 470px) {  width: 12px; }
                             @media (min-width: 530px) {  width: 10px; }
                             @media (min-width: 690px) {  width: 12px; }
@@ -103,7 +98,6 @@
                     margin-top: 4%;
                     font-size: 8px;
                     color: $gray;
-    
                     @media (min-width: 470px) { font-size: 10px; }
                     @media (min-width: 850px) {  margin-top: 2%; }
                 }
@@ -120,7 +114,6 @@
                         height: 15px;
                         background: $lightgray;
                         border-radius: 5px;
-    
                         @media (min-width: 570px) {  height: 20px; }
                         @media (min-width: 690px) {  height: 25px; }
                         @media (min-width: 850px) {  height: 30px; }
@@ -140,7 +133,6 @@
                     grid-template-columns: repeat(4, 1fr);
                     grid-column-gap: 5px;
                     row-gap: 10px;
-    
                     @media (min-width: 530px) {  row-gap: 20px; }
                     
                     div {
@@ -149,7 +141,6 @@
                         background:$lightgray;
                         border-radius: 5px;
                         border-top-right-radius: 0;
-    
                         @media (min-width: 570px) {  height: 35px; }
                         @media (min-width: 690px) {  height: 40px; }
                         @media (min-width: 850px) {  height: 55px; }
@@ -199,7 +190,6 @@
             border-bottom-left-radius: 3em;
             box-shadow: 0px 15px 10px -7px rgba(0,0,0,1);
             border-top: none;
-    
             @media (min-width: 280px) {  width:85%; }
             @media (min-width: 340px) {  height: 8px; }
             @media (min-width: 470px) {  height: 10px; }
@@ -225,7 +215,6 @@
         place-items: center;
         padding: 50px 10%;
         background-color: $white;
-      
         @media (min-width: 600px) {  grid-template-columns: repeat(2, 1fr); }
       
       
@@ -236,7 +225,6 @@
           justify-content: center;
           text-align: center;
           padding-bottom: 50px;
-      
           @media (min-width: 600px) {  text-align: start; padding-bottom: 0; }
         }
         
@@ -263,7 +251,6 @@
               padding: 0 10%;
               display: flex;
               align-items: flex-start;
-      
       
               .icons { 
                 height: 100%;
@@ -343,7 +330,6 @@
     place-items: center;
     padding: 0 10%;
     padding-bottom: 50px;
-    
     @media (min-width: 750px) { 
         grid-template-columns: repeat(2, 1fr);
         place-items: center start;
@@ -358,13 +344,11 @@
         padding: 50px 0;
         text-align: center;
         grid-row: 1/2;
-
         @media (min-width: 750px) { text-align: start; }
 
         ul {
             list-style-type: none;
             @media (min-width: 800px) { list-style-type: disc; }
-
             li { padding: .3em 0; }
         }
     }

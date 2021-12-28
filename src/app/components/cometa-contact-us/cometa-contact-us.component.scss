@@ -16,7 +16,6 @@ $a-fsize: .9em;
             text-align: left;
             margin: 20px 0;
             width: 100%;
-
             @media (min-width: 600px) {  width: 70%; }
             @media (min-width: 900px) {  width: 40%; }
     
@@ -35,27 +34,18 @@ $a-fsize: .9em;
                 margin: 10px 0;
             }
 
-            textarea {
-                height: 100px;
-            }
+            textarea { height: 100px; }
     
-            .feedback {
-                color: $heavy-orange;
-            }
+            .feedback { color: $heavy-orange; }
 
             .feedback-message {             
                 transition: .5s;
+                color: $red;
 
-                color: red;
-
-                &.isSuccess {
-                    color: green;
-                }
+                &.isSuccess { color: $green; }
 
                 /* adds 10px to separate the form feedback elemts */
-                p {
-                    margin: 10px 0;
-                }
+                p { margin: 10px 0; }
             }
 
             button {
@@ -67,12 +57,9 @@ $a-fsize: .9em;
                 margin: 10px 0;
                 margin-right: 10px;
                 outline-color: $heavy-orange;
-
                 @media (min-width: 900px) {  width: 30%; }
     
-                &:hover {
-                    background-color: $heavy-orange;
-                }
+                &:hover { background-color: $heavy-orange; }
             }
         }
     }
