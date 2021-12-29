@@ -1,78 +1,97 @@
 <div [ngClass]="{'isDark': currentTheme == 'dark'}" class="section-contact-us" (ngSubmit)="onSubmit()">
 
     <div class="section-header">
-        <h1 data-aos="fade-up">{{content.cometa_contactus_title}}</h1>
+        <h1>{{content.cometa_contactus_title}}</h1>
         <div class="separator"></div>
-        <p data-aos="fade-up">{{content.cometa_contactus_desc}}</p>
+        <p>{{content.cometa_contactus_desc}}</p>
     </div>
 
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-        <div data-aos="fade-left" class="form-group">
-            <h4>{{content.cometa_contactus_form_label_name}}</h4>
-            <input type="text" formControlName="name" class="form-control"/>
-            <div *ngIf="submitted && form['name'].errors" class="feedback">
+        <mat-form-field appearance="legacy">
+            <mat-label>{{content.cometa_contactus_form_label_name}}</mat-label>
+            <input matInput type="text" formControlName="name" class="form-control" placeholder="Alex Peterson">
+            <mat-hint *ngIf="submitted && form['name'].errors">
                 <div *ngIf="form['name'].errors['required']">{{content.cometa_contactus_form_required_name}}</div>
-            </div>
-        </div>
-        <div data-aos="fade-left" class="form-group">
-            <h4>{{content.cometa_contactus_form_label_email}}</h4>
-            <input type="text" formControlName="email" class="form-control"/>
-            <div *ngIf="submitted && form['email'].errors" class="feedback">
+            </mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="legacy">
+            <mat-label>{{content.cometa_contactus_form_label_email}}</mat-label>
+            <input matInput type="text" formControlName="email" class="form-control"
+                placeholder="{{content.cometa_contactus_form_label_email_placeholder}}">
+            <mat-hint *ngIf="submitted && form['email'].errors">
                 <div *ngIf="form['email'].errors['required']">{{content.cometa_contactus_form_required_email}}</div>
-                <div *ngIf="form['email'].errors['pattern']">{{content.cometa_contactus_form_required_email_format}}</div>
-            </div>
-        </div>
-        <div data-aos="fade-left" class="form-group">
-            <h4>{{content.cometa_contactus_form_label_subject}}</h4>
-            <input type="text" formControlName="subject" class="form-control"/>
-            <div *ngIf="submitted && form['subject'].errors" class="feedback">
+                <div *ngIf="form['email'].errors['pattern']">{{content.cometa_contactus_form_required_email_format}}
+                </div>
+            </mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="legacy">
+            <mat-label>{{content.cometa_contactus_form_label_subject}}</mat-label>
+            <input matInput type="text" type="text" formControlName="subject" class="form-control"
+                placeholder="{{content.cometa_contactus_form_label_subject_placeholder}}">
+            <mat-hint *ngIf="submitted && form['subject'].errors">
                 <div *ngIf="form['subject'].errors['required']">{{content.cometa_contactus_form_required_subject}}</div>
-            </div>
-        </div>
-        <div data-aos="fade-left" class="form-group">
-            <h4>{{content.cometa_contactus_form_label_message}}</h4>
-            <textarea type="text" formControlName="message" class="form-control"></textarea>
-            <div *ngIf="submitted && form['message'].errors" class="feedback">
+            </mat-hint>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="legacy">
+            <mat-label>{{content.cometa_contactus_form_label_message}}</mat-label>
+            <textarea matInput type="text" formControlName="message" class="form-control"
+                placeholder="{{content.cometa_contactus_form_label_message_placeholder}}"></textarea>
+            <mat-hint *ngIf="submitted && form['message'].errors">
                 <div *ngIf="form['message'].errors['required']">{{content.cometa_contactus_form_required_message}}</div>
+            </mat-hint>
+        </mat-form-field>
+
+
+
+        <botdetect-captcha captchaStyleName="welcomeCaptcha"></botdetect-captcha>
+        <mat-form-field appearance="legacy">
+            <mat-label>{{content.cometa_contactus_form_label_captcha}}</mat-label>
+            <input matInput type="text" id="userCaptchaInput" name="userCaptchaInput" class="form-control"
+                formControlName="captcha">
+            <mat-hint *ngIf="submitted && form['captcha'].errors">
+                <div *ngIf="form['captcha'].errors['required']">{{content.cometa_contactus_form_required_captcha}}</div>
+            </mat-hint>
+        </mat-form-field>
+
+        <button [disabled]="loading"> Submit </button>
+        <img *ngIf="loading" class="pl-3"
+            src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+
+
+        <div *ngIf="mailFeedback.successCode != 0">
+
+            <!--If successCode is 200, it means that mail was sent. Feedback message will be shown in green-->
+            <div *ngIf="mailFeedback.successCode == 200" class="feedback-message"
+                [ngClass]="{'isSuccess': mailFeedback.successCode == 200}">
+                <p>{{content.cometa_contactus_form_feedback_200_dear_user}} {{form["name"].value}} ...</p>
+                <p>{{content.cometa_contactus_form_feedback_200_thanks_you}}</p>
+                <p>{{content.cometa_contactus_form_feedback_200_recieved_message}}</p>
+                <br>Ref.ID: {{mailFeedback.lastMsgID}}<br>
+                <p>{{content.cometa_contactus_form_feedback_200_contact_you}}</p>
+                <p>{{content.cometa_contactus_form_feedback_200_your_cometa}}<br>
+                    <span class="text-color-grey">{{content.cometa_contactus_form_feedback_mobile_number}}</span>
+                </p>
             </div>
-        </div>
-        <div data-aos="fade-left" class="form-group">
-            <botdetect-captcha captchaStyleName="welcomeCaptcha"></botdetect-captcha>
-            <h4>{{content.cometa_contactus_form_label_captcha}}</h4>
-            <input type="text" id="userCaptchaInput" name="userCaptchaInput" formControlName="captcha">
-            <div *ngIf="submitted && form['captcha'].errors" class="feedback">
-                <div *ngIf="form['captcha'].errors['required']">{{content.cometa_contactus_form_required_captcha}}</div>               
+
+            <!-- If successCode is 400, it means that entered captcha was not valid. Feedback message will be shown in red -->
+            <div *ngIf="mailFeedback.successCode == 400" class="feedback-message">
+                <p>{{content.cometa_contactus_form_feedback_400_wrong_captcha}}</p>
+                <p>{{content.cometa_contactus_form_feedback_400_try_again}}</p>
+                <p>{{content.cometa_contactus_form_feedback_400_via_phone}}</p>
             </div>
-        </div>
-        <div data-aos="fade-left" class="form-group">
-            <button [disabled]="loading"> Submit </button>
-            <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-            
-            <div *ngIf="mailFeedback.successCode != 0">
-                <!-- msg below in case of sucess in green -->
-                <span id="return-code">{{mailFeedback.successCode}}</span>
-                <div *ngIf="mailFeedback.successCode == 200" class="feedback-message" [ngClass]="{'isSuccess': mailFeedback.successCode == 200}">
-                    <p>Dear {{form['name'].value}} ...</p> 
-                    <p>Thank you for contacting us.</p>
-                    <p>We have received your message.</p>
-                    <br>Ref.ID: {{mailFeedback.lastMsgID}}<br>
-                    <p>We will contact you as soon as possible.</p>
-                    <p>Your cometa.rocks team<br>
-                    <span class="text-color-grey">m: +34 717102603</span></p> 
-                </div>
-                <!-- msg below in case of error in red -->
-                <div *ngIf="mailFeedback.successCode == 400" class="feedback-message">
-                    <p>Ooops ... The Mailserver made Booobooo!</p> 
-                    <p>Your message was NOT sent.</p>
-                    <p style="margin-top:10px;">Please contact the cometa.rocks team via phone: m: +34 717102603</p> 
-                </div>
-                <!-- msg below in case of error in red -->
-                <div *ngIf="mailFeedback.successCode == 502" class="feedback-message">
-                    <p>Ooops ... wrong captcha code!</p> 
-                    <p>Please try again</p>
-                    <p style="margin-top:10px;">If you are having trouble reading the captcha, you might contact the cometa.rocks team via phone: m: +34 717102603</p> 
-                </div>
+
+            <!-- If successCode is 502, it means that mail server is down and message wasnt sent. Feedback message will be
+            shown in red -->
+            <div *ngIf="mailFeedback.successCode == 503" class="feedback-message">
+                <p>{{content.cometa_contactus_form_feedback_503_mailserver_crash}}</p>
+                <p>{{content.cometa_contactus_form_feedback_503_message_not_sent}}</p>
+                <p>{{content.cometa_contactus_form_feedback_503_via_phone}}</p>
             </div>
+
         </div>
     </form>
 </div>

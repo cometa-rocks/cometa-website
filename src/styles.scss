@@ -1,27 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+/*
+ * Global css styling 
+ * Styles added here will affect html elements all over the web site
+ */
 
+/*global angular materia prebuild styles, it is necessary when angular material like mat-input, mat-form-field, mat-icon, etc.. are used*/
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+/*global color variables imported from common/_colors.scss*/
 @import "_colors";
 
-@font-face{
-    font-family:'Material Icons';
-    font-style:normal;
-    font-weight:400;
-    src:url(https://fonts.gstatic.com/s/materialicons/v118/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
-}
+/*global font faces imported from common/_font-face.scss*/
+@import "_font-face";
 
-@font-face{
-    font-family:'Inter';
-    font-style:normal;
-    font-weight:100;
-    font-display:swap;
-    src:url(https://fonts.gstatic.com/s/inter/v7/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeAZJhjp-Ek-_EeAmM.woff) format('woff');
-    unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-
-
-.material-icons{
+.material-icons {
     font-family:'Material Icons';
     font-weight:normal;
     font-style:normal;
@@ -37,10 +28,6 @@
     -webkit-font-smoothing:antialiased;
 }
 
-
-$p-fsize: .9em;
-$a-fsize: .9em;
-
 * {
     padding: 0;
     margin: 0;
@@ -54,8 +41,8 @@ body {
     overflow-X: hidden;
 
     h1 {
-        /* h1 styles contain comfortaa font */
-        font-family: 'comfortaa', sans-serif;
+        /* h1 styles contain comfortaa font, these fonts are renamed to Cometa-Rocks in common/_font-face.scss*/
+        font-family: Cometa-Rocks, sans-serif;
     }
     
     /* headers styles for section >> architecture, enterprise, features, portfolio, users, contact us */
@@ -116,8 +103,8 @@ body {
     }
 
 
-    /********************************** global headers text styling ****************++++***************/
-    /**********************************+++++++++++++++++++++++++++++++++*******************************/
+    /********************************** global headers text styling ***********************************/
+    /**************************************************************************************************/
     h1, h2, h4 { padding: .5em 0; }
 
     h1 { 
@@ -138,10 +125,6 @@ body {
         @media (min-width: 1200px) { font-size: 1.5em; }
     }
     /******************************* end of headers text styling **************************************/
-    /**********************************+++++++++++++++++++++++++++++++++*******************************/
-
-
-
+    /**************************************************************************************************/
+    
 } /* end of body */
-
-
