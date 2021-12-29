@@ -87,6 +87,8 @@
                         background: $blackish;
                         color: $white;
                         margin: 10px 0;
+                        padding-left: 10px;
+                        padding-top: 10px;
                     }
 
                     .form-group {
@@ -149,10 +151,10 @@
             }
 
             /*&:nth-child(2) { //styles the p element of second occurence of class .link > .title
-                which corresponds to php mailer text (Let's talk.../Parlem...)
+                which corresponds to php mailer text (Let's talk.../Parlem...) in cometa-users.component.html
                 .title {
-                     p { color: $whitish; border-bottom: 2px solid $whitish; }
-                    }
+                     p { }
+                }
             }*/
         }
     }
