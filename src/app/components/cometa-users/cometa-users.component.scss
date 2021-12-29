@@ -150,10 +150,12 @@
                 }
             }
 
-            /*&:nth-child(2) { //styles the p element of second occurence of class .link > .title
-                which corresponds to php mailer text (Let's talk.../Parlem...) in cometa-users.component.html
-                .title {
-                     p { }
+            /*Select p element of second occurence of class .link .title
+            which corresponds to mail sender text in comenta-user.component.html
+            It is left in comment in case we need to change text color
+            &:nth-child(2) { 
+                .title { 
+                     p { } 
                 }
             }*/
         }

@@ -33,16 +33,16 @@
         </div>
 
         <div class="link">
-            <div (click)="openMailDialog()" data-aos="fade-right" class="title">
-                <p>{{content.cometa_users_lets_talk}}</p>
+            <div data-aos="fade-right" class="title">
+                <p (click)="openMailDialog()">{{content.cometa_users_lets_talk}}</p>
             </div>
             <p data-aos="fade-right">{{content.cometa_users_lets_talk_desc}}</p>
         </div>
 
 
         <div class="link">
-            <div data-aos="fade-right" class="title" (click)="activateDonatePanel()">
-                <p>{{content.cometa_users_donate}}</p>
+            <div data-aos="fade-right" class="title">
+                <p (click)="activateDonatePanel()">{{content.cometa_users_donate}}</p>
             </div>
             <p data-aos="fade-right">{{content.cometa_users_donate_desc}}</p>
             <div class="donate-panel" *ngIf="donatePanelIsActive">
