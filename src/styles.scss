@@ -1,45 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+/*
+ * Global css styling 
+ * Styles added here will affect html elements all over the web site
+ */
 
+/*global angular materia prebuild styles, it is necessary when angular material like mat-input, mat-form-field, mat-icon, etc.. are used*/
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+/*global color variables imported from common/_colors.scss*/
 @import "_colors";
 
-@font-face{
-    font-family:'Material Icons';
-    font-style:normal;
-    font-weight:400;
-    src:url(https://fonts.gstatic.com/s/materialicons/v118/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
-}
+/*global font faces imported from common/_font-face.scss*/
+@import "_font-face";
 
-@font-face{
-    font-family:'Inter';
-    font-style:normal;
-    font-weight:100;
-    font-display:swap;
-    src:url(https://fonts.gstatic.com/s/inter/v7/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyeAZJhjp-Ek-_EeAmM.woff) format('woff');
-    unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-
-
-.material-icons{
-    font-family:'Material Icons';
-    font-weight:normal;
-    font-style:normal;
-    font-size:24px;
-    line-height:1;
-    letter-spacing:normal;
-    text-transform:none;
-    display:inline-block;
-    white-space:nowrap;
-    word-wrap:normal;
-    direction:ltr;
-    -webkit-font-feature-settings:'liga';
-    -webkit-font-smoothing:antialiased;
-}
-
-
-$p-fsize: .9em;
-$a-fsize: .9em;
+/*angular prebuild material styles*/
+@import "_material";
 
 * {
     padding: 0;
@@ -47,15 +21,15 @@ $a-fsize: .9em;
     box-sizing: border-box;
     font-weight: 300;
 }
-
+ 
 body {
     background-color: #F1F1F1;
     font-family: Arial;
     overflow-X: hidden;
 
     h1 {
-        /* h1 styles contain comfortaa font */
-        font-family: 'comfortaa', sans-serif;
+        /* h1 styles contain comfortaa font, these fonts are renamed to Cometa-Rocks in common/_font-face.scss*/
+        font-family: Cometa-Rocks, sans-serif;
     }
     
     /* headers styles for section >> architecture, enterprise, features, portfolio, users, contact us */
@@ -65,7 +39,7 @@ body {
         width: 100%;
         text-align: center;
 
-        h2 {
+        h1 {
             @media (min-width: 850px) { font-size: 2.5em; }
             @media (min-width: 1200px) { font-size: 2em; }
         }
@@ -81,26 +55,19 @@ body {
             margin: 10px 0;
             border: 5px solid white;
 
-            &::before {
-                content: '';
-                position: absolute;
-                top: 50%;
-                right: 15px;
-                transform: translateY(-50%);
-                height: 1px;
-                width: 100px;
-                background-color: $heavy-orange;
-            }
+            &::before,
             &::after {
                 content: '';
                 position: absolute;
                 top: 50%;
-                left: 15px;
-                transform: translateY(-50%);
                 height: 1px;
                 width: 100px;
+                transform: translateY(-50%);
                 background-color: $heavy-orange;
             }
+
+            &::before { right: 15px; }
+            &::after { left: 15px; }
         }
 
         p {
@@ -115,9 +82,42 @@ body {
     /************************************ Section header styles end ***********************************/
     /**************************************************************************************************/
 
+
+
+    /* to put text-color to grey use this class */
+    .text-color-grey {
+        color: $lightblack;
+    }
+
+
+    /********************************** global headers text styling ***********************************/
+    /**************************************************************************************************/
+    h1, h2, h4 { padding: .5em 0; }
+
+    h1 { 
+        color: $heavy-orange;
+        font-size: 2em;
+        @media (min-width: 850px) {  font-size: 3.5em; }
+        @media (min-width: 1200px) {  font-size: 4em; }
+    }
+
+    h2 {
+        @media (min-width: 850px) {  font-size: 2.5em; }
+        @media (min-width: 1200px) {  font-size: 2em; }
+    }
+
+    h4 {
+        padding: .3em 0;
+        @media (min-width: 850px) {  font-size: 1em; }
+        @media (min-width: 1200px) { font-size: 1.5em; }
+    }
+    /******************************* end of headers text styling **************************************/
+    /**************************************************************************************************/
+    
 } /* end of body */
 
-/* to put text-color to grey use this class */
-.text-color-grey{
-    color: $lightblack;
+
+/* mat-dialog container will scroll down if its content is overflowing*/
+.cdk-overlay-pane {
+    overflow-y: auto;
 }

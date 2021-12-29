@@ -5,17 +5,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Development server
 
 * Edit to your needs `php/cometa_secret_variables.php` and `src/environments/environment`.
-* docker-compose up -d
-* Enter docker
-* Set Environment as seen prepare.sh
-```
-VERSION=v14.15.0
-DISTRO=linux-x64-musl
-INSTALL_DIR=/usr/local/lib/nodejs
-export PATH=$INSTALL_DIR/node-$VERSION-$DISTRO/bin:$PATH
-```
-* Run  `ng serve --host 0.0.0.0 --port 4300 --disable-host-check` for a dev server. Navigate to `http://localhost:4300/`. The app will automatically reload if you change any of the source files.
-
+* docker-compose -f docker-compose-dev.yml up -d --force-recreate
+* Make sure to to tunnel the ports 8011 and 4300 via ssh 
 
 ## Code scaffolding
 
@@ -25,6 +16,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 For production use `ng build --aot --extract-licenses --build-optimizer --optimization --configuration production`.
+The build is automatically prepared by the `prepare.sh` script. it is executed on startup of the container by .gitlab-ci.yml.
 
 ## Running unit tests
 

@@ -3,7 +3,7 @@
         <div class="links" *ngFor="let section of content.linkSection">
             <div data-aos="fade-up" class="title">{{section.title}}</div>
             <ul data-aos="fade-up" *ngFor="let link of section.links">
-                <li><a target="{{link.target}}" href="{{link.href}}">{{link.name}}</a></li>
+                <li><a target="{{link.target}}" rel="{{link.rel}}" href="{{link.href}}">{{link.name}}</a></li>
             </ul>
         </div>
     </div>
@@ -14,8 +14,12 @@
             <p data-aos="fade-up">{{content.cometa_footer_company_info}}</p>
         </div>
         <div data-aos="fade-up" class="social-net">
-            <a target="_blank" href="https://linkedin.com/company/cometa-rocks/"> <img alt="" src="assets/social-media/linkedin-icon.png"> </a>
-            <a target="_blank" href="https://twitter.com/cometa_rocks"> <img alt="" src="assets/social-media/twitter-icon.webp"> </a>
+            <a target="_blank" rel="noopener" aria-label="cometa-linkeding" href="https://linkedin.com/company/cometa-rocks/"> 
+                <img alt="" src="assets/social-media/linkedin-icon.png">
+            </a>
+            <a nametarget="_blank" rel="noopener" aria-label="cometa-twitter" href="https://twitter.com/cometa_rocks"> 
+                <img alt="" src="assets/social-media/twitter-icon.webp">
+            </a>
         </div>
         <div data-aos="fade-up" class="keywords">
             <p>{{content.cometa_footer_keywords}}</p>

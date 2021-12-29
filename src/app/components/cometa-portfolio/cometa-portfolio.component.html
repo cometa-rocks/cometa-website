@@ -1,6 +1,6 @@
 <div [ngClass]="{'isDark': currentTheme == 'dark'}" class="section-portfolio">
     <div class="section-header">
-        <h2 data-aos="fade-up">{{content.cometa_portfolio_title}}</h2>
+        <h1 data-aos="fade-up">{{content.cometa_portfolio_title}}</h1>
         <div class="separator"></div>
         <p data-aos="fade-up">
             {{content.cometa_portfolio_desc_automation}}
@@ -11,7 +11,7 @@
         </p>
         
         <p data-aos="fade-up">{{content.cometa_portfolio_screenshots}}
-            <a rel="noopener" href="https://prod.cometa.rocks/" target="_blank">{{content.cometa_portfolio_trial}}</a>
+            <a target="_blank" rel="noopener" href="https://prod.cometa.rocks/" >{{content.cometa_portfolio_trial}}</a>
         </p>
     </div>
 
@@ -22,7 +22,7 @@
                     <img alt="" (click)="openMagnifier($event)" [src]="screenshot.image">
                 </div>
                 <div class="text">
-                    <h4>{{screenshot.title}}</h4>
+                    <h1>{{screenshot.title}}</h1>
                     <p>{{screenshot.description}}</p>
                 </div>
             </div>

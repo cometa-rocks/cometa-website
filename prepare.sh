@@ -46,11 +46,15 @@ function install_nodejs(){
     echo "Uninstalling older node and npm packages"
     apk del npm
 
-    echo "Installing node version 14.4 build against musl / for alpine "
+    echo "Installing node version $VERSION build against musl / for alpine "
+    echo "If you want to updaet this. Change the VERSION variable in $0"
+    echo "-------"
+    echo "Creating $INSTALL_DIR"
     mkdir -p $INSTALL_DIR
     wget https://unofficial-builds.nodejs.org/download/release/$VERSION/node-$VERSION-$DISTRO.tar.xz
     tar -xvf node-$VERSION-$DISTRO.tar.xz -C $INSTALL_DIR
     # add links to /usr/bin/
+    echo "Adding symlinks to /usr/bin"
     ln -s $INSTALL_DIR/node-$VERSION-$DISTRO/bin/node /usr/bin/node
     ln -s $INSTALL_DIR/node-$VERSION-$DISTRO/bin/npm /usr/bin/npm
     ln -s $INSTALL_DIR/node-$VERSION-$DISTRO/bin/npx /usr/bin/npx
@@ -90,6 +94,17 @@ function build_angular(){
 }
 
 #
+# ng serve the project for development without exit
+# ... this will start nginx in background
+#
+function ng_serve_project() {
+    # start nginx in background
+    /start.sh &
+    # the ng server only works, if the $PATH variable is set correctly as seen at the beginning of this script
+    ng serve --host 0.0.0.0 --port 4300 --disable-host-check
+}
+
+#
 # Copy files to dist
 #
 function deploy_to_nginx(){
@@ -120,6 +135,7 @@ OPTIONS:
 	basic						fixes user permissions, installs lua for nginx, nodejs and npm
 	compile						installs angular, npm packages, builds the project and deploys it to nginx document root
 	full						runs both of the above options (basic and compile)
+    serve                       runs ng serve
 
 EXAMPLES:
 	* Fresh install / Complete Deployment
@@ -171,6 +187,9 @@ do
         change_owner # change owner permissions
         exit 0;
         shift
+        ;;
+    serve)
+        ng_serve_project # ng serve this project 
         ;;
     *)    # unknown option
         echo "Unknown option ${key}, try again...";

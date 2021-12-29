@@ -1,85 +1,48 @@
 @import "_colors";
 
-$p-fsize: .9em;
-$a-fsize: .9em;
-
 
 .section-contact-us {
-    padding: 50px 10%;
-    background-color: $white;
-
+    
     form {
-        display: grid;
         place-items: center;
+        width: 100%;
 
-        .form-group {
-            text-align: left;
-            margin: 20px 0;
+        mat-form-field {
             width: 100%;
-
-            @media (min-width: 600px) {  width: 70%; }
-            @media (min-width: 900px) {  width: 40%; }
+            margin-top: 5px;
     
             input,
             textarea {
                 width: 100%;
                 padding-left: 15px;
-                height: 40px;
-                border: 1px solid $heavy-orange;
-                border-radius: 5px;
                 font: inherit;
                 cursor: pointer;
-                outline: inherit;
-                background: $whitish;
-                color: $blackish;
-                margin: 10px 0;
             }
 
-            textarea {
-                height: 100px;
-            }
-    
-            .feedback {
-                color: $heavy-orange;
-            }
-
-            .feedback-message {             
-                transition: .5s;
-
-                color: red;
-
-                &.isSuccess {
-                    color: green;
-                }
-
-                /* adds 10px to separate the form feedback elemts */
-                p {
-                    margin: 10px 0;
-                }
-            }
-
-            button {
-                font-family: 'comfortaa', 'Inter', sans-serif;
-                width: 100%;
-                height: 40px;
-                background: $blackish;
-                color: $white;
-                margin: 10px 0;
-                margin-right: 10px;
-                outline-color: $heavy-orange;
-
-                @media (min-width: 900px) {  width: 30%; }
-    
-                &:hover {
-                    background-color: $heavy-orange;
-                }
-            }
+            mat-hint { color: $heavy-orange; }
         }
-    }
+        
+        .feedback-message {             
+            transition: .5s;
+            color: $red;
+            p { margin: 10px 0; }
 
-    
-    &.isDark {
-        background-color: $black;
-        color: $whitish;
+            &.isSuccess { color: $green; }
+        }
+
+        button {
+            font-family: Cometa-Rocks, sans-serif;
+            width: 100%;
+            height: 35px;
+            background: $blackish;
+            color: $white;
+            margin: 10px 0;
+            margin-right: 10px;
+            outline-color: $heavy-orange;
+            @media (min-width: 600px) {  width: 70%; }
+            @media (min-width: 900px) {  width: 40%; }
+
+            &:hover { background-color: $heavy-orange; }
+        }
     }
 }

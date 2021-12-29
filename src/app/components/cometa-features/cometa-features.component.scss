@@ -8,7 +8,6 @@
         display: grid;
         grid-template-columns: repeat(1fr);
         grid-gap: 30px;
-
         @media (min-width: 560px) { grid-template-columns: repeat(2,1fr); }
         @media (min-width: 1200px) { grid-template-columns: repeat(3,1fr); }
 
@@ -17,12 +16,11 @@
                 display: flex;
                 justify-content: space-around;
     
-    
                 .text {
                     padding-bottom: 25px;
                     padding-left: 10px;
     
-                    h4 {
+                    h1 {
                         padding: 10px 0;
                         font-size: 1.3em;
                         color: $heavy-orange;

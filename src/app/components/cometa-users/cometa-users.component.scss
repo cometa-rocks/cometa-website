@@ -6,7 +6,7 @@
     .content-wrapper {
         display: flex;
         flex-direction: row;
-        align-items: start;
+        align-items: flex-start;
         @media (min-width: 650px) { align-items: center; }
 
         .logo {
@@ -19,23 +19,18 @@
             background-size: cover;
             z-index: -9999;
             display: none;
-    
             @media (min-width: 650px) { display: inline-block; }
         }
 
         .content {
             width: 100%;
-    
-            @media (min-width: 650px) {  
-                width: 50%;
-            }
+            @media (min-width: 650px) {   width: 50%; }
     
             .title {
                 h1 {
                     font-size: 1.2em;
                     padding: 10px 0;
                     color: $heavy-orange; 
-    
                     @media (min-width: 1200px) { font-size: 2em; }
                 }
             }
@@ -53,10 +48,7 @@
     
                 i {
                     font-size: 1.1em;
-    
-                    @media (min-width: 1200px) { 
-                        line-height: 2em;
-                    }
+                    @media (min-width: 1200px) {  line-height: 2em; }
                 }
             }
         }
@@ -69,21 +61,21 @@
             .title {
                 padding: 10px 0;
                 
-                a {
-                    color: $heavy-orange;
+                a,p {
                     font-size: 2em;
                     text-decoration: none;
-                    border-bottom: 2px solid $heavy-orange;
                     cursor: pointer;
                 }
+                a {
+                    color: $heavy-orange;
+                    border-bottom: 2px solid $heavy-orange;
+                }
+                p {
+                    display: inline-block;
+                    color: $greenish;
+                    border-bottom: 2px solid $greenish;
+                }
             }
-            
-            &:nth-child(2) {
-                .title a {
-                     color: #8BBEAC;
-                     border-bottom: 2px solid #8BBEAC;
-                 }
-             }
 
             .donate-panel {
                 margin-top: 15px;
@@ -95,6 +87,8 @@
                         background: $blackish;
                         color: $white;
                         margin: 10px 0;
+                        padding-left: 10px;
+                        padding-top: 10px;
                     }
 
                     .form-group {
@@ -104,14 +98,8 @@
                             grid-template-columns: repeat(2,1fr);
                             place-items: start;
                             grid-gap: 20px;
-    
-                            @media (min-width: 750px) { 
-                                grid-template-columns: repeat(4,1fr);
-                            }
-    
-                            @media (min-width: 1200px) { 
-                                width: 50%;
-                            }
+                            @media (min-width: 750px) { grid-template-columns: repeat(4,1fr); }
+                            @media (min-width: 1200px) { width: 50%; }
     
                             div {
                                 margin-right: 10px;
@@ -127,18 +115,10 @@
                                     background: $blackish;
                                     color: $white;
                                     outline: #8BBEAC;
-
-                                    @media (min-width: 450px) { 
-                                        width: 140px;
-                                    }
+                                    @media (min-width: 450px) {  width: 140px; }
             
-                                    &:hover {
-                                        background-color: $heavy-orange;
-                                    }
-    
-                                    &.isSet {
-                                        background-color: $heavy-orange;
-                                    }
+                                    &:hover { background-color: $heavy-orange; }
+                                    &.isSet { background-color: $heavy-orange; }
                                 }
                             }
                         }
@@ -146,19 +126,15 @@
                     }
                     
                     .subscribe-time {
-                        font-family: 'comfortaa';
+                        font-family: Cometa-Rocks;
                         padding: 30px 0;
                         display: flex;
                         flex-direction: column;
-                        justify-content: start;
-
-
-                        @media (min-width: 350px) { 
-                            flex-direction: row;
-                        }
+                        justify-content: flex-start;
+                        @media (min-width: 350px) {  flex-direction: row; }
 
                         button {
-                            font-family: 'comfortaa', 'Inter', sans-serif;
+                            font-family: Cometa-Rocks, sans-serif;
                             width: 100%;
                             height: 40px;
                             background: $blackish;
@@ -166,18 +142,22 @@
                             margin: 10px 0;
                             margin-right: 10px;
                             outline-color: $heavy-orange;
+                            @media (min-width: 350px) {  width: 100px; }
 
-                            &:hover {
-                                background-color: $heavy-orange;
-                            }
-
-                            @media (min-width: 350px) { 
-                                width: 100px;
-                            }
+                            &:hover { background-color: $heavy-orange; }
                         }
                     }
                 }
             }
+
+            /*Select p element of second occurence of class .link .title
+            which corresponds to mail sender text in comenta-user.component.html
+            It is left in comment in case we need to change text color
+            &:nth-child(2) { 
+                .title { 
+                     p { } 
+                }
+            }*/
         }
     }
 
