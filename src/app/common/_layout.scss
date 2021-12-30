@@ -1,0 +1,34 @@
+@mixin flexbox($dir: null, $justify: null, $align: null) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin grid($place-items: null, $template-columns: null, $gap: null, $column-gap: null, $row-gap: null) {
+  display: grid;
+  place-items: $place-items;
+  grid-template-columns: $template-columns;
+  grid-gap: $gap;
+  grid-column-gap: $column-gap;
+  row-gap: $row-gap;
+}
+
+@mixin dimensions($height: null, $width: null) {
+  width: $width;
+  height: $height;
+}
+
+@mixin margin($top: null, $right: null, $bottom: null, $left: null) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}
+
+@mixin padding($top: null, $right: null, $bottom: null, $left: null) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}

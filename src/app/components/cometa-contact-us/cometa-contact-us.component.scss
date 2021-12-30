@@ -1,46 +1,48 @@
 @import "_colors";
-
+@import "_breakpoints";
+@import "_layout";
 
 .section-contact-us {
     
     form {
-        place-items: center;
-        width: 100%;
+        @include dimensions($width: 100%);
 
         mat-form-field {
-            width: 100%;
-            margin-top: 5px;
+            @include dimensions($width: 100%);
+            @include margin($top: 5px);
     
             input,
             textarea {
-                width: 100%;
-                padding-left: 15px;
+                @include dimensions($width: 100%);
+                @include padding($left: 15px);
                 font: inherit;
                 cursor: pointer;
             }
-
             mat-hint { color: $heavy-orange; }
         }
         
         .feedback-message {             
             transition: .5s;
             color: $red;
-            p { margin: 10px 0; }
-
+            p { 
+                @include margin($top: 10px, $bottom: 10px);
+            }
             &.isSuccess { color: $green; }
         }
 
         button {
+            @include dimensions($width: 100%, $height: 35px);
+            @include margin($top: 10px, $bottom: 10px, $right: 10px);
+            @include for-small-tablet-portrait-up (small-tablet) {
+                @include dimensions($width: 70%);
+            }
+            @include for-large-tablet-portrait-up (large-tablet) {
+                @include dimensions($width: 40%);
+            }
             font-family: Cometa-Rocks, sans-serif;
-            width: 100%;
-            height: 35px;
             background: $blackish;
             color: $white;
-            margin: 10px 0;
-            margin-right: 10px;
             outline-color: $heavy-orange;
-            @media (min-width: 600px) {  width: 70%; }
-            @media (min-width: 900px) {  width: 40%; }
 
             &:hover { background-color: $heavy-orange; }
         }

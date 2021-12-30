@@ -1,4 +1,6 @@
 @import "_colors";
+@import "_breakpoints";
+@import "_layout";
 
 footer {
     padding: 50px 10%;
@@ -6,16 +8,16 @@ footer {
     color: $whitish;
     
     .links-wrapper {
-        display: grid;
-        grid-template-columns: repeat(1fr);
-        text-align: center;
-        @media (min-width: 400px) { 
-            grid-template-columns: repeat(2,1fr); 
+        @include grid($template-columns: repeat(1fr));
+        @include for-small-phone-landscape-up(small-phone-plus-120) { 
+            @include grid($template-columns: repeat(2,1fr), $place-items: start);
             text-align: start;
-            place-items: start;
         }
-        @media (min-width: 850px) {  grid-template-columns: repeat(4,1fr);  }
+        @include for-tablet-portrait-up(tablet-plus-100) {
+            @include grid($template-columns: repeat(4,1fr));
+        }
 
+        text-align: center;
         .links {
             .title {
                 color: $heavy-orange;

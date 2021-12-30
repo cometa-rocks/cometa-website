@@ -1,73 +1,84 @@
 @import "_colors";
+@import "_breakpoints";
+@import "_layout";
 
     .section-laptop {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 1%;
-        padding-bottom: 50px;
+        @include flexbox($dir: column, $justify: center, $align: center);
+        @include padding($top: 1%, $right: 1%, $bottom: calc(1% + 50px), $left: 1%);
         
         .text {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 50px 0;
+            @include flexbox($dir: column, $justify: center);
+            @include padding($top: 50px, $bottom: 50px);
+            @include dimensions($width: 100%);
+            @include for-phone-landscape-up(phone-plus-38) {
+                @include dimensions($width: 85%);
+            }
+            @include for-tablet-portrait-up(tablet-plus-100) {
+                @include dimensions($width: 70%);
+            }
+            @include for-large-tablet-portrait-up (large-tablet-plus-185) {
+                @include dimensions($width: 60%);
+            }
             text-align: center;
-            @media (min-width: 568px) {  width: 85%; }
-            @media (min-width: 850px) {  width: 70%; }
-            @media (min-width: 1085px) {  width: 60%; }
         }
 
         .laptop {
-            height: 140px;
-            width: 80%;
+            @include flexbox($dir: row, $justify: center, $align: center);
+            @include dimensions($height: 140px, $width: 80%);
+            @include for-small-phone-landscape-up(small-phone-plus-60) {
+                @include dimensions($height: 160px);
+            }
+            @include for-small-phone-landscape-up(small-phone-plus-190) {
+                @include dimensions($height: 200px);
+            }
+            @include for-phone-landscape-up(phone) {
+                @include dimensions($height: 250px);
+            }
+            @include for-phone-landscape-up(phone-plus-40) {
+                @include dimensions($height: 300px);
+            }
+            @include for-small-tablet-portrait-up(small-tablet-plus-90) {
+                @include dimensions($height: 350px);
+            }
+            @include for-tablet-portrait-up(tablet-plus-100) {
+                @include dimensions($height: 400px);
+            }
+            @include for-large-tablet-portrait-up(large-tablet-plus-185) {
+                @include dimensions($width: 800px);
+            }
             background: $lightgray;
             border-radius: .4em;
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
             border-bottom: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             box-shadow: 0px 15px 10px -7px rgba(0,0,0,1);
-            @media (min-width: 340px) {  height: 160px; }
-            @media (min-width: 470px) {  height: 200px; }
-            @media (min-width: 530px) {  height: 250px; }
-            @media (min-width: 570px) {  height: 300px; }
-            @media (min-width: 690px) {  height: 350px; }
-            @media (min-width: 850px) {  height: 400px; }
-            @media (min-width: 1085px) {  width: 800px; }
 
             .output {
-                height: 90%;
-                width: 94%;
+                @include dimensions($height: 90%, $width: 94%);
                 background: $white;
                 border-radius: .4em;
                 transition: 2s;
                 -webkit-transition: 2s;
     
                 .header {
-                    width: 98%;
-                    height: 8%;
+                    @include flexbox ($dir: row, $justify: space-between);
+                    @include dimensions($height: 8%, $width: 98%);
+                    @include margin($top: .5%, $left: 1%);
+                    @include for-phone-landscape-up (phone) {
+                        @include dimensions($height: 5%);
+                    }
                     background: $lightgray;
-                    margin-top: .5%;
-                    display: flex;
-                    justify-content: space-between;
-                    margin-left: 1%;
                     border-radius: .2em;
-                    @media (min-width: 530px) {  height: 5%; }
     
                     .logo {
-                        margin-left: 5px;
+                        @include margin($left: 5px);
                         font-size: 0;
     
                         span { 
                             font-size: 8px;
-                            @media (min-width: 470px) {  font-size: 10px; }
-                            @media (min-width: 690px) {  font-size: 12px; }
-                            @media (min-width: 850px) {  font-size: 14px; }
+                            @include for-small-phone-landscape-up(small-phone-plus-190) { font-size: 10px; }
+                            @include for-small-tablet-portrait-up(small-tablet-plus-90) { font-size: 12px; }
+                            @include for-tablet-portrait-up(tablet-plus-100)            { font-size: 14px; }
     
                             &:nth-child(1) { color: $heavy-orange; }
                             &:nth-child(2) { color: $gray; }
@@ -75,96 +86,108 @@
                     }
     
                     .router-links {
-                        display: flex;
-                        align-items: center;
-    
+                        @include flexbox($dir: row, $align: center);
+
                         div {
-                            height: 80%;
-                            width: 8px;
+                            @include dimensions($height: 80%, $width: 8px);
+                            @include margin($top: 5px, $right: 5px, $bottom: 5px, $left: 5px);
+                            @include for-phone-landscape-up (phone) {
+                                @include dimensions($width: 10px);
+                            }
+                            @include for-tablet-portrait-up(tablet-plus-100) {
+                                @include dimensions($width: 14px);
+                            }
+                            @include for-small-phone-landscape-up(small-phone-plus-190) {
+                                @include dimensions($width: 12px);
+                            }
+                            @include for-small-tablet-portrait-up(small-tablet-plus-90) {
+                                @include dimensions($width: 12px);
+                            }
                             background: $medium-gray;
-                            margin: 5px;
                             border-radius: 10px;
-                            @media (min-width: 470px) {  width: 12px; }
-                            @media (min-width: 530px) {  width: 10px; }
-                            @media (min-width: 690px) {  width: 12px; }
-                            @media (min-width: 850px) {  width: 14px; }
                         }
                     }
                 }
     
                 p {
-                    margin: 0;
-                    margin-left: 1%;
-                    margin-top: 4%;
+                    @include margin($top: 4%, $right: 0, $bottom: 0, $left: 1%);
+                    @include for-small-phone-landscape-up(small-phone-plus-190) { font-size: 10px; }
+                    @include for-tablet-portrait-up(tablet-plus-100) {
+                        @include margin($top: 2%);
+                    }
                     font-size: 8px;
                     color: $gray;
-                    @media (min-width: 470px) { font-size: 10px; }
-                    @media (min-width: 850px) {  margin-top: 2%; }
                 }
     
                 .folders {
-                    width: 98%;
-                    margin-left: 1%;
-                    margin-top: 3%;
-                    display: grid;
-                    grid-template-columns: repeat(7, 1fr);
-                    grid-gap: 5px;
+                    @include grid($template-columns: repeat(7, 1fr), $gap: 5px);
+                    @include dimensions($width: 98%);
+                    @include margin($left: 1%, $top: 3%);
     
                     div {
-                        height: 15px;
+                        @include dimensions($height: 15px);
+                        @include for-phone-landscape-up (phone-plus-40) {
+                            @include dimensions($height: 20px);
+                        }
+                        @include for-small-tablet-portrait-up(small-tablet-plus-90) {
+                            @include dimensions($height: 25px);
+                        }
+                        @include for-tablet-portrait-up(tablet-plus-100) {
+                            @include dimensions($height: 30px);
+                        }
                         background: $lightgray;
                         border-radius: 5px;
-                        @media (min-width: 570px) {  height: 20px; }
-                        @media (min-width: 690px) {  height: 25px; }
-                        @media (min-width: 850px) {  height: 30px; }
-    
+                        
                         &:nth-last-child(-n+1) {
                             display: none;
-                            @media (min-width: 470px) {  display: inline-block; }
+                            @include for-small-phone-landscape-up(small-phone-plus-190) { display: inline-block; }
                         }
                     }
                 }
     
                 .features {
-                    width: 98%;
-                    margin-left: 1%;
-                    margin-top: 3%;
-                    display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    grid-column-gap: 5px;
-                    row-gap: 10px;
-                    @media (min-width: 530px) {  row-gap: 20px; }
+                    @include grid($template-columns: repeat(4, 1fr), $column-gap: 5px, $row-gap: 10px);
+                    @include for-phone-landscape-up (phone) {
+                        @include grid($row-gap: 20px);
+                    }
+                    @include dimensions($width: 98%);
+                    @include margin($left: 1%, $top: 3%);
                     
                     div {
+                        @include dimensions($height: 25px);
+                        @include for-phone-landscape-up (phone-plus-40) {
+                            @include dimensions($height: 35px);
+                        }
+                        @include for-small-tablet-portrait-up(small-tablet-plus-90) {
+                            @include dimensions($height: 40px);
+                        }
+                        @include for-tablet-portrait-up(tablet-plus-100) {
+                            @include dimensions($height: 55px);
+                        }
                         position: relative;
-                        height: 25px;
                         background:$lightgray;
                         border-radius: 5px;
                         border-top-right-radius: 0;
-                        @media (min-width: 570px) {  height: 35px; }
-                        @media (min-width: 690px) {  height: 40px; }
-                        @media (min-width: 850px) {  height: 55px; }
-
 
                         &::before,
                         &::after {
                             content: '';
                             position: absolute;
-                            height:5px;
                             top: -5px;
-                            @media (min-width: 690px) {  height: 10px; top: -10px; }
+                            @include dimensions($height: 5px);
+                            @include for-small-tablet-portrait-up(small-tablet-plus-90) { height: 10px; top: -10px; }
                         }
 
                         &::before {
+                            @include dimensions($width: 30%);
                             background-color: $lightblue;                            
-                            width: 30%;
                             right: 0;
                             border-top-right-radius: 5px;
                         }
     
                         &::after {
+                            @include dimensions($width: 20%);
                             background-color: $lightgreen;
-                            width: 20%;
                             right: 28%;
                             transform: skew(-20deg);
                         }
@@ -175,7 +198,7 @@
     
                         &:nth-last-child(-n+4) {
                             display: none;
-                            @media (min-width: 530px) {  display: inline-block; }
+                            @include for-phone-landscape-up (phone) { display: inline-block; }
                         }
                     }
                 }
@@ -183,21 +206,36 @@
         }
     
         .keyboard {
-            width: 100%;
-            height: 6px;
+            @include dimensions($width: 100%, $height: 6px);
+            @include for-small-phone-landscape-up(small-phone) {
+                @include dimensions($width: 85%);
+            }
+            @include for-small-phone-landscape-up(small-phone-plus-60) {
+                @include dimensions($height: 8px);
+            }
+            @include for-small-phone-landscape-up(small-phone-plus-190) {
+                @include dimensions($height: 10px);
+            }
+            @include for-phone-landscape-up (phone) {
+                @include dimensions($height: 12px);
+            }
+            @include for-phone-landscape-up (phone-plus-40) {
+                @include dimensions($height: 14px);
+            }
+            @include for-small-tablet-portrait-up(small-tablet-plus-90) {
+                @include dimensions($height: 16px);
+            }
+            @include for-tablet-portrait-up(tablet-plus-100) {
+                @include dimensions($height: 18px);
+            }
+            @include for-large-tablet-portrait-up (large-tablet-plus-185) {
+                @include dimensions($height: 20px, $width: 900px);
+            }
             background: #bdbcbc;
             border-bottom-right-radius: 3em;
             border-bottom-left-radius: 3em;
             box-shadow: 0px 15px 10px -7px rgba(0,0,0,1);
             border-top: none;
-            @media (min-width: 280px) {  width:85%; }
-            @media (min-width: 340px) {  height: 8px; }
-            @media (min-width: 470px) {  height: 10px; }
-            @media (min-width: 530px) {  height: 12px; }
-            @media (min-width: 570px) {  height: 14px; }
-            @media (min-width: 690px) {  height: 16px; }
-            @media (min-width: 850px) {  height: 18px; }
-            @media (min-width: 1085px) { height: 20px; width: 900px; }
         }
 
 
@@ -210,60 +248,48 @@
     }
 
     .section-mobile {
-        display: grid;
-        grid-template-columns: repeat(1fr);
-        place-items: center;
-        padding: 50px 10%;
+        @include grid($template-columns: repeat(1fr), $place-items: center);
+        @include for-small-tablet-portrait-up(small-tablet) {
+            @include grid($template-columns: repeat(2, 1fr), $place-items: center);
+        }
+        @include padding($top: 50px, $right: 10%, $bottom: 50px, $left: 10%);
         background-color: $white;
-        @media (min-width: 600px) {  grid-template-columns: repeat(2, 1fr); }
-      
-      
+        
         .text {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
+          @include flexbox($dir: column, $justify: center);
+          @include dimensions($width: 100%);
+          @include padding ($bottom: 50px);
+          @include for-small-tablet-portrait-up(small-tablet) { text-align: start; padding-bottom: 0; }
           text-align: center;
-          padding-bottom: 50px;
-          @media (min-width: 600px) {  text-align: start; padding-bottom: 0; }
         }
         
         .mobile {
+          @include flexbox($dir: row, $justify: center, $align: center);
+          @include dimensions($width: 150px, $height: 300px);
           position: relative;
-          height: 300px;
-          width: 150px;
           background:$lightgray;
           border-radius: 30px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
           box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       
           .screen {
-            height: 95%;
-            width: 95%;
+            @include dimensions($width: 95%, $height: 95%);
             background: $white;
             border-radius: 20px;
       
             .header { 
-              height: 10%;
+              @include flexbox($dir: row, $align: flex-start);
+              @include dimensions($height: 10%);
+              @include padding ($right: 10%, $left: 10%);
               border-radius: 30px;
-              padding: 0 10%;
-              display: flex;
-              align-items: flex-start;
       
               .icons { 
-                height: 100%;
-                width: 50%;
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
+                @include flexbox($dir: row, $justify: flex-start, $align: center);
+                @include dimensions($height: 100%, $width: 50%);
       
                 div {
-                  height: 10px;
-                  width: 20px;
+                  @include dimensions($height: 10px, $width: 20px);
+                  @include margin($right: 2px, $left: 2px);
                   background:$lightgray;
-                  margin: 0 2px;
                   border-radius: 3px;
                 }
               }
@@ -271,17 +297,14 @@
           }
       
           .content {
-            height: 90%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            margin: 0 25px;
+            @include flexbox($dir: column, $align: flex-end);
+            @include dimensions($height: 90%);
+            @include margin($right: 25px, $left: 25px);
       
             div  {
+              @include dimensions($height: 10%, $width: 80%);
+              @include margin($top: 3px, $bottom: 3px);
               position: relative;
-              height: 10%;
-              margin: 3px 0;
-              width: 80%;
               background: $lightgray;
               border-radius: 5px;
 
@@ -289,8 +312,8 @@
               &::after {
                 content: '';
                 position: absolute;
-                width: 3px;
                 background:  $green;
+                @include dimensions($width: 3px);
               }
       
               &::before { bottom: 2px; left: -25px; height: 100%; transform: rotate(45deg); }
@@ -299,10 +322,9 @@
               &:nth-child(3n+4) {
                 &::before,
                 &::after {
+                  @include dimensions($height: 100%, $width: 3px);
                   top: 0;
                   left: -28px;
-                  height: 100%;
-                  width: 3px;
                   background-color: $red;
                 }
                 
@@ -325,98 +347,98 @@
 
 
 .section-tablet {
-    display: grid;
-    grid-template-columns: repeat(1fr);
-    place-items: center;
-    padding: 0 10%;
-    padding-bottom: 50px;
-    @media (min-width: 750px) { 
-        grid-template-columns: repeat(2, 1fr);
-        place-items: center start;
+    @include grid($template-columns: repeat(1fr), $place-items: center);
+    @include for-tablet-portrait-up (tablet) {
+        @include grid($template-columns: repeat(2, 1fr), $place-items: center start);
         padding-bottom: 0;
     }
+    @include padding($top: 0, $right: 10%, $bottom: calc(10% + 50px), $left: 10%);
 
     .text {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 50px 0;
+        @include flexbox($dir: column, $justify: center);
+        @include dimensions($width: 100%);
+        @include padding($top: 50px, $bottom: 50px);
+        @include for-tablet-portrait-up (tablet) { text-align: start; }
         text-align: center;
         grid-row: 1/2;
-        @media (min-width: 750px) { text-align: start; }
-
+        
         ul {
             list-style-type: none;
-            @media (min-width: 800px) { list-style-type: disc; }
-            li { padding: .3em 0; }
+            @include for-tablet-portrait-up(tablet-plus-50) { list-style-type: disc; }
+            li {
+                @include padding($top: .3em, $bottom: .3em);
+            }
         }
     }
 
     .tablet {
-        height: 400px;
-        width: 280px;
+        @include flexbox($dir: row, $justify: center, $align: center);
+        @include dimensions($height: 400px, $width: 280px);
+        @include for-tablet-portrait-up (tablet) { grid-row: 1/2; }
         background-color: $lightgray;
         border-radius: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        @media (min-width: 750px) { grid-row: 1/2; }
 
         .screen {
-            height: 95%;
-            width: 95%;
+            @include dimensions($height: 95%, $width: 95%);
             background: $white;
             border-radius: 20px;
 
             .header {
-                height: 5%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 5px 10px;;
+                @include flexbox($dir: row, $justify: space-between, $align: center);
+                @include dimensions($height: 5%);
+                @include padding($top: 5px, $right: 10px, $bottom: 5px, $left: 10px);
 
                 div {
-                    width: 40%;
-                    height: 90%;
+                    @include dimensions($height: 90%, $width: 40%);
                     background-color: $lightgray;
                     border-radius: 5px;
                 }
             } 
             .diagram {
                 position: relative;
-                padding: 0 2.5%;
+                @include padding($right: 2.5%, $left: 2.5%);
 
-                svg { position: absolute; width: 95%; opacity: .5; }
+                svg { 
+                    @include dimensions($width: 95%);
+                    position: absolute;
+                    opacity: .5; 
+                }
             }
 
             .info {
-                margin-top: 25%;
-                height: 75%;
-                padding: 0 2.5%;
+                @include dimensions($height: 75%);
+                @include margin($top: 25%);
+                @include padding($right: 2.5%, $left: 2.5%);
                 
                 .data {
+                    @include dimensions($height: 10%, $width: 100%);
+                    @include margin($top: 14px);
                     position: relative;
-                    height: 10%;
-                    width: 100%;
                     background-color: $lightgray;
-                    margin-top: 14px;
                     border-radius: 5px;
 
                     &::before,
                     &::after {
+                        @include dimensions($height: 30%);
+                        @include padding($top: 2px, $right: 2px, $bottom: 2px, $left: 2px);
                         content: '';
                         position: absolute; 
                         top: 8px;
-                        height: 30%;
                         border-radius: 4px;
                         font-size: 12px;
-                        padding: 2px;
                     }
 
-                    &::before { left: 5px; width: 17%; background-color: $green; }
-                    &::after { left: 60px; width: 72%; background-color: $gray; }
+                    &::before { 
+                        left: 5px;
+                        @include dimensions($width: 17%);
+                        background-color: $green; 
+                    }
+                    &::after {
+                        left: 60px;
+                        @include dimensions($width: 72%);
+                        background-color: $gray; 
+                    }
 
                     &:nth-last-child(-n+2)::before { background-color: $red; }
                 }
