@@ -34,7 +34,7 @@ export class CometaContactUsComponent implements OnInit {
   //view the captcha child component
   @ViewChild(CaptchaComponent, { static: true }) captchaComponent!: CaptchaComponent;
 
-  constructor(private formBuilder: FormBuilder, private sw: SwitcherService, private http: HttpClient, private elRef: ElementRef, private renderer: Renderer2) {
+  constructor(private formBuilder: FormBuilder, private sw: SwitcherService, private http: HttpClient) {
     this.contactForm = this.formBuilder.group({});
 
   }
@@ -136,7 +136,7 @@ export class CometaContactUsComponent implements OnInit {
           */
           this.reload();
 
-          /*html calls mailfeedback properties in order to show service feedback message to user */
+          /*html calls mailfeedback properties via *ngIf in order to show service feedback message to user depending on successCode */
           this.mailFeedback = res;
         },
         (err: any) => {

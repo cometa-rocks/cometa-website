@@ -1,0 +1,46 @@
+/*This file defines global breakpoints for different devices*/
+
+/* The website is developed using >>Mobile First<< approach.
+ * As there are still some small mobile devices, we set styling start point to 270 pixels width.
+ * So in order to change the way elements output layout, we use breakpoints, this way we can make website responsive
+ * meaning that we adapt the layout styling, according to size of the device which is reproducing website
+ * As we consider 270 pixels the startpoint that can reproduce default styling, minimum breakpoint is set to 280 pixels
+ */
+
+@mixin for-small-phone-landscape-up ($breakpoint) {
+    @if $breakpoint == small-phone            { @media (min-width: 280px) { @content; } }
+    @if $breakpoint == small-phone-plus-60    { @media (min-width: 340px) { @content; } }
+    @if $breakpoint == small-phone-plus-70    { @media (min-width: 350px) { @content; } }
+    @if $breakpoint == small-phone-plus-120   { @media (min-width: 400px) { @content; } }
+    @if $breakpoint == small-phone-plus-170   { @media (min-width: 450px) { @content; } }
+    @if $breakpoint == small-phone-plus-190   { @media (min-width: 470px) { @content; } }
+}
+
+@mixin for-phone-landscape-up ($breakpoint) {
+    @if $breakpoint == phone                  { @media (min-width: 530px) { @content; } }
+    @if $breakpoint == phone-plus-20          { @media (min-width: 550px) { @content; } }
+    @if $breakpoint == phone-plus-30          { @media (min-width: 560px) { @content; } }
+    @if $breakpoint == phone-plus-38          { @media (min-width: 568px) { @content; } }
+    @if $breakpoint == phone-plus-40          { @media (min-width: 570px) { @content; } }
+}
+
+@mixin for-small-tablet-portrait-up ($breakpoint) {
+    @if $breakpoint == small-tablet           { @media (min-width: 600px) { @content; } }
+    @if $breakpoint == small-tablet-plus-50   { @media (min-width: 650px) { @content; } }
+    @if $breakpoint == small-tablet-plus-90   { @media (min-width: 690px) { @content; } }
+}
+
+@mixin for-tablet-portrait-up ($breakpoint) {
+    @if $breakpoint == tablet                 { @media (min-width: 750px) { @content; } }
+    @if $breakpoint == tablet-plus-50         { @media (min-width: 800px) { @content; } }
+    @if $breakpoint == tablet-plus-100        { @media (min-width: 850px) { @content; } }
+}
+
+@mixin for-large-tablet-portrait-up ($breakpoint) {
+    @if $breakpoint == large-tablet           { @media (min-width: 900px) { @content; } }
+    @if $breakpoint == large-tablet-plus-185  { @media (min-width: 1085px) { @content; } }
+}
+
+@mixin for-desktop-portrait-up ($breakpoint) {
+    @if $breakpoint == desktop                { @media (min-width: 1200px) { @content; } }
+}

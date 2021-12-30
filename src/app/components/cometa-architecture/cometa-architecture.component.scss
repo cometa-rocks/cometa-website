@@ -1,20 +1,19 @@
 @import "_colors";
+@import "_breakpoints";
+@import "_layout";
 
 .section-architecture {
-    padding: 50px 10%;
+    @include padding($top: 50px, $bottom: 50px, $left: 10%, $right: 10%);
     background-color: $white;
 
     .content-wrapper {
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-gap: 20px;
-        @media (min-width: 1200px) { grid-template-columns: repeat(4,1fr); }
+        @include grid($template-columns: repeat(2,1fr), $gap: 20px);
+        @include for-desktop-portrait-up (desktop) { 
+            @include grid($template-columns: repeat(4,1fr));
+        }
 
         .tech {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            @include flexbox($dir: column, $justify: center, $align: center);
 
             a {
                 text-decoration: none;
@@ -22,10 +21,13 @@
                 font-size: 2em;
 
                 img {
-                    height: 80px;
-                    width: auto;
-                    @media (min-width: 650px) { height: 120px; }
-                    @media (min-width: 900px) { height: 200px; }
+                    @include dimensions($height: 80px, $width: auto);
+                    @include for-small-tablet-portrait-up (small-tablet-plus-50) {
+                        @include dimensions($height: 120px);
+                    }
+                    @include for-large-tablet-portrait-up (large-tablet) {
+                        @include dimensions($height: 200px);
+                    }
                 }
             }
         } 

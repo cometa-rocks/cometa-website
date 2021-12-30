@@ -1,21 +1,15 @@
-//
-// Import the global colors scheme
-//
 @import "_colors";
+@import "_layout";
 
 header {
+    @include flexbox($dir: row, $justify: space-between, $align: center);
     height: 4em;
     background-color: $lightblack;
     color: $whitish;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
     .cometa {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
+        @include flexbox($dir: row, $justify: center, $align: center);
+
         .menu {
             display: none;
             margin: 0 1em;
@@ -37,8 +31,6 @@ header {
         }
     }
 
-    
-
     .nav {
         display: none; 
 
@@ -55,9 +47,7 @@ header {
 
     .theme-switcher, 
     .lang-switcher {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexbox($dir: row, $justify: center, $align: center);
         color: $heavy-orange;
     }
 

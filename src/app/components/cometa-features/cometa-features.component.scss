@@ -1,21 +1,23 @@
 @import "_colors";
+@import "_breakpoints";
+@import "_layout";
 
 .section-features {
-    padding: 50px 10%;
+    @include padding($top: 50px, $right: 10%, $bottom: 50px, $left: 10%);
     background-color: $white;
 
     .content-wrapper {
-        display: grid;
-        grid-template-columns: repeat(1fr);
-        grid-gap: 30px;
-        @media (min-width: 560px) { grid-template-columns: repeat(2,1fr); }
-        @media (min-width: 1200px) { grid-template-columns: repeat(3,1fr); }
+        @include grid($template-columns: repeat(1fr), $gap: 30px);
+        @include for-phone-landscape-up(phone-plus-30) {
+            @include grid($template-columns: repeat(2,1fr));
+        }
+        @include for-desktop-portrait-up(desktop) {
+            @include grid($template-columns: repeat(3,1fr));
+        }
 
         .content {
             .card {
-                display: flex;
-                justify-content: space-around;
-    
+                @include flexbox($dir: row, $justify: space-around);
                 .text {
                     padding-bottom: 25px;
                     padding-left: 10px;
@@ -24,8 +26,8 @@
                         padding: 10px 0;
                         font-size: 1.3em;
                         color: $heavy-orange;
-                        @media (min-width: 850px) { font-size: 1.5em; }
-                        @media (min-width: 1200px) { font-size: 2em; }
+                        @include for-tablet-portrait-up(tablet-plus-100)  { font-size: 1.5em; }
+                        @include for-desktop-portrait-up(desktop)         { font-size: 2em; }
                     }
                 }
             }

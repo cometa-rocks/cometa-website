@@ -1,13 +1,15 @@
 @import "_colors";
+@import "_breakpoints";
+@import "_layout";
 
 .section-users {
-    padding: 50px 10%;
+    @include padding($top: 50px, $right: 10%, $bottom: 50px, $left: 10%);
     
     .content-wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        @media (min-width: 650px) { align-items: center; }
+        @include flexbox($dir: row, $align: flex-start);
+        @include for-small-tablet-portrait-up(small-tablet-plus-50)  {
+            @include flexbox($align: center);
+        }
 
         .logo {
             background: url("../../../assets/cometa.svg");
@@ -19,19 +21,19 @@
             background-size: cover;
             z-index: -9999;
             display: none;
-            @media (min-width: 650px) { display: inline-block; }
+            @include for-small-tablet-portrait-up(small-tablet-plus-50) { display: inline-block; }
         }
 
         .content {
             width: 100%;
-            @media (min-width: 650px) {   width: 50%; }
+            @include for-small-tablet-portrait-up(small-tablet-plus-50) { width: 50%; }
     
             .title {
                 h1 {
                     font-size: 1.2em;
                     padding: 10px 0;
                     color: $heavy-orange; 
-                    @media (min-width: 1200px) { font-size: 2em; }
+                    @include for-desktop-portrait-up(desktop) { font-size: 2em; }
                 }
             }
     
@@ -43,12 +45,12 @@
     
                 .testimonial-quote {
                     font-size: 2em;
-                    @media (min-width: 1200px) { font-size: 5em; }
+                    @include for-desktop-portrait-up(desktop) { font-size: 5em; }
                 }
     
                 i {
                     font-size: 1.1em;
-                    @media (min-width: 1200px) {  line-height: 2em; }
+                    @include for-desktop-portrait-up(desktop) {  line-height: 2em; }
                 }
             }
         }
@@ -93,13 +95,12 @@
 
                     .form-group {
                         .amount-buttons {
+                            @include grid($template-columns: repeat(2, 1fr), $place-items: start, $gap: 20px);
+                            @include for-tablet-portrait-up(tablet) {
+                                @include grid($template-columns: repeat(4,1fr));
+                            }
+                            @include for-desktop-portrait-up(desktop) { width: 50%;}
                             width: 100%;
-                            display: grid;
-                            grid-template-columns: repeat(2,1fr);
-                            place-items: start;
-                            grid-gap: 20px;
-                            @media (min-width: 750px) { grid-template-columns: repeat(4,1fr); }
-                            @media (min-width: 1200px) { width: 50%; }
     
                             div {
                                 margin-right: 10px;
@@ -115,7 +116,7 @@
                                     background: $blackish;
                                     color: $white;
                                     outline: #8BBEAC;
-                                    @media (min-width: 450px) {  width: 140px; }
+                                    @include for-small-phone-landscape-up(small-phone-plus-170) { width: 140px; }
             
                                     &:hover { background-color: $heavy-orange; }
                                     &.isSet { background-color: $heavy-orange; }
@@ -126,12 +127,13 @@
                     }
                     
                     .subscribe-time {
+                        @include flexbox($dir: column, $justify: flex-start);
+                        @include for-small-phone-landscape-up(small-phone-plus-70) {
+                            @include flexbox($dir: row);
+                        }
                         font-family: Cometa-Rocks;
                         padding: 30px 0;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: flex-start;
-                        @media (min-width: 350px) {  flex-direction: row; }
+                        
 
                         button {
                             font-family: Cometa-Rocks, sans-serif;
@@ -142,7 +144,7 @@
                             margin: 10px 0;
                             margin-right: 10px;
                             outline-color: $heavy-orange;
-                            @media (min-width: 350px) {  width: 100px; }
+                            @include for-small-phone-landscape-up(small-phone-plus-70) { width: 100px; }
 
                             &:hover { background-color: $heavy-orange; }
                         }
