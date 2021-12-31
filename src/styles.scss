@@ -15,6 +15,13 @@
 /*angular prebuild material styles*/
 @import "_material";
 
+/*Breakpoints for responsive desing*/
+@import "_breakpoints";
+
+/*mixin functions for grid, flex, padding, margin and dimensions
+check file common/_layout.scss*/
+@import "_layout";
+
 * {
     padding: 0;
     margin: 0;
@@ -35,33 +42,31 @@ body {
     /* headers styles for section >> architecture, enterprise, features, portfolio, users, contact us */
     /**************************************************************************************************/
     .section-header {
-        padding-bottom: 50px;
-        width: 100%;
+        @include padding($bottom: 50px);
+        @include dimensions($width: 100%);
         text-align: center;
 
         h1 {
-            @media (min-width: 850px) { font-size: 2.5em; }
-            @media (min-width: 1200px) { font-size: 2em; }
+            @include for-tablet-portrait-up(tablet-plus-100) { font-size: 2.5em; }
+            @include for-desktop-portrait-up(desktop)        { font-size: 2em; }
         }
 
         .separator {
+            @include dimensions($height: 20px, $width: 20px);
+            @include margin($top: 10px, $bottom: 10px);
             position: relative;
             left: 50%;
             transform: translateX(-50%);
-            height: 20px;
-            width: 20px;
             border-radius: 50%;
             background-color: $heavy-orange;
-            margin: 10px 0;
             border: 5px solid white;
 
             &::before,
             &::after {
+                @include dimensions($width: 100px, $height: 1px);
                 content: '';
                 position: absolute;
                 top: 50%;
-                height: 1px;
-                width: 100px;
                 transform: translateY(-50%);
                 background-color: $heavy-orange;
             }
@@ -92,24 +97,26 @@ body {
 
     /********************************** global headers text styling ***********************************/
     /**************************************************************************************************/
-    h1, h2, h4 { padding: .5em 0; }
+    h1, h2, h4 {
+        @include padding($top: .5em, $bottom: .5em);
+    }
 
     h1 { 
         color: $heavy-orange;
         font-size: 2em;
-        @media (min-width: 850px) {  font-size: 3.5em; }
-        @media (min-width: 1200px) {  font-size: 4em; }
+        @include for-tablet-portrait-up(tablet-plus-100) { font-size: 3.5em; }
+        @include for-desktop-portrait-up(desktop)        { font-size: 4em; }
     }
 
     h2 {
-        @media (min-width: 850px) {  font-size: 2.5em; }
-        @media (min-width: 1200px) {  font-size: 2em; }
+        @include for-tablet-portrait-up(tablet-plus-100) { font-size: 2.5em; }
+        @include for-desktop-portrait-up(desktop)        { font-size: 2em; }
     }
 
     h4 {
         padding: .3em 0;
-        @media (min-width: 850px) {  font-size: 1em; }
-        @media (min-width: 1200px) { font-size: 1.5em; }
+        @include for-tablet-portrait-up(tablet-plus-100) { font-size: 1em; }
+        @include for-desktop-portrait-up(desktop)        { font-size: 1.5em; }
     }
     /******************************* end of headers text styling **************************************/
     /**************************************************************************************************/
