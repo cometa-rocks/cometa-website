@@ -19,13 +19,12 @@
             .card {
                 @include flexbox($dir: row, $justify: space-around);
                 .text {
-                    padding-bottom: 25px;
-                    padding-left: 10px;
+                    @include padding($bottom: 25px, $left: 10px);
     
                     h1 {
-                        padding: 10px 0;
                         font-size: 1.3em;
                         color: $heavy-orange;
+                        @include padding($top: 10px, $bottom: 10px);
                         @include for-tablet-portrait-up(tablet-plus-100)  { font-size: 1.5em; }
                         @include for-desktop-portrait-up(desktop)         { font-size: 2em; }
                     }
