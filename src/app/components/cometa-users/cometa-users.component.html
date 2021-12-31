@@ -42,7 +42,7 @@
 
         <div class="link">
             <div data-aos="fade-right" class="title">
-                <p (click)="activateDonatePanel()">{{content.cometa_users_donate}}</p>
+                <p (click)="toggleDonatePanel()">{{content.cometa_users_donate}}</p>
             </div>
             <p data-aos="fade-right">{{content.cometa_users_donate_desc}}</p>
             <div class="donate-panel" *ngIf="donatePanelIsActive">
@@ -57,17 +57,17 @@
                             <div>
                                 <p>{{content.cometa_users_donate_button_helper}}</p>
                                 <input [ngClass]="{'isSet': form['amount'].value === 10}" (click)="setAmount(10)"
-                                    type="button" value="10">
+                                    type="button" value="10€">
                             </div>
                             <div>
                                 <p>{{content.cometa_users_donate_button_Supporter}}</p>
                                 <input [ngClass]="{'isSet': form['amount'].value === 29}" (click)="setAmount(29)"
-                                    type="button" value="29">
+                                    type="button" value="29€">
                             </div>
                             <div>
                                 <p>{{content.cometa_users_donate_button_Lover}}</p>
                                 <input [ngClass]="{'isSet': form['amount'].value === 490}" (click)="setAmount(490)"
-                                    type="button" value="490">
+                                    type="button" value="490€">
                             </div>
                             <div>
                                 <p>{{content.cometa_users_donate_button_Angel}}</p>
@@ -75,7 +75,7 @@
                                                                                     && form['amount'].value != 29 
                                                                                     && form['amount'].value != 10
                                                                                     && form['amount'].value != '' }"
-                                    (input)="setCustomeAmount($event)" type="number" placeholder="custome">
+                                    (input)="setCustomeAmount($event)" type="number" placeholder="custom">
                             </div>
                         </div>
                     </div>

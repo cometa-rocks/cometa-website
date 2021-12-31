@@ -22,7 +22,6 @@
         }
         
         .feedback-message {             
-            transition: .5s;
             color: $red;
             p { 
                 @include margin($top: 10px, $bottom: 10px);

@@ -3,7 +3,7 @@
 @import "_layout";
 
 footer {
-    padding: 50px 10%;
+    @include padding($top: 50px, $right: 10%, $bottom: 50px, $left: 10%);
     background-color: $lightblack;
     color: $whitish;
     
@@ -20,15 +20,15 @@ footer {
         text-align: center;
         .links {
             .title {
+                @include padding($top: 15px, $bottom: 15px);
                 color: $heavy-orange;
-                padding: 15px 0;
             }
     
             ul {
                 list-style-type: none;
 
                 li {     
-                    padding: 5px 0;
+                    @include padding($top: 5px, $bottom: 5px);
                     cursor: pointer;
                     a { color: $whitish; text-decoration: none; }
                 }
@@ -37,23 +37,23 @@ footer {
     }
 
     .legal-info {
-        padding-top: 20px;
+        @include padding($top: 20px);
         text-align: center;
         font-size: .9em;
 
         .social-net {
             a {
                 img {
-                    width: 48px;
-                    margin: 25px;
+                    @include dimensions($width: 48px);
+                    @include margin($top: 25px);
                     border-radius: 1em;
                 }
             }            
         }
 
         .copyright {
-            padding: 5px 0;
-            p { padding: 5px 0; }
+            @include padding($top: 5px, $bottom: 5px);
+            p { @include padding($top: 5px, $bottom: 5px); }
         }
     }
 

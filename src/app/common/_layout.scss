@@ -14,9 +14,13 @@
   row-gap: $row-gap;
 }
 
-@mixin dimensions($height: null, $width: null) {
-  width: $width;
+@mixin dimensions($height: null, $width: null, $max-height: null, $max-width: null, $min-height: null, $min-width: null) {
   height: $height;
+  width: $width;
+  max-height: $max-height;
+  max-width: $max-width;
+  min-height: $min-height;
+  min-width: $min-width;
 }
 
 @mixin margin($top: null, $right: null, $bottom: null, $left: null) {

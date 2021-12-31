@@ -38,7 +38,7 @@
 
 @mixin for-large-tablet-portrait-up ($breakpoint) {
     @if $breakpoint == large-tablet           { @media (min-width: 900px) { @content; } }
-    @if $breakpoint == large-tablet-plus-185  { @media (min-width: 1085px) { @content; } }
+    @if $breakpoint == large-tablet-plus-185  { @media (min-width: 1085px){ @content; } }
 }
 
 @mixin for-desktop-portrait-up ($breakpoint) {

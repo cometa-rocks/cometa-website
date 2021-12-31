@@ -430,13 +430,13 @@
                     }
 
                     &::before { 
-                        left: 5px;
                         @include dimensions($width: 17%);
+                        left: 5px;
                         background-color: $green; 
                     }
                     &::after {
-                        left: 60px;
                         @include dimensions($width: 72%);
+                        left: 60px;
                         background-color: $gray; 
                     }
 
