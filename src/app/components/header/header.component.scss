@@ -7,6 +7,15 @@ header {
     background-color: $lightblack;
     color: $whitish;
 
+    /* Login Button in Header */
+    button {
+        background-color: $heavy-orange;
+        padding: 10px 25px;
+        border-radius: 5px;
+        border-color: $lightblack;
+        font-family: "Cometa-Rocks", "Arial", "Sans-Serif";
+    }
+
     .cometa {
         @include flexbox($dir: row, $justify: center, $align: center);
 
