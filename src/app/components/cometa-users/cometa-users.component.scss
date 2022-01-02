@@ -12,9 +12,8 @@
         }
 
         .logo {
+            @include dimensions($width: 50%, $height: 50vw);
             background: url("../../../assets/cometa.svg");
-            width: 50%;
-            height: 50vw;
             filter: invert(1);
             background-repeat: no-repeat;
             background-position: -10VW -10VW;
@@ -25,22 +24,24 @@
         }
 
         .content {
-            width: 100%;
-            @include for-small-tablet-portrait-up(small-tablet-plus-50) { width: 50%; }
+            @include dimensions($width: 100%);
+            @include for-small-tablet-portrait-up(small-tablet-plus-50) { 
+                @include dimensions($width: 50%);
+            }
     
             .title {
                 h1 {
                     font-size: 1.2em;
-                    padding: 10px 0;
                     color: $heavy-orange; 
+                    @include padding($top: 10px, $bottom: 10px);
                     @include for-desktop-portrait-up(desktop) { font-size: 2em; }
                 }
             }
     
             .testimonial {
+                @include padding($top: 10px, $right: 10px, $bottom: 10px, $left: 10px);
+                @include margin($top: 2em, $bottom: 2em);
                 border: 1px solid $heavy-orange;
-                padding: 10px;
-                margin: 2em 0;
                 border-radius: 1em;
     
                 .testimonial-quote {
@@ -58,10 +59,10 @@
 
     .links {
         .link {
-            margin: 50px 0;
+            @include margin($top: 50px, $bottom: 50px);
 
             .title {
-                padding: 10px 0;
+                @include padding($top: 10px, $bottom: 10px);
                 
                 a,p {
                     font-size: 2em;
@@ -80,34 +81,35 @@
             }
 
             .donate-panel {
-                margin-top: 15px;
+                @include margin($top: 15px);
 
                 form {
                     textarea {
-                        width: 100%;
-                        height: 60px;
+                        @include dimensions($width: 100%, $height: 60px);
+                        @include margin($top: 10px, $bottom: 10px);
+                        @include padding($left: 10px, $top: 10px);
                         background: $blackish;
                         color: $white;
-                        margin: 10px 0;
-                        padding-left: 10px;
-                        padding-top: 10px;
                     }
 
                     .form-group {
                         .amount-buttons {
                             @include grid($template-columns: repeat(2, 1fr), $place-items: start, $gap: 20px);
+                            @include dimensions($width: 100%);
+
                             @include for-tablet-portrait-up(tablet) {
                                 @include grid($template-columns: repeat(4,1fr));
                             }
-                            @include for-desktop-portrait-up(desktop) { width: 50%;}
-                            width: 100%;
+                            @include for-desktop-portrait-up(desktop) {
+                                @include dimensions($width: 50%);
+                            }
+                            
     
                             div {
-                                margin-right: 10px;
+                                @include margin($right: 10px);
     
                                 input {
-                                    width: 100px;
-                                    height: 40px;
+                                    @include dimensions($width: 100px, $height: 40px);
                                     border: 1px solid $heavy-orange;
                                     border-radius: 5px;
                                     font: inherit;
@@ -116,7 +118,9 @@
                                     background: $blackish;
                                     color: $white;
                                     outline: #8BBEAC;
-                                    @include for-small-phone-landscape-up(small-phone-plus-170) { width: 140px; }
+                                    @include for-small-phone-landscape-up(small-phone-plus-170) {
+                                        @include dimensions($width: 140px);
+                                    }
             
                                     &:hover { background-color: $heavy-orange; }
                                     &.isSet { background-color: $heavy-orange; }
@@ -128,24 +132,22 @@
                     
                     .subscribe-time {
                         @include flexbox($dir: column, $justify: flex-start);
+                        @include padding($top: 30px, $bottom: 30px);
                         @include for-small-phone-landscape-up(small-phone-plus-70) {
                             @include flexbox($dir: row);
                         }
                         font-family: Cometa-Rocks;
-                        padding: 30px 0;
-                        
 
                         button {
+                            @include dimensions($width: 100%, $height: 40px);
+                            @include margin($top: 10px, $right: 10px, $bottom: 10px);
+                            @include for-small-phone-landscape-up(small-phone-plus-70) {
+                                @include dimensions($width: 100%);
+                            }
                             font-family: Cometa-Rocks, sans-serif;
-                            width: 100%;
-                            height: 40px;
                             background: $blackish;
                             color: $white;
-                            margin: 10px 0;
-                            margin-right: 10px;
                             outline-color: $heavy-orange;
-                            @include for-small-phone-landscape-up(small-phone-plus-70) { width: 100px; }
-
                             &:hover { background-color: $heavy-orange; }
                         }
                     }

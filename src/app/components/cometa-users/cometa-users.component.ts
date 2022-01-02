@@ -66,7 +66,7 @@ export class CometaUsersComponent implements OnInit {
 
   /*toggles donation panel open. donation panel toggle event is binded to boolean variable donatePanelIsActive.
   correspondingly - panel is open when variable value is true and closed when it is false*/
-  activateDonatePanel() {
+  toggleDonatePanel() {
     this.donatePanelIsActive = this.donatePanelIsActive ? false : true;
   }
 
@@ -140,12 +140,14 @@ export class CometaUsersComponent implements OnInit {
 
   //opens up a dialog that contains layout of cometa contact us component
   openMailDialog() {
+    //close donate panel if it is open
+    if (this.donatePanelIsActive) { this.donatePanelIsActive = false; }
+
+    //open dialog
     const dialogRef = this.dialog.open(CometaContactUsComponent);
 
     dialogRef.afterClosed().subscribe((result: any) => {
       //here goes logic after dialog is closed
     });
   }
-
-
 }
