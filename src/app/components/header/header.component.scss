@@ -1,3 +1,6 @@
+/*Breakpoints for responsive design */
+@import "_breakpoints";
+
 @import "_colors";
 @import "_layout";
 
@@ -8,12 +11,15 @@ header {
     color: $whitish;
 
     /* Login Button in Header */
-    button {
+    a {
         background-color: $heavy-orange;
         padding: 10px 25px;
         border-radius: 5px;
         border-color: $lightblack;
         font-family: "Cometa-Rocks", "Arial", "Sans-Serif";
+        color: $lightblack;
+        text-decoration: none;
+        margin: 15px;
     }
 
     .cometa {
@@ -40,8 +46,18 @@ header {
         }
     }
 
+    .switcher {
+        /* default do not display on phone */
+        display: none;
+
+        /* display switch on tablet and up */
+        @include for-tablet-portrait-up(tablet) {
+            display: inline;
+        }
+    }
+
     .nav {
-        display: none; 
+        display: inline; 
 
         ul {
             display: flex;
@@ -54,6 +70,7 @@ header {
         }
     }
 
+
     .theme-switcher, 
     .lang-switcher {
         @include flexbox($dir: row, $justify: center, $align: center);
@@ -64,6 +81,7 @@ header {
     .lang-switcher p {
         @include margin($top: .5em, $right: 1em, $bottom: .5em, $left: 1em);
         font-size: .9em;
+        cursor: pointer;
 
         &.isActive {
             font-weight: bold;
