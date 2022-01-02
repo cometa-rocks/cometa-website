@@ -1,7 +1,7 @@
 export const  COMETA_ENTERPRISE_DATA = {
     en: {
         cometa_enterprise_title: "co.meta For Enterprise",
-        cometa_enterprise_desc: "Time always means money. co.meta reduces test hours to minutes or seconds.",
+        cometa_enterprise_desc: "Time always means money. co.meta reduces test hours to minutes. Coverage up and budget down.",
         characteristics: [
             {
                 image: "assets/enterprise/icons8-tick-box-96.webp",

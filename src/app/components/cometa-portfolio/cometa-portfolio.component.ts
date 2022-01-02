@@ -14,6 +14,7 @@ export class CometaPortfolioComponent implements OnInit {
   img_magnifier_isActive: boolean = false;
   currentTheme: any;
   currentLang: any;
+  co_screenshots_show_more: boolean = false;
 
   /*stores the text-type content of the section*/
   content: any; 
@@ -25,17 +26,17 @@ export class CometaPortfolioComponent implements OnInit {
     this.applyCurrentLayoutSettings();
   }
 
-  /*closes img magnifier  when escape is clicked*/
+  /* closes img magnifier  when escape is clicked */
   @HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
     this.closeMagnifier();
   }
 
-  /*closes img magnifier on any kind of mousewheel usage*/
+  /* closes img magnifier on any kind of mousewheel usage */
   @HostListener('mousewheel', ['$event']) scroll(event: MouseEvent) {
     this.closeMagnifier();
   }
 
-  /*applys currently selected language and theme to layout*/
+  /* applys currently selected language and theme to layout */
   applyCurrentLayoutSettings() {
     this.sw.getCurrentThemeObservable().subscribe( (theme: any) => this.currentTheme = theme );
     this.sw.getCurrentLangObservable().subscribe( (lang: any) => {
@@ -44,7 +45,7 @@ export class CometaPortfolioComponent implements OnInit {
     });
   }
 
-  /*filters testimonials by currentLang('en'/'ca') value and returns an object which contains all the section text-type content for translated in currently selected language*/
+  /* filters testimonials by currentLang('en'/'ca') value and returns an object which contains all the section text-type content for translated in currently selected language*/
   getCurrentLangContent() {
     const currentLangEntry =  Object.entries(COMETA_PORTFOLIO_DATA).filter(([key]) => key === this.currentLang);
     const currentLangContent  = Object.fromEntries(currentLangEntry);
@@ -62,5 +63,11 @@ export class CometaPortfolioComponent implements OnInit {
   /* closes the image magnifier */
   closeMagnifier() {
     this.img_magnifier_isActive = false;
+  }
+
+  /* Click on "show more" or "show less" toggles co_screenshots_show_more from true to false and vica versa */
+  toggle_co_screenshots_show_more() {
+    console.log("Co. toggle show more")
+    this.co_screenshots_show_more = !this.co_screenshots_show_more;
   }
 }

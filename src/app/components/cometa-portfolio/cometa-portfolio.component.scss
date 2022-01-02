@@ -4,7 +4,20 @@
 
 .section-portfolio {
     @include padding($top: 50px, $right: 10%, $bottom: 50px, $left: 10%);
-        
+    
+    .button {
+        margin: 15px;
+        a, div {
+            padding: 10px 15px;
+            background-color: $heavy-orange;
+            border-radius: 3px;
+            border-color: $blackish;
+            text-decoration: none;
+            color: $lightblack;
+            cursor: pointer;
+        }
+    }
+
     .content-wrapper {
         @include grid($template-columns: repeat(1fr), $gap: 30px);
         @include for-tablet-portrait-up(tablet) {

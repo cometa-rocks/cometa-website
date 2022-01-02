@@ -1,12 +1,12 @@
 export const COMETA_USERS_DATA = {
   en: {
-    cometa_users_title: "Cometa Feedback",
+    cometa_users_title: "Cometa Testimonials",
     cometa_users_desc: "Here is some feedback from people who already had some taste of cometa",
     cometa_users_say: "What co.meta users say",
     cometa_users_early_access: "Request early access to Co.meta",
     cometa_users_early_access_desc: "The open beta has ended. We invite you to request access before going public. You have the exclusive opportunity to test and use co.meta without paying. By doing so, you will be able to access our private repository and discussion channels on discord and telegram.",
     cometa_users_lets_talk: "Let's talk...",
-    cometa_users_lets_talk_desc: "Questions? In the co.meta rocks  team we welcome any kind of feedback, it helps us make the world of testing easier. We are interested in your experience as a tester, let's talk.",
+    cometa_users_lets_talk_desc: "Questions? The co.meta rocks  team welcomes any kind of feedback, it helps us make the world of testing easier. We are interested in your experience as a tester, let's talk.",
     cometa_users_donate: "Subscribe",
     cometa_users_donate_desc: "Show that you understand where we are going. Express that you are more than interested ...",
     cometa_users_donate_panel_desc: "Great to see your interest. Thank you so much. Let us know for what reason your are donating ...",
