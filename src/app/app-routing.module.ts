@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CometaLogotipsComponent } from './components/cometa-logotips/cometa-logotips.component';
-import { HomeComponent } from './components/home/home.component';
+import { CometaHomeComponent } from './components/cometa-home/cometa-home.component';
 
 const routes: Routes = [
   //inner component navigations  
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: CometaHomeComponent },
   { path: 'logotips', component: CometaLogotipsComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', redirectTo: '' },

@@ -7,8 +7,8 @@ import { BotDetectCaptchaModule } from 'angular-captcha';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { HeaderComponent } from './components/header/header.component';
+import { CometaHomeComponent } from './components/cometa-home/cometa-home.component';
+import { CometaHeaderComponent } from './components/cometa-header/cometa-header.component';
 import { CometaDevicesComponent } from './components/cometa-devices/cometa-devices.component';
 import { CometaFeaturesComponent } from './components/cometa-features/cometa-features.component';
 import { CometaPortfolioComponent } from './components/cometa-portfolio/cometa-portfolio.component';
@@ -26,8 +26,8 @@ import { CometaLogotipsComponent } from './components/cometa-logotips/cometa-log
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    HeaderComponent,
+    CometaHomeComponent,
+    CometaHeaderComponent,
     CometaDevicesComponent,
     CometaFeaturesComponent,
     CometaPortfolioComponent,
