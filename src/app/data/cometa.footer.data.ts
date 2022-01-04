@@ -33,7 +33,7 @@ export const COMETA_FOOTER_DATA = {
           { name: "Contact Us", target: "_blank", rel: "noopener", href: "mailto:contact@cometa.rocks" },
           { name: "Telegram", target: "_blank", rel: "noopener", href: "https://t.me/joinchat/bFquCBGPBCAwYWZk" },
           { name: "WhatsApp", target: "_blank", rel: "noopener", href: "https://chat.whatsapp.com/CLIOla00LAf4Ym2mux8TXC" },
-          //{ name: "Logos", target: "_self", rel: "", href: "#" }
+          { name: "Logos", target: "_self", rel: "", href: "logotips" }
         ]
       }
     ]
@@ -72,7 +72,7 @@ export const COMETA_FOOTER_DATA = {
           { name: "Contacta amb nosaltres", target: "_blank", rel: "noopener", href: "mailto:contact@cometa.rocks" },
           { name: "Telegram", target: "_blank", rel: "noopener", href: "https://t.me/joinchat/bFquCBGPBCAwYWZk" },
           { name: "WhatsApp", target: "_blank", rel: "noopener", href: "https://chat.whatsapp.com/CLIOla00LAf4Ym2mux8TXC" },
-          // { name: "Logotips", target: "_self", rel: "", href: "#" }
+          { name: "Logotips", target: "_self", rel: "", href: "logotips" }
         ]
       }
     ]

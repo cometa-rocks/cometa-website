@@ -1,6 +1,6 @@
 <header [ngClass]="{'isDark': currentTheme == 'dark'}">
   <div class="cometa">
-    <div class="logo">
+    <div class="logo" (click)="gotoHome()">
       <span>co.</span><span>meta</span>
     </div>
     <div *ngIf="currentLang == 'en'"><a href="https://prod.cometa.rocks/" name="login"
