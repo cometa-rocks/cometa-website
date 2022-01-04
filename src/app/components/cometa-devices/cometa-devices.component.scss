@@ -256,11 +256,11 @@
         background-color: $white;
         
         .text {
-          @include flexbox($dir: column, $justify: center);
-          @include dimensions($width: 100%);
-          @include padding ($bottom: 50px);
-          @include for-small-tablet-portrait-up(small-tablet) { text-align: start; padding-bottom: 0; }
-          text-align: center;
+            @include flexbox($dir: column, $justify: center);
+            @include dimensions($width: 100%);
+            @include padding ($bottom: 50px);
+            @include for-small-tablet-portrait-up(small-tablet) { text-align: start; padding-bottom: 0; }
+            text-align: center;
         }
         
         .mobile {

@@ -20,7 +20,7 @@ stage_deployment:
   script:
     # replace stripe key
     - echo "Replace strip key in src/environments/environment.prod.ts with environment variable COMETA_STRIPE_PUBLIC_KEY"
-    - sed -i 's/@@COMETA_STRIPE_PUBLIC_KEY@@/'$COMETA_STRIPE_PUBLIC_TEST_KEY'/g' src/environments/environment.prod.ts
+    - sed -i 's/@@COMETA_STRIPE_PUBLIC_KEY@@/'$COMETA_STRIPE_PUBLIC_LIVE_KEY'/g' src/environments/environment.prod.ts
     # replace mail password
     - echo "Replace mail password in cometa_secret_variables.prod.php with Value from enviroment "
     - sed -i 's/@@COMETA_MAIL_PASSWORD@@/'$COMETA_MAIL_PASSWORD'/g' php/cometa_secret_variables.prod.php

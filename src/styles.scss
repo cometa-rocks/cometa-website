@@ -120,7 +120,33 @@ body {
     }
     /******************************* end of headers text styling **************************************/
     /**************************************************************************************************/
-    
+
+    button {
+        background-color: $heavy-orange;
+        padding: 10px 20px;
+        border-radius: 1.5em;
+        font-size: 15px;
+        border: 0;
+        font-family: "Cometa-Rocks", "Arial", "Sans-Serif";
+        color: $lightblack;
+        text-decoration: none;
+        margin-right: 15px;
+        margin-top: 15px;
+        transition: .2s;
+        box-shadow: rgba(60, 64, 67, 0.8) 0px 1px 2px -1px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+        a {
+            text-decoration: none;
+            color: $lightblack;
+            font-weight: bold;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+
 } /* end of body */
 
 

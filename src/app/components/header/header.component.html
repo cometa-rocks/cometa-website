@@ -1,35 +1,27 @@
 <header [ngClass]="{'isDark': currentTheme == 'dark'}">
-    <div class="cometa">
-      <div class="menu">
-        <mat-icon>menu</mat-icon>
-      </div>
-      <div class="logo">            
-          <span>co.</span><span>meta</span>
-      </div>
+  <div class="cometa">
+    <div class="logo">
+      <span>co.</span><span>meta</span>
     </div>
-    <div class="nav">
-      <!--<ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">Features</a></li>
-        <li><a href="">Screenshots</a></li>
-        <li><a href="">Architecture</a></li>
-        <li><a href="">Enterprise</a></li>
-        <li><a href="">Contact</a></li>
-      </ul>-->
+    <div *ngIf="currentLang == 'en'"><a href="https://prod.cometa.rocks/" name="login"
+        aria-label="login button">Login</a>
     </div>
-    <div><a href="https://prod.cometa.rocks/" name="login" aria-label="login button">Login</a></div>
-    <div class="switcher">
-        <div class="theme-switcher">
-          <p *ngIf="currentLang == 'en'" [ngClass]="{'isActive': currentTheme == 'light'}" (click)="switchTheme()" >LIGHT</p>
-          <p *ngIf="currentLang == 'ca'" [ngClass]="{'isActive': currentTheme == 'light'}" (click)="switchTheme()" >CLAR</p>
-          <div [ngClass]="{'isDark': currentTheme == 'dark'}"  (click)="switchTheme()" class="switch"></div>
-          <p *ngIf="currentLang == 'en'" [ngClass]="{'isActive': currentTheme == 'dark'}" (click)="switchTheme()" >DARK</p>
-          <p *ngIf="currentLang == 'ca'" [ngClass]="{'isActive': currentTheme == 'dark'}" (click)="switchTheme()" >FOSC</p>
-        </div>
-        <div class="lang-switcher">
-          <p (click)="switchLang('en')"  [ngClass]="{'isActive': currentLang == 'en'}"> EN </p>
-          <div class="separator">|</div>
-          <p (click)="switchLang('ca')" [ngClass]="{'isActive': currentLang == 'ca'}"> CA </p>
-        </div>
+    <div *ngIf="currentLang == 'ca'"><a href="https://prod.cometa.rocks/" name="login" aria-label="login button">Iniciar
+        Sessió</a></div>
+  </div>
+
+  <div class="switcher">
+    <div class="theme-switcher">
+      <p *ngIf="currentLang == 'en'" [ngClass]="{'isActive': currentTheme == 'light'}" (click)="switchTheme()">LIGHT</p>
+      <p *ngIf="currentLang == 'ca'" [ngClass]="{'isActive': currentTheme == 'light'}" (click)="switchTheme()">CLAR</p>
+      <div [ngClass]="{'isDark': currentTheme == 'dark'}" (click)="switchTheme()" class="switch"></div>
+      <p *ngIf="currentLang == 'en'" [ngClass]="{'isActive': currentTheme == 'dark'}" (click)="switchTheme()">DARK</p>
+      <p *ngIf="currentLang == 'ca'" [ngClass]="{'isActive': currentTheme == 'dark'}" (click)="switchTheme()">FOSC</p>
     </div>
+    <div class="lang-switcher">
+      <p (click)="switchLang('en')" [ngClass]="{'isActive': currentLang == 'en'}"> EN </p>
+      <div class="separator">|</div>
+      <p (click)="switchLang('ca')" [ngClass]="{'isActive': currentLang == 'ca'}"> CA </p>
+    </div>
+  </div>
 </header>

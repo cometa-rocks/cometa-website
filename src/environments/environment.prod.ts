@@ -11,5 +11,6 @@
 export const environment = {
   production: true,
   stripe_key: '@@COMETA_STRIPE_PUBLIC_KEY@@',
-  env_mailurl: ''
+  env_mailurl: '',
+  stripe_domain: 'prod'
 };
