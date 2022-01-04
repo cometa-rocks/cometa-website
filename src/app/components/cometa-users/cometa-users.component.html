@@ -81,9 +81,9 @@
                     </div>
                     <div *ngIf="form['amount'].value > 0" class="form-group">
                         <div class="subscribe-time">
-                            <button [disabled]="loading"
+                            <button class="period" [disabled]="loading"
                                 (click)="onSubmit('month')">{{content.cometa_users_donate_button_submit_monthly}}</button>
-                            <button [disabled]="loading"
+                            <button class="period" [disabled]="loading"
                                 (click)="onSubmit('year')">{{content.cometa_users_donate_button_submit_yearly}}</button>
                         </div>
                     </div>

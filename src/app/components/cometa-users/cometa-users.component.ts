@@ -113,7 +113,7 @@ export class CometaUsersComponent implements OnInit {
     this.loading = true;
 
     /*defines request url to donation service*/
-    const apiURL = 'https://stage.cometa.rocks/backend/createDonation/';
+    const apiURL = `https://${environment.stripe_domain}.cometa.rocks/backend/createDonation/`;
 
     /*gets stripe key from enviroment variables*/
     const stripe = await loadStripe(environment.stripe_key);

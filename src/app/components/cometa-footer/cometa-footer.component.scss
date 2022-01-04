@@ -45,7 +45,7 @@ footer {
             a {
                 img {
                     @include dimensions($width: 48px);
-                    @include margin($top: 25px);
+                    @include margin($top: 25px, $right: 25px, $bottom: 25px, $left: 25px);
                     border-radius: 1em;
                 }
             }            

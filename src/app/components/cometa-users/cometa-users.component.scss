@@ -138,11 +138,11 @@
                         }
                         font-family: Cometa-Rocks;
 
-                        button {
+                        .period {
                             @include dimensions($width: 100%, $height: 40px);
                             @include margin($top: 10px, $right: 10px, $bottom: 10px);
                             @include for-small-phone-landscape-up(small-phone-plus-70) {
-                                @include dimensions($width: 100%);
+                                @include dimensions($width: 20%);
                             }
                             font-family: Cometa-Rocks, sans-serif;
                             background: $blackish;

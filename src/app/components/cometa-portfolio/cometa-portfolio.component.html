@@ -3,34 +3,44 @@
         <h1 data-aos="fade-up">{{content.cometa_portfolio_title}}</h1>
         <div class="separator"></div>
         <div data-aos="fade-up">
-            {{content.cometa_portfolio_desc_automation}}
-            <br>
-            {{content.cometa_portfolio_desc_tests}}
-            <br>
-            <div>{{content.cometa_portfolio_desc_development}}</div>
+            <p>{{content.cometa_portfolio_automation}}</p>
+            <p>{{content.cometa_portfolio_tests}}</p>
+            <p>{{content.cometa_portfolio_development}}</p>
         </div>
-        
         <p data-aos="fade-up">{{content.cometa_portfolio_screenshots}}</p>
-        
         <!--  trial button -->
-        <div class="button" aria-label="trial-button"><a target="_blank" rel="noopener" href="https://prod.cometa.rocks/" >{{content.cometa_portfolio_trial}}</a></div>
+        <button data-aos="fade-up" aria-label="trial-button">
+            <a target="_blank" rel="noopener" href="https://prod.cometa.rocks/">{{content.cometa_portfolio_trial}}</a>
+        </button>
     </div>
 
-    <div class="content-wrapper">
-        <div data-aos="fade-up" class="content" *ngFor="let screenshot of content.screenshots; let i = index" [attr.data-index]="i">
-            <div class="card" *ngIf="i<3">
-                <div class="screenshot">
-                    <img alt="" (click)="openMagnifier($event)" [src]="screenshot.image">
-                </div>
-                <div class="text">
-                    <h1>{{screenshot.title}}</h1>
-                    <p>{{screenshot.description}}</p>
-                </div>
+
+
+    <div class="show-more">
+        <div class="screenshot">
+            <div class="img-wrapper">
+                <img alt="" (click)="openMagnifier($event)" [src]="content.screenshots[0].image">
             </div>
-            <div class="card" *ngIf="i>=3 && co_screenshots_show_more === true">
+        </div>
+
+        <div class="text">
+            <h1>{{content.screenshots[0].title}}</h1>
+            <p>{{content.screenshots[0].description}}</p>
+            <!-- Button for toggeling more and less -->
+            <button data-aos="fade-up" (click)="co_screenshots_show_more = !co_screenshots_show_more" class="button">
+                <div *ngIf="currentLang == 'en'">{{co_screenshots_show_more? 'show less' : 'show more...'}}</div>
+                <div *ngIf="currentLang == 'ca'">{{co_screenshots_show_more? 'mostrar menys' : 'mostra més...'}}</div>
+            </button>
+        </div>
+    </div>
+
+    <div *ngIf="co_screenshots_show_more" class="content-wrapper">
+        <div data-aos="fade-up" class="content" *ngFor="let screenshot of content.screenshots">
+            <div class="card">
                 <div class="screenshot">
                     <img alt="" (click)="openMagnifier($event)" [src]="screenshot.image">
                 </div>
+
                 <div class="text">
                     <h1>{{screenshot.title}}</h1>
                     <p>{{screenshot.description}}</p>
@@ -38,14 +48,29 @@
             </div>
         </div>
     </div>
-    <!-- Buttons for toggeling more and less -->
-    <div *ngIf="co_screenshots_show_more === true" (click)="toggle_co_screenshots_show_more()"  class="button"><div>show less</div></div>
-    <div *ngIf="co_screenshots_show_more === false" (click)="toggle_co_screenshots_show_more()" class="button"><div> --> show more</div></div>
-</div>
 
+    <!--<div class="content-wrapper">
+        <div data-aos="fade-up" [ngClass]="{'show-more': co_screenshots_show_more }" class="content"
+            *ngFor="let screenshot of content.screenshots">
+            <div class="screenshot">
+                <div class="img-wrapper">
+                    <img alt="" (click)="openMagnifier($event)" [src]="screenshot.image">
+                </div>
+            </div>
+
+            <div class="text">
+                <h1>{{screenshot.title}}</h1>
+                <p>{{screenshot.description}}</p>
+            </div>
+        </div>
+    </div>-->
+
+
+
+
+</div>
 
 <!-- Magnifier DIV ... that shows screenshot in big -->
 <div [ngClass]="{'isActive': img_magnifier_isActive }" class="image-magnifier" (click)="closeMagnifier()">
-    <img alt="" class="magnified_img" >
+    <img alt="" class="magnified_img">
 </div>
-
