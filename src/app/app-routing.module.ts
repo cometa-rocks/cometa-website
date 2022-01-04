@@ -1,7 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CometaLogotipsComponent } from './components/cometa-logotips/cometa-logotips.component';
+import { CometaHomeComponent } from './components/cometa-home/cometa-home.component';
 
 const routes: Routes = [
+  //inner component navigations  
+  { path: 'home', component: CometaHomeComponent },
+  { path: 'logotips', component: CometaLogotipsComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '' },
 
   //redirects cometa.rocks/cometa-introduction to https://drive.google.com/file/d/1Y4lQ5aSC5Dbfn8q5Q4DLy0eEfsGWAVkm/view?usp=sharing
   {

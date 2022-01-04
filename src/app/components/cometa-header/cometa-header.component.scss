@@ -9,30 +9,33 @@ header {
     @include dimensions($height: 4em);
     background-color: $lightblack;
     color: $whitish;
+    z-index: 10;
+    
 
     /* Login Button in Header */
     a {
+        @include padding($top: 10px, $right: 25px, $bottom: 10px, $left: 25px);
+        @include margin($top: 15px, $right: 15px, $bottom: 15px, $left: 15px);
         background-color: $heavy-orange;
-        padding: 10px 25px;
         border-radius: 5px;
         border-color: $lightblack;
         font-family: "Cometa-Rocks", "Arial", "Sans-Serif";
         color: $lightblack;
         text-decoration: none;
-        margin: 15px;
     }
 
     .cometa {
         @include flexbox($dir: row, $justify: center, $align: center);
 
         .menu {
-            @include margin($left: 1em, $right: 1em);
             display: none;
+            @include margin($left: 1em, $right: 1em);
             mat-icon { color: $heavy-orange; padding: 0; }
         }
 
         .logo {
             @include margin($left: 2em);
+            cursor: pointer;
             line-height: 30px;
             font-family: Cometa-Rocks;
 

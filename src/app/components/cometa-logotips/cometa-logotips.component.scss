@@ -1,0 +1,57 @@
+@import '_colors';
+@import '_layout';
+@import '_breakpoints';
+.media {
+    @include padding($top: 50px, $right: 10%, $bottom: 50px, $left: 10%);
+    @include flexbox($dir: row);
+
+    .logo {
+        @include dimensions($width: 50%, $height: 50vw);
+        background: url("../../../assets/cometa.svg");
+        filter: invert(1);
+        background-repeat: no-repeat;
+        background-position: -10VW -10VW;
+        background-size: cover;
+        z-index: -9999;
+        display: none;
+        @include for-small-tablet-portrait-up(small-tablet-plus-50) { display: inline-block; }
+    }
+    
+    .text {
+        text-align: center;
+
+        .logos {
+            @include padding($top: 50px, $bottom: 50px);
+            h1 { padding: 0; }
+            p { font-size: 14px; padding-bottom: 25px; }
+        }
+        
+        ul {
+            @include margin($top: 100px, $bottom: 100px);
+            list-style-type: none;
+            li {
+                @include margin($top: 15px, $bottom: 15px);
+                a {
+                    font-weight: bold;
+                    text-decoration: none;
+                    color: $heavy-orange;
+                    border-bottom: 1px solid $heavy-orange;
+                }
+    
+            }
+        }
+    }
+
+    &.isDark {
+        background-color: $blackish;
+        color: $whitish;
+
+        .content-wrapper { 
+            .logo {
+                z-index: 1;
+                filter: invert(0);
+            }
+        }
+    }
+}
+

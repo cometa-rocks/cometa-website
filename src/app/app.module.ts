@@ -6,8 +6,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { BotDetectCaptchaModule } from 'angular-captcha';
 
 import { AppRoutingModule } from './app-routing.module';
-import { HomeComponent } from './components/home/home.component';
-import { HeaderComponent } from './components/header/header.component';
+import { AppComponent } from './app.component';
+import { CometaHomeComponent } from './components/cometa-home/cometa-home.component';
+import { CometaHeaderComponent } from './components/cometa-header/cometa-header.component';
 import { CometaDevicesComponent } from './components/cometa-devices/cometa-devices.component';
 import { CometaFeaturesComponent } from './components/cometa-features/cometa-features.component';
 import { CometaPortfolioComponent } from './components/cometa-portfolio/cometa-portfolio.component';
@@ -19,12 +20,14 @@ import { CometaFooterComponent } from './components/cometa-footer/cometa-footer.
 
 /* BrowserAnimationsModule is necessary if angular material is used, material includes certain animations*/
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CometaLogotipsComponent } from './components/cometa-logotips/cometa-logotips.component';
 
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    HeaderComponent,
+    AppComponent,
+    CometaHomeComponent,
+    CometaHeaderComponent,
     CometaDevicesComponent,
     CometaFeaturesComponent,
     CometaPortfolioComponent,
@@ -33,6 +36,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CometaContactUsComponent,
     CometaUsersComponent,
     CometaFooterComponent,
+    CometaLogotipsComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +48,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule
   ],
   providers: [],
-  bootstrap: [HomeComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

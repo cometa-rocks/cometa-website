@@ -24,7 +24,6 @@ export class CometaPortfolioComponent implements OnInit {
 
   ngOnInit(): void {
     this.applyCurrentLayoutSettings();
-    console.log(this.content);
   }
 
   /* closes img magnifier  when escape is clicked */

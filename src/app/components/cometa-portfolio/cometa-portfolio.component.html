@@ -14,8 +14,6 @@
         </button>
     </div>
 
-
-
     <div class="show-more">
         <div class="screenshot">
             <div class="img-wrapper">
@@ -34,7 +32,7 @@
         </div>
     </div>
 
-    <div *ngIf="co_screenshots_show_more" class="content-wrapper">
+    <div class="content-wrapper" [ngClass]="{'show-less': !co_screenshots_show_more }">
         <div data-aos="fade-up" class="content" *ngFor="let screenshot of content.screenshots">
             <div class="card">
                 <div class="screenshot">
@@ -48,26 +46,6 @@
             </div>
         </div>
     </div>
-
-    <!--<div class="content-wrapper">
-        <div data-aos="fade-up" [ngClass]="{'show-more': co_screenshots_show_more }" class="content"
-            *ngFor="let screenshot of content.screenshots">
-            <div class="screenshot">
-                <div class="img-wrapper">
-                    <img alt="" (click)="openMagnifier($event)" [src]="screenshot.image">
-                </div>
-            </div>
-
-            <div class="text">
-                <h1>{{screenshot.title}}</h1>
-                <p>{{screenshot.description}}</p>
-            </div>
-        </div>
-    </div>-->
-
-
-
-
 </div>
 
 <!-- Magnifier DIV ... that shows screenshot in big -->
