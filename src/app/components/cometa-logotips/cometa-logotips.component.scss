@@ -6,7 +6,7 @@
     @include flexbox($dir: row);
 
     .logo {
-        @include dimensions($width: 50%, $height: 50vw);
+        @include dimensions($width: 80%, $height: 50vw);
         background: url("../../../assets/cometa.svg");
         filter: invert(1);
         background-repeat: no-repeat;
@@ -45,13 +45,10 @@
     &.isDark {
         background-color: $blackish;
         color: $whitish;
-
-        .content-wrapper { 
             .logo {
                 z-index: 1;
-                filter: invert(0);
+                filter: none;
             }
-        }
     }
 }
 
