@@ -7,6 +7,7 @@
 # This script just prepares some dependcies to resolve issues with npm and other
 # ---
 # Changelog:
+# 2022-01-05 TONI change_id: 1.1
 # 2021-12-22 RRO create
 #
 
@@ -24,6 +25,14 @@ function fix_user() {
     echo "Fixing users to 1000+1001"
     deluser www-data && adduser -DH -h /home/www-data -s /sbin/nologin -u 1000 www-data
     deluser nginx && adduser -DH -h /home/nginx -s /sbin/nologin -u 1001 nginx
+}
+
+#
+# change_id: 1.1
+# restart nginx service
+function restart_nginx() {
+    echo "Restarting nginx..."
+    supervisorctl restart nginx
 }
 
 #
@@ -171,6 +180,7 @@ do
         build_angular # build angular project
         deploy_to_nginx # deploy to nginx document root
         change_owner # change owner permissions
+        restart_nginx # restart nginx service
         exit 0;
         shift
         ;;
@@ -185,6 +195,7 @@ do
         build_angular # build angular project
         deploy_to_nginx # deploy to nginx document root
         change_owner # change owner permissions
+        restart_nginx # restart nginx service
         exit 0;
         shift
         ;;
