@@ -8,7 +8,7 @@ export const COMETA_DEVICES_DATA = {
         cometa_laptop_folders: "Folders",
         cometa_laptop_features: "Features",
         cometa_login: "Login",
-        cometa_demo: "Shedule a demo",
+        cometa_demo: "Schedule a demo",
 
 
         //mobile
