@@ -2,6 +2,16 @@
 @import "_breakpoints";
 @import "_layout";
 
+    /**
+        Adding stronger color to call-to-action buttons 
+    */
+    .c2a-button-demo {
+        background-color: $call-to-action-color-greenish;
+    }
+    .c2a-button-login {
+        background-color: $call-to-action-color-blueish;
+    }
+
     .section-laptop {
         @include flexbox($dir: column, $justify: center, $align: center);
         @include padding($top: 1%, $right: 1%, $bottom: calc(1% + 50px), $left: 1%);

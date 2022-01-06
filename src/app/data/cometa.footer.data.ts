@@ -1,8 +1,8 @@
 export const COMETA_FOOTER_DATA = {
   en: {
-    cometa_footer_cometa_rocks: "COMETA ROCKS - Software crafted with 💚 in Barcelona.",
+    cometa_footer_cometa_rocks: "COMETA ROCKS - Test and Automation Software crafted with 💚 for the Testing Community, DevOps and Project Managers.",
     cometa_footer_company_info: "Founded on 01.06.2021 | +34 717 102 603 | +49 711 89467029 | GV de les Corts Catalanes 636 Princ. 1B, 08007 Barcelona, Spain | Tax number: ES-B06880405",
-    cometa_footer_keywords: "Keywords that our users find usefull when searching:web testing, automated software testing, no code, low code, open source, web testing tools, rowser automation, ui testing, automated web testing, gui testing tools, web macro, web ui testing, ui testing framework, ui automation,automated ui testing, web automation, website automation, usertesting, ser testing, testing usability, web usability, usability test, usability testing, online usability testing tools, usability testing software, remote user testing, website usability testing, mobile user testing",
+    cometa_footer_keywords: "Keywords that our users find usefull when searching: web testing, automated software testing, no code, low code, open source, web testing tools, rowser automation, ui testing, automated web testing, gui testing tools, web macro, web ui testing, ui testing framework, ui automation,automated ui testing, web automation, website automation, usertesting, ser testing, testing usability, web usability, usability test, usability testing, online usability testing tools, usability testing software, remote user testing, website usability testing, mobile user testing",
     linkSection: [
       {
         title: "Co.meta",
@@ -39,7 +39,7 @@ export const COMETA_FOOTER_DATA = {
     ]
   },
   ca: {
-    cometa_footer_cometa_rocks: "COMETA ROCKS - Programari elaborat amb 💚 a Barcelona.",
+    cometa_footer_cometa_rocks: "COMETA ROCKS - Programari elaborat amb 💚 per QA, DevOps i Gestors de projectes.",
     cometa_footer_company_info: "Fundat el 01.06.2021 | +34 717 102 603 | +49 711 89467029 | GV de les Corts Catalanes 636 Princ. 1B, 08007 Barcelona, Spain | NIF: ES-B06880405",
     cometa_footer_keywords: "Paraules clau que els nostres usuaris troben útils en fer cerques: proves web, proves automàtiques de programari, sense codi, low code, codi obert, eines de proves web, automatització de fileser, proves d’interfície d’usuari, proves web automatitzades, eines de prova de gui, macros de web, proves d’interfície d’usuari web, framework de proves d’interfície d’usuari, automatització d’interfície d’usuari, proves d’interfície d’usuari automatitzades, automatització de webs, automatització de llocs web, proves d’usuari, proves d'usuari, proves d’usabilitat, usabilitat web, proves d’usabilitat, eines de proves d’usabilitat en línia, programari de proves d’usabilitat, proves d’usuaris remots, proves d’usabilitat de llocs web, proves d'usuaris mòbils",
     linkSection: [
