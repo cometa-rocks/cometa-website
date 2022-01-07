@@ -4,6 +4,7 @@
 
 .section-users {
     @include padding($top: 50px, $right: 10%, $bottom: 50px, $left: 10%);
+    overflow-x: hidden;
     
     .content-wrapper {
         @include flexbox($dir: row, $align: flex-start);
