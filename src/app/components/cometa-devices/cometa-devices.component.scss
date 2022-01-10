@@ -15,7 +15,7 @@
     .section-laptop {
         @include flexbox($dir: column, $justify: center, $align: center);
         @include padding($top: 1%, $right: 1%, $bottom: calc(1% + 50px), $left: 1%);
-        
+
         .text {
             @include flexbox($dir: column, $justify: center);
             @include padding($top: 50px, $bottom: 50px);
@@ -264,6 +264,7 @@
         }
         @include padding($top: 50px, $right: 10%, $bottom: 50px, $left: 10%);
         background-color: $white;
+        overflow-x: hidden;
         
         .text {
             @include flexbox($dir: column, $justify: center);
@@ -363,6 +364,7 @@
         padding-bottom: 0;
     }
     @include padding($top: 0, $right: 10%, $bottom: calc(10% + 50px), $left: 10%);
+    overflow-x: hidden;
 
     .text {
         @include flexbox($dir: column, $justify: center);
