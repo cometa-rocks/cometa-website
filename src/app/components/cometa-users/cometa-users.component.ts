@@ -15,6 +15,7 @@ import { CometaContactUsComponent } from '../cometa-contact-us/cometa-contact-us
 import { loadStripe } from '@stripe/stripe-js/pure';
 import { environment } from 'src/environments/environment';
 import { SwitcherService } from '../../cometa-services/shared/switcher.service';
+import { TranslateService } from 'src/app/cometa-services/shared/translate.service';
 import { COMETA_USERS_DATA } from 'src/app/data/cometa.users.data'; // imports text content for this section
 
 
@@ -34,7 +35,7 @@ export class CometaUsersComponent implements OnInit {
   content: any;
 
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private sw: SwitcherService, private dialog: MatDialog) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private switcherService: SwitcherService, private translateService: TranslateService, private dialog: MatDialog) {
     this.donateForm = this.formBuilder.group({});
   }
 
@@ -49,20 +50,15 @@ export class CometaUsersComponent implements OnInit {
 
   /*applys currently selected language and theme to layout*/
   applyCurrentLayoutSettings() {
-    this.sw.getCurrentThemeObservable().subscribe((theme: any) => this.currentTheme = theme);
-    this.sw.getCurrentLangObservable().subscribe((lang: any) => {
+    /*get current theme*/
+    this.switcherService.getCurrentThemeObservable().subscribe((theme: any) => this.currentTheme = theme);
+
+    /*get current language and translate all the text in that language*/
+    this.switcherService.getCurrentLangObservable().subscribe((lang: any) => {
       this.currentLang = lang;
-      this.content = this.getCurrentLangContent();
+      this.content = this.translateService.translate(COMETA_USERS_DATA);
     });
   }
-
-  /*filters testimonials by currentLang('en'/'ca') value and returns an object which contains all the section text-type content for translated in currently selected language*/
-  getCurrentLangContent() {
-    const currentLangEntry = Object.entries(COMETA_USERS_DATA).filter(([key]) => key === this.currentLang);
-    const currentLangContent = Object.fromEntries(currentLangEntry);
-    return Object.values(currentLangContent)[0];
-  }
-
 
   /*toggles donation panel open. donation panel toggle event is binded to boolean variable donatePanelIsActive.
   correspondingly - panel is open when variable value is true and closed when it is false*/
@@ -112,7 +108,9 @@ export class CometaUsersComponent implements OnInit {
       this behavior prevents multiple event firing while first event is still being processed*/
     this.loading = true;
 
-    /*defines request url to donation service*/
+    /*defines request url to donation service*, which is dynamic.
+     when app runs in development, environment.stripe_domain value is >> stage 
+     when app runs in production, environment.stripe_domain value is >> prod */
     const apiURL = `https://${environment.stripe_domain}.cometa.rocks/backend/createDonation/`;
 
     /*gets stripe key from enviroment variables*/

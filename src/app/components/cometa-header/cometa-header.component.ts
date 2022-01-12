@@ -11,24 +11,24 @@ export class CometaHeaderComponent implements OnInit {
   currentTheme: any;
   currentLang: any;
 
-  constructor(private sw: SwitcherService, private router: Router,) { }
+  constructor(private switcherService: SwitcherService, private router: Router,) { }
 
   ngOnInit(): void {
     this.applyCurrentLayoutSettings();
   }
 
   applyCurrentLayoutSettings() {
-    this.sw.getCurrentThemeObservable().subscribe((theme: any) => this.currentTheme = theme);
-    this.sw.getCurrentLangObservable().subscribe((lang: any) => this.currentLang = lang);
+    this.switcherService.getCurrentThemeObservable().subscribe((theme: any) => this.currentTheme = theme);
+    this.switcherService.getCurrentLangObservable().subscribe((lang: any) => this.currentLang = lang);
   }
 
   switchTheme() {
     const invertedTheme = this.invertTheme();
-    this.sw.switchCurrentTheme(invertedTheme);
+    this.switcherService.switchCurrentTheme(invertedTheme);
   }
 
   switchLang(lang: string) {
-    this.sw.switchCurrentLang(lang);
+    this.switcherService.switchCurrentLang(lang);
   }
 
   invertTheme() {

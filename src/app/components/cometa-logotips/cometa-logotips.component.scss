@@ -1,6 +1,7 @@
 @import '_colors';
 @import '_layout';
 @import '_breakpoints';
+
 .media {
     @include padding($top: 50px, $right: 10%, $bottom: 50px, $left: 10%);
     @include flexbox($dir: row);
@@ -20,15 +21,41 @@
     .text {
         text-align: center;
 
-        .logos {
+        .logos,
+        .favicons,
+        .other {
             @include padding($top: 50px, $bottom: 50px);
             h1 { padding: 0; }
             p { font-size: 14px; padding-bottom: 25px; }
         }
-        
+
+        .logos {
+            .logo-wrapper {
+                img { width: 30vw; }
+                &:nth-of-type(1) { background-color: $white;} /*styles the first element with class name logo-wrapper*/
+                &:nth-of-type(2) { background-color: $black;} /*styles the second element with class name logo-wrapper*/
+            }
+        }
+
+        .favicons {
+            .favicon-wrapper {
+                &:nth-of-type(1), /*styles the img tag for the first 2 elements with class name favicon-wrapper*/
+                &:nth-of-type(2) {
+                    img { width: 15vw; }
+                }
+            }
+        }
+
+        .other {
+            img {
+                width: 25vw;
+            }
+        }
+
         ul {
             @include margin($top: 100px, $bottom: 100px);
             list-style-type: none;
+
             li {
                 @include margin($top: 15px, $bottom: 15px);
                 a {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SwitcherService } from '../../cometa-services/shared/switcher.service';
+import { TranslateService } from 'src/app/cometa-services/shared/translate.service';
 import { COMETA_FEATURES_DATA } from 'src/app/data/cometa.features.data';
 
 @Component({
@@ -8,33 +9,29 @@ import { COMETA_FEATURES_DATA } from 'src/app/data/cometa.features.data';
   styleUrls: ['./cometa-features.component.scss']
 })
 export class CometaFeaturesComponent implements OnInit {
-    
+
   currentTheme: any;
   currentLang: any;
 
   /*stores the text-type content of the section*/
-  content: any; 
+  content: any;
 
-  constructor(private sw: SwitcherService) { }
+  constructor(private switcherService: SwitcherService, private translateService: TranslateService) { }
 
   ngOnInit(): void {
-   this.applyCurrentLayoutSettings();
+    this.applyCurrentLayoutSettings();
   }
+
 
   /*applys currently selected language and theme to layout*/
   applyCurrentLayoutSettings() {
-    this.sw.getCurrentThemeObservable().subscribe( (theme: any) => this.currentTheme = theme );
-    this.sw.getCurrentLangObservable().subscribe( (lang: any) => {
+    /*get current theme*/
+    this.switcherService.getCurrentThemeObservable().subscribe((theme: any) => this.currentTheme = theme);
+
+    /*get current language and translate all the text in that language*/
+    this.switcherService.getCurrentLangObservable().subscribe((lang: any) => {
       this.currentLang = lang;
-      this.content = this.getCurrentLangContent();
+      this.content = this.translateService.translate(COMETA_FEATURES_DATA);
     });
   }
-
-  /*filters testimonials by currentLang('en'/'ca') value and returns an object which contains all the section text-type content for translated in currently selected language*/
-  getCurrentLangContent() {
-    const currentLangEntry =  Object.entries(COMETA_FEATURES_DATA).filter(([key]) => key === this.currentLang);
-    const currentLangContent  = Object.fromEntries(currentLangEntry);
-    return Object.values(currentLangContent)[0];
-  }
-
 }

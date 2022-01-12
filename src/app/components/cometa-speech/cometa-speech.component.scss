@@ -3,35 +3,29 @@
 @import "_colors";
 
 .section-speech {
-    display: flex;
-    flex-direction: column;
+    @include flexbox($dir: column);
     @include for-tablet-portrait-up(tablet) {
-        flex-direction: row;    
+        @include flexbox($dir: row);
     }
 }
 
-
 .images {
+    @include dimensions($width: 100%);
+    @include flexbox($dir: column, $justify: center, $align: center);
     background: $blackish;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
     @include for-tablet-portrait-up(tablet) {
-        flex-direction: row;
+        @include flexbox($dir: row);
     }
 
     img {
-        margin: 15px;
-        width: 90%;
+        @include margin($top: 15px, $right: 15px, $bottom: 15px, $left: 15px);
+        @include dimensions($width: 90%);
     }
 }
 
 #wrapper {
-    width: 100%;
-    height: 70vh;
+    @include dimensions($width: 100%, $height: 70vh);
 }
 
 iframe {
