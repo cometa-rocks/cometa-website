@@ -8,10 +8,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./cometa-speech.component.scss']
 })
 export class CometaSpeechComponent implements OnInit {
-
-  //defines dynamic source for image
-  img_src = "assets/speech/Flyer_Ralf.jpg";
-
   constructor(private loadScript: LoadScriptService, private activatedroute: ActivatedRoute, private elref: ElementRef, private renderer: Renderer2) {
     /* load typeform embed.js script before page is rendered
 
@@ -26,20 +22,24 @@ export class CometaSpeechComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedroute.paramMap.subscribe((paramsMap: any) => {
-      // Replace speaker image according to parameters coming from URL
-      // There are only two valid parameters
-      // 1. ralf
-      // 2. david
-      // all other paramters will be showing ralf
+      /* Replace speaker image according to parameters coming from URL
+       * There are only two valid parameters
+       * 1. ralf
+       * 2. david
+       * all other paramters will be showing ralf*/
 
-      //get speaker
+      /*gets speaker name from url params. 
+        if param value is different from "david", 
+        then no matter what is the actual value, speaker will always be set to "ralf"
+        allows us to defines default behavior in case speaker name is different from allowed() */
       const speaker = paramsMap.params.speakername == "david" ? "david" : "ralf";
 
-      //set src attribute to img according to recieved param(speakername)
+      //set src and alt attribute to img according to recieved param(speakername)
       const img = this.elref.nativeElement.querySelector("img");
-
       this.renderer.setAttribute(img, "src", `assets/speech/Flyer_${speaker}.jpg`);
+      this.renderer.setAttribute(img, "alt", `Flyer_${speaker}`);
     })
   }
 
 }
+

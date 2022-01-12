@@ -12,55 +12,66 @@ export class SwitcherService {
   private currentTheme: Observable<any>;
   private currentLang: Observable<any>
 
-  constructor() { 
-    if( !this.getCurrentTheme() ) { this.setCurrentTheme('dark'); }
-    if( !this.getCurrentLang() ) { this.setCurrentLang('en'); }
+  constructor() {
+    /* set up localstorage, if it is the first time user enters the page, or user cleared browser cache*/
+    if (!this.getCurrentTheme()) { this.setCurrentTheme('dark'); }
+    if (!this.getCurrentLang()) { this.setCurrentLang('en'); }
 
+    /* set up behavior subjects, for theme and language.
+    Inicial value is set from localstorage using this.getCurrentTheme() and this.getCurrentLang()
+    Behavior subjects allows us to export its current value as observable
+    which is needed in order to render layout according to theme and language values */
     this.currentThemeSubject = new BehaviorSubject<any>(this.getCurrentTheme());
-    this.currentTheme = this.currentThemeSubject.asObservable();
-
     this.currentLangSubject = new BehaviorSubject<any>(this.getCurrentLang());
+
+
+    /* returns current theme and language values as observable
+       subscribe from anywhere to these variables in order to set up live data stream
+       this will allow to automatically apply changes, depending on theme and language values*/
+    this.currentTheme = this.currentThemeSubject.asObservable();
     this.currentLang = this.currentLangSubject.asObservable();
   }
-  
+
+  /* actualize theme value('dark'/'light') in localstorage and set it as next and current value of theme behavior subject */
   switchCurrentTheme(theme: string) {
     this.setCurrentTheme(theme);
     this.currentThemeSubject.next(theme);
   }
 
+  /* actualize language value('en'/'ca') in localstorage and set it as next and current value of language behavior subject */
   switchCurrentLang(lang: string) {
     this.setCurrentLang(lang);
     this.currentLangSubject.next(lang);
   }
 
-  getCurrentThemeValue() {
-    return this.currentThemeSubject.value;
-  }
-
+  /* return current theme value as live data stream */
   getCurrentThemeObservable() {
     return this.currentTheme;
   }
 
-  getCurrentLangValue() {
-    return this.currentLangSubject.value;
-  }
-
+  /* return current language value as live data stream */
   getCurrentLangObservable() {
     return this.currentLang;
   }
 
+
+  /* localstorange functions -----------------------------------------*/
+  /*get current theme (dark/light)*/
   getCurrentTheme() {
     return localStorage.getItem('currentTheme');
   }
 
+  /*set current theme (light/dark)*/
   setCurrentTheme(theme: string) {
     localStorage.setItem('currentTheme', theme);
   }
 
+  /*get current language (en/ca)*/
   getCurrentLang() {
     return localStorage.getItem('currentLang');
   }
 
+  /*set current language (en/ca)*/
   setCurrentLang(lang: string) {
     localStorage.setItem('currentLang', lang);
   }

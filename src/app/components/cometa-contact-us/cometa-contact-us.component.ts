@@ -2,6 +2,7 @@ import { Component, ViewChild, Renderer2, ElementRef, OnInit } from '@angular/co
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SwitcherService } from '../../cometa-services/shared/switcher.service';
+import { TranslateService } from '../../cometa-services/shared/translate.service';
 import { CaptchaComponent } from 'angular-captcha';
 import { COMETA_CONTACT_US_DATA } from 'src/app/data/cometa.contactus.data';
 import { environment } from 'src/environments/environment';
@@ -34,9 +35,8 @@ export class CometaContactUsComponent implements OnInit {
   //view the captcha child component
   @ViewChild(CaptchaComponent, { static: true }) captchaComponent!: CaptchaComponent;
 
-  constructor(private formBuilder: FormBuilder, private sw: SwitcherService, private http: HttpClient) {
+  constructor(private formBuilder: FormBuilder, private translateService: TranslateService, private switcherService: SwitcherService, private http: HttpClient) {
     this.contactForm = this.formBuilder.group({});
-
   }
 
   ngOnInit() {
@@ -49,18 +49,14 @@ export class CometaContactUsComponent implements OnInit {
 
   /*applys currently selected language and theme to layout*/
   applyCurrentLayoutSettings() {
-    //this.sw.getCurrentThemeObservable().subscribe((theme: any) => this.currentTheme = theme);
-    this.sw.getCurrentLangObservable().subscribe((lang: any) => {
-      this.currentLang = lang;
-      this.content = this.getCurrentLangContent();
-    });
-  }
+    /*get current theme*/
+    this.switcherService.getCurrentThemeObservable().subscribe((theme: any) => this.currentTheme = theme);
 
-  /*filters testimonials by currentLang('en'/'ca') value and returns an object which contains all the text-type content, translated in currently selected language*/
-  getCurrentLangContent() {
-    const currentLangEntry = Object.entries(COMETA_CONTACT_US_DATA).filter(([key]) => key === this.currentLang);
-    const currentLangContent = Object.fromEntries(currentLangEntry);
-    return Object.values(currentLangContent)[0];
+    /*get current language and translate all the text in that language*/
+    this.switcherService.getCurrentLangObservable().subscribe((lang: any) => {
+      this.currentLang = lang;
+      this.content = this.translateService.translate(COMETA_CONTACT_US_DATA);
+    });
   }
 
   /* inicializes contact us mail form and binds to it required attributes and validators for each required attribute*/

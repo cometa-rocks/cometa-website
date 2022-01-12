@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SwitcherService } from '../../cometa-services/shared/switcher.service';
+import { TranslateService } from 'src/app/cometa-services/shared/translate.service';
 import { COMETA_FOOTER_DATA } from 'src/app/data/cometa.footer.data';
+
 
 @Component({
   selector: 'app-cometa-footer',
@@ -8,14 +10,14 @@ import { COMETA_FOOTER_DATA } from 'src/app/data/cometa.footer.data';
   styleUrls: ['./cometa-footer.component.scss']
 })
 export class CometaFooterComponent implements OnInit {
- 
+
   currentTheme: any;
   currentLang: any;
 
   /*stores the text-type content of the section*/
-  content: any; 
+  content: any;
 
-  constructor(private sw: SwitcherService) { }
+  constructor(private switcherService: SwitcherService, private translateService: TranslateService) { }
 
   ngOnInit(): void {
     this.applyCurrentLayoutSettings();
@@ -23,17 +25,13 @@ export class CometaFooterComponent implements OnInit {
 
   /*applys currently selected language and theme to layout*/
   applyCurrentLayoutSettings() {
-    this.sw.getCurrentThemeObservable().subscribe( (theme: any) => this.currentTheme = theme );
-    this.sw.getCurrentLangObservable().subscribe( (lang: any) => {
-      this.currentLang = lang;
-      this.content = this.getCurrentLangContent();
-    });
-  }
+    /*get current theme*/
+    this.switcherService.getCurrentThemeObservable().subscribe((theme: any) => this.currentTheme = theme);
 
-  /*filters testimonials by currentLang('en'/'ca') value and returns an object which contains all the section text-type content for translated in currently selected language*/
-  getCurrentLangContent() {
-    const currentLangEntry =  Object.entries(COMETA_FOOTER_DATA).filter(([key]) => key === this.currentLang);
-    const currentLangContent  = Object.fromEntries(currentLangEntry);
-    return Object.values(currentLangContent)[0];
+    /*get current language and translate all the text in that language*/
+    this.switcherService.getCurrentLangObservable().subscribe((lang: any) => {
+      this.currentLang = lang;
+      this.content = this.translateService.translate(COMETA_FOOTER_DATA);
+    });
   }
 }

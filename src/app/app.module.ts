@@ -4,10 +4,12 @@ import { CommonModule } from "@angular/common"
 import { MaterialModule } from './modules/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BotDetectCaptchaModule } from 'angular-captcha';
-
 import { AppRoutingModule } from './app-routing.module';
+
+/* root component, exported from app.component.ts which is inicialized in index.html*/
 import { AppComponent } from './app.component';
-import { CometaHomeComponent } from './components/cometa-home/cometa-home.component';
+
+/* reusable, not navigable componenets*/
 import { CometaHeaderComponent } from './components/cometa-header/cometa-header.component';
 import { CometaDevicesComponent } from './components/cometa-devices/cometa-devices.component';
 import { CometaFeaturesComponent } from './components/cometa-features/cometa-features.component';
@@ -19,6 +21,7 @@ import { CometaUsersComponent } from './components/cometa-users/cometa-users.com
 import { CometaFooterComponent } from './components/cometa-footer/cometa-footer.component';
 
 /* page components, these components are navigable */
+import { CometaHomeComponent } from './components/cometa-home/cometa-home.component';
 import { CometaLogotipsComponent } from './components/cometa-logotips/cometa-logotips.component';
 import { CometaSpeechComponent } from './components/cometa-speech/cometa-speech.component';
 
