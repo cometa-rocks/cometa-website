@@ -18,9 +18,12 @@ import { CometaContactUsComponent } from './components/cometa-contact-us/cometa-
 import { CometaUsersComponent } from './components/cometa-users/cometa-users.component';
 import { CometaFooterComponent } from './components/cometa-footer/cometa-footer.component';
 
+/* page components, these components are navigable */
+import { CometaLogotipsComponent } from './components/cometa-logotips/cometa-logotips.component';
+import { CometaSpeechComponent } from './components/cometa-speech/cometa-speech.component';
+
 /* BrowserAnimationsModule is necessary if angular material is used, material includes certain animations*/
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CometaLogotipsComponent } from './components/cometa-logotips/cometa-logotips.component';
 
 
 @NgModule({
@@ -37,6 +40,7 @@ import { CometaLogotipsComponent } from './components/cometa-logotips/cometa-log
     CometaUsersComponent,
     CometaFooterComponent,
     CometaLogotipsComponent,
+    CometaSpeechComponent,
   ],
   imports: [
     BrowserModule,
