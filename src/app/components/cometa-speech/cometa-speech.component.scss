@@ -1,0 +1,39 @@
+@import "_layout";
+@import "_breakpoints";
+@import "_colors";
+
+.section-speech {
+    display: flex;
+    flex-direction: column;
+    @include for-tablet-portrait-up(tablet) {
+        flex-direction: row;    
+    }
+}
+
+
+.images {
+    background: $blackish;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include for-tablet-portrait-up(tablet) {
+        flex-direction: row;
+    }
+
+    img {
+        margin: 15px;
+        width: 90%;
+    }
+}
+
+#wrapper {
+    width: 100%;
+    height: 70vh;
+}
+
+iframe {
+    border-radius: 0 !important;
+}

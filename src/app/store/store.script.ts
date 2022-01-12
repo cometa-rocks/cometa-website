@@ -8,6 +8,7 @@
 import { Script } from "../interfaces/schema.script";
 
 export const ScriptStore: Script[] = [
+    { name: 'typeform', src: '//embed.typeform.com/next/embed.js', loaded: false }
     /*
      * usage.....
      * import here script info in object format. ex:
