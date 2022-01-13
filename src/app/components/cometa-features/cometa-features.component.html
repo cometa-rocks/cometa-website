@@ -1,5 +1,5 @@
 <div [ngClass]="{'isDark': currentTheme == 'dark'}" class="section-features">
-    
+
     <div class="section-header">
         <h1 data-aos="fade-up">{{content.cometa_features_title}}</h1>
         <div class="separator"></div>
@@ -7,9 +7,10 @@
 
         <p *ngIf="currentLang == 'en'" data-aos="fade-up">
             {{content.cometa_features_desc_opensrc}}
-            <a target="_blank" rel="noopener" href="https://jmeter.apache.org/">{{content.cometa_features_jmeter}}</a>, 
-            <a target="_blank" rel="noopener" href="https://www.jenkins.io/">{{content.cometa_features_jenkins}}</a>, 
-            <a target="_blank" rel="noopener" href="htstps://git-scm.com/">{{content.cometa_features_git}}</a>, ...) {{content.cometa_features_easier}}
+            <a target="_blank" rel="noopener" href="https://jmeter.apache.org/">{{content.cometa_features_jmeter}}</a>,
+            <a target="_blank" rel="noopener" href="https://www.jenkins.io/">{{content.cometa_features_jenkins}}</a>,
+            <a target="_blank" rel="noopener" href="htstps://git-scm.com/">{{content.cometa_features_git}}</a>, ...)
+            {{content.cometa_features_easier}}
         </p>
     </div>
 
@@ -17,7 +18,11 @@
         <div class="content" *ngFor="let screenshot of content.screenshots">
             <div data-aos="fade-up" class="card">
                 <div class="icon">
-                    <img alt="" [src]="screenshot.image">
+                    <picture>
+                        <source [srcset]="screenshot.image_safari" type="image/jpeg">
+                        <source [srcset]="screenshot.image" type="image/webp">
+                        <img alt="" [src]="screenshot.image">
+                    </picture>
                 </div>
                 <div class="text">
                     <h1>{{screenshot.title}}</h1>
