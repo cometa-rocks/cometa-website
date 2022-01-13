@@ -7,24 +7,35 @@
         <div class="logos">
             <h1>{{content.cometa_media}}</h1>
             <p>{{content.cometa_avaliable_logos}}</p>
-            <div class="logo-wrapper">
-                <img src="assets/logos/COMETA_Logo_Yell_Black-02_400x89.png" alt="cometa-logo-black">
-            </div>
-            <div class="logo-wrapper">
-                <img src="assets/logos/COMETA_Logo_Yell_White-02-03.png" alt="cometa-logo-white">
+            <div class="logo-wrapper" *ngFor="let logo of content.logos">
+                <picture>
+                    <source [srcset]="logo.image_safari" type="image/png">
+                    <source [srcset]="logo.image" type="image/webp">
+                    <img [src]="logo.image" alt="{{logo.alt}}">
+                </picture>
             </div>
         </div>
 
         <div class="favicons">
             <h1>{{content.cometa_favicons}}</h1>
-            <div class="favicon-wrapper"> <img src="assets/favicons/512.png" alt="icon-512"> </div>
-            <div class="favicon-wrapper"> <img src="assets/logos/COMETA_prod.png" alt="cometa-prod"></div>
-            <div class="favicon-wrapper"> <img src="favicon.ico" alt="favicon"> </div>
+            <div class="favicon-wrapper" *ngFor="let favicon of content.favicons">
+                <picture>
+                    <source [srcset]="favicon.image_safari" type="image/png">
+                    <source [srcset]="favicon.image" type="image/webp">
+                    <img [src]="favicon.image" alt="{{favicon.alt}}">
+                </picture>
+            </div>
         </div>
 
         <div class="other">
             <h1>{{content.cometa_other}}</h1>
-            <div class="other-wrapper"> <img src="assets/logos/img/SVG/4x/Asset 2@4x.png" alt="cometa-svg"> </div>
+            <div class="other-wrapper" *ngFor="let other of content.other">
+                <picture>
+                    <source [srcset]="other.image_safari" type="image/png">
+                    <source [srcset]="other.image" type="image/webp">
+                    <img src="{{other.image}}" alt="{{other.alt}}">
+                </picture>
+            </div>
         </div>
 
         <h1>{{content.cometa_media}}</h1> {{content.cometa_published_info}}

@@ -49,10 +49,11 @@ export class CometaPortfolioComponent implements OnInit {
   }
 
   /* image magnifier toggling is binded to img_magnifier_isActive boolean variable */
-  /* sends selected img to html element with class name mangnified_img and rerenders its src attribute */
+  /* sends selected img to html element with class name mangnified_img and rerenders its src and alt attributes */
   openMagnifier(event: any) {
     let magnified_img = this.elRef.nativeElement.querySelector(".magnified_img");
     this.renderer.setAttribute(magnified_img, "src", event.target.src);
+    this.renderer.setAttribute(magnified_img, "alt", event.target.alt);
     this.img_magnifier_isActive = true;
   }
 

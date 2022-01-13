@@ -9,6 +9,18 @@ export const COMETA_LOGOTIPS_DATA = {
             { title: "What the Product", target: "_blank", rel: "noopener", href: "https://www.youtube.com/watch?v=8uv-QAJkOLY&t=4s" },
             { title: "Tea Time with Tester", target: "_blank", rel: "noopener", href: "https://teatimewithtesters.com/cometa-rocks-product-launch/" },
             { title: "Cometa Rocks openPR", target: "_blank", rel: "noopener", href: "https://www.openpr.com/news/2417683/world-s-first-100-open-source-no-code-automation-suite-opens" }
+        ],
+        logos: [
+            { image: "assets/logos/COMETA_Logo_Yell_Black-02_400x89.webp", image_safari: "assets/logos/COMETA_Logo_Yell_Black-02_400x89.png", alt: "cometa-black-logo" },
+            { image: "assets/logos/COMETA_Logo_Yell_Black-02_400x89.webp", image_safari: "assets/logos/COMETA_Logo_Yell_White-02-03.png", alt: "cometa-white-logo" }
+        ],
+        favicons: [
+            { image: "assets/favicons/512.webp", image_safari: "assets/favicons/512.png", alt: "favicon-512" },
+            { image: "assets/logos/COMETA_prod.webp", image_safari: "assets/logos/COMETA_prod.png", alt: "cometa-prod" },
+            { image: "favicon.ico", image_safari: "favicon.ico", alt: "favicon" }
+        ],
+        other: [
+            { image: "assets/logos/Asset_2_4x.webp", image_safari: "assets/logos/Asset_2_4x.png", alt: "cometa-svg" }
         ]
     },
     ca: {
@@ -21,6 +33,18 @@ export const COMETA_LOGOTIPS_DATA = {
             { title: "Quin és el producte", target: "_blank", rel: "noopener", href: "https://www.youtube.com/watch?v=8uv-QAJkOLY&t=4s" },
             { title: "L'hora del te amb Tester", target: "_blank", rel: "noopener", href: "https://teatimewithtesters.com/cometa-rocks-product-launch/" },
             { title: "Cometa Rocks openPR", target: "_blank", rel: "noopener", href: "https://www.openpr.com/news/2417683/world-s-first-100-open-source-no-code-automation-suite-opens" }
+        ],
+        logos: [
+            { image: "assets/logos/COMETA_Logo_Yell_Black-02_400x89.webp", image_safari: "assets/logos/COMETA_Logo_Yell_Black-02_400x89.png", alt: "cometa-black-logo" },
+            { image: "assets/logos/COMETA_Logo_Yell_Black-02_400x89.webp", image_safari: "assets/logos/COMETA_Logo_Yell_White-02-03.png", alt: "cometa-white-logo" }
+        ],
+        favicons: [
+            { image: "assets/favicons/512.webp", image_safari: "assets/favicons/512.png", alt: "favicon-512" },
+            { image: "assets/logos/COMETA_prod.webp", image_safari: "assets/logos/COMETA_prod.png", alt: "cometa-prod" },
+            { image: "favicon.ico", image_safari: "favicon.ico", alt: "favicon" }
+        ],
+        other: [
+            { image: "assets/logos/Asset_2_4x.webp", image_safari: "assets/logos/Asset_2_4x.png", alt: "cometa-svg" }
         ]
     }
 };
