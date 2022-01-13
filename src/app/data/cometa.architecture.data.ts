@@ -1,4 +1,4 @@
-export const  COMETA_ARCHITECTURE_DATA = {
+export const COMETA_ARCHITECTURE_DATA = {
     en: {
         cometa_enterprise_title: "Architecture",
         cometa_enterprise_desc: "co.meta has been developed with 100% open source tools. Scales 100%. Can be used on-premises, on desktop or on cloud. co.meta is unicode compliant. The co.meta REST API integrates easily with continous testing solutions as seen in ",
@@ -7,21 +7,25 @@ export const  COMETA_ARCHITECTURE_DATA = {
             {
                 name: "Docker",
                 image: "assets/architecture/icons8-docker-512.webp",
+                image_safari: "assets/architecture/icons8-docker-512.jpeg",
                 href: "https://www.docker.com/"
             },
             {
                 name: "Selenium",
                 image: "assets/architecture/icons8-selenium-512.webp",
+                image_safari: "assets/architecture/icons8-selenium-512.jpeg",
                 href: "https://www.selenium.dev/"
             },
             {
                 name: "Django",
                 image: "assets/architecture/icons8-django-512.webp",
+                image_safari: "assets/architecture/icons8-django-512.jpeg",
                 href: "https://www.djangoproject.com/"
             },
             {
                 name: "Python",
                 image: "assets/architecture/icons8-python-512.webp",
+                image_safari: "assets/architecture/icons8-python-512.jpeg",
                 href: "https://www.python.org/"
             }
         ]
@@ -34,21 +38,25 @@ export const  COMETA_ARCHITECTURE_DATA = {
             {
                 name: "Docker",
                 image: "assets/architecture/icons8-docker-512.webp",
+                image_safari: "assets/architecture/icons8-docker-512.jpeg",
                 href: "https://www.docker.com/"
             },
             {
                 name: "Selenium",
                 image: "assets/architecture/icons8-selenium-512.webp",
+                image_safari: "assets/architecture/icons8-selenium-512.jpeg",
                 href: "https://www.selenium.dev/"
             },
             {
                 name: "Django",
                 image: "assets/architecture/icons8-django-512.webp",
+                image_safari: "assets/architecture/icons8-django-512.jpeg",
                 href: "https://www.djangoproject.com/"
             },
             {
                 name: "Python",
                 image: "assets/architecture/icons8-python-512.webp",
+                image_safari: "assets/architecture/icons8-python-512.jpeg",
                 href: "https://www.python.org/"
             }
         ]
