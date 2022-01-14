@@ -21,6 +21,8 @@
                 font-size: 2em;
 
                 img {
+                    //TODO - fix django image: remove background and then uncomment drop shadow filter
+                    //filter: drop-shadow(0 0 0.75rem rgb(24, 20, 12));
                     @include dimensions($height: 80px, $width: auto);
                     @include for-small-tablet-portrait-up (small-tablet-plus-50) {
                         @include dimensions($height: 120px);

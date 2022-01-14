@@ -44,6 +44,19 @@
                 @include margin($top: 2em, $bottom: 2em);
                 border: 1px solid $heavy-orange;
                 border-radius: 1em;
+
+                // styles the avatar of testimonial
+                img {
+                    @include dimensions($width: 2em);
+                    @include margin($right: 10px);
+                    @include for-desktop-portrait-up(desktop) {
+                        @include dimensions($width: 5em);
+                        border-radius: 2.5em;
+                    }
+                    float: left;
+                    border-radius: 1em;
+                    box-shadow: 0 10px 10px -5px rgba(0,0,0,.5);
+                }
     
                 .testimonial-quote {
                     font-size: 2em;

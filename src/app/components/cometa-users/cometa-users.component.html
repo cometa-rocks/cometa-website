@@ -12,10 +12,15 @@
                 <h1 data-aos="fade-left">{{content.cometa_users_users_say}}</h1>
             </div>
             <div data-aos="fade-left" class="testimonial" *ngFor="let testimonial of content.testimonials">
+                <picture *ngIf="testimonial.image">
+                    <source [srcset]="testimonial.image_safari" type="image/png">
+                    <source [srcset]="testimonial.image" type="image/webp">
+                    <img [src]="testimonial.image" alt="{{testimonial.footer_text}}">
+                </picture>
                 <span class="testimonial-quote">&quot;{{testimonial.quote}}</span>
                 <i> {{testimonial.text}}&quot; </i>
                 <p class="testimonial_from" style="font-family: 'Montserrat','Arial'; padding-top:20px">
-                    {{testimonial.form}}
+                    {{testimonial.who}}
                     <br />{{testimonial.footer_text}}
                 </p>
             </div>
