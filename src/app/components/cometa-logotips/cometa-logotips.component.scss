@@ -33,8 +33,8 @@
             .logo-wrapper {
                 display: inline-block;
                 img { width: 30vw; }
-                &:nth-of-type(2) { background-color: $white;} /*styles the first element with class name logo-wrapper*/
-                &:nth-of-type(1) { background-color: $black;} /*styles the second element with class name logo-wrapper*/
+                &:nth-of-type(1) { background-color: $white;} /*styles the first element with class name logo-wrapper*/
+                &:nth-of-type(2) { background-color: $black;} /*styles the second element with class name logo-wrapper*/
             }
         }
 

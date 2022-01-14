@@ -10,7 +10,7 @@
         <ul>
             <li data-aos="fade-up" *ngFor="let characteristic of content.characteristics">
                 <picture>
-                    <source [srcset]="characteristic.image_safari" type="image/jpeg">
+                    <source [srcset]="characteristic.image_safari" type="image/png">
                     <source [srcset]="characteristic.image" type="image/webp">
                     <img alt="{{characteristic.description}}" [src]="characteristic.image">
                 </picture>
