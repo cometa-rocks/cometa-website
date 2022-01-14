@@ -7,25 +7,25 @@ export const COMETA_ARCHITECTURE_DATA = {
             {
                 name: "Docker",
                 image: "assets/architecture/icons8-docker-512.webp",
-                image_safari: "assets/architecture/icons8-docker-512.jpeg",
+                image_safari: "assets/architecture/icons8-docker-512.png",
                 href: "https://www.docker.com/"
             },
             {
                 name: "Selenium",
                 image: "assets/architecture/icons8-selenium-512.webp",
-                image_safari: "assets/architecture/icons8-selenium-512.jpeg",
+                image_safari: "assets/architecture/icons8-selenium-512.png",
                 href: "https://www.selenium.dev/"
             },
             {
                 name: "Django",
                 image: "assets/architecture/icons8-django-512.webp",
-                image_safari: "assets/architecture/icons8-django-512.jpeg",
+                image_safari: "assets/architecture/icons8-django-512.png",
                 href: "https://www.djangoproject.com/"
             },
             {
                 name: "Python",
                 image: "assets/architecture/icons8-python-512.webp",
-                image_safari: "assets/architecture/icons8-python-512.jpeg",
+                image_safari: "assets/architecture/icons8-python-512.png",
                 href: "https://www.python.org/"
             }
         ]
@@ -38,25 +38,25 @@ export const COMETA_ARCHITECTURE_DATA = {
             {
                 name: "Docker",
                 image: "assets/architecture/icons8-docker-512.webp",
-                image_safari: "assets/architecture/icons8-docker-512.jpeg",
+                image_safari: "assets/architecture/icons8-docker-512.png",
                 href: "https://www.docker.com/"
             },
             {
                 name: "Selenium",
                 image: "assets/architecture/icons8-selenium-512.webp",
-                image_safari: "assets/architecture/icons8-selenium-512.jpeg",
+                image_safari: "assets/architecture/icons8-selenium-512.png",
                 href: "https://www.selenium.dev/"
             },
             {
                 name: "Django",
                 image: "assets/architecture/icons8-django-512.webp",
-                image_safari: "assets/architecture/icons8-django-512.jpeg",
+                image_safari: "assets/architecture/icons8-django-512.png",
                 href: "https://www.djangoproject.com/"
             },
             {
                 name: "Python",
                 image: "assets/architecture/icons8-python-512.webp",
-                image_safari: "assets/architecture/icons8-python-512.jpeg",
+                image_safari: "assets/architecture/icons8-python-512.png",
                 href: "https://www.python.org/"
             }
         ]

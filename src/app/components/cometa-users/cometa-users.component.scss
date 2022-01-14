@@ -165,9 +165,13 @@
                         .period {
                             @include dimensions($width: 100%, $height: 40px);
                             @include margin($top: 10px, $right: 10px, $bottom: 10px);
-                            @include for-small-phone-landscape-up(small-phone-plus-70) {
-                                @include dimensions($width: 20%);
-                            }
+
+                            //adjusts donation period button size for small mobiles
+                            @include for-small-phone-landscape-up(small-phone-plus-70) { @include dimensions($width: 40%); }
+
+                            //adjust donation period button size for small tablets
+                            @include for-small-tablet-portrait-up (small-tablet) { @include dimensions($width: 20%); }
+
                             font-family: Cometa-Rocks, sans-serif;
                             background: $blackish;
                             color: $white;

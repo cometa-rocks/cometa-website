@@ -10,37 +10,37 @@ export const COMETA_FEATURES_DATA = {
         screenshots: [
             {
                 image: "assets/features/icons8-test-aprobado-64.webp",
-                image_safari: "assets/features/icons8-test-aprobado-64.jpeg",
+                image_safari: "assets/features/icons8-test-aprobado-64.png",
                 title: "Test Automation",
                 description: "Create tests to analyze and verify each part of your website. Simply check its status."
             },
             {
                 image: "assets/features/icons8-logo-de-google-64.webp",
-                image_safari: "assets/features/icons8-logo-de-google-64.jpeg",
+                image_safari: "assets/features/icons8-logo-de-google-64.png",
                 title: "Sign in via Google, OIDC, ... ",
                 description: "Access through your Google account and enjoy our service. On-premises installation uses OIDC login."
             },
             {
                 image: "assets/features/icons8-multiples-dispositivos-64.webp",
-                image_safari: "assets/features/icons8-multiples-dispositivos-64.jpeg",
+                image_safari: "assets/features/icons8-multiples-dispositivos-64.png",
                 title: "Test on Multiple Devices",
                 description: "Test the functionalities of your website in different responsive devices. Receive eMail summary of test results."
             },
             {
                 image: "assets/features/icons8-horas-extras-64.webp",
-                image_safari: "assets/features/icons8-horas-extras-64.jpeg",
+                image_safari: "assets/features/icons8-horas-extras-64.png",
                 title: "Schedule Execution",
                 description: "Schedule the execution of your tests weekly or monthly at the minute, time or day that you want."
             },
             {
                 image: "assets/features/icons8-abrir-en-el-navegador-64.webp",
-                image_safari: "assets/features/icons8-abrir-en-el-navegador-64.jpeg",
+                image_safari: "assets/features/icons8-abrir-en-el-navegador-64.png",
                 title: "Browser Automation",
                 description: "Test your web projects in just some browsers or compatibility on 2000+ devices with BrowserStack integration. Software made in Europe with excellence."
             },
             {
                 image: "assets/features/icons8-arbol-de-carpetas-64.webp",
-                image_safari: "assets/features/icons8-arbol-de-carpetas-64.jpeg",
+                image_safari: "assets/features/icons8-arbol-de-carpetas-64.png",
                 title: "Flexible Hierarchy",
                 description: "Manage your tests through our hierarchy, where you can select the department, application and environment of your project. User based folder type organization. Each user can personally re-group individual tests. Woah!"
             }
@@ -57,37 +57,37 @@ export const COMETA_FEATURES_DATA = {
         screenshots: [
             {
                 image: "assets/features/icons8-test-aprobado-64.webp",
-                image_safari: "assets/features/icons8-test-aprobado-64.jpeg",
+                image_safari: "assets/features/icons8-test-aprobado-64.png",
                 title: "Automatització de proves",
                 description: "Creeu proves per analitzar i verificar cada part del vostre lloc web. Simplement comproveu el seu estat."
             },
             {
                 image: "assets/features/icons8-logo-de-google-64.webp",
-                image_safari: "assets/features/icons8-logo-de-google-64.jpeg",
+                image_safari: "assets/features/icons8-logo-de-google-64.png",
                 title: "Inicieu la sessió mitjançant Google, OIDC,...",
                 description: "Accedeix a través del teu compte de Google i gaudeix del nostre servei. La instal·lació local utilitza l'inici de sessió OIDC."
             },
             {
                 image: "assets/features/icons8-multiples-dispositivos-64.webp",
-                image_safari: "assets/features/icons8-multiples-dispositivos-64.jpeg",
+                image_safari: "assets/features/icons8-multiples-dispositivos-64.png",
                 title: "Prova en diversos dispositius",
                 description: "Proveu les funcionalitats del vostre lloc web en diferents dispositius responsive. Rebre per correu electrònic un resum dels resultats de la prova."
             },
             {
                 image: "assets/features/icons8-horas-extras-64.webp",
-                image_safari: "assets/features/icons8-horas-extras-64.jpeg",
+                image_safari: "assets/features/icons8-horas-extras-64.png",
                 title: "Programa d'execució",
                 description: "Programeu l'execució de les vostres proves setmanalment o mensualment al minut, hora o dia que vulgueu."
             },
             {
                 image: "assets/features/icons8-abrir-en-el-navegador-64.webp",
-                image_safari: "assets/features/icons8-abrir-en-el-navegador-64.jpeg",
+                image_safari: "assets/features/icons8-abrir-en-el-navegador-64.png",
                 title: "Automatització del navegador",
                 description: "Proveu els vostres projectes web només en alguns navegadors o la compatibilitat en més de 2000 dispositius amb la integració de BrowserStack. Programari fet a Europa amb excel·lència."
             },
             {
                 image: "assets/features/icons8-arbol-de-carpetas-64.webp",
-                image_safari: "assets/features/icons8-arbol-de-carpetas-64.jpeg",
+                image_safari: "assets/features/icons8-arbol-de-carpetas-64.png",
                 title: "Jerarquia flexible",
                 description: "Gestiona les teves proves a través de la nostra jerarquia, on podràs seleccionar el departament, l'aplicació i l'entorn del teu projecte. Organització de tipus de carpeta basada en l'usuari. Cada usuari pot reagrupar personalment les proves individuals. Woah!"
             }
