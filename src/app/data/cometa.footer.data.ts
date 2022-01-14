@@ -48,7 +48,7 @@ export const COMETA_FOOTER_DATA = {
         links: [
           { name: "Introducció", target: "_blank", rel: "noopener", href: "https://drive.google.com/file/d/1Y4lQ5aSC5Dbfn8q5Q4DLy0eEfsGWAVkm/view?usp=sharing" },
           { name: "Començant", target: "_blank", rel: "noopener", href: "https://drive.google.com/file/d/1jWA5QeMW1MJ0rmrP60oC5YzpCSRcZa9w/view?usp=sharing" },
-          { name: "Donar", target: "_self", rel: "", href: "#subscribe" }
+          { name: "Subscriu-te", target: "_self", rel: "", href: "#subscribe" }
         ]
       },
       {
