@@ -18,6 +18,13 @@
         .content {
             .card {
                 @include flexbox($dir: row, $justify: space-around);
+
+                .icon img {
+                    // filter: drop-shadow property sets a shadow on NOT TRANSPARENT part of the image
+                    // make sure to edit image and remove background before applying this property
+                    filter: drop-shadow(0 0 0.75rem $heavy-orange);
+                }
+
                 .text {
                     @include padding($bottom: 25px, $left: 10px);
     
@@ -36,5 +43,10 @@
     &.isDark {
         background-color: $black;
         color: $whitish;
+
+        // image shadow will be whitish when webpage is in dark mode
+        .content-wrapper .content .card .icon img {
+            filter: drop-shadow(0 0 0.65rem $heavy-orange);
+        }
     }
 }

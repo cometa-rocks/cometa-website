@@ -21,6 +21,10 @@
                 font-size: 2em;
 
                 img {
+                    // filter: drop-shadow property sets a shadow on NOT TRANSPARENT part of the image
+                    // make sure to edit image and remove background before applying this property
+                    filter: drop-shadow(0 0 0.30rem $heavy-orange);
+
                     @include dimensions($height: 80px, $width: auto);
                     @include for-small-tablet-portrait-up (small-tablet-plus-50) {
                         @include dimensions($height: 120px);
@@ -36,5 +40,8 @@
     &.isDark {
         background-color: $black;
         color: $whitish;
+
+        // image shadow will be whitish when webpage is in dark mode
+        .content-wrapper .tech a img { filter: drop-shadow(0  0.15rem $heavy-orange); }
     }
 }
