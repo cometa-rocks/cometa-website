@@ -5,7 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './cometa-home.component.html',
   styleUrls: ['./cometa-home.component.scss']
 })
+
 export class CometaHomeComponent implements OnInit {
+
   constructor() { }
 
   ngOnInit(): void {

@@ -1,0 +1,39 @@
+<app-cometa-header></app-cometa-header>
+<title>cometa.rocks support</title>
+
+<div class="sectiongeneric generic-headling"  [ngClass]="{'isDark': currentTheme == 'dark'}" >
+    <h1>We love to here from you!</h1>
+    <span>Whenever you are stuck, let us help you. We really enjoy helping you. Just choose your prefered way of contact.</span>
+</div>
+
+<div class="sectiongeneric" [ngClass]="{'isDark': currentTheme == 'dark'}" >
+
+    <div class="grid-layout-with-2-columns">
+        <div class="generic-image" aria-label="Support Image for decoration">
+            <picture>
+                <img src="assets/universe-image-help-small.png">
+
+            </picture>
+        </div>
+
+        <div class="generic-content">
+
+            <h2>Support Channels</h2>
+
+            <h3>Discord</h3>
+            <div>On our discord-server there are over 70 members, active. Many of them are online in different timezones. On discord you can benefit from screen-sharing. We provide voice-channels, where we can see and discuss details.</div>
+            <button name="join discord server" class="button-blueish"><a href="https://discord.gg/PUxt5bsRej" target="_blank">Join our Discord</a></button>
+
+            <h3>Telegram + WhatsApp</h3>
+            <div>We provide the Telegram and WhatsApp for you, if you do not like or cannot use the Discord-Channels. we invite you to ask for help, whenever you are stuck for more than 5 minutes. </div>
+            <button name="join Telegram" ><a href="https://t.me/joinchat/bFquCBGPBCAwYWZk" target="_blank">Telegram</a></button>
+            <button name="join WhatsApp" ><a href="https://chat.whatsapp.com/CLIOla00LAf4Ym2mux8TXC" target="_blank">WhatsApp</a></button>
+
+            <h3>E-Mail</h3>
+            <div>You prefer it the classic way using e-mail? Perfect. Here is our contact-form.</div>
+            <button name="link to contact us form" (click)="open_dialog_contact_form()">Contact Us</button>
+        </div>
+    </div>
+</div>
+
+<app-cometa-footer></app-cometa-footer>
