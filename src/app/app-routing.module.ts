@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CometaLogotipsComponent } from './components/cometa-logotips/cometa-logotips.component';
 import { CometaHomeComponent } from './components/cometa-home/cometa-home.component';
 import { CometaSpeechComponent } from './components/cometa-speech/cometa-speech.component';
+import { CometaSupportComponent } from './components/cometa-support/cometa-support.component';
 
 const routes: Routes = [
   /*inner component navigations  */
@@ -15,6 +16,9 @@ const routes: Routes = [
 
   /* redirects to cometa.rocks/speech*/
   { path: 'speech', component: CometaSpeechComponent },
+
+  /* redirects to cometa.rocks/support ... where users can see support options */
+  { path: 'support', component: CometaSupportComponent },
 
   /* redirects to cometa.rocks/speech/<name>, where <name> must be ralf or david. ex: cometa.rocks/speech/ralf
      if any other option is passed, it will be considered as ralf
