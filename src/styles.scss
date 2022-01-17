@@ -149,6 +149,58 @@ body {
 
 } /* end of body */
 
+/* general padding for content */
+.sectiongeneric {
+    /* have a global padding of 25px always */
+    padding: 25px;
+
+    /* general attriubutes for dark/light mode switching */
+    &.isDark {
+        background-color: $blackish;
+        color: $whitish;
+
+        .keyboard { box-shadow: 0px 15px 10px -7px rgb(245, 245, 245); }
+    }
+
+    /* grid defintion to hold image and content divs with generic spacieng */
+    .grid-layout-with-2-columns {
+        display: grid;
+        grid-template-columns: repeat(1fr);
+
+        /* have a gap between each container */
+        grid-gap: 25px;
+        /* show image + content in two boxes side by side for tablet and up */
+        @include for-tablet-portrait-up(tablet) { grid-template-columns: repeat(2,1fr); }
+    }
+
+    // button-blueish
+    .button-blueish {
+        background-color: $lightblue;
+    }
+
+    // set all images to 90% width to fit well
+    img {
+        /* have the image at 90% of size */
+        width: 90%;
+        /* make some nice round corners */
+        border-radius:15%;
+    };
+
+    // sets spacing for holding the image
+    .generic-image {
+        border-top: transparent; // just a dummy entry to not have this class empty
+    }
+
+    // sets spacing for holding the content
+    .generic-content {
+        /* give all h3 it's spacing 15px above and 10px below */
+        h3 {
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+    }
+}
+
 
 /* mat-dialog container will scroll down if its content is overflowing*/
 .cdk-overlay-pane {

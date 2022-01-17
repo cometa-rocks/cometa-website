@@ -30,9 +30,8 @@ export const COMETA_FOOTER_DATA = {
       {
         title: "Community & Help",
         links: [
-          { name: "Contact Us", target: "_blank", rel: "noopener", href: "mailto:contact@cometa.rocks" },
-          { name: "Telegram", target: "_blank", rel: "noopener", href: "https://t.me/joinchat/bFquCBGPBCAwYWZk" },
-          { name: "WhatsApp", target: "_blank", rel: "noopener", href: "https://chat.whatsapp.com/CLIOla00LAf4Ym2mux8TXC" },
+          { name: "Github", target: "_blank", rel: "noopener", href: "https://github.com/cometa-rocks/" },
+          { name: "Support", target: "_self", rel: "", href: "support" },
           { name: "Logos", target: "_self", rel: "", href: "logotips" }
         ]
       }
@@ -69,11 +68,11 @@ export const COMETA_FOOTER_DATA = {
       {
         title: "Comunitat i ajuda",
         links: [
-          { name: "Contacta amb nosaltres", target: "_blank", rel: "noopener", href: "mailto:contact@cometa.rocks" },
-          { name: "Telegram", target: "_blank", rel: "noopener", href: "https://t.me/joinchat/bFquCBGPBCAwYWZk" },
-          { name: "WhatsApp", target: "_blank", rel: "noopener", href: "https://chat.whatsapp.com/CLIOla00LAf4Ym2mux8TXC" },
-          { name: "Logotips", target: "_self", rel: "", href: "logotips" }
+          { name: "Github", target: "_blank", rel: "noopener", href: "https://github.com/cometa-rocks/" },
+          { name: "Suport", target: "_self", rel: "", href: "support" },
+          { name: "Logos", target: "_self", rel: "", href: "logotips" }
         ]
+
       }
     ]
   }
