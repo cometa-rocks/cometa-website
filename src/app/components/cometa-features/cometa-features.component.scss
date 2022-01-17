@@ -22,7 +22,7 @@
                 .icon img {
                     // filter: drop-shadow property sets a shadow on NOT TRANSPARENT part of the image
                     // make sure to edit image and remove background before applying this property
-                    filter: drop-shadow(0 0 0.75rem $blackish);
+                    filter: drop-shadow(0 0 0.75rem $heavy-orange);
                 }
 
                 .text {
@@ -44,9 +44,9 @@
         background-color: $black;
         color: $whitish;
 
-        // image shadow will be whitish when webpage is no dark mode
+        // image shadow will be whitish when webpage is in dark mode
         .content-wrapper .content .card .icon img {
-            filter: drop-shadow(0 0 0.75rem $whitish);
+            filter: drop-shadow(0 0 0.65rem $heavy-orange);
         }
     }
 }
