@@ -17,7 +17,6 @@ export const COMETA_LOGOTIPS_DATA = {
         favicons: [
             { image: "assets/favicons/512.webp", image_safari: "assets/favicons/512.png", alt: "favicon-512" },
             { image: "assets/logos/COMETA_prod.webp", image_safari: "assets/logos/COMETA_prod.png", alt: "cometa-prod" },
-            { image: "favicon.ico", image_safari: "favicon.ico", alt: "favicon" }
         ],
         other: [
             { image: "assets/logos/Asset_2_4x.webp", image_safari: "assets/logos/Asset_2_4x.png", alt: "cometa-svg" }
@@ -41,7 +40,6 @@ export const COMETA_LOGOTIPS_DATA = {
         favicons: [
             { image: "assets/favicons/512.webp", image_safari: "assets/favicons/512.png", alt: "favicon-512" },
             { image: "assets/logos/COMETA_prod.webp", image_safari: "assets/logos/COMETA_prod.png", alt: "cometa-prod" },
-            { image: "favicon.ico", image_safari: "favicon.ico", alt: "favicon" }
         ],
         other: [
             { image: "assets/logos/Asset_2_4x.webp", image_safari: "assets/logos/Asset_2_4x.png", alt: "cometa-svg" }
