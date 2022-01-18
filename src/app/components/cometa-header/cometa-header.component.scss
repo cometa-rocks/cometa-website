@@ -33,20 +33,6 @@ header {
             mat-icon { color: $heavy-orange; padding: 0; }
         }
 
-        .logo {
-            @include margin($left: 2em);
-            cursor: pointer;
-            line-height: 30px;
-            font-family: Cometa-Rocks;
-
-            span {
-                font-size: 30px;
-                font-weight: bold;
-
-                &:nth-child(1) { color: $heavy-orange; }
-                &:nth-child(2) { color: gray; }
-            }
-        }
     }
 
     .switcher {

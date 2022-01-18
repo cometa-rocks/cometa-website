@@ -5,7 +5,7 @@ export const COMETA_FOOTER_DATA = {
     cometa_footer_keywords: "Keywords that our users find usefull when searching: web testing, automated software testing, no code, low code, open source, web testing tools, rowser automation, ui testing, automated web testing, gui testing tools, web macro, web ui testing, ui testing framework, ui automation,automated ui testing, web automation, website automation, usertesting, ser testing, testing usability, web usability, usability test, usability testing, online usability testing tools, usability testing software, remote user testing, website usability testing, mobile user testing",
     linkSection: [
       {
-        title: "Co.meta",
+        title: "First steps",
         links: [
           { name: "Introduction", target: "_blank", rel: "noopener", href: "https://drive.google.com/file/d/1Y4lQ5aSC5Dbfn8q5Q4DLy0eEfsGWAVkm/view?usp=sharing" },
           { name: "Getting Started", target: "_blank", rel: "noopener", href: "https://drive.google.com/file/d/1jWA5QeMW1MJ0rmrP60oC5YzpCSRcZa9w/view?usp=sharing" },
@@ -43,7 +43,7 @@ export const COMETA_FOOTER_DATA = {
     cometa_footer_keywords: "Paraules clau que els nostres usuaris troben útils en fer cerques: proves web, proves automàtiques de programari, sense codi, low code, codi obert, eines de proves web, automatització de fileser, proves d’interfície d’usuari, proves web automatitzades, eines de prova de gui, macros de web, proves d’interfície d’usuari web, framework de proves d’interfície d’usuari, automatització d’interfície d’usuari, proves d’interfície d’usuari automatitzades, automatització de webs, automatització de llocs web, proves d’usuari, proves d'usuari, proves d’usabilitat, usabilitat web, proves d’usabilitat, eines de proves d’usabilitat en línia, programari de proves d’usabilitat, proves d’usuaris remots, proves d’usabilitat de llocs web, proves d'usuaris mòbils",
     linkSection: [
       {
-        title: "Co.meta",
+        title: "Primers passos",
         links: [
           { name: "Introducció", target: "_blank", rel: "noopener", href: "https://drive.google.com/file/d/1Y4lQ5aSC5Dbfn8q5Q4DLy0eEfsGWAVkm/view?usp=sharing" },
           { name: "Començant", target: "_blank", rel: "noopener", href: "https://drive.google.com/file/d/1jWA5QeMW1MJ0rmrP60oC5YzpCSRcZa9w/view?usp=sharing" },
