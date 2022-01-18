@@ -39,9 +39,9 @@ export const COMETA_USERS_DATA = {
         image: "assets/social-media/peer.webp",
         image_safari: "assets/social-media/peer.png",
         quote: "R",
-        text: "alf and his team at cometa has been supporting us from the very early days of our project. He is incredibly helpful and cometa has identified problems that our playwright tests didn't find",
-        who: "Peer Richelsen, Co-CEO Cal.com",
-        footer_text: "calendso, orangeDAOxyz"
+        text: "alf and his team at cometa has been supporting us from the very early days of our project. He is incredibly helpful and cometa has identified problems that our playwright tests didn't find.",
+        who: "Peer Richelsen, Co-CEO",
+        footer_text: "Cal.com"
       }
     ]
   },
@@ -85,7 +85,7 @@ export const COMETA_USERS_DATA = {
         image: "assets/social-media/peer.webp",
         image_safari: "assets/social-media/peer.png",
         quote: "R",
-        text: "alf i el seu equip de cometa ens han donat suport des dels primers dies del nostre projecte. És increïblement útil i Cometa ha identificat problemes que les nostres proves de playwright no van trobar",
+        text: "alf i el seu equip de cometa ens han donat suport des dels primers dies del nostre projecte. És increïblement útil i Cometa ha identificat problemes que les nostres proves de playwright no van trobar.",
         who: "Peer Richelsen, Co-CEO Cal.com",
         footer_text: "calendso, orangeDAOxyz"
       }
