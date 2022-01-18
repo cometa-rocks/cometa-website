@@ -82,8 +82,11 @@
     
                     .logo {
                         @include margin($left: 5px);
+                        line-height: 12px;
                         font-size: 0;
-    
+                    
+                        @include for-small-tablet-portrait-up(small-tablet-plus-50) { line-height: 16px; }
+
                         span { 
                             font-size: 8px;
                             @include for-small-phone-landscape-up(small-phone-plus-190) { font-size: 10px; }
