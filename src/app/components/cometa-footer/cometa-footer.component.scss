@@ -7,6 +7,11 @@ footer {
     background-color: $lightblack;
     color: $whitish;
     
+    .logo {
+        /* remove margin from logo set in generic styles */
+        margin: 0px;
+    }
+
     .links-wrapper {
         @include grid($template-columns: repeat(1fr));
         @include for-small-phone-landscape-up(small-phone-plus-120) { 
@@ -14,8 +19,11 @@ footer {
             text-align: start;
         }
         @include for-tablet-portrait-up(tablet-plus-100) {
-            @include grid($template-columns: repeat(4,1fr));
+            /* make the gap between the columns bigger to have more space for the logo */
+            column-gap: 50px;
+            @include grid($template-columns: repeat(5,1fr));
         }
+
 
         text-align: center;
         .links {

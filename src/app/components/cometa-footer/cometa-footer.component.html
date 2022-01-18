@@ -1,5 +1,12 @@
 <footer [ngClass]="{'isDark': currentTheme == 'dark'}">
     <div class="links-wrapper">
+        <div style="padding-bottom:25px" onclick="window.scroll({top: 0,left: 0,behavior: 'smooth'})">
+            <div class="logo" style="vertical-align: left !important;">
+                <span>co.</span><span>meta</span>
+            </div>
+            <hr style="margin: 10px 0px 10px 0px">
+            eases testing
+        </div>
         <div class="links" *ngFor="let section of content.linkSection">
             <div data-aos="fade-up" class="title">{{section.title}}</div>
             <ul data-aos="fade-up" *ngFor="let link of section.links">

@@ -59,11 +59,15 @@
                 }
     
                 .testimonial-quote {
+                    font-family: 'Times New Roman', Times, serif;
+                    font-style: italic;
                     font-size: 2em;
                     @include for-desktop-portrait-up(desktop) { font-size: 5em; }
                 }
     
                 i {
+                    font-family: 'Times New Roman', Times, serif;
+                    font-style: italic;
                     font-size: 1.1em;
                     @include for-desktop-portrait-up(desktop) {  line-height: 2em; }
                 }
