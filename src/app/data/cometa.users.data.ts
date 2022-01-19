@@ -20,8 +20,8 @@ export const COMETA_USERS_DATA = {
     cometa_users_donate_button_submit_monthly: "monthly",
     testimonials: [
       {
-        image: "cornelia.png",
-        image_safari: "cornelia.webp",
+        image: "assets/social-media/cornelia.png",
+        image_safari: "assets/social-media/cornelia.webp",
         quote: "B",
         text: "efore I got to know co.meta, I couldn't imagine how easy it can be to automate tests without in-depth programming knowledge. Automating tests so quickly and on a large scale with co.meta is not only a big relief in my daily business, it is also fun to work with a product that reflects the great experience and passion of its developers.",
         who: "Cornelia S., Test Manager (Finance Accounting IT Solutions)",
@@ -39,7 +39,7 @@ export const COMETA_USERS_DATA = {
         image: "assets/social-media/peer.webp",
         image_safari: "assets/social-media/peer.png",
         quote: "R",
-        text: "alf and his team at cometa has been supporting us from the very early days of our project. He is incredibly helpful and cometa has identified problems that our playwright tests didn't find.",
+        text: "alf and his team at cometa have been supporting us from the very early days of our project. They are incredibly helpful and cometa has identified problems that our playwright tests didn't find.",
         who: "Peer Richelsen, Co-CEO",
         footer_text: "Cal.com"
       }
@@ -66,8 +66,8 @@ export const COMETA_USERS_DATA = {
     cometa_users_donate_button_submit_monthly: "mensual",
     testimonials: [
       {
-        image: "cornelia.png",
-        image_safari: "cornelia.webp",
+        image: "assets/social-media/cornelia.png",
+        image_safari: "assets/social-media/cornelia.webp",
         quote: "A",
         text: "bans de conèixer co.meta, no m'imaginava el fàcil que pot ser automatitzar proves sense coneixements de programació profunds. Automatitzar les proves tan ràpidament i a gran escala amb co.meta no només suposa un gran alleujament en el meu negoci diari, sinó que també és divertit treballar amb un producte que reflecteixi la gran experiència i passió dels seus desenvolupadors.",
         who: "Cornelia S., responsable de proves (solucions informàtiques de comptabilitat financera)",
@@ -85,7 +85,7 @@ export const COMETA_USERS_DATA = {
         image: "assets/social-media/peer.webp",
         image_safari: "assets/social-media/peer.png",
         quote: "R",
-        text: "alf i el seu equip de cometa ens han donat suport des dels primers dies del nostre projecte. És increïblement útil i Cometa ha identificat problemes que les nostres proves de playwright no van trobar.",
+        text: "alf i el seu equip de cometa ens han donat suport des dels primers dies del nostre projecte. Són increïblement útils i Cometa ha identificat problemes que les nostres proves de playwright no van trobar.",
         who: "Peer Richelsen, Co-CEO Cal.com",
         footer_text: "calendso, orangeDAOxyz"
       }
