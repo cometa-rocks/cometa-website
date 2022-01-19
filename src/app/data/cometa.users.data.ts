@@ -20,8 +20,8 @@ export const COMETA_USERS_DATA = {
     cometa_users_donate_button_submit_monthly: "monthly",
     testimonials: [
       {
-        image: "",
-        image_safari: "",
+        image: "cornelia.png",
+        image_safari: "cornelia.webp",
         quote: "B",
         text: "efore I got to know co.meta, I couldn't imagine how easy it can be to automate tests without in-depth programming knowledge. Automating tests so quickly and on a large scale with co.meta is not only a big relief in my daily business, it is also fun to work with a product that reflects the great experience and passion of its developers.",
         who: "Cornelia S., Test Manager (Finance Accounting IT Solutions)",
@@ -66,8 +66,8 @@ export const COMETA_USERS_DATA = {
     cometa_users_donate_button_submit_monthly: "mensual",
     testimonials: [
       {
-        image: "",
-        image_safari: "",
+        image: "cornelia.png",
+        image_safari: "cornelia.webp",
         quote: "A",
         text: "bans de conèixer co.meta, no m'imaginava el fàcil que pot ser automatitzar proves sense coneixements de programació profunds. Automatitzar les proves tan ràpidament i a gran escala amb co.meta no només suposa un gran alleujament en el meu negoci diari, sinó que també és divertit treballar amb un producte que reflecteixi la gran experiència i passió dels seus desenvolupadors.",
         who: "Cornelia S., responsable de proves (solucions informàtiques de comptabilitat financera)",
