@@ -47,15 +47,15 @@
 
                 // styles the avatar of testimonial
                 img {
-                    @include dimensions($width: 2em);
-                    @include margin($right: 10px);
-                    @include for-desktop-portrait-up(desktop) {
-                        @include dimensions($width: 5em);
-                        border-radius: 2.5em;
-                    }
-                    float: left;
-                    border-radius: 1em;
+                    @include dimensions($width: 4em);
+                    @include margin($top: 10px, $right: 10px, $bottom: 10px, $left: 10px );
+                    border-radius: 50%;;
+                    float: right;
                     box-shadow: 0 10px 10px -5px rgba(0,0,0,.5);
+
+                    @include for-desktop-portrait-up(desktop) {
+                        @include dimensions($width: 6em);
+                    }
                 }
     
                 .testimonial-quote {

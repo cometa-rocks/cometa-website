@@ -33,7 +33,7 @@ export const COMETA_FOOTER_DATA = {
           { name: "Github", target: "_blank", rel: "noopener", href: "https://github.com/cometa-rocks/" },
           { name: "Support", target: "_self", rel: "", href: "support" },
           { name: "Logos", target: "_self", rel: "", href: "logotips" },
-          { name: "Swag", target: "_blank", rel: "noopener", href: "https://teespring.com/de/testing-opensource-cometa" }
+          { name: "Merch", target: "_blank", rel: "noopener", href: "https://teespring.com/de/testing-opensource-cometa" }
         ]
       }
     ]
@@ -71,7 +71,8 @@ export const COMETA_FOOTER_DATA = {
         links: [
           { name: "Github", target: "_blank", rel: "noopener", href: "https://github.com/cometa-rocks/" },
           { name: "Suport", target: "_self", rel: "", href: "support" },
-          { name: "Logos", target: "_self", rel: "", href: "logotips" }
+          { name: "Logotips", target: "_self", rel: "", href: "logotips" },
+          { name: "Mercaderia", target: "_blank", rel: "noopener", href: "https://teespring.com/de/testing-opensource-cometa" }
         ]
 
       }
