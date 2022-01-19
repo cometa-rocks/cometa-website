@@ -6,7 +6,7 @@ export const COMETA_FEATURES_DATA = {
         cometa_features_jmeter: "jMeter",
         cometa_features_jenkins: "Jenkins",
         cometa_features_git: "Git",
-        cometa_features_easier: " evenmore easy.",
+        cometa_features_easier: " even more easy.",
         screenshots: [
             {
                 image: "assets/features/icons8-test-aprobado-64.webp",
