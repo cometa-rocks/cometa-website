@@ -28,12 +28,18 @@ const routes: Routes = [
   /* redirects cometa.rocks/ to cometa.rocks/home*/
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 
-  /* redirect to adhoc meeting */
+  /* redirect cometa.rocks/meet ... to adhoc meeting */
   {
     path: 'meet',
     loadChildren: () => new Promise(() => { if (window.location.href.match(/meet/)) window.location.href = 'https://us05web.zoom.us/j/9483933684?pwd=dW91dEd1OUlYZktGSW82cmZ5cmZCUT09'; })
   },
 
+  /* redirect cometa.rocks/schedule ... to adhoc meeting */
+  {
+    path: 'schedule',
+    loadChildren: () => new Promise(() => { if (window.location.href.match(/schedule/)) window.location.href = 'https://cal.com/ralf/'; })
+  },
+  
   /*redirects cometa.rocks/introduction to https://drive.google.com/file/d/1Y4lQ5aSC5Dbfn8q5Q4DLy0eEfsGWAVkm/view?usp=sharing*/
   {
     path: 'introduction',
