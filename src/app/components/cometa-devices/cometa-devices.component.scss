@@ -261,13 +261,16 @@
     }
 
     .section-mobile {
+        position: relative;
         @include grid($template-columns: repeat(1fr), $place-items: center);
+        @include padding($top: 50px, $right: 10%, $bottom: 0, $left: 10%);
         @include for-small-tablet-portrait-up(small-tablet) {
             @include grid($template-columns: repeat(2, 1fr), $place-items: center);
         }
-        @include padding($top: 50px, $right: 10%, $bottom: 50px, $left: 10%);
+        @include for-desktop-portrait-up(desktop) { perspective-origin: 60% 30%; }
         background-color: $white;
-        overflow-x: hidden;
+        perspective: 1000px;
+        
         
         .text {
             @include flexbox($dir: column, $justify: center);
@@ -275,80 +278,142 @@
             @include padding ($bottom: 50px);
             @include for-small-tablet-portrait-up(small-tablet) { text-align: start; padding-bottom: 0; }
             text-align: center;
+
+            .buttons-container {
+                @include padding($bottom: 50px);
+            }
         }
         
         .mobile {
-          @include flexbox($dir: row, $justify: center, $align: center);
-          @include dimensions($width: 150px, $height: 300px);
-          position: relative;
-          background:$lightgray;
-          border-radius: 30px;
-          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      
-          .screen {
-            @include dimensions($width: 95%, $height: 95%);
-            background: $white;
-            border-radius: 20px;
-      
-            .header { 
-              @include flexbox($dir: row, $align: flex-start);
-              @include dimensions($height: 10%);
-              @include padding ($right: 10%, $left: 10%);
-              border-radius: 30px;
-      
-              .icons { 
-                @include flexbox($dir: row, $justify: flex-start, $align: center);
-                @include dimensions($height: 100%, $width: 50%);
-      
-                div {
-                  @include dimensions($height: 10px, $width: 20px);
-                  @include margin($right: 2px, $left: 2px);
-                  background:$lightgray;
-                  border-radius: 3px;
-                }
-              }
-            }
-          }
-      
-          .content {
-            @include flexbox($dir: column, $align: flex-end);
-            @include dimensions($height: 90%);
-            @include margin($right: 25px, $left: 25px);
-      
-            div  {
-              @include dimensions($height: 10%, $width: 80%);
-              @include margin($top: 3px, $bottom: 3px);
-              position: relative;
-              background: $lightgray;
-              border-radius: 5px;
+            @include dimensions($height: 400px, $width: 150px);
+            @include border($top: 2px solid $device-border-color);
+            @include position($pos: relative);
+            @include for-small-tablet-portrait-up(small-tablet) { transform: rotateX(0deg) rotateY(-35deg); }
+            background-color: $device-background;
+            transform: rotateX(0deg) rotateY(-25deg);
+            transform-style: preserve-3d;
+            box-shadow: 0 25px 22px -12px rgba(0,0,0,0.3);
+            
+            
 
-              &::before,
-              &::after {
+            &::after {
+                @include dimensions($width: 10px, $height: 100%);
+                @include position($pos: absolute, $top: -2px, $right: -10px);
                 content: '';
-                position: absolute;
-                background:  $green;
-                @include dimensions($width: 3px);
-              }
-      
-              &::before { bottom: 2px; left: -25px; height: 100%; transform: rotate(45deg); }
-              &::after { bottom: 3px; left: -32px; height: 60%; transform: rotate(-45deg); }
-      
-              &:nth-child(3n+4) {
-                &::before,
-                &::after {
-                  @include dimensions($height: 100%, $width: 3px);
-                  top: 0;
-                  left: -28px;
-                  background-color: $red;
-                }
-                
-                &::before { transform: rotate(0deg) rotate(45deg); } 
-                &::after { transform: rotate(0deg) rotate(-45deg); }
-              }
+                background-color: $device-border-color;
+                transform: rotateY(45deg);
             }
-          }
+
+            .navbar {
+                @include dimensions($height: 10%);
+                @include position($pos: relative);
+                @include border($bottom: 2px solid $device-border-color, $right: 2px solid $device-border-color);
+                background-color: $lightblack;
+                box-shadow: $mobile-shadow;
+                color: $heavy-orange;
+                transform-style: preserve-3d;
+                transform: translateZ(15px);
+                transition: all .2s;
+
+                // .navbar pseudo elements
+                &::before {
+                    @include position($pos: absolute, $left: 10%, $top: 50%);
+                    content: '|||';
+                    transform: translateY(-50%) rotate(90deg);
+                    font-weight: bold;
+                }
+
+                &::after {
+                    @include position($pos: absolute, $left: 30%, $top: 29%);
+                    content: 'CO.META';
+                    transform: translate(-50% -50%);
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+
+                &:hover { transform: translateZ(25px); }
+            }
+
+            .item-wrapper {
+                @include flexbox($dir: column, $align: flex-end);
+                @include dimensions($height: 80%);
+                @include padding($top: 5px, $right: 5px, $bottom: 5px, $left: 5px);
+                transform-style: preserve-3d;
+
+                .item {
+                    @include dimensions($height: 10%, $width: 70%);
+                    @include margin ($top: 6%, $bottom: 6%);
+                    @include border($right: 2px solid $device-border-color, $bottom: 2px solid $device-border-color);
+                    @include position($pos: relative);
+                    transform: translateZ(15px);
+                    transform-style: preserve-3d;
+                    background-color: $device-item-color;
+                    box-shadow: $mobile-shadow;
+                    transition: all .2s;
+
+                    // .item pseudo elements styling
+                    &::before {
+                        @include position($pos: absolute, $left: -10px, $top: 5px);
+                        @include dimensions($height: 80%, $width: 3px);
+                        @include border($right: 1px solid $device-border-color);
+                        content: '';
+                        background-color: $device-success-color;
+                        transform: translateZ(15px) rotate(35deg);
+                        box-shadow: $mobile-shadow;
+                    }
+
+                      &::after {
+                        @include position($pos: absolute, $left: -18px, $top: 15px);
+                        @include dimensions($height: 40%, $width: 3px);
+                        @include border($left: 1px solid $device-border-color);
+                        content: '';
+                        background-color: $device-success-color;
+                        transform: translateZ(15px) rotate(-55deg);
+                        box-shadow: $mobile-shadow;
+                    }
+
+                    // overwrites each 3rd pseudo element(after) starting from 2nd last element
+                    &:nth-last-child(3n+2):after {
+                        @include position($left: -14px, $top: 1px);
+                        @include dimensions($height: 90%, $width: 3px);
+                        background: $device-fail-color;
+                        border: 0;
+                        transform: translateZ(15px) rotate(-45deg);
+                    }
+
+                    // overwrites each 3rd pseudo element(before) starting from 2nd last element
+                    &:nth-last-child(3n+2):before {
+                        @include position($left: -15px, $top: 0);
+                        @include dimensions($height: 100%, $width: 3px);
+                        @include border($right: 1px solid $device-border-color);
+                        background-color: $device-fail-color;
+                        transform: translateZ(14px) rotate(45deg);
+                    }
+
+                    &:hover { transform: translateZ(25px); }
+                }
+            }
+
+            .button-wrapper {
+                @include flexbox($justify: space-between);
+                @include dimensions($height: 10%);
+                @include padding($top: 5px, $right: 5px, $bottom: 5px, $left: 5px);
+                transform-style: preserve-3d; 
+
+                .item-button {
+                    @include dimensions($height: 50%, $width: 30%);
+                    @include border($right: 2px solid $device-border-color, $bottom: 2px solid $device-border-color);
+                    transform: translateZ(15px);
+                    transform-style: preserve-3d;
+                    background: $heavy-orange;
+                    transition: all .2s;
+                    box-shadow: $mobile-shadow;
+
+                    &:hover { transform: translateZ(25px); }
+                }
+            }
         }
-      
+          
         &.isDark {
           background-color: $black;
           color: $whitish;
@@ -357,7 +422,7 @@
             box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
           }
         }
-      }
+    }
 
 
 .section-tablet {
@@ -366,9 +431,149 @@
         @include grid($template-columns: repeat(2, 1fr), $place-items: center start);
         padding-bottom: 0;
     }
-    @include padding($top: 0, $right: 10%, $bottom: calc(10% + 50px), $left: 10%);
-    overflow-x: hidden;
+    @include padding($top: 50px, $right: 10%, $bottom: 0, $left: 10%);
+    @include for-small-tablet-portrait-up(small-tablet) { transform: rotateX(0deg) rotateY(-25deg); perspective-origin: 20% 40%;}
+    perspective: 1000px;
+    
 
+    .tablet {
+        @include position($pos: relative);
+        @include dimensions($height: 400px, $width: 280px);
+        @include border($top: 2px solid $device-border-color);
+        @include for-tablet-portrait-up (tablet) { grid-row: 1/2; }
+        background-color: $device-background;
+        transform: rotateX(0deg) rotateY(25deg);
+        transform-style: preserve-3d;
+        box-shadow: 0 25px 22px -12px rgba(0,0,0,0.3);
+
+        &::before {
+            @include position($pos: absolute, $top: -2px, $left: -11.5px);
+            @include dimensions($width: 10px, $height: 100%);
+            content: '';
+            background-color: $device-border-color;
+            transform: rotateY(-45deg);
+        }
+    
+        .navbar {
+            @include dimensions($height: 10%);
+            @include border($bottom: 2px solid $device-border-color, $left: 2px solid $device-border-color);
+            transform-style: preserve-3d;
+            transform: translateZ(15px);
+            background-color: $lightblack;
+            box-shadow: $tablet-shadow;
+            color: $heavy-orange;
+            transition: .2s;
+
+            &::before {
+                @include position($pos: absolute, $left: 10%, $top: 50%);
+                content: '|||';
+                transform: translateY(-50%) rotate(90deg);
+                font-weight: bold;
+            }
+
+            &::after {
+                @include position($pos: absolute, $left: 30%, $top: 29%);
+                content: 'CO.META';
+                transform: translate(-50% -50%) rotate(deg);
+                font-weight: bold;
+                font-size: 14px;
+            }
+
+            &:hover { transform: translateZ(25px); }
+        }
+
+        .item-wrapper {
+            position: relative;
+            @include flexbox($dir: column, $align: flex-end);
+            @include dimensions($height: 80%);
+            @include padding($top: 5px, $right: 5px, $bottom: 5px, $left: 5px);
+            transform-style: preserve-3d;
+
+            .diagram {
+                @include position($pos: relative);
+                @include dimensions($height: 20%, $width: 100%);
+                @include border($bottom: 2px solid $device-border-color, $left: 2px solid $device-border-color);
+                transform: translateZ(15px);
+                box-shadow: $tablet-shadow;
+                transform-style: preserve-3d;
+                transition: .2s;
+
+                svg {
+                    @include position($pos: absolute, $top: 0);
+                    @include dimensions($height: 100%, $width: 100%);
+                    transition: .2s;
+                    opacity: .9;
+                }
+               
+                &:hover {
+                    transform: translateZ(20px);
+
+                    //push out gant diagrams when diagram container is hovered
+                    @for $i from 1 to 4  {
+                        .gantt-#{$i} {
+                            transform: translateZ(35px*$i);
+                            opacity: .5;
+                        }
+                    }
+                }
+            }
+
+            .item {
+                @include position($pos: relative);
+                @include dimensions($height: 10%, $width: 75%);
+                @include margin($top: 3%, $bottom: 3%);
+                @include border($bottom: 2px solid $device-border-color, $left: 2px solid $device-border-color);
+                transform: translateZ(15px);
+                transform-style: preserve-3d;
+                background-color: $device-item-color;
+                box-shadow: $tablet-shadow;
+                transition: .2s;
+
+                &::before {
+                    @include position($pos: absolute, $left: -36%, $top: 0);
+                    @include dimensions($width: 20%, $height: 40%);
+                    @include border($bottom: 1px solid $device-border-color, $left: 1px solid $device-border-color);
+                    content: '';
+                    background-color: $device-success-color;
+                    box-shadow: $tablet-shadow;
+                    transform: translateZ(10px);
+                }
+
+                &::after {
+                    @include position($pos: absolute, $left: -36%, $bottom: 0);
+                    @include dimensions($width: 20%, $height: 40%);
+                    @include border($bottom: 1px solid $device-border-color, $left: 1px solid $device-border-color);
+                    content: '';
+                    background-color: $device-fail-color;
+                    box-shadow: $tablet-shadow;
+                    transform: translateZ(10px);
+                }
+
+                &:hover { transform: translateZ(25px); }
+            }
+        }
+
+        .button-wrapper {
+            @include flexbox($dir: row, $justify: space-between);
+            @include dimensions($height: 10%);
+            @include padding($top: 5px, $right: 5px, $bottom: 5px, $left: 5px);
+            transform-style: preserve-3d; 
+
+            .item-button {
+                @include dimensions($height: 50%, $width: 30%);
+                @include border($bottom: 2px solid $device-border-color, $left: 2px solid $device-border-color);
+                transform: translateZ(15px);
+                transform-style: preserve-3d;
+                background: $heavy-orange;
+                box-shadow: $tablet-shadow;
+                transition: .2s;
+
+                &:hover { transform: translateZ(25px); }
+            }
+        }
+    }
+
+    
     .text {
         @include flexbox($dir: column, $justify: center);
         @include dimensions($width: 100%);
@@ -384,88 +589,6 @@
                 @include padding($top: .3em, $bottom: .3em);
             }
         }
-    }
-
-    .tablet {
-        @include flexbox($dir: row, $justify: center, $align: center);
-        @include dimensions($height: 400px, $width: 280px);
-        @include for-tablet-portrait-up (tablet) { grid-row: 1/2; }
-        background-color: $lightgray;
-        border-radius: 30px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-        .screen {
-            @include dimensions($height: 95%, $width: 95%);
-            background: $white;
-            border-radius: 20px;
-
-            .header {
-                @include flexbox($dir: row, $justify: space-between, $align: center);
-                @include dimensions($height: 5%);
-                @include padding($top: 5px, $right: 10px, $bottom: 5px, $left: 10px);
-
-                div {
-                    @include dimensions($height: 90%, $width: 40%);
-                    background-color: $lightgray;
-                    border-radius: 5px;
-                }
-            } 
-            .diagram {
-                position: relative;
-                @include padding($right: 2.5%, $left: 2.5%);
-
-                svg { 
-                    @include dimensions($width: 95%);
-                    position: absolute;
-                    opacity: .5; 
-                }
-            }
-
-            .info {
-                @include dimensions($height: 75%);
-                @include margin($top: 25%);
-                @include padding($right: 2.5%, $left: 2.5%);
-                
-                .data {
-                    @include dimensions($height: 10%, $width: 100%);
-                    @include margin($top: 14px);
-                    position: relative;
-                    background-color: $lightgray;
-                    border-radius: 5px;
-
-                    &::before,
-                    &::after {
-                        @include dimensions($height: 30%);
-                        @include padding($top: 2px, $right: 2px, $bottom: 2px, $left: 2px);
-                        content: '';
-                        position: absolute; 
-                        top: 8px;
-                        border-radius: 4px;
-                        font-size: 12px;
-                    }
-
-                    &::before { 
-                        @include dimensions($width: 17%);
-                        left: 5px;
-                        background-color: $green; 
-                    }
-                    &::after {
-                        @include dimensions($width: 72%);
-                        left: 60px;
-                        background-color: $gray; 
-                    }
-
-                    &:nth-last-child(-n+2)::before { background-color: $red; }
-                }
-            }  
-        }
-    }
-
-    &.isDark {
-      background-color: $blackish;
-      color: $whitish;
-
-      .tablet { box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px; }
     }
 }
       
