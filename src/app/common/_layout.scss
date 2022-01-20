@@ -36,3 +36,18 @@
   padding-bottom: $bottom;
   padding-left: $left;
 }
+
+@mixin border($top: null, $right: null ,$bottom: null, $left: null) {
+  border-top: $top;
+  border-right: $right;
+  border-bottom: $bottom;
+  border-left: $left;
+}
+
+@mixin position($pos: null, $top: null, $right: null ,$bottom: null, $left: null) {
+  position: $pos;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}

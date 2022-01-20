@@ -33,6 +33,14 @@ $gray: gray;
 
 $white: #ffffff;
 
+/* used in cometa-devices*/
+$device-background: #EEEEEE;
+$device-item-color: #FAFAFA;
+$device-border-color: #c7c7c7;
+$device-success-color: #67B122;
+$device-fail-color: #DA2222;
+$mobile-shadow: 4.4px 8px 6px rgb(0 0 0 / 10%), 4.4px 5.6px 6px rgb(0 0 0 / 10%);
+$tablet-shadow: -4.4px 8px 6px rgb(0 0 0 / 10%), -4.4px 5.6px 6px rgb(0 0 0 / 10%);
 /* used in darkmode for text */
 $whitish: #cae0eb;
 
