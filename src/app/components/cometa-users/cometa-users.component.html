@@ -13,7 +13,7 @@
             </div>
             <div data-aos="fade-left" class="testimonial" *ngFor="let testimonial of content.testimonials">
                 <picture *ngIf="testimonial.image">
-                    <source [srcset]="testimonial.image_safari" type="image/png">
+                    <source [srcset]="testimonial.image_safari" type="image/jpeg">
                     <source [srcset]="testimonial.image" type="image/webp">
                     <img [src]="testimonial.image" alt="{{testimonial.footer_text}}">
                 </picture>

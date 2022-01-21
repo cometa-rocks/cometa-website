@@ -286,7 +286,7 @@
         
         .mobile {
             @include dimensions($height: 400px, $width: 150px);
-            @include border($top: 2px solid $device-border-color);
+            @include border($top: 1px solid $device-border-color);
             @include position($pos: relative);
             @include for-small-tablet-portrait-up(small-tablet) { transform: rotateX(0deg) rotateY(-35deg); }
             background-color: $device-background;
@@ -298,7 +298,7 @@
 
             &::after {
                 @include dimensions($width: 10px, $height: 100%);
-                @include position($pos: absolute, $top: -2px, $right: -10px);
+                @include position($pos: absolute, $top: -1px, $right: -9px);
                 content: '';
                 background-color: $device-border-color;
                 transform: rotateY(45deg);
@@ -417,6 +417,7 @@
         &.isDark {
           background-color: $black;
           color: $whitish;
+          z-index: 1;
       
           .mobile {
             box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
@@ -432,7 +433,7 @@
         padding-bottom: 0;
     }
     @include padding($top: 50px, $right: 10%, $bottom: 0, $left: 10%);
-    @include for-small-tablet-portrait-up(small-tablet) { transform: rotateX(0deg) rotateY(-25deg); perspective-origin: 20% 40%;}
+    @include for-small-tablet-portrait-up(small-tablet) {perspective-origin: 20% 40%;}
     perspective: 1000px;
     
 
@@ -447,11 +448,20 @@
         box-shadow: 0 25px 22px -12px rgba(0,0,0,0.3);
 
         &::before {
-            @include position($pos: absolute, $top: -2px, $left: -11.5px);
+            @include position($pos: absolute, $top: -2px, $left: -9px);
             @include dimensions($width: 10px, $height: 100%);
             content: '';
             background-color: $device-border-color;
             transform: rotateY(-45deg);
+        }
+
+        &::after {
+            @include dimensions($width: 100%, $height: 10px);
+            @include position($pos: absolute, $left: 0, $top: -10px);
+            content: '';
+            background-color: $device-border-color;
+            transform: rotateX(90deg) skewX(30deg);
+            transform-origin: 0 100%;
         }
     
         .navbar {
@@ -588,6 +598,15 @@
             li {
                 @include padding($top: .3em, $bottom: .3em);
             }
+        }
+    }
+
+    &.isDark {
+        background-color: $black;
+        color: $whitish;
+    
+        .tablet {
+          box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
         }
     }
 }

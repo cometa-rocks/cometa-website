@@ -20,8 +20,8 @@ export const COMETA_USERS_DATA = {
     cometa_users_donate_button_submit_monthly: "monthly",
     testimonials: [
       {
-        image: "assets/social-media/cornelia.png",
-        image_safari: "assets/social-media/cornelia.webp",
+        image: "assets/social-media/cornelia.webp",
+        image_safari: "assets/social-media/cornelia.jpeg",
         quote: "B",
         text: "efore I got to know co.meta, I couldn't imagine how easy it can be to automate tests without in-depth programming knowledge. Automating tests so quickly and on a large scale with co.meta is not only a big relief in my daily business, it is also fun to work with a product that reflects the great experience and passion of its developers.",
         who: "Cornelia S., Test Manager (Finance Accounting IT Solutions)",
@@ -29,7 +29,7 @@ export const COMETA_USERS_DATA = {
       },
       {
         image: "assets/social-media/lalit.webp",
-        image_safari: "assets/social-media/lalit.png",
+        image_safari: "assets/social-media/lalit.jpeg",
         quote: "W",
         text: "riting UI automation is very easy with cometa particularly because of its no-code offerings and a lot of thought given to different possibilities by the makers of the tool. We are generally impressed with the capability this tool offers. Dig deeper and you will always find something more to explore.",
         who: "Lalitkumar B., QA Engineer",
@@ -37,7 +37,7 @@ export const COMETA_USERS_DATA = {
       },
       {
         image: "assets/social-media/peer.webp",
-        image_safari: "assets/social-media/peer.png",
+        image_safari: "assets/social-media/peer.jpeg",
         quote: "R",
         text: "alf and his team at cometa have been supporting us from the very early days of our project. They are incredibly helpful and cometa has identified problems that our playwright tests didn't find.",
         who: "Peer Richelsen, Co-CEO",
@@ -66,8 +66,8 @@ export const COMETA_USERS_DATA = {
     cometa_users_donate_button_submit_monthly: "mensual",
     testimonials: [
       {
-        image: "assets/social-media/cornelia.png",
-        image_safari: "assets/social-media/cornelia.webp",
+        image: "assets/social-media/cornelia.webp",
+        image_safari: "assets/social-media/cornelia.jpeg",
         quote: "A",
         text: "bans de conèixer co.meta, no m'imaginava el fàcil que pot ser automatitzar proves sense coneixements de programació profunds. Automatitzar les proves tan ràpidament i a gran escala amb co.meta no només suposa un gran alleujament en el meu negoci diari, sinó que també és divertit treballar amb un producte que reflecteixi la gran experiència i passió dels seus desenvolupadors.",
         who: "Cornelia S., responsable de proves (solucions informàtiques de comptabilitat financera)",
@@ -75,7 +75,7 @@ export const COMETA_USERS_DATA = {
       },
       {
         image: "assets/social-media/lalit.webp",
-        image_safari: "assets/social-media/lalit.png",
+        image_safari: "assets/social-media/lalit.jpeg",
         quote: "A",
         text: "utomatitzar l’interfície d’usuari és molt fàcil amb co.meta, sobretot a causa de les seves ofertes sense codi i de la reflexió que els fabricants de l’eina han donat a les diferents possibilitats. En general, ens impressiona la capacitat que ofereix aquesta eina. Aprofundiu i sempre trobareu alguna cosa més per explorar.",
         who: "Lalitkumar B., enginyer de control de qualitat",
@@ -83,7 +83,7 @@ export const COMETA_USERS_DATA = {
       },
       {
         image: "assets/social-media/peer.webp",
-        image_safari: "assets/social-media/peer.png",
+        image_safari: "assets/social-media/peer.jpeg",
         quote: "R",
         text: "alf i el seu equip de cometa ens han donat suport des dels primers dies del nostre projecte. Són increïblement útils i Cometa ha identificat problemes que les nostres proves de playwright no van trobar.",
         who: "Peer Richelsen, Co-CEO Cal.com",
