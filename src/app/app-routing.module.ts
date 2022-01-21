@@ -13,6 +13,7 @@ const routes: Routes = [
 
   /* redirects to cometa.rocks/logotips */
   { path: 'logotips', component: CometaLogotipsComponent },
+  { path: 'logos', component: CometaLogotipsComponent },
 
   /* redirects to cometa.rocks/speech*/
   { path: 'speech', component: CometaSpeechComponent },
