@@ -13,6 +13,7 @@ const routes: Routes = [
 
   /* redirects to cometa.rocks/logotips */
   { path: 'logotips', component: CometaLogotipsComponent },
+  { path: 'logos', component: CometaLogotipsComponent },
 
   /* redirects to cometa.rocks/speech*/
   { path: 'speech', component: CometaSpeechComponent },
@@ -58,10 +59,14 @@ const routes: Routes = [
     loadChildren: () => new Promise(() => { if (window.location.href.match(/user-scenarios/)) window.location.href = 'https://drive.google.com/file/d/1jlxj-776_oTUyRHrxtFgZJUXmX3yInxn/view?usp=sharing'; })
   },
 
-  /*redirects cometa.rocks/early-access-form to https://drive.google.com/file/d/1jlxj-776_oTUyRHrxtFgZJUXmX3yInxn/view?usp=sharing*/
+  /*redirects cometa.rocks/early-access-form and /early-access to https://drive.google.com/file/d/1jlxj-776_oTUyRHrxtFgZJUXmX3yInxn/view?usp=sharing*/
   {
     path: 'early-access-form',
     loadChildren: () => new Promise(() => { if (window.location.href.match(/early-access-form/)) window.location.href = 'https://ocagzojn33k.typeform.com/to/G2VgVbbB'; })
+  },
+  {
+    path: 'early-access',
+    loadChildren: () => new Promise(() => { if (window.location.href.match(/early-access/)) window.location.href = 'https://ocagzojn33k.typeform.com/to/G2VgVbbB'; })
   },
 
   /* redirects any cometa.rocks/inexsistent to cometa.rocks/home*/
