@@ -328,7 +328,7 @@
                     content: 'CO.META';
                     transform: translate(-50% -50%);
                     font-weight: bold;
-                    font-size: 14px;
+                    font-size: 16px;
                 }
 
                 &:hover { transform: translateZ(25px); }
@@ -436,6 +436,7 @@
     @include for-small-tablet-portrait-up(small-tablet) {perspective-origin: 20% 40%;}
     perspective: 1000px;
     
+    
 
     .tablet {
         @include position($pos: relative);
@@ -486,7 +487,7 @@
                 content: 'CO.META';
                 transform: translate(-50% -50%) rotate(deg);
                 font-weight: bold;
-                font-size: 14px;
+                font-size: 16px;
             }
 
             &:hover { transform: translateZ(25px); }
@@ -591,6 +592,7 @@
         @include for-tablet-portrait-up (tablet) { text-align: start; }
         text-align: center;
         grid-row: 1/2;
+        overflow-x: hidden;
         
         ul {
             list-style-type: none;

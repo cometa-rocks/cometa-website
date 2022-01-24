@@ -21,13 +21,13 @@ export const COMETA_CONTACT_US_DATA = {
         cometa_contactus_form_feedback_200_thanks_you: "Thank you for contacting us.",
         cometa_contactus_form_feedback_200_recieved_message: "We have received your message.",
         cometa_contactus_form_feedback_200_contact_you: "We will contact you as soon as possible.",
-        cometa_contactus_form_feedback_200_your_cometa: "Your cometa.rocks team",
+        cometa_contactus_form_feedback_200_your_cometa: "Your co.meta rocks team",
         cometa_contactus_form_feedback_400_wrong_captcha: "Ooops ... wrong captcha code!",
         cometa_contactus_form_feedback_400_try_again: "Please try again",
-        cometa_contactus_form_feedback_400_via_phone: "If you are having trouble reading the captcha, you might contact the cometa.rocks team via phone: m: +34 717102603",
+        cometa_contactus_form_feedback_400_via_phone: "If you are having trouble reading the captcha, you might contact the co.meta rocks team via phone: m: +34 717102603",
         cometa_contactus_form_feedback_503_mailserver_crash: "Ooops ... The Mailserver made Booobooo!",
         cometa_contactus_form_feedback_503_message_not_sent: "Your message was NOT sent.",
-        cometa_contactus_form_feedback_503_via_phone: "Please contact the cometa.rocks team via phone: m: +34 717102603",
+        cometa_contactus_form_feedback_503_via_phone: "Please contact the co.meta rocks team via phone: m: +34 717102603",
 
     },
     ca: {
@@ -52,13 +52,13 @@ export const COMETA_CONTACT_US_DATA = {
         cometa_contactus_form_feedback_200_thanks_you: "Gràcies per contactar amb nosaltres.",
         cometa_contactus_form_feedback_200_recieved_message: "Hem rebut el teu missatge.",
         cometa_contactus_form_feedback_200_contact_you: "Ens posarem en contacte amb tu el més aviat possible.",
-        cometa_contactus_form_feedback_200_your_cometa: "El teu equip de cometa.rocks",
+        cometa_contactus_form_feedback_200_your_cometa: "El teu equip de co.meta rocks",
         cometa_contactus_form_feedback_400_wrong_captcha: "Vaja... codi captcha incorrecte!",
         cometa_contactus_form_feedback_400_try_again: "Siusplau torna-ho a provar",
-        cometa_contactus_form_feedback_400_via_phone: "Si teniu problemes per llegir el captcha, podeu contactar amb el equip cometa.rocks per telèfon: m: +34 717102603",
+        cometa_contactus_form_feedback_400_via_phone: "Si teniu problemes per llegir el captcha, podeu contactar amb el equip co.meta rocks per telèfon: m: +34 717102603",
         cometa_contactus_form_feedback_503_mailserver_crash: "Vaja... El servidor de correu ha fet Booobooo!",
         cometa_contactus_form_feedback_503_message_not_sent: "El teu missatge NO s'ha enviat.",
-        cometa_contactus_form_feedback_503_via_phone: "Poseu-vos en contacte amb l'equip de cometa.rocks per telèfon: m: +34 717102603",
+        cometa_contactus_form_feedback_503_via_phone: "Poseu-vos en contacte amb l'equip de co.meta rocks per telèfon: m: +34 717102603",
     }
 };
 

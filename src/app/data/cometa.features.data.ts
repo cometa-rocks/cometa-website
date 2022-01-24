@@ -1,7 +1,7 @@
 export const COMETA_FEATURES_DATA = {
     en: {
-        cometa_features_title: "Cometa features",
-        cometa_features_desc: "Don't break code. Don't break layout. Using cometa provides many benefits for your project.",
+        cometa_features_title: "Co.meta features",
+        cometa_features_desc: "Don't break code. Don't break layout. Using co.meta provides many benefits for your project.",
         cometa_features_desc_opensrc: "Being 100% open source and providing complete functionalities via REST API makes integration of third party tools (",
         cometa_features_jmeter: "jMeter",
         cometa_features_jenkins: "Jenkins",
@@ -47,8 +47,8 @@ export const COMETA_FEATURES_DATA = {
         ]
     },
     ca: {
-        cometa_features_title: "Característiques del Cometa",
-        cometa_features_desc: "No trencar el codi. No trenqueu el disseny. L'ús de cometa ofereix molts avantatges per al vostre projecte.",
+        cometa_features_title: "Característiques del Co.meta",
+        cometa_features_desc: "No trencar el codi. No trenqueu el disseny. L'ús de co.meta ofereix molts avantatges per al vostre projecte.",
         cometa_features_desc_opensrc: "Ser 100% de codi obert i proporcionar funcionalitats completes via L'API REST fa la integració d'eines de tercers (",
         cometa_features_jmeter: "jMeter",
         cometa_features_jenkins: "Jenkins",
