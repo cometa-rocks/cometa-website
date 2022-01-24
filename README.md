@@ -2,7 +2,7 @@
 
 This is the official cometa-rocks website. It is mirrored from git.mvara.de to github.com/cometa-rocks.
 
-Feel free to contribute.
+Feel free to contribute. We would be happy to acknowledge your pull-request :-)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.2.
 
