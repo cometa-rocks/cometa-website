@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CometaLogotipsComponent } from './components/cometa-logotips/cometa-logotips.component';
 import { CometaHomeComponent } from './components/cometa-home/cometa-home.component';
 import { CometaSpeechComponent } from './components/cometa-speech/cometa-speech.component';
+import { CometaSpeechFeedbackComponent } from './components/cometa-speech-feedback/cometa-speech-feedback.component';
 import { CometaSupportComponent } from './components/cometa-support/cometa-support.component';
 
 const routes: Routes = [
@@ -18,14 +19,17 @@ const routes: Routes = [
   /* redirects to cometa.rocks/speech*/
   { path: 'speech', component: CometaSpeechComponent },
 
-  /* redirects to cometa.rocks/support ... where users can see support options */
-  { path: 'support', component: CometaSupportComponent },
-
   /* redirects to cometa.rocks/speech/<name>, where <name> must be ralf or david. ex: cometa.rocks/speech/ralf
      if any other option is passed, it will be considered as ralf
      ex: cometa.rocks/speech/xyz will behave like it is cometa.rocks/speech/ralf*/
   { path: 'speech/:speakername', component: CometaSpeechComponent },
 
+  /* redirects to cometa.rocks/feedback, which includes the type to give feedback */
+  { path: 'feedback', component: CometaSpeechFeedbackComponent },
+
+  /* redirects to cometa.rocks/support ... where users can see support options */
+  { path: 'support', component: CometaSupportComponent },
+  
   /* redirects cometa.rocks/ to cometa.rocks/home*/
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 
