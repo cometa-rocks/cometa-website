@@ -3,20 +3,13 @@
 @import "_colors";
 
 .section-speech {
-    @include flexbox($dir: column);
-    @include for-tablet-portrait-up(tablet) {
-        @include flexbox($dir: row);
-    }
+    text-align: center;
+    color: $lightblue;
 }
 
 .images {
     @include dimensions($width: 100%);
-    @include flexbox($dir: column, $justify: center, $align: center);
     background: $blackish;
-
-    @include for-tablet-portrait-up(tablet) {
-        @include flexbox($dir: row);
-    }
 
     img {
         @include margin($top: 15px, $right: 15px, $bottom: 15px, $left: 15px);
@@ -24,11 +17,9 @@
     }
 }
 
-#wrapper {
+/* Changed wrapper from id to class, because that is easier to render for the browser */
+.wrapper {
     @include dimensions($width: 100%, $height: 70vh);
+    /* added background color to remove rounded form edges from type iframe page  */
     background-color: $blackish;
-}
-
-iframe {
-    border-radius: 0 !important;
 }
