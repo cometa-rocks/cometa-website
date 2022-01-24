@@ -1,7 +1,7 @@
 export const COMETA_USERS_DATA = {
   en: {
-    cometa_users_title: "Cometa Testimonials",
-    cometa_users_desc: "Here is some feedback from people who already had some taste of cometa",
+    cometa_users_title: "Co.meta Testimonials",
+    cometa_users_desc: "Here is some feedback from people who already had some taste of co.meta",
     cometa_users_say: "What co.meta users say",
     cometa_video_explanation: "co.meta - highlevel explanation",
     cometa_video_in_action: "co.meta in action",
@@ -31,7 +31,7 @@ export const COMETA_USERS_DATA = {
         image: "assets/social-media/lalit.webp",
         image_safari: "assets/social-media/lalit.jpeg",
         quote: "W",
-        text: "riting UI automation is very easy with cometa particularly because of its no-code offerings and a lot of thought given to different possibilities by the makers of the tool. We are generally impressed with the capability this tool offers. Dig deeper and you will always find something more to explore.",
+        text: "riting UI automation is very easy with co.meta particularly because of its no-code offerings and a lot of thought given to different possibilities by the makers of the tool. We are generally impressed with the capability this tool offers. Dig deeper and you will always find something more to explore.",
         who: "Lalitkumar B., QA Engineer",
         footer_text: "Tea-Time with Testers"
       },
@@ -39,15 +39,15 @@ export const COMETA_USERS_DATA = {
         image: "assets/social-media/peer.webp",
         image_safari: "assets/social-media/peer.jpeg",
         quote: "R",
-        text: "alf and his team at cometa have been supporting us from the very early days of our project. They are incredibly helpful and cometa has identified problems that our playwright tests didn't find.",
+        text: "alf and his team at co.meta have been supporting us from the very early days of our project. They are incredibly helpful and cometa has identified problems that our playwright tests didn't find.",
         who: "Peer Richelsen, Co-CEO",
         footer_text: "Cal.com"
       }
     ]
   },
   ca: {
-    cometa_users_title: "Cometa Feedback",
-    cometa_users_desc: "Aquí teniu alguns comentaris de gent que ja tenia un gust de cometa",
+    cometa_users_title: "Co.meta Feedback",
+    cometa_users_desc: "Aquí teniu alguns comentaris de gent que ja tenia un gust de co.meta",
     cometa_users_say: "Què diuen els usuaris de co.meta",
     cometa_video_explanation: "co.meta: explicació d'alt nivell",
     cometa_video_in_action: "co.meta en acció",
@@ -85,7 +85,7 @@ export const COMETA_USERS_DATA = {
         image: "assets/social-media/peer.webp",
         image_safari: "assets/social-media/peer.jpeg",
         quote: "R",
-        text: "alf i el seu equip de cometa ens han donat suport des dels primers dies del nostre projecte. Són increïblement útils i Cometa ha identificat problemes que les nostres proves de playwright no van trobar.",
+        text: "alf i el seu equip de co.meta ens han donat suport des dels primers dies del nostre projecte. Són increïblement útils i Co.meta ha identificat problemes que les nostres proves de playwright no van trobar.",
         who: "Peer Richelsen, Co-CEO Cal.com",
         footer_text: "calendso, orangeDAOxyz"
       }
