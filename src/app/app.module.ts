@@ -26,6 +26,7 @@ import { CometaLogotipsComponent } from './components/cometa-logotips/cometa-log
 import { CometaSpeechComponent } from './components/cometa-speech/cometa-speech.component';
 import { CometaSpeechFeedbackComponent } from './components/cometa-speech-feedback/cometa-speech-feedback.component';
 import { CometaSupportComponent } from './components/cometa-support/cometa-support.component';
+import { CometaSlidesComponent } from './components/cometa-slides/cometa-slides.component';
 
 /* BrowserAnimationsModule is necessary if angular material is used, material includes certain animations*/
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -48,6 +49,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CometaSpeechComponent,
     CometaSupportComponent,
     CometaSpeechFeedbackComponent,
+    CometaSlidesComponent,
   ],
   imports: [
     BrowserModule,
