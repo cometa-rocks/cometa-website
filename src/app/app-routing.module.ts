@@ -5,6 +5,7 @@ import { CometaHomeComponent } from './components/cometa-home/cometa-home.compon
 import { CometaSpeechComponent } from './components/cometa-speech/cometa-speech.component';
 import { CometaSpeechFeedbackComponent } from './components/cometa-speech-feedback/cometa-speech-feedback.component';
 import { CometaSupportComponent } from './components/cometa-support/cometa-support.component';
+import { CometaSlidesComponent } from './components/cometa-slides/cometa-slides.component';
 
 const routes: Routes = [
   /*inner component navigations  */
@@ -23,6 +24,11 @@ const routes: Routes = [
      if any other option is passed, it will be considered as ralf
      ex: cometa.rocks/speech/xyz will behave like it is cometa.rocks/speech/ralf*/
   { path: 'speech/:speakername', component: CometaSpeechComponent },
+
+  /* redirects to cometa.rocks/slides/opensource, where <name> must be ralf or david. ex: cometa.rocks/speech/ralf
+     if any other option is passed, it will be considered as ralf
+     ex: cometa.rocks/speech/xyz will behave like it is cometa.rocks/speech/ralf*/
+     { path: 'slides/:slidename', component: CometaSlidesComponent },
 
   /* redirects to cometa.rocks/feedback, which includes the type to give feedback */
   { path: 'feedback', component: CometaSpeechFeedbackComponent },
