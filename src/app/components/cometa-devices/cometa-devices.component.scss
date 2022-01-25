@@ -15,19 +15,17 @@
     .section-laptop {
         @include flexbox($dir: column, $justify: center, $align: center);
         @include padding($top: 1%, $right: 1%, $bottom: calc(1% + 50px), $left: 1%);
-
+        overflow-x: hidden;
+        
         .text {
-            @include flexbox($dir: column, $justify: center);
-            @include padding($top: 50px, $bottom: 50px);
+            @include padding($top: 50px, $right: 3%, $bottom: 50px, $left: 3%);
             @include dimensions($width: 100%);
             @include for-phone-landscape-up(phone-plus-38) {
                 @include dimensions($width: 85%);
+                @include padding($right: 0, $left: 0);
             }
             @include for-tablet-portrait-up(tablet-plus-100) {
                 @include dimensions($width: 70%);
-            }
-            @include for-large-tablet-portrait-up (large-tablet-plus-185) {
-                @include dimensions($width: 60%);
             }
             text-align: center;
         }
