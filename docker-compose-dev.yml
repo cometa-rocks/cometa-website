@@ -14,12 +14,13 @@ services:
         # mount working_dir for docker-compose
         - ./:/cometa_website
         # mount configuration for nginx 
-        - ./default.conf:/etc/nginx/conf.d/default.conf
-        - ./default.conf:/etc/nginx/sites-available/default.conf
+        - ./default_dev.conf:/etc/nginx/conf.d/default.conf
+        - ./default_dev.conf:/etc/nginx/sites-available/default.conf
         # mount dist/cometa-rocks-website to html-root of nginx
         # - ./dist/cometa-rocks-website:/var/www/html
         # mount php direcotry to be available to nginx inside document root
         - ./php:/var/www/html/php
+        - /etc/TZ:/etc/timezone
       working_dir: /cometa_website
       environment:
         - PHP_ERRORS_STDERR=TRUE
@@ -28,6 +29,6 @@ services:
         # use port 4300 ... as other projects like cometa_front run on 4200
         - "4300:4300"
 
-      command: bash -c "./prepare.sh full
-          && echo forking ng serve
-          && ./prepare.sh serve"
+      command: bash -c "./prepare.sh start"
+        # && echo forking ng serve
+        # && ./prepare.sh serve"
