@@ -7,6 +7,7 @@
 # This script just prepares some dependcies to resolve issues with npm and other
 # ---
 # Changelog:
+# 2022-01-27 RRO Added baisc, basic2 and baisc3 for debugging, changed to npm ci, npm installation commands, as npm ci installs, what we need ;-)
 # 2022-01-05 TONI change_id: 1.1
 # 2021-12-22 RRO create
 #
@@ -81,12 +82,18 @@ function install_npm_packages(){
     cd /cometa_website && echo "ok" || echo "failed"
     echo "Switching off ng analytics as seen in https://angular.io/analytics"
     export NG_CLI_ANALYTICS=ci # https://stackoverflow.com/questions/56355499/stop-angular-cli-asking-for-collecting-analytics-when-i-use-ng-build
-    echo "Doing npm install"
-    npm install -g @angular/cli && echo "OK" || echo "failed npm install - check on this!!!"
-    echo "Installing angular-devkit@latest"
-    npm i --save-dev @angular-devkit/build-angular@latest
-    echo "Creating node_modules with npm i"
-    npm i # FIXME .. ask Arslan
+    echo "Removing node_modules"
+    rm -rf node_modules
+    # #####
+    # Commented the following, as npm ci does not need any installation directives ... it installs what is in package-lock.json
+    # #####
+    # echo "Doing npm install"
+    # npm install -g @angular/cli && echo "============ OK 1 =============" || echo "failed npm install 1 - check on this!!!"
+    # echo "I am installing as user: " $(whoami)
+    # echo "Installing angular-devkit@latest"
+    # npm ci --save-dev @angular-devkit/build-angular@latest && echo "============ OK 2 =============" || echo "failed npm install 2 - check on this!!!"
+    # echo "Creating node_modules with npm ci --unsafe-perm" && echo "============ OK 3 =============" || echo "failed npm install 3 - check on this!!!"
+    npm ci --unsafe-perm && echo "============ OK 4 =============" || echo "failed npm install 4 - check on this!!!" # FIXME .. ask Arslan
     echo "Showing angluar version for your convinience"
     npx ng --version
 }
@@ -100,7 +107,7 @@ function build_angular(){
 
     echo "Building project"
     [ ! -f /cometa_website/src/environments/environment.ts ] && { cp /cometa_website/src/environments/environment.prod.ts /cometa_website/src/environments/environment.ts; echo Copied environment.prod.ts; } || echo environment.ts exists
-    ng build --aot --extract-licenses --build-optimizer --optimization --configuration production
+    npx ng build --aot --extract-licenses --build-optimizer --optimization --configuration production
 }
 
 #
@@ -111,7 +118,7 @@ function ng_serve_project() {
     # start nginx in background
     /start.sh &
     # the ng server only works, if the $PATH variable is set correctly as seen at the beginning of this script
-    ng serve --host 0.0.0.0 --port 4300 --disable-host-check
+    npx ng serve --host 0.0.0.0 --port 4300 --disable-host-check
 }
 
 #

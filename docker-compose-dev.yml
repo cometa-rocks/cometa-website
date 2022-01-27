@@ -20,7 +20,7 @@ services:
         # - ./dist/cometa-rocks-website:/var/www/html
         # mount php direcotry to be available to nginx inside document root
         - ./php:/var/www/html/php
-        - /etc/TZ:/etc/timezone
+        - /etc/timezone:/etc/TZ
       working_dir: /cometa_website
       environment:
         - PHP_ERRORS_STDERR=TRUE
@@ -29,6 +29,6 @@ services:
         # use port 4300 ... as other projects like cometa_front run on 4200
         - "4300:4300"
 
-      command: bash -c "./prepare.sh start"
-        # && echo forking ng serve
-        # && ./prepare.sh serve"
+      command: bash -c "./prepare.sh full
+        && echo forking ng serve
+        && ./prepare.sh serve"

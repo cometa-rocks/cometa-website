@@ -28,4 +28,5 @@ services:
       # prepare.sh Command installs npm, compiles and copies result to html folder of nginx
       #
       command: bash -c "./prepare.sh full
+          && echo "================ now starting to srve the project ... this will cause error on port http of nginx, which is ok"
           && /start.sh"
