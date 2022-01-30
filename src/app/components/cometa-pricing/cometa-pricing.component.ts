@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { SwitcherService } from '../../cometa-services/shared/switcher.service';
 @Component({
   selector: 'app-cometa-pricing',
   templateUrl: './cometa-pricing.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CometaPricingComponent implements OnInit {
 
-  constructor() { }
+  currentTheme: any;
+
+  constructor(private switcherService: SwitcherService ) { }
 
   ngOnInit(): void {
+    this.switcherService.getCurrentThemeObservable().subscribe((theme: any) => this.currentTheme = theme);
   }
 
 }

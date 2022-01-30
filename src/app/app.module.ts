@@ -6,6 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { BotDetectCaptchaModule } from 'angular-captcha';
 import { AppRoutingModule } from './app-routing.module';
 
+/* Angular Material Tabs Module */
+import { MatTabsModule } from '@angular/material/tabs';
+
+/* Angular Material Cards Module ... used on pricing */
+import { MatCardModule } from '@angular/material/card';
+
 /* root component, exported from app.component.ts which is inicialized in index.html*/
 import { AppComponent } from './app.component';
 
@@ -57,6 +63,8 @@ import { CometaPricingComponent } from './components/cometa-pricing/cometa-prici
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
+    MatCardModule,
+    MatTabsModule,
     CommonModule,
     HttpClientModule,
     BotDetectCaptchaModule,
