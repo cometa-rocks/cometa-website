@@ -30,6 +30,7 @@ import { CometaSlidesComponent } from './components/cometa-slides/cometa-slides.
 
 /* BrowserAnimationsModule is necessary if angular material is used, material includes certain animations*/
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CometaPricingComponent } from './components/cometa-pricing/cometa-pricing.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CometaSupportComponent,
     CometaSpeechFeedbackComponent,
     CometaSlidesComponent,
+    CometaPricingComponent,
   ],
   imports: [
     BrowserModule,

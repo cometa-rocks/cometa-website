@@ -9,28 +9,22 @@ export const COMETA_FOOTER_DATA = {
         links: [
           { name: "Introduction", target: "_blank", rel: "noopener", href: "https://drive.google.com/file/d/1Y4lQ5aSC5Dbfn8q5Q4DLy0eEfsGWAVkm/view?usp=sharing" },
           { name: "Getting Started", target: "_blank", rel: "noopener", href: "https://drive.google.com/file/d/1jWA5QeMW1MJ0rmrP60oC5YzpCSRcZa9w/view?usp=sharing" },
-          { name: "Subscribe", target: "_self", rel: "", href: "#subscribe" }
-        ]
-      },
-      {
-        title: "Learn More",
-        links: [
-          { name: "Documentation", target: "_blank", rel: "noopener", href: "https://github.com/cometa-rocks/cometa_documentation" },
-          { name: "What the product", target: "_blank", rel: "noopener", href: "https://www.youtube.com/watch?v=8uv-QAJkOLY&t=4s" }
+          { name: "What the product", target: "_blank", rel: "noopener", href: "https://www.youtube.com/watch?v=8uv-QAJkOLY&t=4s" },
+          { name: "User Scenarios", target: "_blank", rel: "noopener", href: "https://drive.google.com/file/d/1jlxj-776_oTUyRHrxtFgZJUXmX3yInxn/view?usp=sharing" }
         ]
       },
       {
         title: "Using Co.meta",
         links: [
           { name: "Schedule a Demo", target: "_blank", rel: "noopener", href: "https://cal.com/ralf/cometa-demo" },
-          { name: "User Scenarios", target: "_blank", rel: "noopener", href: "https://drive.google.com/file/d/1jlxj-776_oTUyRHrxtFgZJUXmX3yInxn/view?usp=sharing" },
-          { name: "Login", target: "_blank", rel: "noopener", href: "https://prod.cometa.rocks/" }
+          { name: "Login - try it, it's free", target: "_blank", rel: "noopener", href: "https://prod.cometa.rocks/" }
         ]
       },
       {
         title: "Community & Help",
         links: [
           { name: "Github", target: "_blank", rel: "noopener", href: "https://github.com/cometa-rocks/" },
+          { name: "Documentation", target: "_blank", rel: "noopener", href: "https://github.com/cometa-rocks/cometa-documentation" },
           { name: "Support", target: "_self", rel: "", href: "support" },
           { name: "Logos", target: "_self", rel: "", href: "logos" },
           { name: "Merch", target: "_blank", rel: "noopener", href: "https://teespring.com/de/testing-opensource-cometa" }
@@ -48,28 +42,22 @@ export const COMETA_FOOTER_DATA = {
         links: [
           { name: "Introducció", target: "_blank", rel: "noopener", href: "https://drive.google.com/file/d/1Y4lQ5aSC5Dbfn8q5Q4DLy0eEfsGWAVkm/view?usp=sharing" },
           { name: "Començant", target: "_blank", rel: "noopener", href: "https://drive.google.com/file/d/1jWA5QeMW1MJ0rmrP60oC5YzpCSRcZa9w/view?usp=sharing" },
-          { name: "Subscriu-te", target: "_self", rel: "", href: "#subscribe" }
-        ]
-      },
-      {
-        title: "Aprèn més",
-        links: [
-          { name: "Documentació", target: "_blank", rel: "noopener", href: "https://github.com/cometa-rocks/cometa_documentation" },
-          { name: "Quin producte", target: "_blank", rel: "noopener", href: "https://www.youtube.com/watch?v=8uv-QAJkOLY&t=4s" }
+          { name: "Quin producte", target: "_blank", rel: "noopener", href: "https://www.youtube.com/watch?v=8uv-QAJkOLY&t=4s" },
+          { name: "Escenaris d'usuari", target: "_blank", rel: "noopener", href: "https://drive.google.com/file/d/1jlxj-776_oTUyRHrxtFgZJUXmX3yInxn/view?usp=sharing" }
         ]
       },
       {
         title: "Utilitzant Co.meta",
         links: [
           { name: "Programa una demostració", target: "_blank", rel: "noopener", href: "https://calendso.com/ralf/cometa-demo" },
-          { name: "Escenaris d'usuari", target: "_blank", rel: "noopener", href: "https://drive.google.com/file/d/1jlxj-776_oTUyRHrxtFgZJUXmX3yInxn/view?usp=sharing" },
-          { name: "iniciar Sessió", target: "_blank", rel: "noopener", href: "https://prod.cometa.rocks/" }
+          { name: "iniciar Sessió - es libre", target: "_blank", rel: "noopener", href: "https://prod.cometa.rocks/" }
         ]
       },
       {
         title: "Comunitat i ajuda",
         links: [
           { name: "Github", target: "_blank", rel: "noopener", href: "https://github.com/cometa-rocks/" },
+          { name: "Documentació", target: "_blank", rel: "noopener", href: "https://github.com/cometa-rocks/cometa-documentation/" },
           { name: "Suport", target: "_self", rel: "", href: "support" },
           { name: "Logos", target: "_self", rel: "", href: "logos" },
           { name: "Mercaderia", target: "_blank", rel: "noopener", href: "https://teespring.com/de/testing-opensource-cometa" }

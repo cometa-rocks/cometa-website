@@ -24,6 +24,11 @@ footer {
             @include grid($template-columns: repeat(5,1fr));
         }
 
+        /* do not color links in purple */
+        a {
+            text-decoration: none;
+            color: $whitish;
+        }
 
         text-align: center;
         .links {

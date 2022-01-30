@@ -6,6 +6,7 @@ import { CometaSpeechComponent } from './components/cometa-speech/cometa-speech.
 import { CometaSpeechFeedbackComponent } from './components/cometa-speech-feedback/cometa-speech-feedback.component';
 import { CometaSupportComponent } from './components/cometa-support/cometa-support.component';
 import { CometaSlidesComponent } from './components/cometa-slides/cometa-slides.component';
+import { CometaPricingComponent } from './components/cometa-pricing/cometa-pricing.component';
 
 const routes: Routes = [
   /*inner component navigations  */
@@ -16,6 +17,9 @@ const routes: Routes = [
   /* redirects to cometa.rocks/logotips */
   { path: 'logotips', component: CometaLogotipsComponent },
   { path: 'logos', component: CometaLogotipsComponent },
+
+  /* redirects to cometa.rocks/pricing */
+  { path: 'pricing', component: CometaPricingComponent },
 
   /* redirects to cometa.rocks/speech*/
   { path: 'speech', component: CometaSpeechComponent },
