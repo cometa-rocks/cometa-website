@@ -7,6 +7,7 @@
 # This script just prepares some dependcies to resolve issues with npm and other
 # ---
 # Changelog:
+# 2022-01-27 RRO Added baisc, basic2 and baisc3 for debugging, changed to npm ci, npm installation commands, as npm ci installs, what we need ;-)
 # 2022-01-05 TONI change_id: 1.1
 # 2021-12-22 RRO create
 #
@@ -67,15 +68,10 @@ function install_nodejs(){
     ln -s $INSTALL_DIR/node-$VERSION-$DISTRO/bin/node /usr/bin/node
     ln -s $INSTALL_DIR/node-$VERSION-$DISTRO/bin/npm /usr/bin/npm
     ln -s $INSTALL_DIR/node-$VERSION-$DISTRO/bin/npx /usr/bin/npx
-}
-
-#
-# Install npm
-# DEPRECATED: If ran after installing nodejs it will replace nodejs binaries.
-#
-function install_npm(){
-    echo "Installing npm"
-    apk add npm 
+    echo "Done ... showing the version of installed node for your convinience"
+    npm -v
+    node -v
+    echo "----"
 }
 
 #
@@ -83,11 +79,23 @@ function install_npm(){
 #
 function install_npm_packages(){
     echo "Switching to /cometa_website dir"
-    cd /cometa_website
-
-    npm install -g @angular/cli
-    npm i --save-dev @angular-devkit/build-angular@latest
-    npm i # FIXME .. ask Arslan
+    cd /cometa_website && echo "ok" || echo "failed"
+    echo "Switching off ng analytics as seen in https://angular.io/analytics"
+    export NG_CLI_ANALYTICS=ci # https://stackoverflow.com/questions/56355499/stop-angular-cli-asking-for-collecting-analytics-when-i-use-ng-build
+    echo "Removing node_modules"
+    rm -rf node_modules
+    # #####
+    # Commented the following, as npm ci does not need any installation directives ... it installs what is in package-lock.json
+    # #####
+    # echo "Doing npm install"
+    # npm install -g @angular/cli && echo "============ OK 1 =============" || echo "failed npm install 1 - check on this!!!"
+    # echo "I am installing as user: " $(whoami)
+    # echo "Installing angular-devkit@latest"
+    # npm ci --save-dev @angular-devkit/build-angular@latest && echo "============ OK 2 =============" || echo "failed npm install 2 - check on this!!!"
+    # echo "Creating node_modules with npm ci --unsafe-perm" && echo "============ OK 3 =============" || echo "failed npm install 3 - check on this!!!"
+    npm ci --unsafe-perm && echo "============ OK 4 =============" || echo "failed npm install 4 - check on this!!!" # FIXME .. ask Arslan
+    echo "Showing angluar version for your convinience"
+    npx ng --version
 }
 
 #
@@ -99,7 +107,7 @@ function build_angular(){
 
     echo "Building project"
     [ ! -f /cometa_website/src/environments/environment.ts ] && { cp /cometa_website/src/environments/environment.prod.ts /cometa_website/src/environments/environment.ts; echo Copied environment.prod.ts; } || echo environment.ts exists
-    ng build --aot --extract-licenses --build-optimizer --optimization --configuration production
+    npx ng build --aot --extract-licenses --build-optimizer --optimization --configuration production
 }
 
 #
@@ -110,7 +118,18 @@ function ng_serve_project() {
     # start nginx in background
     /start.sh &
     # the ng server only works, if the $PATH variable is set correctly as seen at the beginning of this script
-    ng serve --host 0.0.0.0 --port 4300 --disable-host-check
+    npx ng serve --host 0.0.0.0 --port 4300 --disable-host-check
+}
+
+#
+# ng serve the project for development without exit
+# ... this will start nginx in background
+#
+function only_start_nginx() {
+    # start nginx in background
+    echo "Starting nginx"
+    /start.sh 
+
 }
 
 #
@@ -120,6 +139,7 @@ function deploy_to_nginx(){
     echo "Switching to /cometa_website dir"
     cd /cometa_website
 
+    ls -la
     echo "Copying files to dist"
     cp -r dist/cometa-rocks-website/* /var/www/html
 }
@@ -145,6 +165,7 @@ OPTIONS:
 	compile						installs angular, npm packages, builds the project and deploys it to nginx document root
 	full						runs both of the above options (basic and compile)
     serve                       runs ng serve
+    start                       only start nginx. This is good for debugging a stuck container
 
 EXAMPLES:
 	* Fresh install / Complete Deployment
@@ -190,6 +211,12 @@ do
         install_nodejs # install nodejs
         shift
         ;;
+    basic2)
+        install_npm_packages # installs npm packages
+        shift;;
+    basic3)
+        build_angular # building anguar project
+        shift;;
     compile)
         install_npm_packages # install npm packages
         build_angular # build angular project
@@ -202,6 +229,11 @@ do
     serve)
         ng_serve_project # ng serve this project 
         ;;
+    start)
+        fix_user # fix nginx user
+        install_lua # install lua for nginx
+        only_start_nginx # only starts nginx ... this is good for debugging a stcuk container installation 
+        ;;
     *)    # unknown option
         echo "Unknown option ${key}, try again...";
         help
@@ -209,3 +241,4 @@ do
         ;;
     esac
 done
+echo "Fin del script"

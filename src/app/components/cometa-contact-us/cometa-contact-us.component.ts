@@ -47,7 +47,7 @@ export class CometaContactUsComponent implements OnInit {
     this.captchaComponent.captchaEndpoint = `${environment.env_mailurl}/php/simple-botdetect.php`;
   }
 
-  /*applys currently selected language and theme to layout*/
+  /* applys currently selected language and theme to layout*/
   applyCurrentLayoutSettings() {
     /*get current theme*/
     this.switcherService.getCurrentThemeObservable().subscribe((theme: any) => this.currentTheme = theme);

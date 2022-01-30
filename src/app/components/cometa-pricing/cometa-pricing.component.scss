@@ -1,0 +1,61 @@
+/*Breakpoints for responsive design */
+@import "_breakpoints";
+
+@import "_colors";
+@import "_layout";
+
+/* wrap anything with a margin */
+.wrapper {
+    padding: 30px;
+    line-height: 25px;
+    text-align: center;
+
+    .card-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        margin: 15px;
+        gap: 2vw;
+        text-align: center;
+        justify-content: center;
+    }
+
+    /* setting for switching the theme */
+    &.isDark {
+        background-color: $lightblack;
+        color: $whitish;
+    }
+
+    .mat-card {
+        /* Max-width of cards */
+        max-width: 400px;
+
+        /* setting for switching the theme */
+        &.isDark {
+            background-color: $black;
+            color: $whitish;
+            border: 1px solid grey;
+        }
+        .mat-tab-label {
+            /* setting for switching the theme */
+            &.isDark {
+                background-color: $black;
+                color: $whitish !important;
+                border: 1px solid grey;
+            }
+        }
+    }
+
+}
+
+/* make tick mark green */
+li::marker {
+    color: $green;
+}
+
+/* put tick mark on list */
+li {
+    list-style: "\2713\00A0";
+    margin:15px;
+}
