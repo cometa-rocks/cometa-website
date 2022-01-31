@@ -6,7 +6,7 @@ export const COMETA_USERS_DATA = {
     cometa_video_explanation: "co.meta - highlevel explanation",
     cometa_video_in_action: "co.meta in action",
     cometa_users_early_access: "Request early access to Co.meta",
-    cometa_users_early_access_desc: "The open beta has ended. We invite you to request access before going public. You have the exclusive opportunity to test and use co.meta without paying. By doing so, you will be able to access our private repository and discussion channels on discord and telegram.",
+    cometa_users_early_access_desc: "The open beta has ended. We invite you to request access. You have the exclusive opportunity to test and use co.meta without paying. By doing so, you will be able to access our private repository and discussion channels on discord and telegram.",
     cometa_users_lets_talk: "Let's talk...",
     cometa_users_lets_talk_desc: "Questions? The co.meta rocks  team welcomes any kind of feedback, it helps us make the world of testing easier. We are interested in your experience as a tester, let's talk.",
     cometa_users_donate: "Subscribe",
