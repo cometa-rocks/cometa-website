@@ -46,6 +46,10 @@ present there as well.
     &.isDark {
         background-color: $lightblack;
         color: $whitish;
+
+        .mat-tab-header-pagination-chevron {
+            border-color: $whitish;
+        }
     }
 
     /* general stuff for the card-wrapper */
