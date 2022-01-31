@@ -7,14 +7,17 @@
     <!-- This text is displayed above the tabs/cars of the pricing -->
     <h1>Fair Pricing</h1>
 
-    <h2>Don't worry ... we love to take care of updates, 99.9% uptime, powerful infrastructure, geo-location steering ... ready when you need it most.</h2>
+    <h2>Don't worry ... we love to take care of updates, 99.9% uptime, powerful infrastructure, geo-location steering
+        ... ready when you need it most.</h2>
     <br><br>
     <h3>
-        Cometa will never lock you in. Try before you buy, use cometa for free (no credit card required, just ask for early access).
+        Cometa will never lock you in. Try before you buy, use cometa for free (no credit card required, just ask for
+        early access).
         <br><br>
         Cometa executes tests much faster than any other testing platform.
         <br><br>
-        Testcases take 50% less time executing on Cometa. Compare our world-class service and speed before you buy anything else. If we do not execute faster, you get your money back - guarantee!
+        Testcases take 50% less time executing on Cometa. Compare our world-class service and speed before you buy
+        anything else. If we do not execute faster, you get your money back - guarantee!
     </h3>
     <br>
     <br>
@@ -36,31 +39,37 @@
                         <h4>Get 90 minutes of testing for free</h4>
                         <ul>
                             <li>250 Steps per Testcase</li>
-                            <li>Video recording</li><li>Visual regression testing</li>
+                            <li>Video recording</li>
+                            <li>Visual regression testing</li>
                             <li>Choose from +200 real and super-fast Browser Emulators</li>
                             <li>Live preview</li>
                             <li>30 Days Data Retention</li>
                         </ul>
                         <br>
-                        <b>Cometa Community Edition</b> is hosted by us for you. No worries about uptime, patching, access ... available when you need it most.
+                        <b>Cometa Community Edition</b> is hosted by us for you. No worries about uptime, patching,
+                        access ... available when you need it most.
                         <br>This is perfect for trying out Cometa.
                         <br>Get started in minutes.
                         <br>No credit card, no downloads, no plugins required. Just request early-access.
                         <p>
-                            <button mat-button [routerLink]="['github']">Early Access</button>
+                            <a [routerLink]="['/early-access']" target="_blank" rel="noopener">
+                                <button mat-button>Early Access</button>
+                            </a>
                         </p>
 
                         <br><br>
                         Or host it yourself. Fork it, twist it, use it. Cometa is available under AGPLv3 license.
                         <p>
-                            <button mat-button [routerLink]="['github']">View on Github</button>
+                            <a [routerLink]="['/github']" target="_blank" rel="noopener">
+                                <button mat-button>View on Github</button>
+                            </a>
                         </p>
                     </mat-card-content>
                 </mat-card>
             </div>
             <br>
             <br>
-        
+
         </mat-tab>
 
         <!--  CLOUD  -->
@@ -70,7 +79,8 @@
                 Cometa Cloud
             </ng-template>
             <br>
-            <b>Cometa Cloud</b> is hosted by us for you. No worries about uptime, patching, access ... available when you need it most.
+            <b>Cometa Cloud</b> is hosted by us for you. No worries about uptime, patching, access ... available when
+            you need it most.
             <div class="card-wrapper">
                 <mat-card mat-card [ngClass]="{'isDark': currentTheme == 'dark'}" class="small">
                     <mat-card-title>Small</mat-card-title>
@@ -78,15 +88,15 @@
 
                     <mat-card-content>
                         <h4>includes 1h of testing</h4>
-
                         <p>
-                            <button mat-button [routerLink]="['early-access']">Get started for free</button>
+                            <a [routerLink]="['/getting-started']" target="_blank" rel="noopener">
+                                <button mat-button>Get started for free</button>
+                            </a>
                         </p>
-    
-
                         <ul>
                             <li>500 Steps per Testcase</li>
-                            <li>Video recording</li><li>Visual regression testing</li>
+                            <li>Video recording</li>
+                            <li>Visual regression testing</li>
                             <li>Choose from +200 real and super-fast Browser Emulators</li>
                             <li>Live preview</li>
                             <li>Up to 60 Days Data Retention</li>
@@ -105,12 +115,15 @@
                         <h4>includes 2h of testing</h4>
 
                         <p>
-                            <button mat-button [routerLink]="['early-access']">Start 30 days trial</button>
+                            <a [routerLink]="['/early-access']" target="_blank" rel="noopener">
+                                <button mat-button>Start 30 days trial</button>
+                            </a>
                         </p>
 
                         <ul>
                             <li>750 Steps per Testcase</li>
-                            <li>Video recording</li><li>Visual regression testing</li>
+                            <li>Video recording</li>
+                            <li>Visual regression testing</li>
                             <li>Choose from +200 real and super-fast Browser Emulators</li>
                             <li>Live preview</li>
                             <li>Up to 90 Days Data Retention</li>
@@ -120,7 +133,8 @@
                         </ul>
                         <br>
                         <br>Extra hour of testing, just 1.50€
-                        <br>Execute in parallel, when you run out of time. This is your plan to save valuable time, when integrating with your nightly builds.
+                        <br>Execute in parallel, when you run out of time. This is your plan to save valuable time, when
+                        integrating with your nightly builds.
                     </mat-card-content>
                 </mat-card>
                 <mat-card mat-card [ngClass]="{'isDark': currentTheme == 'dark'}" class="large">
@@ -130,12 +144,15 @@
                         <h4>includes 4h of testing</h4>
 
                         <p>
-                            <button mat-button [routerLink]="['schedule']">Schedule a demo</button>
+                            <a [routerLink]="['/schedule']" target="_blank" rel="noopener">
+                                <button mat-button>Schedule a demo</button>
+                            </a>
                         </p>
 
                         <ul>
                             <li>1.500 Steps per Testcase</li>
-                            <li>Video recording</li><li>Visual regression testing</li>
+                            <li>Video recording</li>
+                            <li>Visual regression testing</li>
                             <li>Choose from +200 real and super-fast Browser Emulators</li>
                             <li>Live preview</li>
                             <li>Up to 180 Days Data Retention</li>
@@ -143,18 +160,20 @@
                             <li>Scheduling</li>
                             <li>Parallel Testing</li>
                             <li>Choose from 2000+ Real Devices</li>
-                        </ul> 
+                        </ul>
                         <br>
                         <br>Extra hour of testing, just 1,-€
-                        <br>Tired of emulators? Test on real stuff? Here is your plan. Execute on real devices. This plan is limited to 5 real devices in parallel.
-                        <br>You need more? No, problem ... talk to us. Or bring your own licence. This is what we call - fair pricing.
+                        <br>Tired of emulators? Test on real stuff? Here is your plan. Execute on real devices. This
+                        plan is limited to 5 real devices in parallel.
+                        <br>You need more? No, problem ... talk to us. Or bring your own licence. This is what we call -
+                        fair pricing.
                     </mat-card-content>
                 </mat-card>
             </div>
         </mat-tab>
 
         <!-- Enterprise -->
-        <mat-tab  label="Cometa Enterprise" mat-align-tabs="end">
+        <mat-tab label="Cometa Enterprise" mat-align-tabs="end">
             <ng-template mat-tab-label>
                 <mat-icon class="example-tab-icon">corporate_fare</mat-icon>
                 Cometa Enterprise
@@ -168,7 +187,7 @@
                     <mat-card-content>
 
                         <p>
-                            <button mat-button [routerLink]="['contact']">Contact us</button>
+                            <button mat-button (click)="open_dialog_contact_form()">Contact us</button>
                         </p>
 
                         <ul>
@@ -186,14 +205,14 @@
                     </mat-card-content>
                     <br>
                     <br>Installs in 15 minutes as Virtual Machine.
-                </mat-card>                <!-- Silver -->
+                </mat-card> <!-- Silver -->
                 <mat-card mat-card [ngClass]="{'isDark': currentTheme == 'dark'}" class="enterprise">
                     <mat-card-title>Enterprise Edition</mat-card-title>
                     <mat-card-subtitle>Silver</mat-card-subtitle>
                     <mat-card-content>
 
                         <p>
-                            <button mat-button [routerLink]="['contact']">Contact us</button>
+                            <button mat-button (click)="open_dialog_contact_form()">Contact us</button>
                         </p>
 
                         <ul>
@@ -220,7 +239,7 @@
                     <mat-card-content>
 
                         <p>
-                            <button mat-button [routerLink]="['contact']">Contact us</button>
+                            <button mat-button (click)="open_dialog_contact_form()">Contact us</button>
                         </p>
 
                         <ul>
@@ -241,15 +260,19 @@
                         </ul>
                     </mat-card-content>
                     <br>
-                    <br>The Gold plan gives you access to the complete solution for Enterprise wide testing. Establish your testing platform and free your Devs from maintaining flaky testcases. 
+                    <br>The Gold plan gives you access to the complete solution for Enterprise wide testing. Establish
+                    your testing platform and free your Devs from maintaining flaky testcases.
                 </mat-card>
             </div>
-            
+
             <br>
-            <b>Cometa Enterprise</b> hosted or self hosted. With Cometa Enterprise Edition your are always on the safe side. 
-            <br>Support garuantee! Nothing is better then talking directly to the people that made the software you are using!
+            <b>Cometa Enterprise</b> hosted or self hosted. With Cometa Enterprise Edition your are always on the safe
+            side.
+            <br>Support garuantee! Nothing is better then talking directly to the people that made the software you are
+            using!
             <br>We continously patch your installation.
-            <br>You get enterprise grade features OIDC, Loadtesting, Run on Kubernetes, Run on any cloud with superb integrations options.
+            <br>You get enterprise grade features OIDC, Loadtesting, Run on Kubernetes, Run on any cloud with superb
+            integrations options.
 
         </mat-tab>
     </mat-tab-group>

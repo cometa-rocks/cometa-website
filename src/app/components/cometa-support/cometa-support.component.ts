@@ -22,7 +22,7 @@ export class CometaSupportComponent implements OnInit {
   currentTheme: any;
   currentLang: any;
 
-  constructor( private dialog:MatDialog, private switcherService: SwitcherService, private translateService: TranslateService ) { }
+  constructor(private dialog: MatDialog, private switcherService: SwitcherService, private translateService: TranslateService) { }
 
   ngOnInit(): void {
     // global theme and language options
