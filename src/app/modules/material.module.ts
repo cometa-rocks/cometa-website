@@ -1,3 +1,12 @@
+/**
+ * 
+ * This file is imported in global app-modules
+ * It collects and separates AngularMaterial imports for better overview
+ * 
+ * Changelog:
+ * 2022-01-31 RRO documentation
+ * 
+ */
 import { NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
