@@ -29,6 +29,7 @@ present there as well.
 
     /* formatting for headlines */
     h1, h2, h3 {
+        line-height: 1.3em;
         text-align: left;
         @include for-desktop-portrait-up(desktop) { 
             margin-left:30%;
