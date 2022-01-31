@@ -19,22 +19,36 @@ present there as well.
 /* wrap the pricing anything with a margin */
 .wrapper-pricing {
 
-    h1, h2, h3 {
-        margin-left:30%;
-        margin-right:30%;
-        text-align: left;
+    /* general stuff for the wrapper */
+    padding: 15px;
+    @include for-desktop-portrait-up(desktop) { 
+        padding: 30px;
     }
-
-
-    padding: 30px;
     line-height: 25px;
     text-align: center;
+
+    /* formatting for headlines */
+    h1, h2, h3 {
+        text-align: left;
+        @include for-desktop-portrait-up(desktop) { 
+            margin-left:30%;
+            margin-right:30%;
+        }
+    }
+
 
     /* Have a pointer cursor on the buttons */
     button {
         cursor: pointer;
     }
 
+    /* setting for switching the theme */
+    &.isDark {
+        background-color: $lightblack;
+        color: $whitish;
+    }
+
+    /* general stuff for the card-wrapper */
     .card-wrapper {
         display: flex;
         flex-direction: row;
@@ -46,12 +60,7 @@ present there as well.
         justify-content: center;
     }
 
-    /* setting for switching the theme */
-    &.isDark {
-        background-color: $lightblack;
-        color: $whitish;
-    }
-
+    /* Formatting for the cards */
     .mat-card {
 
         /* align the UL tick items left */
@@ -73,8 +82,10 @@ present there as well.
             margin:20px;
         }
 
-        /* Width of cards all the same */
-        width: 400px;
+        @include for-desktop-portrait-up(desktop) { 
+            /* Width of cards all the same */
+            width: 400px;
+        }
 
         /* setting for switching the theme */
         &.isDark {
@@ -93,8 +104,6 @@ present there as well.
 
 }
 
-
-
 /* Styles for the tab background bar */
 .mat-tab-labels {
     background-color: transparent;
@@ -103,10 +112,14 @@ present there as well.
 /* Styles for tab labels */
 .mat-tab-label {
     background-color: $medium-gray !important;
-    /* make all tabs the same width */
-    width: 300px !important;
     /* put some space between the tabs */
-    margin-right: 5px;    
+    margin-right: 1px;    
+    @include for-desktop-portrait-up(desktop) { 
+        /* make all tabs the same width */
+        width: 300px !important;
+        /* put some space between the tabs */
+        margin-right: 5px;    
+    }
     color: $black;
     font-weight: 700;
     /* make the top of the tabs round */
@@ -129,6 +142,7 @@ present there as well.
     border-radius: 15px;
 }
 
+/* put some spaceing on the bottom */
 .mat-tab-group {
     margin-bottom: 50px;
 }
@@ -137,6 +151,7 @@ present there as well.
 .mat-tab-label.mat-tab-label-active .mat-icon {
     color: $orange;
 }
+
 /* general distance to text on the right */
 .mat-icon {
     margin-right:15px;
