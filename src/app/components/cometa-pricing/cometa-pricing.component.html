@@ -2,37 +2,36 @@
 
 <title>Cometa Pricing</title>
 
-<div [ngClass]="{'isDark': currentTheme == 'dark'}" class="wrapper">
+<div [ngClass]="{'isDark': currentTheme == 'dark'}" class="wrapper-pricing">
 
     <!-- This text is displayed above the tabs/cars of the pricing -->
     <h1>Fair Pricing</h1>
 
-    Don't worry ... we love to take care of updates, 99.9% uptime, powerful infrastructure, geo-location steering ... ready when you need it most.
+    <h2>Don't worry ... we love to take care of updates, 99.9% uptime, powerful infrastructure, geo-location steering ... ready when you need it most.</h2>
     <br><br>
-    Cometa will never lock you in. Try before you buy, use cometa for free (no credit card required, just ask for early access).
-    <br><br>
-    Cometa executes tests much faster than any other testing platform.
-    <br><br>
-    Testcases take 50% less time executing on Cometa. Compare our world-class service and speed before you buy anything else. If we do not execute faster, you get your money back - guarantee!
-    <br>
-    <br>
-    <p>
-        <button mat-button><a routerLink="/early-access/">Try for free - get early access</a></button>
-        <button mat-button><a routerLink="/schedule/">Schedule a Demo</a></button>
-    </p>
+    <h3>
+        Cometa will never lock you in. Try before you buy, use cometa for free (no credit card required, just ask for early access).
+        <br><br>
+        Cometa executes tests much faster than any other testing platform.
+        <br><br>
+        Testcases take 50% less time executing on Cometa. Compare our world-class service and speed before you buy anything else. If we do not execute faster, you get your money back - guarantee!
+    </h3>
     <br>
     <br>
 
     <!-- There are two tabs inside ... Cometa Clud and Cometa Enterprise -->
     <mat-tab-group mat-align-tabs="center" mat-card [ngClass]="{'isDark': currentTheme == 'dark'}">
-        <!--  CLOUD  -->
-        <mat-tab label="Cometa Cloud">
+        <!-- Community -->
+        <mat-tab label="Cometa Community " mat-align-tabs="start">
+            <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">group</mat-icon>
+                Cometa Community
+            </ng-template>
             <br>
-            <b>Cometa Cloud</b> is hosted by us for you. No worries about uptime, patching, access ... available when you need it most.
             <div class="card-wrapper">
                 <mat-card [ngClass]="{'isDark': currentTheme == 'dark'}" class="free">
-                    <mat-card-title>Community Edition</mat-card-title>
-                    <mat-card-subtitle>free</mat-card-subtitle>
+                    <mat-card-title>Cometa CE</mat-card-title>
+                    <mat-card-subtitle>hosted or selfhosted</mat-card-subtitle>
                     <mat-card-content>
                         <h4>Get 90 minutes of testing for free</h4>
                         <ul>
@@ -43,16 +42,48 @@
                             <li>30 Days Data Retention</li>
                         </ul>
                         <br>
+                        <b>Cometa Community</b> is hosted by us for you. No worries about uptime, patching, access ... available when you need it most.
                         <br>This is perfect for trying out Cometa.
                         <br>Get started in minutes.
-                        <br>No credit card, no downloads, no plugins required.
+                        <br>No credit card, no downloads, no plugins required. Just regquest early-access.
+                        <p>
+                            <button mat-button [routerLink]="['github']">Early Access</button>
+                        </p>
+
+                        <br><br>
+                        Or host it yourself. Fork it, twist it, use it. Cometa is available under AGPLv3 license.
+                        <p>
+                            <button mat-button [routerLink]="['github']">View on Github</button>
+                        </p>
                     </mat-card-content>
                 </mat-card>
+            </div>
+            <br>
+            <br>
+        
+        </mat-tab>
+
+        <!--  CLOUD  -->
+        <mat-tab label="Cometa Cloud" mat-align-tabs="center">
+            <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">cloud</mat-icon>
+                Cometa Cloud
+            </ng-template>
+            <br>
+            <b>Cometa Cloud</b> is hosted by us for you. No worries about uptime, patching, access ... available when you need it most.
+            <div class="card-wrapper">
                 <mat-card mat-card [ngClass]="{'isDark': currentTheme == 'dark'}" class="small">
                     <mat-card-title>Small</mat-card-title>
                     <mat-card-subtitle>€ 7,-/month</mat-card-subtitle>
+
                     <mat-card-content>
-                        <h4>includes 2h of testing</h4>
+                        <h4>includes 1h of testing</h4>
+
+                        <p>
+                            <button mat-button [routerLink]="['early-access']">Get started for free</button>
+                        </p>
+    
+
                         <ul>
                             <li>500 Steps per Testcase</li>
                             <li>Video recording</li><li>Visual regression testing</li>
@@ -72,6 +103,11 @@
                     <mat-card-subtitle>€ 49,-/month</mat-card-subtitle>
                     <mat-card-content>
                         <h4>includes 2h of testing</h4>
+
+                        <p>
+                            <button mat-button [routerLink]="['early-access']">Start 30 days trial</button>
+                        </p>
+
                         <ul>
                             <li>750 Steps per Testcase</li>
                             <li>Video recording</li><li>Visual regression testing</li>
@@ -91,7 +127,12 @@
                     <mat-card-title>Large</mat-card-title>
                     <mat-card-subtitle>€ 149,-/month</mat-card-subtitle>
                     <mat-card-content>
-                        <h4>includes 2h of testing</h4>
+                        <h4>includes 4h of testing</h4>
+
+                        <p>
+                            <button mat-button [routerLink]="['schedule']">Schedule a demo</button>
+                        </p>
+
                         <ul>
                             <li>1.500 Steps per Testcase</li>
                             <li>Video recording</li><li>Visual regression testing</li>
@@ -111,20 +152,28 @@
                 </mat-card>
             </div>
         </mat-tab>
+
         <!-- Enterprise -->
-        <mat-tab  label="Cometa Enterprise">
+        <mat-tab  label="Cometa Enterprise" mat-align-tabs="end">
+            <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">corporate_fare</mat-icon>
+                Cometa Enterprise
+            </ng-template>
             <br>
-            <b>Cometa Enterprise</b> hosted or self hosted. With Cometa Enterprise Edition your are always on the safe side. We cintously patch your installation.
-            <br>You get enterprise grade features OIDC, Loadtesting, Run on Kubernetes, Run on any cloud with superb integrations options.
             <div class="card-wrapper">
+                <!-- Bronze -->
                 <mat-card mat-card [ngClass]="{'isDark': currentTheme == 'dark'}" class="enterprise">
                     <mat-card-title>Enterprise Edition</mat-card-title>
                     <mat-card-subtitle>Bronze</mat-card-subtitle>
                     <mat-card-content>
-                        <h4>Get 4,800 minutes of testing for free</h4>
+
+                        <p>
+                            <button mat-button [routerLink]="['contact']">Contact us</button>
+                        </p>
+
                         <ul>
                             <li>5 Departments</li>
-                            <li>5 Prallel Browsers</li>
+                            <li>5 Parallel Browsers</li>
                             <li>25 Environment Variables</li>
                             <li>500 Steps per Testcase</li>
                             <li>IBM Cognos Teststeps</li>
@@ -136,14 +185,17 @@
                         </ul>
                     </mat-card-content>
                     <br>
-                    <br>Enhance your experience and run Cometa behind your firewall?
-                    <br>No problem! With the Enterprise Editions you can rest asure that you get the support, when you need it most.
-                </mat-card>
+                    <br>Installs in 15 minutes as Virtual Machine.
+                </mat-card>                <!-- Silver -->
                 <mat-card mat-card [ngClass]="{'isDark': currentTheme == 'dark'}" class="enterprise">
                     <mat-card-title>Enterprise Edition</mat-card-title>
                     <mat-card-subtitle>Silver</mat-card-subtitle>
                     <mat-card-content>
-                        <h4>includes 72,000 minutes of testing</h4>
+
+                        <p>
+                            <button mat-button [routerLink]="['contact']">Contact us</button>
+                        </p>
+
                         <ul>
                             <li>15 Departments</li>
                             <li>50 Parallel Browsers</li>
@@ -166,7 +218,11 @@
                     <mat-card-title>Enterprise Edition</mat-card-title>
                     <mat-card-subtitle>Gold</mat-card-subtitle>
                     <mat-card-content>
-                        <h4>includes 288,000 minutes of testing</h4>
+
+                        <p>
+                            <button mat-button [routerLink]="['contact']">Contact us</button>
+                        </p>
+
                         <ul>
                             <li>Unlimited Departments</li>
                             <li>200 Parallel Browsers</li>
@@ -188,6 +244,13 @@
                     <br>The Gold plan gives you access to the complete solution for Enterprise wide testing. Establish your testing platform and free your Devs from maintaining flaky testcases. 
                 </mat-card>
             </div>
+            
+            <br>
+            <b>Cometa Enterprise</b> hosted or self hosted. With Cometa Enterprise Edition your are always on the safe side. 
+            <br>Support garuantee! Nothing is better then talking directly to the people that made the software you are using!
+            <br>We continously patch your installation.
+            <br>You get enterprise grade features OIDC, Loadtesting, Run on Kubernetes, Run on any cloud with superb integrations options.
+
         </mat-tab>
     </mat-tab-group>
 </div>

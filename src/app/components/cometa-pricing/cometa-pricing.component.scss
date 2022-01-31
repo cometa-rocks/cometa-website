@@ -1,14 +1,39 @@
-/*Breakpoints for responsive design */
+/* Breakpoints for responsive design */
 @import "_breakpoints";
 
+/* Global colors */
 @import "_colors";
+
+/* global layout parameters */
 @import "_layout";
 
-/* wrap anything with a margin */
-.wrapper {
+
+/* 
+==================================================================================
+Be carefull with declaring CSS in this component as it uses ViewEncapsulation.None
+This means that any decalaration will effect the whole application, if tags are 
+present there as well.
+==================================================================================
+*/
+
+/* wrap the pricing anything with a margin */
+.wrapper-pricing {
+
+    h1, h2, h3 {
+        margin-left:30%;
+        margin-right:30%;
+        text-align: left;
+    }
+
+
     padding: 30px;
     line-height: 25px;
     text-align: center;
+
+    /* Have a pointer cursor on the buttons */
+    button {
+        cursor: pointer;
+    }
 
     .card-wrapper {
         display: flex;
@@ -28,34 +53,92 @@
     }
 
     .mat-card {
-        /* Max-width of cards */
-        max-width: 400px;
+
+        /* align the UL tick items left */
+        ul {
+            text-align: left;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-top: 50px;
+        }
+
+        /* make tick mark green */
+        li::marker {
+            color: $green;
+        }
+
+        /* put tick mark + 3 spaces on list */
+        li {
+            list-style: "\2713\00A0\00A0\00A0";
+            margin:20px;
+        }
+
+        /* Width of cards all the same */
+        width: 400px;
 
         /* setting for switching the theme */
         &.isDark {
             background-color: $black;
-            color: $whitish;
+            color: $white !important;
             border: 1px solid grey;
-        }
-        .mat-tab-label {
-            /* setting for switching the theme */
-            &.isDark {
-                background-color: $black;
-                color: $whitish !important;
-                border: 1px solid grey;
+
+            /* color text of subtitle on dark theme */
+            .mat-card-subtitle {
+                color:$whitish;
             }
         }
+
+
     }
 
 }
 
-/* make tick mark green */
-li::marker {
-    color: $green;
+
+
+/* Styles for the tab background bar */
+.mat-tab-labels {
+    background-color: transparent;
 }
 
-/* put tick mark on list */
-li {
-    list-style: "\2713\00A0";
-    margin:15px;
+/* Styles for tab labels */
+.mat-tab-label {
+    background-color: $medium-gray !important;
+    /* make all tabs the same width */
+    width: 300px !important;
+    /* put some space between the tabs */
+    margin-right: 5px;    
+    color: $black;
+    font-weight: 700;
+    /* make the top of the tabs round */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
+
+/* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
+    min-width: 25px !important;
+    background-color: white !important;
+    color: $black;
+    font-weight: 700;
+}
+
+/* Styles for the ink bar */
+.mat-ink-bar {
+    background-color: $heavy-orange !important;
+    border: 2px solid $heavy-orange;
+    border-radius: 15px;
+}
+
+.mat-tab-group {
+    margin-bottom: 50px;
+}
+
+/* put color on icon when active */
+.mat-tab-label.mat-tab-label-active .mat-icon {
+    color: $orange;
+}
+/* general distance to text on the right */
+.mat-icon {
+    margin-right:15px;
+}
+
