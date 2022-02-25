@@ -5,14 +5,17 @@
     <div class="text">
 
         <div class="logos">
-            <h1>{{content.cometa_media}}</h1>
+            <h1>{{content.cometa_logos}}</h1>
             <p>{{content.cometa_avaliable_logos}}</p>
-            <div class="logo-wrapper" *ngFor="let logo of content.logos">
-                <picture>
-                    <source [srcset]="logo.image_safari" type="image/png">
-                    <source [srcset]="logo.image" type="image/webp">
-                    <img [src]="logo.image" alt="{{logo.alt}}">
-                </picture>
+            <div *ngFor="let logo of content.logos">
+                <div class="logo-wrapper" style="background-color: {{logo.bgcolor}}">
+                    <picture>
+                        <source [srcset]="logo.image_safari" type="image/png">
+                        <source [srcset]="logo.image" type="image/webp">
+                        <img [src]="logo.image" alt="{{logo.alt}}">
+                    </picture>
+                </div>
+
             </div>
         </div>
 

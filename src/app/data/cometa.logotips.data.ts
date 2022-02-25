@@ -1,6 +1,7 @@
 export const COMETA_LOGOTIPS_DATA = {
     en: {
         cometa_media: "Co.meta in the Media",
+        cometa_logos: "Co.meta Logos",
         cometa_avaliable_logos: "The Co.meta logo is available for download as seen below. Feel free to use them. Please do not distort them.",
         cometa_favicons: "Co.meta Favicons",
         cometa_other: "Other",
@@ -11,8 +12,9 @@ export const COMETA_LOGOTIPS_DATA = {
             { title: "Co.meta Rocks openPR", target: "_blank", rel: "noopener", href: "https://www.openpr.com/news/2417683/world-s-first-100-open-source-no-code-automation-suite-opens" }
         ],
         logos: [
-            { image: "assets/logos/COMETA_Logo_Yell_Black-02_400x89.webp", image_safari: "assets/logos/COMETA_Logo_Yell_Black-02_400x89.png", alt: "co.meta-black-logo" },
-            { image: "assets/logos/COMETA_Logo_Yell_Black-02_400x89.webp", image_safari: "assets/logos/COMETA_Logo_Yell_White-02-03.png", alt: "co.meta-white-logo" }
+            { bgcolor:"", image: "assets/logos/cometa-rocks-eases-testing.png", image_safari: "assets/logos/cometa-rocks-eases-testing.png", alt: "cometa.rocks eases testing" },
+            { bgcolor:"#000", image: "assets/logos/COMETA_Logo_Yell_Black-02_400x89.webp", image_safari: "assets/logos/COMETA_Logo_Yell_White-02-03.png", alt: "co.meta-white-logo" },
+            { bgcolor:"#ffffff", image: "assets/logos/COMETA_Logo_Yell_Black-02_400x89.webp", image_safari: "assets/logos/COMETA_Logo_Yell_Black-02_400x89.png", alt: "co.meta-black-logo" }
         ],
         favicons: [
             { image: "assets/favicons/512.webp", image_safari: "assets/favicons/512.png", alt: "favicon-512" },
@@ -25,6 +27,7 @@ export const COMETA_LOGOTIPS_DATA = {
     ca: {
 
         cometa_media: "Co.meta als mitjans de comunicació",
+        cometa_logos: "Co.meta logotip",
         cometa_avaliable_logos: "El logotip de co.meta està disponible per a la seva descàrrega tal com es veu a continuació. No dubteu a utilitzar-los. Si us plau, no els distorsionis.",
         cometa_favicons: "Co.meta Favicons",
         cometa_other: "Altres",

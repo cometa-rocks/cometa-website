@@ -18,7 +18,7 @@
         overflow-x: hidden;
         
         .text {
-            @include padding($top: 50px, $right: 3%, $bottom: 50px, $left: 3%);
+            @include padding($top: 100px, $right: 3%, $bottom: 50px, $left: 3%);
             @include dimensions($width: 100%);
             @include for-phone-landscape-up(phone-plus-38) {
                 @include dimensions($width: 85%);
@@ -29,7 +29,7 @@
             }
             text-align: center;
         }
-        
+
         /* Create a blinking border-right */
         .foss-alternative-to {
             border-right: 1px solid orange;
