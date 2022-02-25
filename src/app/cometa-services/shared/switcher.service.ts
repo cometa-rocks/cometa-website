@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
+// import logger service
+import { LoggerService } from 'src/app/services/logger.service';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +15,7 @@ export class SwitcherService {
   private currentTheme: Observable<any>;
   private currentLang: Observable<any>
 
-  constructor() {
+  constructor(private log:LoggerService) {
     /* set up localstorage, if it is the first time user enters the page, or user cleared browser cache*/
     if (!this.getCurrentTheme()) { this.setCurrentTheme('dark'); }
     if (!this.getCurrentLang()) { this.setCurrentLang('en'); }
@@ -34,12 +37,14 @@ export class SwitcherService {
 
   /* actualize theme value('dark'/'light') in localstorage and set it as next and current value of theme behavior subject */
   switchCurrentTheme(theme: string) {
+    this.log.msg("1", "switched theme to:"+theme, "SWITCHER")
     this.setCurrentTheme(theme);
     this.currentThemeSubject.next(theme);
   }
 
   /* actualize language value('en'/'ca') in localstorage and set it as next and current value of language behavior subject */
   switchCurrentLang(lang: string) {
+    this.log.msg("1", "switched lang to: "+lang, "SWITCHER")
     this.setCurrentLang(lang);
     this.currentLangSubject.next(lang);
   }

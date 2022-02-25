@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { SwitcherService } from '../../cometa-services/shared/switcher.service';
 
+// import logger service
+import { LoggerService } from 'src/app/services/logger.service';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -8,7 +11,7 @@ export class TranslateService {
   private currentLang: any;
 
 
-  constructor(private sw: SwitcherService) {
+  constructor(private sw: SwitcherService, private log:LoggerService) {
     //get current language value
     this.sw.getCurrentLangObservable().subscribe((lang: any) => { this.currentLang = lang; });
   }
@@ -20,6 +23,7 @@ export class TranslateService {
   translate(data: Object) {
     const currentLangEntry = Object.entries(data).filter(([key]) => key === this.currentLang);
     const currentLangContent = Object.fromEntries(currentLangEntry);
+    this.log.msg("1", "Just translated", "TRANSLATE")
     return Object.values(currentLangContent)[0];
   }
 }
