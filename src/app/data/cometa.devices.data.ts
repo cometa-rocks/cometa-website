@@ -5,13 +5,15 @@ export const COMETA_DEVICES_DATA = {
         cometa_laptop_dont_break_code: "Don't break code. Don't break layout.",
         cometa_laptop_using_cometa: "Using co.meta provides many benefits for your project.",
         cometa_automation: "Automation of human actions on websites made easy.",
-        cometa_opensrc: "100% Open source made with 💚 for QAs, DevOps and Project Managers.",
+        cometa_opensrc: "Made with 💚 for QAs, DevOps and Project Managers. Free your most valuable resources. Helps you test more and faster with less efforts.",
         cometa_comparison: "Visual comparison with screenshots! Easy UI testing on over 2000 devices.",
         cometa_api: "REST API integrates easy and smooth. Webhooks alert you in your preferred messaging platform.",
         cometa_laptop_folders: "Folders",
         cometa_laptop_features: "Features",
         cometa_login: "Login",
         cometa_demo: "Schedule a demo",
+        cometa_ibmcognos: "20+ specialized test steps for IBM Cognos.",
+
 
 
         //mobile
@@ -50,7 +52,7 @@ export const COMETA_DEVICES_DATA = {
         cometa_laptop_dont_break_code: "No trencar el codi. No trenqueu el disseny.",
         cometa_laptop_using_cometa: "L'ús de co.meta ofereix molts avantatges per al vostre projecte.",
         cometa_automation: "L'automatització de les accions humanes als llocs web és fàcil.",
-        cometa_opensrc: "100% codi obert fet amb 💚 per a QA, DevOps i gestors de projectes.",
+        cometa_opensrc: "Fet amb 💚 per a QA, DevOps i gestors de projectes. Allibera els teus recursos més valuosos. T'ajuda a provar més i més ràpidament amb menys esforços.",
         cometa_comparison: "Comparació visual amb captures de pantalla! Proves fàcils de la interfície d'usuari en més de 2000 dispositius.",
         cometa_api: "L'API REST s'integra de manera fàcil i fluida. Els webhooks us alerten a la vostra plataforma de missatgeria preferida.",
         cometa_laptop_automation: "L'automatització de les accions humanes als llocs web és fàcil. 100% codi obert fet amb ♥ a Barcelona. Comparació visual amb captures de pantalla! Proves fàcils de la interfície d'usuari en més de 2000 dispositius. L'API REST s'integra de manera fàcil i fluida. Ara que ho saps, ja no queden excuses.",
@@ -58,6 +60,8 @@ export const COMETA_DEVICES_DATA = {
         cometa_laptop_features: "Característiques",
         cometa_login: "iniciar Sessió",
         cometa_demo: "Programa una demostració",
+        cometa_ibmcognos: "Més de 20 passos de prova especialitzats per a IBM Cognos.",
+
 
 
         //mobile

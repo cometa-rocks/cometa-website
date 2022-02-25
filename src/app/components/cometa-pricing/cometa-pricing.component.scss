@@ -21,6 +21,7 @@ present there as well.
 
     /* general stuff for the wrapper */
     padding: 15px;
+    padding-top: 100px; /* since adding the fixed floating header, we needs some space above all */
     @include for-desktop-portrait-up(desktop) { 
         padding: 30px;
     }
