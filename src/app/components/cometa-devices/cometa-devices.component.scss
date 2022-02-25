@@ -29,6 +29,23 @@
             }
             text-align: center;
         }
+        
+        /* Create a blinking border-right */
+        .foss-alternative-to {
+            border-right: 1px solid orange;
+            animation: blink .5s step-end infinite ;
+            @keyframes blink {
+                50% {
+                  border-color: transparent;
+                }
+              }
+            @-webkit-keyframes blink {
+                50% {
+                  border-color: transparent;
+                }
+            }
+        }
+
 
         .laptop {
             @include flexbox($dir: row, $justify: center, $align: center);

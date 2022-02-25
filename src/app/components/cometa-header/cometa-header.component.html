@@ -3,25 +3,30 @@
     <div class="logo" (click)="gotoHome()">
       <span>co.</span><span>meta</span>
     </div>
-    <div *ngIf="currentLang == 'en'"><a href="https://prod.cometa.rocks/" name="login"
-        aria-label="login button">Login</a>
-    </div>
-    <div *ngIf="currentLang == 'ca'"><a href="https://prod.cometa.rocks/" name="login" aria-label="login button">Iniciar
-        Sessió</a></div>
   </div>
 
-  <div class="switcher">
-    <div class="theme-switcher">
-      <p *ngIf="currentLang == 'en'" [ngClass]="{'isActive': currentTheme == 'light'}" (click)="switchTheme()">LIGHT</p>
-      <p *ngIf="currentLang == 'ca'" [ngClass]="{'isActive': currentTheme == 'light'}" (click)="switchTheme()">CLAR</p>
-      <div [ngClass]="{'isDark': currentTheme == 'dark'}" (click)="switchTheme()" class="switch"></div>
-      <p *ngIf="currentLang == 'en'" [ngClass]="{'isActive': currentTheme == 'dark'}" (click)="switchTheme()">DARK</p>
-      <p *ngIf="currentLang == 'ca'" [ngClass]="{'isActive': currentTheme == 'dark'}" (click)="switchTheme()">FOSC</p>
+  <div class="header-navigation-items">
+    <div class="menu">
+      <div *ngIf="currentLang == 'en'"><a href="https://prod.cometa.rocks/" name="login" aria-label="login button">Login</a></div>
+      <div *ngIf="currentLang == 'ca'"><a href="https://prod.cometa.rocks/" name="login" aria-label="login button">Iniciar Sessió</a></div>
+      <div *ngIf="currentLang == 'en'"><a [routerLink]="['/pricing']" name="pricing" aria-label="pricing">Pricing</a></div>
+      <div *ngIf="currentLang == 'ca'"><a [routerLink]="['/pricing']" name="preu" aria-label="pricing">Preus</a></div>
     </div>
-    <div class="lang-switcher">
-      <p (click)="switchLang('en')" [ngClass]="{'isActive': currentLang == 'en'}"> EN </p>
-      <div class="separator">|</div>
-      <p (click)="switchLang('ca')" [ngClass]="{'isActive': currentLang == 'ca'}"> CA </p>
+  
+    <div class="switcher">
+      <div class="theme-switcher">
+        <p *ngIf="currentLang == 'en'" [ngClass]="{'isActive': currentTheme == 'light'}" (click)="switchTheme()">LIGHT</p>
+        <p *ngIf="currentLang == 'ca'" [ngClass]="{'isActive': currentTheme == 'light'}" (click)="switchTheme()">CLAR</p>
+        <div [ngClass]="{'isDark': currentTheme == 'dark'}" (click)="switchTheme()" class="switch"></div>
+        <p *ngIf="currentLang == 'en'" [ngClass]="{'isActive': currentTheme == 'dark'}" (click)="switchTheme()">DARK</p>
+        <p *ngIf="currentLang == 'ca'" [ngClass]="{'isActive': currentTheme == 'dark'}" (click)="switchTheme()">FOSC</p>
+      </div>
+      <div class="lang-switcher">
+        <p (click)="switchLang('en')" [ngClass]="{'isActive': currentLang == 'en'}"> EN </p>
+        <div class="separator">|</div>
+        <p (click)="switchLang('ca')" [ngClass]="{'isActive': currentLang == 'ca'}"> CA </p>
+      </div>
     </div>
+  
   </div>
 </header>

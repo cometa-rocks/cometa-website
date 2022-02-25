@@ -8,6 +8,9 @@ import { CometaContactUsComponent } from '../cometa-contact-us/cometa-contact-us
 // Used to open the contact-us component
 import { MatDialog } from '@angular/material/dialog';
 
+// import logger service
+import { LoggerService } from 'src/app/services/logger.service';
+
 @Component({
   selector: 'app-cometa-pricing',
   templateUrl: './cometa-pricing.component.html',
@@ -18,14 +21,16 @@ export class CometaPricingComponent implements OnInit {
 
   currentTheme: any;
 
-  constructor(private switcherService: SwitcherService, private dialog: MatDialog,) { }
+  constructor(private switcherService: SwitcherService, private dialog: MatDialog, private log:LoggerService) { }
 
   ngOnInit(): void {
     this.switcherService.getCurrentThemeObservable().subscribe((theme: any) => this.currentTheme = theme);
+    this.log.trace("ngOnInit", "PRICING")
   }
 
   open_dialog_contact_form() {
     this.dialog.open(CometaContactUsComponent)
+    this.log.trace("open_dialog_contact_form", "PRICING")
   }
 
 
