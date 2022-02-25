@@ -9,7 +9,12 @@ header {
     @include dimensions($height: 4em);
     background-color: $lightblack;
     color: $whitish;
+    /* make the header always stay on top of all elements */
     z-index: 10;
+
+    /* Fix the header to be always visible */
+    position: fixed;
+    width: 100%;
     
 
     /* Login Button in Header */
@@ -35,6 +40,16 @@ header {
 
     }
 
+    /* formatting of surrounding menu items */
+    .header-navigation-items {
+        display:flex;
+    }
+    /* Formatting of menu items */
+    .menu {
+        display:flex;
+        align-items: center;
+    }
+
     .switcher {
         /* default do not display on phone */
         display: none;
@@ -42,20 +57,6 @@ header {
         /* display switch on tablet and up */
         @include for-tablet-portrait-up(tablet) {
             display: inline;
-        }
-    }
-
-    .nav {
-        display: inline; 
-
-        ul {
-            display: flex;
-            list-style-type: none;
-
-            li {
-                @include margin($left: 1em, $right: 1em);
-                a { text-decoration: none; }
-            }
         }
     }
 
