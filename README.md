@@ -10,6 +10,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 * Edit to your needs `php/cometa_secret_variables.php` and `src/environments/environment`.
 * docker-compose -f docker-compose-dev.yml up -d --force-recreate
+* manually serve `npx ng serve  --host 0.0.0.0 --port 4300 --disable-host-check`
 * Make sure to to tunnel the ports 8011 and 4300 via ssh 
 
 ## Code scaffolding

@@ -6,8 +6,12 @@
 
         <div class="logos">
             <h1>{{content.cometa_logos}}</h1>
-            <p>{{content.cometa_avaliable_logos}}</p>
-            <div *ngFor="let logo of content.logos">
+            <h4>
+                {{content.cometa_avaliable_logos}}             
+                <a href="https://github.com/cometa-website/src/app/assets/logos/cometa_rocks_logos_20220228.zip" title=" {{content.cometa_download}} ">{{content.cometa_download}}</a>
+            </h4>
+            <div style="margin-top:25px;" *ngFor="let logo of content.logos">
+                <div style="width:100%; text-align:left">{{logo.alt}}</div>
                 <div class="logo-wrapper" style="background-color: {{logo.bgcolor}}">
                     <picture>
                         <source [srcset]="logo.image_safari" type="image/png">
@@ -15,7 +19,6 @@
                         <img [src]="logo.image" alt="{{logo.alt}}">
                     </picture>
                 </div>
-
             </div>
         </div>
 
@@ -41,10 +44,11 @@
             </div>
         </div>
 
-        <h1>{{content.cometa_media}}</h1> {{content.cometa_published_info}}
-        <ul class="media-links-list">
+        <h1>{{content.cometa_media}}</h1> 
+        <h4>{{content.cometa_published_info}}</h4>
+        <ul>
             <li *ngFor="let link of content.links">
-                <a class="media-links" target="{{link.target}}" rel="{{link.rel}}"
+                <a target="{{link.target}}" rel="{{link.rel}}"
                     href="{{link.href}}">{{link.title}}</a>
             </li>
         </ul>
