@@ -31,6 +31,7 @@
 
         .logos {
             .logo-wrapper {
+                margin: 15px;
                 img { width: 30vw; height: auto; }
                 &:nth-of-type(1) { background-color: $white;} /*styles the first element with class name logo-wrapper*/
                 &:nth-of-type(2) { background-color: $black;} /*styles the second element with class name logo-wrapper*/
@@ -58,15 +59,24 @@
 
             li {
                 @include margin($top: 15px, $bottom: 15px);
-                a {
-                    font-weight: bold;
-                    text-decoration: none;
-                    color: $heavy-orange;
-                    border-bottom: 1px solid $heavy-orange;
-                }
+
     
             }
         }
+    }
+
+    /* style links with underline orange */
+    a {
+        font-weight: bold;
+        text-decoration: none;
+        color: $heavy-orange;
+        border-bottom: 1px solid $heavy-orange;
+        transition: border-bottom 300ms;
+    }
+
+    /* animate links with underline */
+    a:hover{
+        border-bottom: 3px solid $heavy-orange;
     }
 
     &.isDark {

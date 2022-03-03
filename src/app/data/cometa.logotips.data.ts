@@ -1,9 +1,10 @@
 export const COMETA_LOGOTIPS_DATA = {
     en: {
         cometa_media: "Co.meta in the Media",
-        cometa_logos: "Co.meta Logos",
-        cometa_avaliable_logos: "The Co.meta logo is available for download as seen below. Feel free to use them. Please do not distort them.",
-        cometa_favicons: "Co.meta Favicons",
+        cometa_logos: "Logos",
+        cometa_download: "Download logos including EPS format as ZIP archive.",
+        cometa_avaliable_logos: "The Co.meta logo is available for download as seen below. It uses the font comfortaa or Montserrat. Feel free to use them. Please do not distort them. They are also available as in EPS format.",
+        cometa_favicons: "Favicons",
         cometa_other: "Other",
         cometa_published_info: "You have published information about co.meta? Let media@cometa.rocks know, so we can link you here.",
         links: [
@@ -13,8 +14,22 @@ export const COMETA_LOGOTIPS_DATA = {
         ],
         logos: [
             { bgcolor:"", image: "assets/logos/cometa-rocks-eases-testing.png", image_safari: "assets/logos/cometa-rocks-eases-testing.png", alt: "cometa.rocks eases testing" },
-            { bgcolor:"#000", image: "assets/logos/COMETA_Logo_Yell_Black-02_400x89.webp", image_safari: "assets/logos/COMETA_Logo_Yell_White-02-03.png", alt: "co.meta-white-logo" },
-            { bgcolor:"#ffffff", image: "assets/logos/COMETA_Logo_Yell_Black-02_400x89.webp", image_safari: "assets/logos/COMETA_Logo_Yell_Black-02_400x89.png", alt: "co.meta-black-logo" }
+
+            { bgcolor:"#fff", image: "assets/logos/COMETA_Logo_Y_B.png", image_safari: "assets/logos/COMETA_Logo_Y_B.png", alt: "co.meta on white font comfortaa" },
+            { bgcolor:"#000", image: "assets/logos/COMETA_Logo_Y_W.png", image_safari: "assets/logos/COMETA_Logo_Y_W.png", alt: "co.meta on black font comfortaa" },
+
+            { bgcolor:"#fff", image: "assets/logos/COMETAROCKS_Logo_Y_B.png", image_safari: "assets/logos/COMETAROCKS_Logo_Y_B.png", alt: "cometa.rocks on white font comfortaa" },
+            { bgcolor:"#000", image: "assets/logos/COMETAROCKS_Logo_Y_W.png", image_safari: "assets/logos/COMETAROCKS_Logo_Y_W.png", alt: "cometa.rocks on black font comfortaa" },
+
+            { bgcolor:"#fff", image: "assets/logos/COMETA_LogoEslog_Y_B.png", image_safari: "assets/logos/COMETA_LogoEslog_Y_B.png", alt: "co.meta eases testing on white" },
+            { bgcolor:"#000", image: "assets/logos/COMETA_LogoEslog_Y_W.png", image_safari: "assets/logos/COMETA_LogoEslog_Y_W.png", alt: "co.meta eases testing on black" },
+
+            { bgcolor:"#fff", image: "assets/logos/COMETAROCKS_LogoEslog_Y_B.png", image_safari: "assets/logos/COMETAROCKS_LogoEslog_Y_B.png", alt: "cometa.rocks on white" },
+            { bgcolor:"#000", image: "assets/logos/COMETAROCKS_LogoEslog_Y_W.png", image_safari: "assets/logos/COMETAROCKS_LogoEslog_Y_W.png", alt: "cometa.rocks on black" },
+
+            { bgcolor:"#fff", image: "assets/logos/COMETA_Logo_Yell_Black-02_400x89.webp", image_safari: "assets/logos/COMETA_Logo_Yell_Black-02_400x89.png", alt: "co.meta-black-logo font montserrat" },
+            { bgcolor:"#000", image: "assets/logos/COMETA_Logo_Yell_White-02-03.webp", image_safari: "assets/logos/COMETA_Logo_Yell_White-02-03.png", alt: "co.meta-white-logo font montserrat" },
+
         ],
         favicons: [
             { image: "assets/favicons/512.webp", image_safari: "assets/favicons/512.png", alt: "favicon-512" },
@@ -28,6 +43,7 @@ export const COMETA_LOGOTIPS_DATA = {
 
         cometa_media: "Co.meta als mitjans de comunicació",
         cometa_logos: "Co.meta logotip",
+        cometa_download: "Baixeu logotips que inclouen format EPS com a arxiu ZIP.",
         cometa_avaliable_logos: "El logotip de co.meta està disponible per a la seva descàrrega tal com es veu a continuació. No dubteu a utilitzar-los. Si us plau, no els distorsionis.",
         cometa_favicons: "Co.meta Favicons",
         cometa_other: "Altres",
