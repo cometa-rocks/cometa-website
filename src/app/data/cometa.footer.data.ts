@@ -24,10 +24,10 @@ export const COMETA_FOOTER_DATA = {
         title: "Community & Help",
         links: [
           { name: "Github", target: "_blank", rel: "noopener", href: "https://github.com/cometa-rocks/" },
-          { name: "Documentation", target: "_blank", rel: "noopener", href: "https://github.com/cometa-rocks/cometa-documentation" },
+          { name: "Documentation", target: "_blank", rel: "noopener", href: "https://github.com/cometa-rocks/cometa_documentation" },
           { name: "Support", target: "_self", rel: "", href: "support" },
           { name: "Logos", target: "_self", rel: "", href: "logos" },
-          { name: "Merch", target: "_blank", rel: "noopener", href: "https://teespring.com/de/testing-opensource-cometa" }
+          { name: "Swag", target: "_blank", rel: "noopener", href: "https://teespring.com/de/testing-opensource-cometa" }
         ]
       }
     ]
