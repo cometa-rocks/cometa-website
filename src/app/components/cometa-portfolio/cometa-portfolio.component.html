@@ -3,11 +3,11 @@
         <h1 data-aos="fade-up">{{content.cometa_portfolio_title}}</h1>
         <div class="separator"></div>
         <div data-aos="fade-up">
-            <p>{{content.cometa_portfolio_automation}}</p>
-            <p>{{content.cometa_portfolio_tests}}</p>
-            <p>{{content.cometa_portfolio_development}}</p>
+            <h4>{{content.cometa_portfolio_automation}}</h4>
+            <h4>{{content.cometa_portfolio_tests}}</h4>
+            <h4>{{content.cometa_portfolio_development}}</h4>
         </div>
-        <p data-aos="fade-up">{{content.cometa_portfolio_screenshots}}</p>
+        <h4 data-aos="fade-up">{{content.cometa_portfolio_screenshots}}</h4>
         <!--  trial button -->
         <button data-aos="fade-up" aria-label="trial-button">
             <a target="_blank" rel="noopener" href="https://prod.cometa.rocks/">{{content.cometa_portfolio_trial}}</a>
@@ -28,7 +28,7 @@
 
         <div class="text">
             <h1>{{content.screenshots[0].title}}</h1>
-            <p>{{content.screenshots[0].description}}</p>
+            <h4>{{content.screenshots[0].description}}</h4>
             <!-- Button for toggeling more and less -->
             <button data-aos="fade-up" (click)="co_screenshots_show_more = !co_screenshots_show_more" class="button">
                 <div *ngIf="currentLang == 'en'">{{co_screenshots_show_more? 'show less' : 'show more...'}}</div>
@@ -50,7 +50,7 @@
 
                 <div class="text">
                     <h1>{{screenshot.title}}</h1>
-                    <p>{{screenshot.description}}</p>
+                    <h4>{{screenshot.description}}</h4>
                 </div>
             </div>
         </div>

@@ -2,443 +2,482 @@
 @import "_breakpoints";
 @import "_layout";
 
-    /**
-        Adding stronger color to call-to-action buttons 
-    */
-    .c2a-button-demo {
-        background-color: $call-to-action-color-greenish;
-    }
-    .c2a-button-login {
-        background-color: $call-to-action-color-blueish;
-    }
+/**
+    Adding stronger color to call-to-action buttons 
+*/
+.c2a-button-demo {
+    background-color: $call-to-action-color-greenish;
+}
+.c2a-button-login {
+    background-color: $call-to-action-color-blueish;
+}
 
-    .section-laptop {
-        @include flexbox($dir: column, $justify: center, $align: center);
-        @include padding($top: 1%, $right: 1%, $bottom: calc(1% + 50px), $left: 1%);
-        overflow-x: hidden;
-        
-        .text {
-            @include padding($top: 100px, $right: 3%, $bottom: 50px, $left: 3%);
-            @include dimensions($width: 100%);
-            @include for-phone-landscape-up(phone-plus-38) {
-                @include dimensions($width: 85%);
-                @include padding($right: 0, $left: 0);
-            }
-            @include for-tablet-portrait-up(tablet-plus-100) {
-                @include dimensions($width: 70%);
-            }
-            text-align: center;
-        }
-
-        /* Create a blinking border-right */
-        .foss-alternative-to {
-            border-right: 1px solid orange;
-            animation: blink .5s step-end infinite ;
-            @keyframes blink {
-                50% {
-                  border-color: transparent;
-                }
-              }
-            @-webkit-keyframes blink {
-                50% {
-                  border-color: transparent;
-                }
-            }
-        }
-
-
-        .laptop {
-            @include flexbox($dir: row, $justify: center, $align: center);
-            @include dimensions($height: 140px, $width: 80%);
-            @include for-small-phone-landscape-up(small-phone-plus-60) {
-                @include dimensions($height: 160px);
-            }
-            @include for-small-phone-landscape-up(small-phone-plus-190) {
-                @include dimensions($height: 200px);
-            }
-            @include for-phone-landscape-up(phone) {
-                @include dimensions($height: 250px);
-            }
-            @include for-phone-landscape-up(phone-plus-40) {
-                @include dimensions($height: 300px);
-            }
-            @include for-small-tablet-portrait-up(small-tablet-plus-90) {
-                @include dimensions($height: 350px);
-            }
-            @include for-tablet-portrait-up(tablet-plus-100) {
-                @include dimensions($height: 400px);
-            }
-            @include for-large-tablet-portrait-up(large-tablet-plus-185) {
-                @include dimensions($width: 800px);
-            }
-            background: $lightgray;
-            border-radius: .4em;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            border-bottom: none;
-            box-shadow: 0px 15px 10px -7px rgba(0,0,0,1);
-
-            .output {
-                @include dimensions($height: 90%, $width: 94%);
-                background: $white;
-                border-radius: .4em;
-                transition: 2s;
-                -webkit-transition: 2s;
+.section-laptop {
+    /* @include flexbox($dir: column, $justify: center, $align: center); */
+    @include padding($top: 1%, $right: 1%, $bottom: calc(1% + 50px), $left: 1%);
+    overflow-x: hidden;
     
-                .header {
-                    @include flexbox ($dir: row, $justify: space-between);
-                    @include dimensions($height: 8%, $width: 98%);
-                    @include margin($top: .5%, $left: 1%);
-                    @include for-phone-landscape-up (phone) {
-                        @include dimensions($height: 5%);
+    /* style for wrapper to pick up text and video on top of the page */
+    .wrapper-devices-text-and-video {
+        justify-content: center;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        @include for-tablet-portrait-up(tablet) {
+            flex-direction: row;
+            gap: 25px;
+        } 
+
+        /* styling the video class */
+        .video {
+            position: relative;
+            padding:25% 0;
+            width:90%;
+            margin-left: 5%;
+            @include for-tablet-portrait-up(tablet) {
+                width:50%;
+            } 
+            iframe {
+                @include dimensions($width: 100%, $height: 100%);
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 5px;
+                @include for-tablet-portrait-up(tablet) {
+                    @include dimensions($width: 80%, $height: 55%);
+                    top: 25%;
+                } 
+            }
+        }
+    }
+
+
+    .text {
+        /* layout for extra small mobiles */
+        @include padding($top: 100px, $right: 3%, $bottom: 50px, $left: 3%);
+        @include dimensions($width: 100%);
+        /* layout for bigger mobiles and up */
+        @include for-phone-landscape-up(phone-plus-38) {
+            @include dimensions($width: 85%);
+            @include padding($right: 0, $left: 0);
+        }
+        @include for-tablet-portrait-up(tablet-plus-100) {
+            @include dimensions($width: 50%);
+            padding-left:25px;
+        }
+        text-align: left;
+    }
+
+    /* Create a blinking border-right */
+    .foss-alternative-to {
+        border-right: 1px solid orange;
+        animation: blink .5s step-end infinite ;
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+            }
+        @-webkit-keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+    }
+
+
+    .laptop {
+        margin-top:25px;
+        @include flexbox($dir: row, $justify: center, $align: center);
+        @include dimensions($height: 140px, $width: 80%);
+        @include for-small-phone-landscape-up(small-phone-plus-60) {
+            @include dimensions($height: 160px);
+        }
+        @include for-small-phone-landscape-up(small-phone-plus-190) {
+            @include dimensions($height: 200px);
+        }
+        @include for-phone-landscape-up(phone) {
+            @include dimensions($height: 250px);
+        }
+        @include for-phone-landscape-up(phone-plus-40) {
+            @include dimensions($height: 300px);
+        }
+        @include for-small-tablet-portrait-up(small-tablet-plus-90) {
+            @include dimensions($height: 350px);
+        }
+        @include for-tablet-portrait-up(tablet-plus-100) {
+            @include dimensions($height: 400px);
+        }
+        @include for-large-tablet-portrait-up(large-tablet-plus-185) {
+            @include dimensions($width: 800px);
+        }
+        background: $lightgray;
+        border-radius: .4em;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: none;
+        box-shadow: 0px 15px 10px -7px rgba(0,0,0,1);
+
+        .output {
+            @include dimensions($height: 90%, $width: 94%);
+            background: $white;
+            border-radius: .4em;
+            transition: 2s;
+            -webkit-transition: 2s;
+
+            .header {
+                @include flexbox ($dir: row, $justify: space-between);
+                @include dimensions($height: 8%, $width: 98%);
+                @include margin($top: .5%, $left: 1%);
+                @include for-phone-landscape-up (phone) {
+                    @include dimensions($height: 5%);
+                }
+                background: $lightgray;
+                border-radius: .2em;
+
+                .logo {
+                    @include margin($left: 5px);
+                    line-height: 12px;
+                    font-size: 0;
+                
+                    @include for-small-tablet-portrait-up(small-tablet-plus-50) { line-height: 16px; }
+
+                    span { 
+                        font-size: 8px;
+                        @include for-small-phone-landscape-up(small-phone-plus-190) { font-size: 10px; }
+                        @include for-small-tablet-portrait-up(small-tablet-plus-90) { font-size: 12px; }
+                        @include for-tablet-portrait-up(tablet-plus-100)            { font-size: 14px; }
+
+                        &:nth-child(1) { color: $heavy-orange; }
+                        &:nth-child(2) { color: $gray; }
+                    }
+                }
+
+                .router-links {
+                    @include flexbox($dir: row, $align: center);
+
+                    div {
+                        @include dimensions($height: 80%, $width: 8px);
+                        @include margin($top: 5px, $right: 5px, $bottom: 5px, $left: 5px);
+                        @include for-phone-landscape-up (phone) {
+                            @include dimensions($width: 10px);
+                        }
+                        @include for-tablet-portrait-up(tablet-plus-100) {
+                            @include dimensions($width: 14px);
+                        }
+                        @include for-small-phone-landscape-up(small-phone-plus-190) {
+                            @include dimensions($width: 12px);
+                        }
+                        @include for-small-tablet-portrait-up(small-tablet-plus-90) {
+                            @include dimensions($width: 12px);
+                        }
+                        background: $medium-gray;
+                        border-radius: 10px;
+                    }
+                }
+            }
+
+            p {
+                @include margin($top: 4%, $right: 0, $bottom: 0, $left: 1%);
+                @include for-small-phone-landscape-up(small-phone-plus-190) { font-size: 10px; }
+                @include for-tablet-portrait-up(tablet-plus-100) {
+                    @include margin($top: 2%);
+                }
+                font-size: 8px;
+                color: $gray;
+            }
+
+            .folders {
+                @include grid($template-columns: repeat(7, 1fr), $gap: 5px);
+                @include dimensions($width: 98%);
+                @include margin($left: 1%, $top: 3%);
+
+                div {
+                    @include dimensions($height: 15px);
+                    @include for-phone-landscape-up (phone-plus-40) {
+                        @include dimensions($height: 20px);
+                    }
+                    @include for-small-tablet-portrait-up(small-tablet-plus-90) {
+                        @include dimensions($height: 25px);
+                    }
+                    @include for-tablet-portrait-up(tablet-plus-100) {
+                        @include dimensions($height: 30px);
                     }
                     background: $lightgray;
-                    border-radius: .2em;
-    
-                    .logo {
-                        @include margin($left: 5px);
-                        line-height: 12px;
-                        font-size: 0;
+                    border-radius: 5px;
                     
-                        @include for-small-tablet-portrait-up(small-tablet-plus-50) { line-height: 16px; }
-
-                        span { 
-                            font-size: 8px;
-                            @include for-small-phone-landscape-up(small-phone-plus-190) { font-size: 10px; }
-                            @include for-small-tablet-portrait-up(small-tablet-plus-90) { font-size: 12px; }
-                            @include for-tablet-portrait-up(tablet-plus-100)            { font-size: 14px; }
-    
-                            &:nth-child(1) { color: $heavy-orange; }
-                            &:nth-child(2) { color: $gray; }
-                        }
-                    }
-    
-                    .router-links {
-                        @include flexbox($dir: row, $align: center);
-
-                        div {
-                            @include dimensions($height: 80%, $width: 8px);
-                            @include margin($top: 5px, $right: 5px, $bottom: 5px, $left: 5px);
-                            @include for-phone-landscape-up (phone) {
-                                @include dimensions($width: 10px);
-                            }
-                            @include for-tablet-portrait-up(tablet-plus-100) {
-                                @include dimensions($width: 14px);
-                            }
-                            @include for-small-phone-landscape-up(small-phone-plus-190) {
-                                @include dimensions($width: 12px);
-                            }
-                            @include for-small-tablet-portrait-up(small-tablet-plus-90) {
-                                @include dimensions($width: 12px);
-                            }
-                            background: $medium-gray;
-                            border-radius: 10px;
-                        }
+                    &:nth-last-child(-n+1) {
+                        display: none;
+                        @include for-small-phone-landscape-up(small-phone-plus-190) { display: inline-block; }
                     }
                 }
-    
-                p {
-                    @include margin($top: 4%, $right: 0, $bottom: 0, $left: 1%);
-                    @include for-small-phone-landscape-up(small-phone-plus-190) { font-size: 10px; }
+            }
+
+            .features {
+                @include grid($template-columns: repeat(4, 1fr), $column-gap: 5px, $row-gap: 10px);
+                @include for-phone-landscape-up (phone) {
+                    @include grid($row-gap: 20px);
+                }
+                @include dimensions($width: 98%);
+                @include margin($left: 1%, $top: 3%);
+                
+                div {
+                    @include dimensions($height: 25px);
+                    @include for-phone-landscape-up (phone-plus-40) {
+                        @include dimensions($height: 35px);
+                    }
+                    @include for-small-tablet-portrait-up(small-tablet-plus-90) {
+                        @include dimensions($height: 40px);
+                    }
                     @include for-tablet-portrait-up(tablet-plus-100) {
-                        @include margin($top: 2%);
+                        @include dimensions($height: 55px);
                     }
-                    font-size: 8px;
-                    color: $gray;
-                }
-    
-                .folders {
-                    @include grid($template-columns: repeat(7, 1fr), $gap: 5px);
-                    @include dimensions($width: 98%);
-                    @include margin($left: 1%, $top: 3%);
-    
-                    div {
-                        @include dimensions($height: 15px);
-                        @include for-phone-landscape-up (phone-plus-40) {
-                            @include dimensions($height: 20px);
-                        }
-                        @include for-small-tablet-portrait-up(small-tablet-plus-90) {
-                            @include dimensions($height: 25px);
-                        }
-                        @include for-tablet-portrait-up(tablet-plus-100) {
-                            @include dimensions($height: 30px);
-                        }
-                        background: $lightgray;
-                        border-radius: 5px;
-                        
-                        &:nth-last-child(-n+1) {
-                            display: none;
-                            @include for-small-phone-landscape-up(small-phone-plus-190) { display: inline-block; }
-                        }
-                    }
-                }
-    
-                .features {
-                    @include grid($template-columns: repeat(4, 1fr), $column-gap: 5px, $row-gap: 10px);
-                    @include for-phone-landscape-up (phone) {
-                        @include grid($row-gap: 20px);
-                    }
-                    @include dimensions($width: 98%);
-                    @include margin($left: 1%, $top: 3%);
-                    
-                    div {
-                        @include dimensions($height: 25px);
-                        @include for-phone-landscape-up (phone-plus-40) {
-                            @include dimensions($height: 35px);
-                        }
-                        @include for-small-tablet-portrait-up(small-tablet-plus-90) {
-                            @include dimensions($height: 40px);
-                        }
-                        @include for-tablet-portrait-up(tablet-plus-100) {
-                            @include dimensions($height: 55px);
-                        }
-                        position: relative;
-                        background:$lightgray;
-                        border-radius: 5px;
-                        border-top-right-radius: 0;
+                    position: relative;
+                    background:$lightgray;
+                    border-radius: 5px;
+                    border-top-right-radius: 0;
 
-                        &::before,
-                        &::after {
-                            content: '';
-                            position: absolute;
-                            top: -5px;
-                            @include dimensions($height: 5px);
-                            @include for-small-tablet-portrait-up(small-tablet-plus-90) { height: 10px; top: -10px; }
-                        }
+                    &::before,
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: -5px;
+                        @include dimensions($height: 5px);
+                        @include for-small-tablet-portrait-up(small-tablet-plus-90) { height: 10px; top: -10px; }
+                    }
 
-                        &::before {
-                            @include dimensions($width: 30%);
-                            background-color: $lightblue;                            
-                            right: 0;
-                            border-top-right-radius: 5px;
-                        }
-    
-                        &::after {
-                            @include dimensions($width: 20%);
-                            background-color: $lightgreen;
-                            right: 28%;
-                            transform: skew(-20deg);
-                        }
-    
-                        &:nth-child(3n+1) {
-                            &::after { background-color:$red; }
-                        }
-    
-                        &:nth-last-child(-n+4) {
-                            display: none;
-                            @include for-phone-landscape-up (phone) { display: inline-block; }
-                        }
+                    &::before {
+                        @include dimensions($width: 30%);
+                        background-color: $lightblue;                            
+                        right: 0;
+                        border-top-right-radius: 5px;
+                    }
+
+                    &::after {
+                        @include dimensions($width: 20%);
+                        background-color: $lightgreen;
+                        right: 28%;
+                        transform: skew(-20deg);
+                    }
+
+                    &:nth-child(3n+1) {
+                        &::after { background-color:$red; }
+                    }
+
+                    &:nth-last-child(-n+4) {
+                        display: none;
+                        @include for-phone-landscape-up (phone) { display: inline-block; }
                     }
                 }
             }
-        }
-    
-        .keyboard {
-            @include dimensions($width: 100%, $height: 6px);
-            @include for-small-phone-landscape-up(small-phone) {
-                @include dimensions($width: 85%);
-            }
-            @include for-small-phone-landscape-up(small-phone-plus-60) {
-                @include dimensions($height: 8px);
-            }
-            @include for-small-phone-landscape-up(small-phone-plus-190) {
-                @include dimensions($height: 10px);
-            }
-            @include for-phone-landscape-up (phone) {
-                @include dimensions($height: 12px);
-            }
-            @include for-phone-landscape-up (phone-plus-40) {
-                @include dimensions($height: 14px);
-            }
-            @include for-small-tablet-portrait-up(small-tablet-plus-90) {
-                @include dimensions($height: 16px);
-            }
-            @include for-tablet-portrait-up(tablet-plus-100) {
-                @include dimensions($height: 18px);
-            }
-            @include for-large-tablet-portrait-up (large-tablet-plus-185) {
-                @include dimensions($height: 20px, $width: 900px);
-            }
-            background: #bdbcbc;
-            border-bottom-right-radius: 3em;
-            border-bottom-left-radius: 3em;
-            box-shadow: 0px 15px 10px -7px rgba(0,0,0,1);
-            border-top: none;
-        }
-
-
-        &.isDark {
-            background-color: $blackish;
-            color: $whitish;
-
-            .keyboard { box-shadow: 0px 15px 10px -7px rgb(245, 245, 245); }
         }
     }
 
-    .section-mobile {
-        position: relative;
-        @include grid($template-columns: repeat(1fr), $place-items: center);
-        @include padding($top: 50px, $right: 10%, $bottom: 0, $left: 10%);
-        @include for-small-tablet-portrait-up(small-tablet) {
-            @include grid($template-columns: repeat(2, 1fr), $place-items: center);
+    .keyboard {
+        @include dimensions($width: 100%, $height: 6px);
+        @include for-small-phone-landscape-up(small-phone) {
+            @include dimensions($width: 85%);
         }
-        @include for-desktop-portrait-up(desktop) { perspective-origin: 60% 30%; }
-        background-color: $white;
-        perspective: 1000px;
-        
-        
-        .text {
-            @include flexbox($dir: column, $justify: center);
-            @include dimensions($width: 100%);
-            @include padding ($bottom: 50px);
-            @include for-small-tablet-portrait-up(small-tablet) { text-align: start; padding-bottom: 0; }
-            text-align: center;
+        @include for-small-phone-landscape-up(small-phone-plus-60) {
+            @include dimensions($height: 8px);
+        }
+        @include for-small-phone-landscape-up(small-phone-plus-190) {
+            @include dimensions($height: 10px);
+        }
+        @include for-phone-landscape-up (phone) {
+            @include dimensions($height: 12px);
+        }
+        @include for-phone-landscape-up (phone-plus-40) {
+            @include dimensions($height: 14px);
+        }
+        @include for-small-tablet-portrait-up(small-tablet-plus-90) {
+            @include dimensions($height: 16px);
+        }
+        @include for-tablet-portrait-up(tablet-plus-100) {
+            @include dimensions($height: 18px);
+        }
+        @include for-large-tablet-portrait-up (large-tablet-plus-185) {
+            @include dimensions($height: 20px, $width: 900px);
+        }
+        background: #bdbcbc;
+        border-bottom-right-radius: 3em;
+        border-bottom-left-radius: 3em;
+        box-shadow: 0px 15px 10px -7px rgba(0,0,0,1);
+        border-top: none;
+    }
 
-            .buttons-container {
-                @include padding($bottom: 50px);
-            }
+
+    &.isDark {
+        background-color: $blackish;
+        color: $whitish;
+
+        .keyboard { box-shadow: 0px 15px 10px -7px rgb(245, 245, 245); }
+    }
+}
+
+.section-mobile {
+    position: relative;
+    @include grid($template-columns: repeat(1fr), $place-items: center);
+    @include padding($top: 50px, $right: 10%, $bottom: 0, $left: 10%);
+    @include for-small-tablet-portrait-up(small-tablet) {
+        @include grid($template-columns: repeat(2, 1fr), $place-items: center);
+    }
+    @include for-desktop-portrait-up(desktop) { perspective-origin: 60% 30%; }
+    background-color: $white;
+    perspective: 1000px;
+    
+    
+    .text {
+        @include flexbox($dir: column, $justify: center);
+        @include dimensions($width: 100%);
+        @include padding ($bottom: 50px);
+        @include for-small-tablet-portrait-up(small-tablet) { text-align: start; padding-bottom: 0; }
+        text-align: center;
+
+        .buttons-container {
+            @include padding($bottom: 50px);
         }
+    }
+    
+    .mobile {
+        @include dimensions($height: 400px, $width: 150px);
+        @include border($top: 1px solid $device-border-color);
+        @include position($pos: relative);
+        @include for-small-tablet-portrait-up(small-tablet) { transform: rotateX(0deg) rotateY(-35deg); }
+        background-color: $device-background;
+        transform: rotateX(0deg) rotateY(-25deg);
+        transform-style: preserve-3d;
+        box-shadow: 0 25px 22px -12px rgba(0,0,0,0.3);
         
-        .mobile {
-            @include dimensions($height: 400px, $width: 150px);
-            @include border($top: 1px solid $device-border-color);
+        
+
+        &::after {
+            @include dimensions($width: 10px, $height: 100%);
+            @include position($pos: absolute, $top: -1px, $right: -9px);
+            content: '';
+            background-color: $device-border-color;
+            transform: rotateY(45deg);
+        }
+
+        .navbar {
+            @include dimensions($height: 10%);
             @include position($pos: relative);
-            @include for-small-tablet-portrait-up(small-tablet) { transform: rotateX(0deg) rotateY(-35deg); }
-            background-color: $device-background;
-            transform: rotateX(0deg) rotateY(-25deg);
+            @include border($bottom: 2px solid $device-border-color, $right: 2px solid $device-border-color);
+            background-color: $lightblack;
+            box-shadow: $mobile-shadow;
+            color: $heavy-orange;
             transform-style: preserve-3d;
-            box-shadow: 0 25px 22px -12px rgba(0,0,0,0.3);
-            
-            
+            transform: translateZ(15px);
+            transition: all .2s;
+
+            // .navbar pseudo elements
+            &::before {
+                @include position($pos: absolute, $left: 10%, $top: 50%);
+                content: '|||';
+                transform: translateY(-50%) rotate(90deg);
+                font-weight: bold;
+            }
 
             &::after {
-                @include dimensions($width: 10px, $height: 100%);
-                @include position($pos: absolute, $top: -1px, $right: -9px);
-                content: '';
-                background-color: $device-border-color;
-                transform: rotateY(45deg);
+                @include position($pos: absolute, $left: 30%, $top: 29%);
+                content: 'CO.META';
+                transform: translate(-50% -50%);
+                font-weight: bold;
+                font-size: 16px;
             }
 
-            .navbar {
-                @include dimensions($height: 10%);
+            &:hover { transform: translateZ(25px); }
+        }
+
+        .item-wrapper {
+            @include flexbox($dir: column, $align: flex-end);
+            @include dimensions($height: 80%);
+            @include padding($top: 5px, $right: 5px, $bottom: 5px, $left: 5px);
+            transform-style: preserve-3d;
+
+            .item {
+                @include dimensions($height: 10%, $width: 70%);
+                @include margin ($top: 6%, $bottom: 6%);
+                @include border($right: 2px solid $device-border-color, $bottom: 2px solid $device-border-color);
                 @include position($pos: relative);
-                @include border($bottom: 2px solid $device-border-color, $right: 2px solid $device-border-color);
-                background-color: $lightblack;
-                box-shadow: $mobile-shadow;
-                color: $heavy-orange;
-                transform-style: preserve-3d;
                 transform: translateZ(15px);
+                transform-style: preserve-3d;
+                background-color: $device-item-color;
+                box-shadow: $mobile-shadow;
                 transition: all .2s;
 
-                // .navbar pseudo elements
+                // .item pseudo elements styling
                 &::before {
-                    @include position($pos: absolute, $left: 10%, $top: 50%);
-                    content: '|||';
-                    transform: translateY(-50%) rotate(90deg);
-                    font-weight: bold;
+                    @include position($pos: absolute, $left: -10px, $top: 5px);
+                    @include dimensions($height: 80%, $width: 3px);
+                    @include border($right: 1px solid $device-border-color);
+                    content: '';
+                    background-color: $device-success-color;
+                    transform: translateZ(15px) rotate(35deg);
+                    box-shadow: $mobile-shadow;
                 }
 
-                &::after {
-                    @include position($pos: absolute, $left: 30%, $top: 29%);
-                    content: 'CO.META';
-                    transform: translate(-50% -50%);
-                    font-weight: bold;
-                    font-size: 16px;
+                    &::after {
+                    @include position($pos: absolute, $left: -18px, $top: 15px);
+                    @include dimensions($height: 40%, $width: 3px);
+                    @include border($left: 1px solid $device-border-color);
+                    content: '';
+                    background-color: $device-success-color;
+                    transform: translateZ(15px) rotate(-55deg);
+                    box-shadow: $mobile-shadow;
+                }
+
+                // overwrites each 3rd pseudo element(after) starting from 2nd last element
+                &:nth-last-child(3n+2):after {
+                    @include position($left: -14px, $top: 1px);
+                    @include dimensions($height: 90%, $width: 3px);
+                    background: $device-fail-color;
+                    border: 0;
+                    transform: translateZ(15px) rotate(-45deg);
+                }
+
+                // overwrites each 3rd pseudo element(before) starting from 2nd last element
+                &:nth-last-child(3n+2):before {
+                    @include position($left: -15px, $top: 0);
+                    @include dimensions($height: 100%, $width: 3px);
+                    @include border($right: 1px solid $device-border-color);
+                    background-color: $device-fail-color;
+                    transform: translateZ(14px) rotate(45deg);
                 }
 
                 &:hover { transform: translateZ(25px); }
             }
-
-            .item-wrapper {
-                @include flexbox($dir: column, $align: flex-end);
-                @include dimensions($height: 80%);
-                @include padding($top: 5px, $right: 5px, $bottom: 5px, $left: 5px);
-                transform-style: preserve-3d;
-
-                .item {
-                    @include dimensions($height: 10%, $width: 70%);
-                    @include margin ($top: 6%, $bottom: 6%);
-                    @include border($right: 2px solid $device-border-color, $bottom: 2px solid $device-border-color);
-                    @include position($pos: relative);
-                    transform: translateZ(15px);
-                    transform-style: preserve-3d;
-                    background-color: $device-item-color;
-                    box-shadow: $mobile-shadow;
-                    transition: all .2s;
-
-                    // .item pseudo elements styling
-                    &::before {
-                        @include position($pos: absolute, $left: -10px, $top: 5px);
-                        @include dimensions($height: 80%, $width: 3px);
-                        @include border($right: 1px solid $device-border-color);
-                        content: '';
-                        background-color: $device-success-color;
-                        transform: translateZ(15px) rotate(35deg);
-                        box-shadow: $mobile-shadow;
-                    }
-
-                      &::after {
-                        @include position($pos: absolute, $left: -18px, $top: 15px);
-                        @include dimensions($height: 40%, $width: 3px);
-                        @include border($left: 1px solid $device-border-color);
-                        content: '';
-                        background-color: $device-success-color;
-                        transform: translateZ(15px) rotate(-55deg);
-                        box-shadow: $mobile-shadow;
-                    }
-
-                    // overwrites each 3rd pseudo element(after) starting from 2nd last element
-                    &:nth-last-child(3n+2):after {
-                        @include position($left: -14px, $top: 1px);
-                        @include dimensions($height: 90%, $width: 3px);
-                        background: $device-fail-color;
-                        border: 0;
-                        transform: translateZ(15px) rotate(-45deg);
-                    }
-
-                    // overwrites each 3rd pseudo element(before) starting from 2nd last element
-                    &:nth-last-child(3n+2):before {
-                        @include position($left: -15px, $top: 0);
-                        @include dimensions($height: 100%, $width: 3px);
-                        @include border($right: 1px solid $device-border-color);
-                        background-color: $device-fail-color;
-                        transform: translateZ(14px) rotate(45deg);
-                    }
-
-                    &:hover { transform: translateZ(25px); }
-                }
-            }
-
-            .button-wrapper {
-                @include flexbox($justify: space-between);
-                @include dimensions($height: 10%);
-                @include padding($top: 5px, $right: 5px, $bottom: 5px, $left: 5px);
-                transform-style: preserve-3d; 
-
-                .item-button {
-                    @include dimensions($height: 50%, $width: 30%);
-                    @include border($right: 2px solid $device-border-color, $bottom: 2px solid $device-border-color);
-                    transform: translateZ(15px);
-                    transform-style: preserve-3d;
-                    background: $heavy-orange;
-                    transition: all .2s;
-                    box-shadow: $mobile-shadow;
-
-                    &:hover { transform: translateZ(25px); }
-                }
-            }
         }
-          
-        &.isDark {
-          background-color: $black;
-          color: $whitish;
-          z-index: 1;
-      
-          .mobile {
-            box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
-          }
+
+        .button-wrapper {
+            @include flexbox($justify: space-between);
+            @include dimensions($height: 10%);
+            @include padding($top: 5px, $right: 5px, $bottom: 5px, $left: 5px);
+            transform-style: preserve-3d; 
+
+            .item-button {
+                @include dimensions($height: 50%, $width: 30%);
+                @include border($right: 2px solid $device-border-color, $bottom: 2px solid $device-border-color);
+                transform: translateZ(15px);
+                transform-style: preserve-3d;
+                background: $heavy-orange;
+                transition: all .2s;
+                box-shadow: $mobile-shadow;
+
+                &:hover { transform: translateZ(25px); }
+            }
         }
     }
+        
+    &.isDark {
+        background-color: $black;
+        color: $whitish;
+        z-index: 1;
+    
+        .mobile {
+        box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
+        }
+    }
+}
 
 
 .section-tablet {

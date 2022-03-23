@@ -1,36 +1,51 @@
 <!----------------------------------- picture laptop ----------------------------------->
 <div [ngClass]="{'isDark': currentTheme == 'dark'}" class="section-laptop">
-  <div class="text">
-  <!--
-    <h1 data-aos="fade-up" data-aos-delay="100">
-      {{content.cometa_laptop_testing}}
-    </h1>
-  -->
-    <h1 data-aos="fade-up" data-aos-delay="100">
-      The Open Source alternative to <br>
-    <span class="foss-alternative-to">{{content.noneFossAlternative}}</span></h1>
-
-    <h2 data-aos="fade-up" data-aos-delay="300">Complete Meta Test Automation Platform</h2>
-
-
-    <!-- <h2 data-aos="fade-up" data-aos-delay="300">{{content.cometa_laptop_dont_break_code}}</h2> -->
-    <!-- <h2 data-aos="fade-up" data-aos-delay="500">{{content.cometa_laptop_using_cometa}}</h2> -->
-    <h4 data-aos="fade-up" data-aos-delay="700">{{content.cometa_ibmcognos}}</h4>
-     <h4 data-aos="fade-up" data-aos-delay="700">{{content.cometa_opensrc}}</h4>
-<!--    <h4 data-aos="fade-up" data-aos-delay="700">{{content.cometa_comparison}}</h4>
-    <h4 data-aos="fade-up" data-aos-delay="700">{{content.cometa_api}}</h4>
- -->    <div data-aos="fade-up" data-aos-delay="800" class="buttons-container">
-      <button aria-label="login-button" class="c2a-button-login">
-        <a target="_blank" rel="noopener" href="https://prod.cometa.rocks/">{{content.cometa_login}}</a>
-      </button>
-      <button aria-label="trial-button" class="c2a-button-demo">
-        <a target="_blank" rel="noopener" href="https://cal.com/ralf/cometa-demo">{{content.cometa_demo}}</a>
-      </button>
+  
+  <div class="wrapper-devices-text-and-video">
+    <!-- box in top part of the page welcoming the user-->
+    <div class="text">
+      <!--
+        <h1 data-aos="fade-up" data-aos-delay="100">
+          {{content.cometa_laptop_testing}}
+        </h1>
+      -->
+        <h1 data-aos="fade-up" data-aos-delay="100">
+          The Open Source alternative to <br>
+        <span class="foss-alternative-to">{{content.noneFossAlternative}}</span></h1>
+  
+        <h2 data-aos="fade-up" data-aos-delay="300">Complete Meta Test Automation Platform</h2>
+  
+  
+        <!-- <h2 data-aos="fade-up" data-aos-delay="300">{{content.cometa_laptop_dont_break_code}}</h2> -->
+        <!-- <h2 data-aos="fade-up" data-aos-delay="500">{{content.cometa_laptop_using_cometa}}</h2> -->
+        <h4 data-aos="fade-up" data-aos-delay="700">{{content.cometa_ibmcognos}}</h4>
+        <h4 data-aos="fade-up" data-aos-delay="700">{{content.cometa_opensrc}}</h4>
+    <!--    <h4 data-aos="fade-up" data-aos-delay="700">{{content.cometa_comparison}}</h4>
+        <h4 data-aos="fade-up" data-aos-delay="700">{{content.cometa_api}}</h4>
+    -->    <div data-aos="fade-up" data-aos-delay="800" class="buttons-container">
+          <button aria-label="login-button" class="c2a-button-login">
+            <a target="_blank" rel="noopener" href="https://prod.cometa.rocks/">{{content.cometa_login}}</a>
+          </button>
+          <button aria-label="trial-button" class="c2a-button-demo">
+            <a target="_blank" rel="noopener" href="https://cal.com/ralf/cometa-demo">{{content.cometa_demo}}</a>
+          </button>
+        </div>
     </div>
+
+    <!-- video explaining cometa to the right of the text-->
+    <div class="video">
+      <p>{{content.cometa_video_in_action}}</p>
+      <iframe src="https://www.youtube-nocookie.com/embed/cuX7VJzWDYg?rel=0"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+
+
   </div>
 
   <!-- draw the laptop "image" -->
-  <div class="laptop">
+  <div class="laptop" style="display: none;">
     <div class="output">
       <div class="header">
         <div class="logo">
@@ -67,7 +82,7 @@
       </div>
     </div>
   </div>
-  <div class="keyboard"></div>
+  <div class="keyboard" style="display:none"></div>
 </div>
 
 <!----------------------------------- picture mobile ----------------------------------->

@@ -46,11 +46,6 @@ body {
         @include dimensions($width: 100%);
         text-align: center;
 
-        h1 {
-            @include for-tablet-portrait-up(tablet-plus-100) { font-size: 2.5em; }
-            @include for-desktop-portrait-up(desktop)        { font-size: 2em; }
-        }
-
         .separator {
             @include dimensions($height: 20px, $width: 20px);
             @include margin($top: 10px, $bottom: 10px);
@@ -75,7 +70,7 @@ body {
             &::after { left: 15px; }
         }
 
-        p {
+        p, h4 {
             padding: 5px 0;
  
             a {
