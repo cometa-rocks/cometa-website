@@ -28,7 +28,7 @@
                 .text {
                     @include padding($bottom: 25px, $left: 10px);
     
-                    h1 {
+                    h2 {
                         font-size: 1.3em;
                         color: $heavy-orange;
                         @include padding($top: 10px, $bottom: 10px);
