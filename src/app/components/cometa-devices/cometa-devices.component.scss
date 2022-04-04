@@ -19,9 +19,9 @@
     
     /* style for wrapper to pick up text and video on top of the page */
     .wrapper-devices-text-and-video {
-        justify-content: center;
         display:flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
         @include for-tablet-portrait-up(tablet) {
             flex-direction: row;
@@ -33,7 +33,6 @@
             position: relative;
             padding:25% 0;
             width:90%;
-            margin-left: 5%;
             @include for-tablet-portrait-up(tablet) {
                 width:50%;
             } 
