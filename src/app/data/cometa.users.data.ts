@@ -34,14 +34,6 @@ export const COMETA_USERS_DATA = {
         text: "riting UI automation is very easy with co.meta particularly because of its no-code offerings and a lot of thought given to different possibilities by the makers of the tool. We are generally impressed with the capability this tool offers. Dig deeper and you will always find something more to explore.",
         who: "Lalitkumar B., QA Engineer",
         footer_text: "Tea-Time with Testers"
-      },
-      {
-        image: "assets/social-media/peer.webp",
-        image_safari: "assets/social-media/peer.jpeg",
-        quote: "R",
-        text: "alf and his team at co.meta have been supporting us from the very early days of our project. They are incredibly helpful and cometa has identified problems that our playwright tests didn't find.",
-        who: "Peer Richelsen, Co-CEO",
-        footer_text: "Cal.com"
       }
     ]
   },
@@ -80,14 +72,6 @@ export const COMETA_USERS_DATA = {
         text: "utomatitzar l’interfície d’usuari és molt fàcil amb co.meta, sobretot a causa de les seves ofertes sense codi i de la reflexió que els fabricants de l’eina han donat a les diferents possibilitats. En general, ens impressiona la capacitat que ofereix aquesta eina. Aprofundiu i sempre trobareu alguna cosa més per explorar.",
         who: "Lalitkumar B., enginyer de control de qualitat",
         footer_text: "Tea-Time with Testers"
-      },
-      {
-        image: "assets/social-media/peer.webp",
-        image_safari: "assets/social-media/peer.jpeg",
-        quote: "R",
-        text: "alf i el seu equip de co.meta ens han donat suport des dels primers dies del nostre projecte. Són increïblement útils i Co.meta ha identificat problemes que les nostres proves de playwright no van trobar.",
-        who: "Peer Richelsen, Co-CEO Cal.com",
-        footer_text: "calendso, orangeDAOxyz"
       }
     ]
   }
