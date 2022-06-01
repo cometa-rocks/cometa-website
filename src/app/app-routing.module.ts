@@ -94,6 +94,12 @@ const routes: Routes = [
     loadChildren: () => new Promise(() => { if (window.location.href.match(/github/)) window.location.href = 'https://github.com/cometa-rocks/'; })
   },
 
+  // redirects to cometa login with invitation token
+  {
+    path: 'eurostar',
+    loadChildren: () => new Promise(() => { if (window.location.href.match(/eurostar/)) window.location.href = 'https://prod.cometa.rocks/?invite=429c27ba89ef3e3a59e8b18a04b1d398e307dbb9'; })
+  },
+
   // redirects any cometa.rocks/inexsistent to cometa.rocks/home
   { path: '**', redirectTo: '/home' },
 ];
